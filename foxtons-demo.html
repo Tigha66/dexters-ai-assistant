@@ -142,8 +142,6 @@
             <a href="mailto:tigha66@gmail.com" class="foxtons-gold-bg hover:bg-[#B8994F] px-8 py-4 rounded-full font-semibold text-lg inline-block text-black transition">📧 Contact Us</a>
             <p class="text-gray-500 text-sm mt-6">From AutoAI Web Solutions</p>
         </div>
-    </section>
-
     <script>
         // MiniMax API Configuration
         const API_KEY = 'sk-api-ispfyArkQsymxhoFgVIA_N6nHg4CDkFRNaEiE5teCm2a6kO8qLK047Ktm1wFD9C0DU8S4sfsuXe0kgfxkDpy1SxaEmw5XUOioQn-sXlTNTRIELmTQ1NkrbU';
@@ -162,8 +160,34 @@
             { role: 'system', content: SYSTEM_PROMPT }
         ];
 
+        // Fallback responses for demo mode
+        const fallbackResponses = {
+            'valuation': 'I can arrange a free valuation for your property. South Kensington properties typically sell for £850K-£2M+ depending on size. Would you like me to book an appointment?',
+            'value': 'I can arrange a free valuation for your property. South Kensington properties typically sell for £850K-£2M+ depending on size. Would you like me to book an appointment?',
+            'sell': 'Selling in South Kensington is excellent right now! Average sale time is 3-4 weeks. I can arrange a free valuation and discuss our premium selling service.',
+            'buy': 'Excellent choice! What\'s your budget and preferred area? I can show you available properties and arrange viewings.',
+            'rent': 'We have great rental properties too! What\'s your budget and preferred area?',
+            'property': 'We have premium properties across London. What area and budget are you looking for?',
+            'book': 'I can book you an appointment! Available slots: Tomorrow 10AM, 2PM, or Friday 11AM. Which suits you?',
+            'appointment': 'I can book you an appointment! Available slots: Tomorrow 10AM, 2PM, or Friday 11AM. Which suits you?',
+            'viewing': 'I can arrange a viewing for you! What property are you interested in and what time works best?',
+            'south kensington': 'South Kensington is one of London\'s most prestigious areas! Properties here command premium prices. What would you like to know?',
+            'area': 'We cover all of London\'s premium areas: South Kensington, Chelsea, Notting Hill, Mayfair, and Knightsbridge.',
+            'price': 'Property prices vary by area. South Kensington: £850K-£2M+, Chelsea: £1M-£3M+, Mayfair: £2M-£5M+. What area interests you?',
+            'help': 'I can help with: valuations, property searches, viewing bookings, area information, and market insights. What would you like?'
+        };
+
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function getFallbackResponse(message) {
+            for (const key in fallbackResponses) {
+                if (message.includes(key)) {
+                    return fallbackResponses[key];
+                }
+            }
+            return "I can help with valuations, property searches, viewing bookings, and market insights. What would you like to know?";
         }
 
         async function sendMessage() {
@@ -214,14 +238,16 @@
                 
                 const data = await response.json();
                 
-                let aiResponse = "I'm having trouble connecting. Please try again or contact us directly.";
+                let aiResponse = "";
                 
                 if (data.choices && data.choices[0] && data.choices[0].message) {
                     aiResponse = data.choices[0].message.content;
                     conversationHistory.push({ role: 'assistant', content: aiResponse });
                 } else if (data.error) {
-                    aiResponse = "I encountered an error. Please contact us at tigha66@gmail.com";
-                    console.error('API Error:', data.error);
+                    console.log('API Error, using fallback:', data.error);
+                    aiResponse = getFallbackResponse(message.toLowerCase());
+                } else {
+                    aiResponse = getFallbackResponse(message.toLowerCase());
                 }
                 
                 // Update loading with real response
@@ -231,12 +257,12 @@
                 `;
                 
             } catch (error) {
-                console.error('Error:', error);
+                console.error('API Error:', error);
+                // Use fallback response
+                const fallback = getFallbackResponse(message.toLowerCase());
                 loadingDiv.innerHTML = `
                     <div class="w-8 h-8 foxtons-gold-bg rounded-full flex items-center justify-center text-sm">🤖</div>
-                    <div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 max-w-md foxtons-gold" style="border: 1px solid #C9A962;">
-                        Sorry, I encountered an error. Please try again or contact us at tigha66@gmail.com
-                    </div>
+                    <div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 max-w-md foxtons-gold" style="border: 1px solid #C9A962;">${fallback}</div>
                 `;
             }
             

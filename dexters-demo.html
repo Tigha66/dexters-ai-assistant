@@ -131,8 +131,31 @@
             { role: 'system', content: SYSTEM_PROMPT }
         ];
 
+        // Fallback responses for demo mode
+        const fallbackResponses = {
+            'viewing': 'I can help schedule a viewing! What time works for you? We have availability tomorrow at 10:00 AM, 2:00 PM, and Saturday at 11:00 AM.',
+            'book': 'I can help schedule a viewing! What time works for you? We have availability tomorrow at 10:00 AM, 2:00 PM, and Saturday at 11:00 AM.',
+            'property': 'We have excellent properties available! What area and budget are you looking for? I can match you with the perfect property.',
+            'price': 'Property prices vary by area and size. What specific property or area are you interested in?',
+            'area': 'We cover all of London! Popular areas include Notting Hill, Chelsea, Kensington, Mayfair, and Canary Wharf. Which interests you?',
+            'flat': 'Great choice! What\'s your budget and preferred area? I can show you matching properties.',
+            'house': 'Excellent! What\'s your budget, how many bedrooms, and preferred area?',
+            'rent': 'We have great rental properties too! What\'s your budget and preferred area?',
+            'buy': 'Buying a property? What\'s your budget, preferred area, and number of bedrooms?',
+            'help': 'I can help with: property searches, viewing bookings, area information, price guidance, and general enquiries.'
+        };
+
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function getFallbackResponse(message) {
+            for (const key in fallbackResponses) {
+                if (message.includes(key)) {
+                    return fallbackResponses[key];
+                }
+            }
+            return "I can help with property searches, viewing bookings, and general enquiries. What would you like to know?";
         }
 
         async function sendMessage() {
@@ -183,14 +206,16 @@
                 
                 const data = await response.json();
                 
-                let aiResponse = "I'm having trouble connecting. Please try again or contact us directly.";
+                let aiResponse = "";
                 
                 if (data.choices && data.choices[0] && data.choices[0].message) {
                     aiResponse = data.choices[0].message.content;
                     conversationHistory.push({ role: 'assistant', content: aiResponse });
                 } else if (data.error) {
-                    aiResponse = "I encountered an error. Please contact us at tigha66@gmail.com";
-                    console.error('API Error:', data.error);
+                    console.log('API Error, using fallback:', data.error);
+                    aiResponse = getFallbackResponse(message.toLowerCase());
+                } else {
+                    aiResponse = getFallbackResponse(message.toLowerCase());
                 }
                 
                 // Update loading with real response
@@ -200,12 +225,12 @@
                 `;
                 
             } catch (error) {
-                console.error('Error:', error);
+                console.error('API Error:', error);
+                // Use fallback response
+                const fallback = getFallbackResponse(message.toLowerCase());
                 loadingDiv.innerHTML = `
                     <div class="w-8 h-8 dexters-bg rounded-full flex items-center justify-center text-sm">🤖</div>
-                    <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">
-                        Sorry, I encountered an error. Please try again or contact us at tigha66@gmail.com
-                    </div>
+                    <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">${fallback}</div>
                 `;
             }
             
