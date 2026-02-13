@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foxtons AI - One Page Summary</title>
+    <style>
+        @page { margin: 0; size: A4 landscape; }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            margin: 0; 
+            padding: 15mm; 
+            background: #f3f4f6;
+            color: #1a1a1a;
+            height: 148mm;
+            overflow: hidden;
+        }
+        .page {
+            background: white;
+            width: 277mm;
+            height: 148mm;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+        }
+        .left {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        .right {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: white;
+            color: #1a1a1a;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        h1 { font-size: 28px; margin: 0 0 5px; }
+        .subtitle { font-size: 16px; opacity: 0.9; margin-bottom: 20px; }
+        .tagline { font-size: 14px; opacity: 0.8; margin-bottom: auto; }
+        .stats-row {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 15px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+        }
+        .stat-num { font-size: 24px; font-weight: bold; color: #c4a35a; }
+        .stat-txt { font-size: 11px; opacity: 0.9; }
+        
+        .hours-box {
+            background: #fef2f2;
+            border: 2px solid #ef4444;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+        }
+        .hours-title { font-size: 12px; font-weight: bold; color: #ef4444; margin-bottom: 8px; }
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        .hours-item { text-align: center; padding: 6px; background: white; border-radius: 6px; font-size: 10px; }
+        .hours-item.closed { background: #fee2e2; color: #ef4444; }
+        .hours-item.ai { background: #dcfce7; color: #166534; border: 2px solid #22c55e; }
+        
+        .demo-qr {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .demo-qr p { color: #1a1a1a; font-size: 11px; margin: 8px 0 0; font-weight: bold; }
+        
+        h2 { 
+            color: #1a1a1a; 
+            font-size: 16px; 
+            border-bottom: 3px solid #c4a35a;
+            padding-bottom: 5px;
+            margin: 0 0 10px;
+        }
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+        }
+        .feature span { font-size: 14px; }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .pricing-card h3 { margin: 0 0 3px; font-size: 14px; color: #c4a35a; }
+        .price { font-size: 24px; font-weight: bold; }
+        .price span { font-size: 12px; opacity: 0.8; }
+        
+        .highlight-box {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .highlight-box h4 { margin: 0 0 4px; color: #92400e; font-size: 12px; }
+        .highlight-box p { margin: 0; font-size: 11px; color: #78350f; }
+        
+        .roi-box {
+            background: #f0fdf4;
+            border: 2px solid #22c55e;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .roi-box h4 { margin: 0 0 5px; color: #166534; font-size: 12px; }
+        .roi-box p { margin: 0; font-size: 11px; color: #166534; }
+        
+        .cta {
+            background: linear-gradient(135deg, #c4a35a 0%, #a08040 100%);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: auto;
+            font-size: 13px;
+        }
+        .contact { font-size: 11px; color: #666; text-align: center; margin-top: 8px; }
+        
+        .problem-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 0 8px 8px 0;
+        }
+        .problem-box p { margin: 0; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="left">
+            <div class="logo">F</div>
+            <h1>Foxtons AI</h1>
+            <p class="subtitle">24/7 Estate Agent Assistant</p>
+            <p class="tagline">Never miss a property lead again</p>
+            
+            <div class="stats-row">
+                <div class="stat-box">
+                    <div class="stat-num">78%</div>
+                    <div class="stat-txt">Lost Off-Hours</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">4.2x</div>
+                    <div class="stat-txt">More Viewings</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">30+</div>
+                    <div class="stat-txt">London Offices</div>
+                </div>
+            </div>
+            
+            <div class="hours-box">
+                <div class="hours-title">📅 Current Foxtons Hours vs AI</div>
+                <div class="hours-grid">
+                    <div class="hours-item closed">Mon-Fri<br>8am-8pm</div>
+                    <div class="hours-item closed">Sat<br>10am-4pm</div>
+                    <div class="hours-item closed">Sun<br>Closed</div>
+                </div>
+                <div class="hours-grid" style="margin-top: 6px;">
+                    <div class="hours-item ai" colspan="3">🤖 AI: 24/7 Available</div>
+                </div>
+            </div>
+            
+            <div class="demo-qr">
+                <div style="width: 70px; height: 70px; background: #eee; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #666; font-size: 9px;">[QR]</div>
+                <p>📱 Scan for Demo</p>
+                <p style="font-size: 9px; margin: 3px 0 0;">tigha66.github.io/dexters-ai-assistant/foxtons-ai-assistant.html</p>
+            </div>
+        </div>
+        
+        <div class="right">
+            <div class="problem-box">
+                <p><strong>🎯 The Problem:</strong> Foxtons is closed 68 hours/week = thousands of lost enquiries and missed commissions.</p>
+            </div>
+            
+            <h2>✨ Key Features</h2>
+            <div class="features-list">
+                <div class="feature"><span>💬</span> 24/7 Instant Responses</div>
+                <div class="feature"><span>📅</span> Auto Calendar Booking</div>
+                <div class="feature"><span>🎯</span> Lead Qualification</div>
+                <div class="feature"><span>📧</span> Email & SMS Follow-up</div>
+                <div class="feature"><span>🏠</span> Rightmove/Zoopla Integration</div>
+                <div class="feature"><span>📊</span> CRM Integration</div>
+            </div>
+            
+            <h2>💰 Pricing</h2>
+            <div style="display: flex; gap: 10px;">
+                <div class="pricing-card" style="flex: 1;">
+                    <h3>Pilot</h3>
+                    <div class="price">£199<span>/mo</span></div>
+                    <p style="font-size: 10px; opacity: 0.9; margin: 3px 0 0;">Single office test</p>
+                </div>
+                <div class="pricing-card" style="flex: 1.5;">
+                    <h3>⭐ Enterprise</h3>
+                    <div class="price">£499<span>/mo</span></div>
+                    <p style="font-size: 10px; opacity: 0.9; margin: 3px 0 0;">All 30+ offices, full integration</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h4>🚀 White-Label Opportunity</h4>
+                <p>Foxtons can re-brand and resell this AI to other estate agents as "Foxtons AI Solutions" — create a new revenue stream!</p>
+            </div>
+            
+            <div class="roi-box">
+                <h4>💰 Estimated ROI (10 offices)</h4>
+                <p><strong>£100K-£250K additional revenue/year</strong> + £50K+ staff time savings through automation.</p>
+            </div>
+            
+            <div class="cta">📞 Book a Demo Call - 14-Day Free Trial</div>
+            <p class="contact">tigha66@gmail.com | 020 7946 0FOX</p>
+        </div>
+    </div>
+</body>
+</html>
