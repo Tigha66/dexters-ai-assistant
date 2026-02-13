@@ -308,7 +308,7 @@
                 <div>
                     <h4 class="font-semibold mb-4">Contact</h4>
                     <ul class="space-y-2 text-slate-400 text-sm">
-                        <li>📧 info@autoaiwebsolutions.com</li>
+                        <li>📧 tigha66@gmail.com</li>
                         <li>📞 Available 24/7</li>
                         <li>📍 United Kingdom</li>
                     </ul>
@@ -325,15 +325,127 @@
         <button onclick="toggleChat()" class="w-14 h-14 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full shadow-2xl flex items-center justify-center text-2xl transition glow">💬</button>
     </div>
 
+    <!-- AI Chat Demo Widget -->
+    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleChat()" class="w-14 h-14 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full shadow-2xl flex items-center justify-center text-2xl transition glow">💬</button>
+    </div>
+
+    <!-- AI Chat Demo Popup -->
+    <div id="chat-popup" class="fixed bottom-24 right-6 z-50 hidden">
+        <div class="bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-indigo-500/30" style="width: 380px;">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                    <div>
+                        <div class="font-semibold">AI Assistant</div>
+                        <div class="text-xs text-indigo-200 flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-1"></span>Online</div>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-white hover:bg-white/20 rounded-full w-8 h-8 flex items-center justify-center transition">✕</button>
+            </div>
+            <!-- Chat Messages -->
+            <div id="chat-messages" class="h-80 p-4 overflow-y-auto space-y-4 bg-slate-900" style="height: 400px;">
+                <div class="flex gap-3">
+                    <div class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center text-sm flex-shrink-0">🤖</div>
+                    <div class="bg-slate-800 rounded-2xl rounded-tl-none px-4 py-3 max-w-[260px] text-sm">
+                        👋 Hi! I'm the AI Assistant demo. Try asking me:
+                        <ul class="mt-2 space-y-1 text-slate-300">
+                            <li>• "What services do you offer?"</li>
+                            <li>• "How much does it cost?"</li>
+                            <li>• "How do I get started?"</li>
+                            <li>• "Tell me about pricing"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Input -->
+            <div class="p-4 border-t border-slate-700 bg-slate-800">
+                <div class="flex gap-2">
+                    <input type="text" id="chat-input" placeholder="Type your question..." 
+                        class="flex-1 bg-slate-700 border border-slate-600 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                        onkeypress="if(event.key==='Enter')sendMessage()">
+                    <button onclick="sendMessage()" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 px-4 py-2 rounded-xl transition">
+                        Send
+                    </button>
+                </div>
+                <p class="text-xs text-slate-500 mt-2 text-center">This is a demo. Contact us to get your own AI assistant!</p>
+            </div>
+        </div>
+    </div>
+
     <script>
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-        function selectPlan(plan) {
-            alert('Selected: ' + plan + '. We will contact you shortly!');
-        }
+        const responses = {
+            'price': "Our pricing starts at £49/month for Starter, £99/month for Professional, and Custom for Enterprise. All plans include a 14-day free trial!",
+            'cost': "Our pricing starts at £49/month for Starter, £99/month for Professional, and Custom for Enterprise. All plans include a 14-day free trial!",
+            'pricing': "Our pricing starts at £49/month for Starter, £99/month for Professional, and Custom for Enterprise. All plans include a 14-day free trial!",
+            'services': "We offer AI Chatbot Assistant, Smart Booking System, Email & SMS Automation, Lead Qualification, CRM Integration, and Website Widget - all designed to automate your business!",
+            'service': "We offer AI Chat Assistant, Smart Booking, Email Automation, Lead Qualification, CRM Integration, and Website Widget!",
+            'started': "Getting started is easy! 1) Choose your plan, 2) Connect your website (2 lines of code), 3) Customize your AI, 4) Go live in minutes!",
+            'start': "Getting started is easy! 1) Choose your plan, 2) Connect your website (2 lines of code), 3) Customize your AI, 4) Go live in minutes!",
+            'help': "I can help with: pricing, services, getting started, features, industries we serve, and contact info. What would you like to know?",
+            'feature': "Key features: 24/7 availability, instant responses, multi-language support, calendar integration, SMS/email notifications, CRM integration, and analytics dashboard!",
+            'features': "Key features: 24/7 availability, instant responses, multi-language support, calendar integration, SMS/email notifications, CRM integration, and analytics dashboard!",
+            'industry': "We serve: Real Estate, Plumbing & Trades, Dental & Medical, Legal Services, Beauty & Wellness, Home Services, Education, and Hospitality!",
+            'industries': "We serve: Real Estate, Plumbing & Trades, Dental & Medical, Legal Services, Beauty & Wellness, Home Services, Education, and Hospitality!",
+            'contact': "You can reach us at tigha66@gmail.com or fill out the contact form above. We typically respond within 24 hours!",
+            'booking': "Our Smart Booking System integrates with your calendar to automatically schedule appointments 24/7, send reminders, and prevent double-booking!",
+            'chatbot': "Our AI Chatbot handles customer inquiries instantly, qualifies leads, books appointments, and works 24/7 - never missing a customer inquiry!",
+            'demo': "This is a demo! Contact us at tigha66@gmail.com to get your own AI assistant with full customization for your business."
+        };
+
         function toggleChat() {
-            alert('Chat widget would open here in production!');
+            const popup = document.getElementById('chat-popup');
+            popup.classList.toggle('hidden');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messages = document.getElementById('chat-messages');
+            const message = input.value.trim().toLowerCase();
+            
+            if (!message) return;
+            
+            // Add user message
+            const userDiv = document.createElement('div');
+            userDiv.className = 'flex gap-3 justify-end';
+            userDiv.innerHTML = `
+                <div class="bg-indigo-600 rounded-2xl rounded-tr-none px-4 py-3 max-w-[260px] text-sm">
+                    ${input.value}
+                </div>
+                <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center text-sm flex-shrink-0">👤</div>
+            `;
+            messages.appendChild(userDiv);
+            
+            // Find response
+            let response = "I'm not sure about that, but our team can help! Contact us at tigha66@gmail.com for more info.";
+            for (const key in responses) {
+                if (message.includes(key)) {
+                    response = responses[key];
+                    break;
+                }
+            }
+            
+            // Add AI response with delay
+            setTimeout(() => {
+                const aiDiv = document.createElement('div');
+                aiDiv.className = 'flex gap-3';
+                aiDiv.innerHTML = `
+                    <div class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center text-sm flex-shrink-0">🤖</div>
+                    <div class="bg-slate-800 rounded-2xl rounded-tl-none px-4 py-3 max-w-[260px] text-sm">
+                        ${response}
+                    </div>
+                `;
+                messages.appendChild(aiDiv);
+                messages.scrollTop = messages.scrollHeight;
+            }, 500);
+            
+            input.value = '';
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function selectPlan(plan) {
+            alert('Great choice! We will contact you shortly at tigha66@gmail.com');
         }
     </script>
 </body>
