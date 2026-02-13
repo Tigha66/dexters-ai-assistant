@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foxtons AI Assistant Proposal</title>
+    <title>Foxtons AI Assistant - Proposal</title>
     <style>
         @page { margin: 0; size: A4; }
         * { box-sizing: border-box; }
@@ -20,11 +20,12 @@
             padding: 20mm; 
             margin: 0 auto; 
             background: white;
+            position: relative;
         }
         .cover {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
             color: white;
-            padding: 25mm;
+            padding: 30mm;
             margin: -20mm -20mm 20mm -20mm;
             position: relative;
         }
@@ -34,25 +35,25 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 80px;
+            height: 60px;
             background: linear-gradient(90deg, #c4a35a 0%, #e8d5a3 100%);
         }
-        .cover h1 { font-size: 38px; margin-bottom: 10px; }
-        .cover .subtitle { font-size: 22px; opacity: 0.9; margin-bottom: 30px; }
+        .cover h1 { font-size: 42px; margin-bottom: 10px; }
+        .cover .subtitle { font-size: 24px; opacity: 0.9; margin-bottom: 30px; }
         .cover .logo {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             background: white;
             color: #1a1a1a;
-            border-radius: 15px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
+            font-size: 42px;
             font-weight: bold;
             margin: 0 auto 30px;
         }
-        .cover .tagline { font-size: 14px; opacity: 0.7; }
+        .cover .tagline { font-size: 16px; opacity: 0.8; }
         
         h2 { 
             color: #1a1a1a; 
@@ -80,18 +81,30 @@
             margin: 18px 0;
         }
         
-        .foxtons-specific {
-            background: linear-gradient(135deg, #f8f5f0 0%, #e8d5a3 100%);
-            border: 2px solid #c4a35a;
+        .hours-box {
+            background: #1a1a1a;
+            color: white;
             border-radius: 12px;
             padding: 20px;
             margin: 20px 0;
         }
-        .foxtons-specific h3 { color: #1a1a1a; margin-top: 0; }
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .hours-item {
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .hours-item.red { background: #7f1d1d; }
+        .hours-item.green { background: #14532d; border: 2px solid #22c55e; }
         
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             margin: 25px 0;
         }
@@ -103,9 +116,9 @@
             text-align: center;
         }
         .stat-number { font-size: 36px; font-weight: bold; color: #c4a35a; }
-        .stat-label { font-size: 12px; margin-top: 5px; }
+        .stat-label { font-size: 11px; margin-top: 5px; opacity: 0.9; }
         
-        .features-grid {
+        .feature-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
@@ -118,34 +131,15 @@
             padding: 12px;
             background: #f8f9fa;
             border-radius: 8px;
+            border-left: 4px solid #c4a35a;
         }
         .feature-icon { font-size: 22px; }
-        
-        .pricing-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-        .pricing-card h3 { color: #c4a35a; margin: 0 0 10px; }
-        .price { font-size: 42px; font-weight: bold; }
-        .price span { font-size: 16px; opacity: 0.8; }
-        
-        .roi-calc {
-            background: #f0fdf4;
-            border: 2px solid #22c55e;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .roi-calc h3 { color: #166534; margin-top: 0; }
         
         .workflow {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 25px 0;
+            margin: 30px 0;
         }
         .workflow-step {
             text-align: center;
@@ -165,23 +159,24 @@
         }
         .workflow-arrow { font-size: 22px; color: #c4a35a; }
         
-        .cta-section {
-            background: linear-gradient(135deg, #c4a35a 0%, #a08040 100%);
+        .pricing-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
             color: white;
             padding: 25px;
             border-radius: 12px;
-            text-align: center;
-            margin-top: 25px;
+            margin: 20px 0;
+            border: 2px solid #c4a35a;
         }
-        .cta-section h3 { color: white; font-size: 24px; margin: 0 0 10px; }
+        .pricing-card h3 { color: #c4a35a; margin: 0 0 10px; }
+        .price { font-size: 42px; font-weight: bold; }
+        .price span { font-size: 16px; opacity: 0.8; }
         
-        .footer {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 2px solid #c4a35a;
-            text-align: center;
-            font-size: 12px;
-            color: #666;
+        .roi-box {
+            background: #f0fdf4;
+            border: 2px solid #22c55e;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
         }
         
         .comparison-table {
@@ -202,13 +197,26 @@
         .check { color: #22c55e; font-weight: bold; }
         .cross { color: #ef4444; }
         
-        .integration-box {
-            background: #eff6ff;
-            border: 2px solid #2563eb;
-            border-radius: 10px;
-            padding: 18px;
-            margin: 18px 0;
+        .cta-section {
+            background: linear-gradient(135deg, #c4a35a 0%, #a08040 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 25px;
         }
+        .cta-section h3 { color: white; font-size: 24px; margin: 0 0 10px; }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px solid #c4a35a;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .highlight { background: #fef3c7; padding: 2px 6px; border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -217,9 +225,9 @@
         <div class="cover">
             <div class="logo">F</div>
             <h1>Foxtons AI Assistant</h1>
-            <p class="subtitle">24/7 Lead Response & Viewing Automation</p>
+            <p class="subtitle">24/7 Estate Agent Lead & Viewing Automation</p>
             <p class="tagline">Never Miss a Property Lead Again</p>
-            <div style="margin-top: 40px; opacity: 0.8;">
+            <div style="margin-top: 50px; opacity: 0.9;">
                 <p>Prepared for Foxtons London</p>
                 <p>February 2026</p>
             </div>
@@ -227,55 +235,53 @@
 
         <!-- Executive Summary -->
         <h2>Executive Summary</h2>
-        <p>Foxtons is London's most recognized estate agency brand. This proposal outlines an <strong>AI-powered assistant</strong> that handles property enquiries 24/7, books viewings automatically, and integrates with your existing systems — giving Foxtons a competitive edge while reducing operational costs.</p>
+        <p>This proposal outlines an <strong>AI-powered assistant</strong> that handles property enquiries 24/7, books viewings automatically, and integrates with Foxtons' existing systems — enhancing your reputation as London's most innovative estate agent.</p>
 
         <!-- The Problem -->
         <h2>The Problem Foxtons Faces</h2>
         <div class="problem-box">
             <strong>Every enquiry that goes unanswered is a lost commission.</strong>
-            <p style="margin: 10px 0 0;">With 30+ offices across London, Foxtons receives thousands of enquiries daily. Many come outside office hours — evenings, weekends, holidays — when staff are unavailable.</p>
+            <p style="margin: 10px 0 0;">With 30+ offices across London, Foxtons receives thousands of enquiries daily. Many come outside opening hours.</p>
         </div>
-        <div class="features-grid">
-            <div class="feature">
-                <span class="feature-icon">⏰</span>
-                <div><strong>Evening Enquiries Lost</strong><p style="margin: 3px 0 0; font-size: 13px;">78% go unanswered after 6pm</p></div>
+        
+        <!-- Foxtons Hours vs AI -->
+        <div class="hours-box">
+            <h3 style="color: white; margin: 0 0 10px;">📅 Current Foxtons Opening Hours</h3>
+            <div class="hours-grid">
+                <div class="hours-item red">
+                    <strong>Mon-Fri</strong><br>8AM - 8PM
+                </div>
+                <div class="hours-item red">
+                    <strong>Saturday</strong><br>10AM - 4PM
+                </div>
+                <div class="hours-item red">
+                    <strong>Sunday</strong><br>Closed
+                </div>
+                <div class="hours-item green">
+                    <strong>🤖 AI Assistant</strong><br>24/7 Available
+                </div>
             </div>
-            <div class="feature">
-                <span class="feature-icon">📞</span>
-                <div><strong>Phone Tag</strong><p style="margin: 3px 0 0; font-size: 13px;">Average 5 calls to book a viewing</p></div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">💸</span>
-                <div><strong>Staff Costs</strong><p style="margin: 3px 0 0; font-size: 13px;">Manual handling is expensive</p></div>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">📊</span>
-                <div><strong>CRM Gaps</strong><p style="margin: 3px 0 0; font-size: 13px;">Leads not logged consistently</p></div>
-            </div>
+            <p style="margin: 15px 0 0; text-align: center; color: #c4a35a;"><strong>Gap Identified:</strong> 68 hours per week when Foxtons is closed → AI fills every gap</p>
         </div>
 
         <!-- Stats -->
         <div class="stats-grid">
             <div class="stat">
                 <div class="stat-number">78%</div>
-                <div class="stat-label">Enquiries lost outside office hours</div>
+                <div class="stat-label">Enquiries lost<br>outside office hours</div>
             </div>
             <div class="stat">
                 <div class="stat-number">4.2x</div>
-                <div class="stat-label">More viewings with AI booking</div>
+                <div class="stat-label">More viewings<br>with AI booking</div>
             </div>
             <div class="stat">
-                <div class="stat-number">£180K</div>
-                <div class="stat-label">Est. annual savings per 10 offices</div>
+                <div class="stat-number">30+</div>
+                <div class="stat-label">London offices<br>unified</div>
             </div>
-        </div>
-
-        <!-- Foxtons-Specific Value -->
-        <div class="foxtons-specific">
-            <h3>🎯 Why Foxtons Specifically?</h3>
-            <p><strong>Brand & Trust:</strong> Foxtons is synonymous with London property. AI assistant enhances your reputation as innovative.</p>
-            <p style="margin-top: 10px;"><strong>Competitive Edge:</strong> Differentiate from other agencies by offering instant responses.</p>
-            <p style="margin-top: 10px;"><strong>Scale:</strong> With 30+ offices, even small improvements = massive ROI.</p>
+            <div class="stat">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Lead response<br>rate</div>
+            </div>
         </div>
 
         <!-- The Solution -->
@@ -285,7 +291,8 @@
             <p style="margin: 10px 0 0;">Instant responses, automatic bookings, seamless CRM integration.</p>
         </div>
 
-        <!-- Workflow -->
+        <!-- How It Works -->
+        <h2>How It Works</h2>
         <div class="workflow">
             <div class="workflow-step">
                 <div class="workflow-icon">💬</div>
@@ -313,15 +320,15 @@
         </div>
 
         <!-- Key Features -->
-        <h2>Key Features for Foxtons</h2>
-        <div class="features-grid">
+        <h2>Key Features</h2>
+        <div class="feature-grid">
             <div class="feature">
                 <span class="feature-icon">💬</span>
                 <div><strong>24/7 Instant Responses</strong><p style="margin: 3px 0 0; font-size: 13px;">AI answers immediately, any time</p></div>
             </div>
             <div class="feature">
                 <span class="feature-icon">📅</span>
-                <div><strong>Auto Calendar Booking</strong><p style="margin: 3px 0 0; font-size: 13px;">Syncs with office calendars</p></div>
+                <div><strong>Auto Calendar Booking</strong><p style="margin: 3px 0 0; font-size: 13px;">Syncs with all office calendars</p></div>
             </div>
             <div class="feature">
                 <span class="feature-icon">🎯</span>
@@ -333,7 +340,7 @@
             </div>
             <div class="feature">
                 <span class="feature-icon">🏠</span>
-                <div><strong>Rightmove/Zoopla Integration</strong><p style="margin: 3px 0 0; font-size: 13px;">Real-time property availability</p></div>
+                <div><strong>Property Feed Integration</strong><p style="margin: 3px 0 0; font-size: 13px;">Rightmove, Zoopla, Onthemarket</p></div>
             </div>
             <div class="feature">
                 <span class="feature-icon">📊</span>
@@ -342,17 +349,16 @@
         </div>
 
         <!-- Integration -->
-        <div class="integration-box">
-            <h3>🔗 Integration with Foxtons Systems</h3>
-            <p>The AI assistant connects with your existing tools:</p>
-            <ul style="margin: 10px 0 0; padding-left: 20px;">
-                <li>Foxtons CRM & databases</li>
-                <li>Office calendars (Outlook, Google)</li>
-                <li>Property feed (Rightmove, Zoopla, Onthemarket)</li>
-                <li>Email systems (SendGrid, internal)</li>
-                <li>SMS providers (Twilio)</li>
-            </ul>
-        </div>
+        <h2>Integration with Foxtons Systems</h2>
+        <p>The AI assistant connects with your existing tools:</p>
+        <ul style="margin: 10px 0 0; padding-left: 20px;">
+            <li>My Foxtons portal & CRM</li>
+            <li>Office calendars (Outlook, Google)</li>
+            <li>Property feeds (Rightmove, Zoopla, Onthemarket)</li>
+            <li>Email systems (SendGrid, internal)</li>
+            <li>SMS providers (Twilio)</li>
+            <li>Avios rewards integration ready</li>
+        </ul>
 
         <!-- Comparison -->
         <h2>Foxtons Today vs Foxtons + AI</h2>
@@ -395,7 +401,7 @@
         </table>
 
         <!-- ROI -->
-        <div class="roi-calc">
+        <div class="roi-box">
             <h3>💰 Estimated ROI for Foxtons</h3>
             <p><strong>Scenario: 10 Foxtons offices using AI Assistant</strong></p>
             <ul style="margin: 10px 0 0; padding-left: 20px;">
@@ -422,7 +428,7 @@
             <div style="background: white; color: #1a1a1a; padding: 15px 25px; border-radius: 8px; display: inline-block; margin-top: 15px; font-weight: bold;">
                 📧 tigha66@gmail.com | 📱 [Your Phone]
             </div>
-            <p style="margin-top: 15px; font-size: 14px;">🎮 Live Demo: https://tigha66.github.io/dexters-ai-assistant/</p>
+            <p style="margin-top: 15px; font-size: 14px;">🎮 Live Demo: https://tigha66.github.io/dexters-ai-assistant/foxtons-ai-assistant.html</p>
         </div>
 
         <div class="footer">
