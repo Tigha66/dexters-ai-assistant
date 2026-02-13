@@ -3,151 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plumber AI Assistant | 24/7 Emergency Call & Booking Automation</title>
+    <title>AutoAI Web Solutions | AI-Powered Business Automation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { font-family: 'Inter', sans-serif; }
-        .glass { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
-        .gradient-bg { background: linear-gradient(135deg, #1e40af 0%, #3b82f8 50%, #1e40af 100%); }
-        .glow { box-shadow: 0 0 40px rgba(59,130,246,0.3); }
-        .pulse { animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+        }
+        .card-gradient {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        }
+        .glow {
+            box-shadow: 0 0 60px rgba(99, 102, 241, 0.3);
+        }
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, #1e1b4b, #0f172a);
+            border-radius: 1rem;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef);
+            border-radius: 1rem;
+            z-index: -1;
+            opacity: 0.5;
+        }
     </style>
 </head>
-<body class="gradient-bg min-h-screen text-white">
-    <!-- Header -->
-    <nav class="fixed w-full z-50 top-0 bg-blue-900/95 backdrop-blur">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-2xl">🔧</div>
-                <span class="text-2xl font-bold">PlumberAI</span>
-            </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#features" class="hover:text-blue-300">Features</a>
-                <a href="#demo" class="hover:text-blue-300">Demo</a>
-                <a href="#pricing" class="hover:text-blue-300">Pricing</a>
-                <button onclick="startChat()" class="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-lg font-semibold">Get Started</button>
+<body class="gradient-bg min-h-screen text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 bg-slate-900/80 backdrop-blur-lg border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-2xl font-bold">A</div>
+                    <span class="text-2xl font-bold">AutoAI<span class="gradient-text">WebSolutions</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-slate-300 hover:text-white transition">Services</a>
+                    <a href="#pricing" class="text-slate-300 hover:text-white transition">Pricing</a>
+                    <a href="#contact" class="text-slate-300 hover:text-white transition">Contact</a>
+                    <button onclick="scrollToSection('contact')" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 px-6 py-2.5 rounded-full font-semibold transition glow">Get Started</button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="pt-32 pb-20 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <div class="inline-flex items-center space-x-2 bg-blue-800/50 rounded-full px-4 py-2 mb-6">
-                <span class="w-2 h-2 bg-green-400 rounded-full pulse"></span>
-                <span class="text-blue-300">AI-Powered • 24/7 Available</span>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 relative">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl float" style="animation-delay: 3s;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 bg-slate-800/50 border border-slate-700 rounded-full px-4 py-2 mb-8">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                <span class="text-sm text-slate-300">Transforming Small Businesses with AI</span>
             </div>
-            <h1 class="text-5xl md:text-6xl font-bold mb-6">Never Miss an Emergency Call Again</h1>
-            <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-                Your AI receptionist that answers calls 24/7, qualifies emergencies, books jobs instantly, and sends details to your team.
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Your Business, <span class="gradient-text">Supercharged</span> by AI
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-400 mb-10 max-w-4xl mx-auto leading-relaxed">
+                Automate customer service, capture more leads, and grow your business 24/7 with intelligent AI assistants that work while you sleep.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button onclick="startChat()" class="bg-blue-500 hover:bg-blue-600 px-8 py-4 rounded-xl text-lg font-semibold glow">🚀 Try Live Demo</button>
-                <a href="#features" class="glass hover:bg-white/10 px-8 py-4 rounded-xl text-lg">Learn More</a>
+                <button onclick="scrollToSection('contact')" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 px-8 py-4 rounded-full font-semibold text-lg transition glow flex items-center gap-2">🚀 Start Free Trial</button>
+                <button onclick="scrollToSection('services')" class="glass hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition">Learn More</button>
             </div>
-            <p class="text-blue-300 text-sm mt-6">Trusted by London plumbing businesses • No credit card required</p>
+            <p class="text-slate-500 text-sm mt-6">No credit card required • 14-day free trial • Cancel anytime</p>
         </div>
     </section>
 
     <!-- Stats -->
-    <section class="py-12 px-4 bg-blue-900/50">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6 text-center">
-            <div class="glass rounded-xl p-6">
-                <div class="text-4xl font-bold">78%</div>
-                <div class="text-blue-200">Plumbers miss overnight calls</div>
-            </div>
-            <div class="glass rounded-xl p-6">
-                <div class="text-4xl font-bold">4.3x</div>
-                <div class="text-blue-200">More Jobs Booked</div>
-            </div>
-            <div class="glass rounded-xl p-6">
-                <div class="text-4xl font-bold">24/7</div>
-                <div class="text-blue-200">Always Available</div>
-            </div>
-            <div class="glass rounded-xl p-6">
-                <div class="text-4xl font-bold">£2,500</div>
-                <div class="text-blue-200">Avg Lost per Missed Call</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Demo -->
-    <section id="demo" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4">See It In Action</h2>
-            <p class="text-center text-blue-200 mb-10">Watch how the AI handles an emergency plumbing call</p>
-            
-            <div class="glass rounded-2xl p-6 border border-blue-500/30">
-                <div class="flex items-center space-x-4 mb-6 pb-4 border-b border-blue-500/30">
-                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-xl">🔧</div>
-                    <div>
-                        <div class="font-semibold">PlumberAI Assistant</div>
-                        <div class="text-green-400 text-sm flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>Online Now</div>
-                    </div>
-                </div>
-                <div class="space-y-4 h-80 overflow-y-auto mb-4">
-                    <div class="flex space-x-3">
-                        <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center">👤</div>
-                        <div class="bg-slate-700 rounded-2xl rounded-tl-none px-4 py-3 max-w-xs">Hi, I have a burst pipe emergency! Need someone ASAP at W1J 5AB</div>
-                    </div>
-                    <div class="flex space-x-3">
-                        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">🤖</div>
-                        <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">🚨 UNDERSTOOD - EMERGENCY PRIORITY<br><br>I've flagged this as urgent. Let me get you help immediately:<br><br>📍 Location: W1J 5AB (Central London)<br>⚠️ Issue: Burst pipe<br><br>Available slots:<br>• Today - Within 2 hours (Emergency)<br>• Today - Within 4 hours<br>• Tomorrow - Priority booking</div>
-                    </div>
-                    <div class="flex space-x-3">
-                        <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center">👤</div>
-                        <div class="bg-slate-700 rounded-2xl rounded-tl-none px-4 py-3 max-w-xs">Can you send someone within 2 hours? I have water everywhere!</div>
-                    </div>
-                    <div class="flex space-x-3">
-                        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">🤖</div>
-                        <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">✅ CONFIRMED! Emergency plumber dispatched within 2 hours.<br><br>📞 You'll receive a call from our engineer shortly.<br>💧 In the meantime: Turn off main water supply if safe to do so.<br><br>Confirmation sent to your email.</div>
-                    </div>
-                </div>
-                <div class="flex space-x-2 pt-4 border-t border-blue-500/30">
-                    <input type="text" placeholder="Type a message..." class="flex-1 bg-blue-800/50 rounded-xl px-4 py-3 text-white placeholder-blue-300">
-                    <button class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl">Send</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section id="features" class="py-20 px-4 bg-blue-900/50">
+    <section class="py-16 px-4 bg-slate-900/50">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4">Powerful AI Features</h2>
-            <p class="text-center text-blue-200 mb-12">Everything you need to capture every emergency call</p>
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-5xl font-bold gradient-text mb-2">500+</div>
+                    <div class="text-slate-400">Businesses Automated</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold gradient-text mb-2">2.4M</div>
+                    <div class="text-slate-400">Leads Captured</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold gradient-text mb-2">98%</div>
+                    <div class="text-slate-400">Satisfaction</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold gradient-text mb-2">24/7</div>
+                    <div class="text-slate-400">Active Monitoring</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Powerful <span class="gradient-text">AI Solutions</span></h2>
+                <p class="text-xl text-slate-400">Everything you need to automate your business</p>
+            </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass rounded-2xl p-8">
-                    <div class="text-4xl mb-4">📞</div>
-                    <h3 class="text-xl font-bold mb-2">24/7 Call Answering</h3>
-                    <p class="text-blue-200">Never miss an emergency. AI answers every call instantly, day or night.</p>
+                <div class="gradient-border p-8 rounded-2xl hover:scale-105 transition">
+                    <div class="text-5xl mb-6">💬</div>
+                    <h3 class="text-2xl font-bold mb-4">AI Chat Assistant</h3>
+                    <p class="text-slate-400 mb-6">24/7 customer service that never sleeps. Answers questions, qualifies leads, books appointments.</p>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex items-center gap-2"><span class="text-green-400">✓</span>Instant responses</li>
+                        <li class="flex items-center gap-2"><span class="text-green-400">✓</span>Natural conversation</li>
+                        <li class="flex items-center gap-2"><span class="text-green-400">✓</span>Multi-language</li>
+                    </ul>
                 </div>
-                <div class="glass rounded-2xl p-8">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h3 class="text-xl font-bold mb-2">Emergency Triage</h3>
-                    <p class="text-blue-200">AI qualifies: Emergency vs. quote? Location? Issue type? Urgency level?</p>
+                <div class="gradient-border p-8 rounded-2xl hover:scale-105 transition">
+                    <div class="text-5xl mb-6">📅</div>
+                    <h3 class="text-2xl font-bold mb-4">Smart Booking</h3>
+                    <p class="text-slate-400 mb-6">Automated scheduling that syncs with your calendar and sends reminders automatically.</p>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex items-center gap-2"><span class="text-green-400">✓</span>Calendar integration</li>
+                        <li class="flex items-center gap-2"><span class="text-green-400">✓</span>Auto reminders</li>
+                        <li class="flex items-center gap-2"><span class="text-green-400">✓</span>No double-booking</li>
+                    </ul>
                 </div>
-                <div class="glass rounded-2xl p-8">
-                    <div class="text-4xl mb-4">📅</div>
-                    <h3 class="text-xl font-bold mb-2">Instant Booking</h3>
-                    <p class="text-blue-200">Book emergency slots directly into your calendar. No phone tag.</p>
+                <div class="gradient-border p-8 rounded-2xl hover:scale-105 transition">
+                    <div class="text-5xl mb-6">📧</div>
+                    <h3 class="text-2xl font-bold mb-4">Email & SMS Automation</h3>
+                    <p class="text-slate-400 mb-6">Automated follow-ups, reminders, and campaigns that nurture leads automatically.</p>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex items-center gap-2"><span class="text-green-400">✓</span>Auto follow-ups</li>
+                        <li class="flex items-center gap-2"><span class="text-green-400">✓</span>SMS notifications</li>
+                        <li class="flex items-center gap-2"><span class="text-green-400">✓</span>Campaign tracking</li>
+                    </ul>
                 </div>
-                <div class="glass rounded-2xl p-8">
-                    <div class="text-4xl mb-4">📧</div>
-                    <h3 class="text-xl font-bold mb-2">SMS/Email Alerts</h3>
-                    <p class="text-blue-200">Instant notifications to your team. Customer gets confirmation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="py-20 px-4 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Perfect for <span class="gradient-text">Every Industry</span></h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-slate-800/50 hover:bg-slate-800/80 p-6 rounded-xl transition text-center">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="font-semibold">Real Estate</h3>
                 </div>
-                <div class="glass rounded-2xl p-8">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-bold mb-2">Job Logging</h3>
-                    <p class="text-blue-200">Every call logged. Track all leads, quotes, and jobs in one place.</p>
+                <div class="bg-slate-800/50 hover:bg-slate-800/80 p-6 rounded-xl transition text-center">
+                    <div class="text-4xl mb-4">🔧</div>
+                    <h3 class="font-semibold">Trades & Plumbing</h3>
                 </div>
-                <div class="glass rounded-2xl p-8">
-                    <div class="text-4xl mb-4">🌍</div>
-                    <h3 class="text-xl font-bold mb-2">Multi-Area Coverage</h3>
-                    <p class="text-blue-200">Central, West, East, South London. Each area gets the right info.</p>
+                <div class="bg-slate-800/50 hover:bg-slate-800/80 p-6 rounded-xl transition text-center">
+                    <div class="text-4xl mb-4">🦷</div>
+                    <h3 class="font-semibold">Dental & Medical</h3>
+                </div>
+                <div class="bg-slate-800/50 hover:bg-slate-800/80 p-6 rounded-xl transition text-center">
+                    <div class="text-4xl mb-4">💼</div>
+                    <h3 class="font-semibold">Legal Services</h3>
+                </div>
+                <div class="bg-slate-800/50 hover:bg-slate-800/80 p-6 rounded-xl transition text-center">
+                    <div class="text-4xl mb-4">💅</div>
+                    <h3 class="font-semibold">Beauty & Wellness</h3>
+                </div>
+                <div class="bg-slate-800/50 hover:bg-slate-800/80 p-6 rounded-xl transition text-center">
+                    <div class="text-4xl mb-4">🏗️</div>
+                    <h3 class="font-semibold">Home Services</h3>
+                </div>
+                <div class="bg-slate-800/50 hover:bg-slate-800/80 p-6 rounded-xl transition text-center">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h3 class="font-semibold">Education</h3>
+                </div>
+                <div class="bg-slate-800/50 hover:bg-slate-800/80 p-6 rounded-xl transition text-center">
+                    <div class="text-4xl mb-4">🍽️</div>
+                    <h3 class="font-semibold">Hospitality</h3>
                 </div>
             </div>
         </div>
@@ -155,106 +201,140 @@
 
     <!-- Pricing -->
     <section id="pricing" class="py-20 px-4">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4">Simple Pricing</h2>
-            <p class="text-center text-blue-200 mb-12">Start capturing every emergency call today</p>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass rounded-2xl p-8 border border-blue-500/30">
-                    <h3 class="text-xl font-bold mb-2">Starter</h3>
-                    <div class="text-4xl font-bold mb-4">£49<span class="text-lg text-blue-300">/mo</span></div>
-                    <ul class="space-y-3 text-blue-200 mb-8">
-                        <li>✓ 500 calls/month</li>
-                        <li>✓ 24/7 AI responses</li>
-                        <li>✓ SMS alerts</li>
-                        <li>✓ Basic calendar</li>
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Simple, <span class="gradient-text">Transparent</span> Pricing</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="gradient-border p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-2">Starter</h3>
+                    <div class="text-5xl font-bold mb-4">£49<span class="text-xl text-slate-400">/mo</span></div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3"><span class="text-green-400">✓</span>1 AI Assistant</li>
+                        <li class="flex items-center gap-3"><span class="text-green-400">✓</span>500 conversations/mo</li>
+                        <li class="flex items-center gap-3"><span class="text-green-400">✓</span>Email support</li>
+                        <li class="flex items-center gap-3"><span class="text-green-400">✓</span>Calendar integration</li>
                     </ul>
-                    <button onclick="selectPlan('starter')" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-xl font-semibold">Get Started</button>
+                    <button onclick="selectPlan('starter')" class="w-full glass hover:bg-white/10 py-3 rounded-xl font-semibold transition">Get Started</button>
                 </div>
-                <div class="glass rounded-2xl p-8 border-2 border-blue-500 glow relative">
-                    <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 px-4 py-1 rounded-full text-sm">Most Popular</span>
-                    <h3 class="text-xl font-bold mb-2">Professional</h3>
-                    <div class="text-4xl font-bold mb-4">£99<span class="text-lg text-blue-300">/mo</span></div>
-                    <ul class="space-y-3 text-blue-200 mb-8">
-                        <li>✓ Unlimited calls</li>
-                        <li>✓ 24/7 AI responses</li>
-                        <li>✓ SMS + Email alerts</li>
-                        <li>✓ Full calendar integration</li>
-                        <li>✓ Job logging</li>
-                        <li>✓ Multi-engineer support</li>
+                <div class="gradient-border p-8 rounded-2xl relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-1 rounded-full text-sm font-semibold">Most Popular</div>
+                    <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                    <div class="text-5xl font-bold mb-4">£99<span class="text-xl text-slate-400">/mo</span></div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3"><span class="text-green-400">✓</span>Unlimited conversations</li>
+                        <li class="flex items-center gap-3"><span class="text-green-400">✓</span>Priority support</li>
+                        <li class="flex items-center gap-3"><span class="text-green-400">✓</span>SMS notifications</li>
+                        <li class="flex items-center gap-3"><span class="text-green-400">✓</span>CRM integration</li>
                     </ul>
-                    <button onclick="selectPlan('professional')" class="w-full bg-blue-500 hover:bg-blue-600 py-3 rounded-xl font-semibold">Get Started</button>
+                    <button onclick="selectPlan('professional')" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 py-3 rounded-xl font-semibold transition glow">Get Started</button>
                 </div>
-                <div class="glass rounded-2xl p-8 border border-blue-500/30">
-                    <h3 class="text-xl font-bold mb-2">Enterprise</h3>
-                    <div class="text-4xl font-bold mb-4">Custom</div>
-                    <ul class="space-y-3 text-blue-200 mb-8">
-                        <li>✓ Everything in Pro</li>
-                        <li>✓ Multiple locations</li>
-                        <li>✓ Custom integrations</li>
-                        <li>✓ API access</li>
-                        <li>✓ White-label option</li>
-                        <li>✓ Dedicated support</li>
+                <div class="gradient-border p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                    <div class="text-5xl font-bold mb-4">Custom</div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3"><span class="text-green-400">✓</span>Unlimited everything</li>
+                        <li class="flex items-center gap-3"><span class="text-green-400">✓</span>Dedicated support</li>
+                        <li class="flex items-center gap-3"><span class="text-green-400">✓</span>White-label option</li>
                     </ul>
-                    <button onclick="selectPlan('enterprise')" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-xl font-semibold">Contact Us</button>
+                    <button onclick="selectPlan('enterprise')" class="w-full glass hover:bg-white/10 py-3 rounded-xl font-semibold transition">Contact Us</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-20 px-4 bg-blue-900/50">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-6">Ready to Capture Every Emergency?</h2>
-            <p class="text-blue-200 mb-8">Join London plumbers using AI to never miss a call again.</p>
-            <button onclick="startChat()" class="bg-blue-500 hover:bg-blue-600 px-8 py-4 rounded-xl text-lg font-semibold glow">🚀 Start Free Trial</button>
-            <p class="text-blue-300 text-sm mt-6">No credit card required • 14-day free trial</p>
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Ready to <span class="gradient-text">Transform</span> Your Business?</h2>
+                <p class="text-xl text-slate-400">Get in touch and let's discuss how AI can work for you</p>
+            </div>
+            <div class="gradient-border p-8 rounded-2xl">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" placeholder="Your Name" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" placeholder="your@email.com" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Company</label>
+                        <input type="text" placeholder="Your Business" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">How can we help?</label>
+                        <textarea rows="4" placeholder="Tell us about your business and how you'd like to automate..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 py-4 rounded-xl font-semibold text-lg transition glow">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-4 text-center text-blue-400 text-sm">
-        <p>© 2026 PlumberAI Assistant. Trusted by London plumbing businesses.</p>
+    <footer class="py-12 px-4 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xl font-bold">A</div>
+                        <span class="text-xl font-bold">AutoAI<span class="gradient-text">WebSolutions</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm">Transforming small businesses with powerful AI automation tools.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">AI Chatbot</a></li>
+                        <li><a href="#" class="hover:text-white transition">Smart Booking</a></li>
+                        <li><a href="#" class="hover:text-white transition">Email Automation</a></li>
+                        <li><a href="#" class="hover:text-white transition">CRM Integration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>📧 info@autoaiwebsolutions.com</li>
+                        <li>📞 Available 24/7</li>
+                        <li>📍 United Kingdom</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
+                © 2026 AutoAI Web Solutions. All rights reserved.
+            </div>
+        </div>
     </footer>
 
     <!-- Chat Widget -->
     <div class="fixed bottom-6 right-6 z-50">
-        <button onclick="toggleChat()" class="w-16 h-16 bg-blue-500 rounded-full shadow-2xl flex items-center justify-center text-3xl glow">💬</button>
-    </div>
-
-    <!-- Chat Popup -->
-    <div id="chatPopup" class="fixed bottom-24 right-6 z-50 hidden">
-        <div class="glass rounded-2xl w-96 shadow-2xl overflow-hidden">
-            <div class="bg-blue-600 p-4 flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🔧</div>
-                    <div>
-                        <div class="text-white font-medium">PlumberAI</div>
-                        <div class="text-blue-200 text-xs flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-1"></span>Online</div>
-                    </div>
-                </div>
-                <button onclick="toggleChat()" class="text-white">✕</button>
-            </div>
-            <div class="h-80 p-4 overflow-y-auto space-y-4 bg-blue-900/90">
-                <div class="flex space-x-3">
-                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-sm">🔧</div>
-                    <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-[220px] text-sm">
-                        Hello! 👋 I'm PlumberAI. How can I help you today?
-                    </div>
-                </div>
-            </div>
-            <div class="p-4 border-t border-blue-500/30">
-                <div class="flex space-x-2">
-                    <input type="text" placeholder="Type a message..." class="flex-1 bg-blue-800/50 rounded-xl px-4 py-3 text-white text-sm">
-                    <button class="bg-blue-500 hover:bg-blue-600 px-4 py-3 rounded-xl">Send</button>
-                </div>
-            </div>
-        </div>
+        <button onclick="toggleChat()" class="w-14 h-14 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full shadow-2xl flex items-center justify-center text-2xl transition glow">💬</button>
     </div>
 
     <script>
-        function toggleChat() { document.getElementById('chatPopup').classList.toggle('hidden'); }
-        function startChat() { document.getElementById('chatPopup').classList.remove('hidden'); }
-        function selectPlan(plan) { alert('Selected: ' + plan + '. Our team will contact you!'); }
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        function selectPlan(plan) {
+            alert('Selected: ' + plan + '. We will contact you shortly!');
+        }
+        function toggleChat() {
+            alert('Chat widget would open here in production!');
+        }
     </script>
 </body>
 </html>
