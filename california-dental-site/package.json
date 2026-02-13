@@ -1,0 +1,13 @@
+{
+  "name": "california-dental-ai",
+  "version": "1.0.0",
+  "description": "AI Voice Agent & Chatbot for California Dental",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.0"
+  }
+}

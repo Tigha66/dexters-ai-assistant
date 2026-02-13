@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Dental | San Fernando, CA Dentist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        :root { --primary: #3bb6b4; --primary-dark: #2a9a94; --secondary: #2c3e50; --accent: #3498db; --success: #27ae60; }
+        .gradient-bg { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); }
+        .typing-indicator span { animation: typing 1.4s infinite; }
+        @keyframes typing { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-teal-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-4 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-3xl">🦷</span>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold">California Dental</h1>
+                    <p class="text-teal-100 text-sm">San Fernando, CA</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#" class="hover:text-teal-200 transition">Home</a>
+                <a href="#" class="hover:text-teal-200 transition">Our Team</a>
+                <a href="#" class="hover:text-teal-200 transition">Services</a>
+                <a href="#" class="hover:text-teal-200 transition">Location</a>
+                <a href="#" class="hover:text-teal-200 transition">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-16 px-4 text-center">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Welcome to California Dental</h2>
+            <p class="text-xl text-gray-600 mb-8">Your trusted local dentist in San Fernando, CA. General & cosmetic dentistry, teeth whitening, implants & veneers.</p>
+            <div class="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="relative">
+                        <div class="w-24 h-24 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center text-5xl shadow-lg">🤖</div>
+                        <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                            <span class="text-white text-sm">🎤</span>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">AI Dental Assistant</h3>
+                <p class="text-gray-600 mb-6">Book appointments, get instant answers, and experience exceptional dental care</p>
+                <button onclick="openChat()" class="gradient-bg text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition flex items-center justify-center mx-auto space-x-2">
+                    <span>💬</span><span>Chat with AI Assistant</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info -->
+    <section class="py-8 px-4 bg-teal-600 text-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 text-center">
+            <div class="flex items-center justify-center space-x-3">
+                <span class="text-2xl">📞</span>
+                <span class="font-semibold">(818) 361-3889</span>
+            </div>
+            <div class="flex items-center justify-center space-x-3">
+                <span class="text-2xl">📍</span>
+                <span class="font-semibold">1009 Glenoaks Blvd, San Fernando, CA 91340</span>
+            </div>
+            <div class="flex items-center justify-center space-x-3">
+                <span class="text-2xl">🕐</span>
+                <span class="font-semibold">Mon-Fri: 9AM-5PM</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-2xl font-bold text-center mb-8">Our Services</h3>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">🦷</div>
+                    <h4 class="font-semibold mb-2">General Dentistry</h4>
+                    <p class="text-gray-500 text-sm">Cleanings, exams, fillings</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">✨</div>
+                    <h4 class="font-semibold mb-2">Teeth Whitening</h4>
+                    <p class="text-gray-500 text-sm">Professional whitening</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">🦴</div>
+                    <h4 class="font-semibold mb-2">Dental Implants</h4>
+                    <p class="text-gray-500 text-sm">Permanent replacement</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">💎</div>
+                    <h4 class="font-semibold mb-2">Veneers</h4>
+                    <p class="text-gray-500 text-sm">Porcelain veneers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Preview -->
+    <section class="py-16 px-4 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-2xl font-bold text-center mb-8">Meet Our Dentists</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-24 h-24 bg-teal-100 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">👨‍⚕️</div>
+                    <h4 class="font-semibold">Dr. Hakeem</h4>
+                    <p class="text-teal-600 text-sm">General Dentistry</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-24 h-24 bg-teal-100 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">👩‍⚕️</div>
+                    <h4 class="font-semibold">Dr. Samara</h4>
+                    <p class="text-teal-600 text-sm">Cosmetic Dentistry</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-24 h-24 bg-teal-100 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">👨‍⚕️</div>
+                    <h4 class="font-semibold">Dr. Ali</h4>
+                    <p class="text-teal-600 text-sm">Dental Implants</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-xl p-8 shadow-lg">
+                <h3 class="text-xl font-bold mb-4 flex items-center"><span class="text-2xl mr-2">📍</span> Location</h3>
+                <p class="text-gray-600 mb-4">Visit us at our San Fernando location:</p>
+                <p class="text-gray-800 font-medium">1009 Glenoaks Blvd</p>
+                <p class="text-gray-800 font-medium">San Fernando, CA 91340</p>
+                <div class="mt-6 h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <span class="text-gray-400">Map Integration</span>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl p-8 shadow-lg">
+                <h3 class="text-xl font-bold mb-4 flex items-center"><span class="text-2xl mr-2">🕐</span> Hours</h3>
+                <div class="space-y-2">
+                    <div class="flex justify-between py-2 border-b"><span>Monday</span><span>9:00 AM - 5:00 PM</span></div>
+                    <div class="flex justify-between py-2 border-b"><span>Tuesday</span><span>9:00 AM - 5:00 PM</span></div>
+                    <div class="flex justify-between py-2 border-b"><span>Wednesday</span><span>9:00 AM - 5:00 PM</span></div>
+                    <div class="flex justify-between py-2 border-b"><span>Thursday</span><span>9:00 AM - 5:00 PM</span></div>
+                    <div class="flex justify-between py-2 border-b"><span>Friday</span><span>9:00 AM - 5:00 PM</span></div>
+                    <div class="flex justify-between py-2 text-gray-500"><span>Saturday</span><span>Closed</span></div>
+                    <div class="flex justify-between py-2 text-gray-500"><span>Sunday</span><span>Closed</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p>© 2026 California Dental. All rights reserved.</p>
+            <p class="text-teal-200 text-sm mt-2">San Fernando's trusted dental practice since 2000</p>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden" style="width: 420px; max-width: calc(100vw - 32px);">
+            <div class="gradient-bg text-white p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                        <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white flex items-center justify-center">
+                            <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-semibold">California Dental AI</div>
+                        <div class="text-xs text-teal-200">Online - Ready to help</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button onclick="toggleVoice()" id="voice-btn" class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">🎤</button>
+                    <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">✕</button>
+                </div>
+            </div>
+            <div id="chat-messages" class="h-96 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-slate-50 to-white" style="height: 400px;"></div>
+            <div id="voice-status" class="hidden bg-teal-50 px-4 py-2 flex items-center justify-center space-x-2 border-t">
+                <div class="flex space-x-1">
+                    <div class="w-1 bg-teal-500 rounded voice-wave" style="animation-delay: 0s;"></div>
+                    <div class="w-1 bg-teal-500 rounded voice-wave" style="animation-delay: 0.2s;"></div>
+                    <div class="w-1 bg-teal-500 rounded voice-wave" style="animation-delay: 0.4s;"></div>
+                    <div class="w-1 bg-teal-500 rounded voice-wave" style="animation-delay: 0.6s;"></div>
+                    <div class="w-1 bg-teal-500 rounded voice-wave" style="animation-delay: 0.8s;"></div>
+                </div>
+                <span class="text-sm text-teal-600">Listening...</span>
+            </div>
+            <div class="p-4 border-t bg-white">
+                <div class="flex space-x-2">
+                    <input type="text" id="chat-input" placeholder="Type your message..." class="flex-1 bg-gray-100 rounded-full px-4 py-3 focus:ring-2 focus:ring-teal-500 outline-none" onkeypress="if(event.key==='Enter')sendMessage()">
+                    <button onclick="sendMessage()" class="gradient-bg text-white w-12 h-12 rounded-full flex items-center justify-center hover:shadow-lg transition">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="openChat()" id="chat-toggle" class="fixed bottom-6 right-6 z-40 w-16 h-16 gradient-bg rounded-full shadow-2xl flex items-center justify-center text-3xl hover:scale-110 transition shadow-lg">
+        <span>💬</span>
+    </button>
+
+    <script>
+        const CONFIG = {
+            clinicName: 'California Dental',
+            email: 'contact@california-dental.net',
+            phone: '(818) 361-3889',
+            address: '1009 Glenoaks Blvd, San Fernando, CA 91340',
+            services: [
+                { name: 'General Dentistry', description: 'Cleanings, exams, fillings, X-rays', price: '$150 - $300' },
+                { name: 'Teeth Whitening', description: 'Professional whitening treatments', price: '$300 - $600' },
+                { name: 'Dental Implants', description: 'Permanent tooth replacement', price: '$1,500 - $3,000 per implant' },
+                { name: 'Veneers', description: 'Porcelain veneers for perfect smiles', price: '$800 - $1,500 per veneer' },
+                { name: 'Cosmetic Dentistry', description: ' smile makeovers, bonding', price: 'Varies' },
+                { name: 'Emergency Care', description: 'Same-day emergency appointments', price: 'Varies' }
+            ],
+            team: [
+                { name: 'Dr. Hakeem', title: 'General Dentistry', specialty: 'General & Family Dentistry' },
+                { name: 'Dr. Samara', title: 'Cosmetic Dentistry', specialty: 'Teeth Whitening & Veneers' },
+                { name: 'Dr. Ali', title: 'Dental Implants', specialty: 'Implant Dentistry' }
+            ]
+        };
+
+        let appointmentState = { step: 0, name: '', phone: '', email: '', service: '', date: '', time: '', notes: '' };
+        const calendarSlots = generateCalendarSlots();
+
+        function generateCalendarSlots() {
+            const slots = {};
+            const today = new Date();
+            for (let i = 1; i <= 30; i++) {
+                const date = new Date(today);
+                date.setDate(today.getDate() + i);
+                const dateStr = date.toISOString().split('T')[0];
+                if (date.getDay() !== 0) {
+                    slots[dateStr] = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'];
+                }
+            }
+            return slots;
+        }
+
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = SpeechRecognition ? new SpeechRecognition() : null;
+        let isListening = false;
+
+        if (recognition) {
+            recognition.continuous = false;
+            recognition.interimResults = true;
+            recognition.lang = 'en-US';
+            recognition.onresult = (event) => {
+                const transcript = event.results[event.results.length - 1][0].transcript;
+                document.getElementById('chat-input').value = transcript;
+                if (event.results[0].isFinal) sendMessage();
+            };
+            recognition.onend = () => { isListening = false; document.getElementById('voice-status').classList.add('hidden'); };
+        }
+
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text.replace(/<[^>]*>/g, ''));
+                utterance.rate = 1; utterance.pitch = 1; utterance.volume = 1;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function openChat() { document.getElementById('chat-widget').classList.remove('hidden'); document.getElementById('chat-toggle').classList.add('hidden'); if (document.getElementById('chat-messages').children.length === 0) { addMessage(welcomeMessage(), false); speak(welcomeMessage().replace(/<[^>]*>/g, '')); } }
+        function closeChat() { document.getElementById('chat-widget').classList.add('hidden'); document.getElementById('chat-toggle').classList.remove('hidden'); }
+        function toggleVoice() { if (!recognition) { alert('Voice not supported. Use Chrome or Edge.'); return; } if (isListening) { recognition.stop(); isListening = false; document.getElementById('voice-status').classList.add('hidden'); } else { recognition.start(); isListening = true; document.getElementById('voice-status').classList.remove('hidden'); } }
+        
+        function addMessage(text, isUser = false) {
+            const messages = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = isUser ? 'flex justify-end' : 'flex justify-start';
+            div.innerHTML = isUser ? `<div class="bg-teal-500 text-white rounded-2xl rounded-tr-none px-4 py-3 max-w-[85%]">${text}</div>` : `<div class="bg-white border border-gray-200 rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%] shadow-sm">${text}</div>`;
+            messages.appendChild(div); messages.scrollTop = messages.scrollHeight;
+        }
+
+        function addTyping() {
+            const messages = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = 'flex justify-start'; div.id = 'typing';
+            div.innerHTML = `<div class="bg-white border border-gray-200 rounded-2xl rounded-tl-none px-4 py-3 shadow-sm"><div class="flex space-x-1"><div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div><div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div><div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div></div></div>`;
+            messages.appendChild(div); messages.scrollTop = messages.scrollHeight;
+        }
+
+        function removeTyping() { const typing = document.getElementById('typing'); if (typing) typing.remove(); }
+
+        function welcomeMessage() { return `👋 Hello! Welcome to <strong>California Dental</strong> in San Fernando! 🦷<br><br>I'm your AI Dental Assistant. I can help you with:<br><br>• 📅 <strong>Booking appointments</strong><br>• 💉 <strong>Information about our services</strong><br>• 👨‍⚕️ <strong>Meeting our dentists</strong><br>• 🕐 <strong>Hours of operation</strong><br>• 📍 <strong>Location & directions</strong><br><br>How can I assist you today?`; }
+
+        function getBotResponse(message) {
+            const m = message.toLowerCase();
+            if (appointmentState.step > 0) return handleBookingFlow(m);
+            if (m.includes('appointment') || m.includes('book') || m.includes('schedule') || m.includes('make an appointment')) { appointmentState.step = 1; return startBooking(); }
+            if (m.includes('service') || m.includes('what do you offer') || m.includes('treatments') || m.includes('procedures')) return showServices();
+            if (m.includes('team') || m.includes('doctor') || m.includes('dentist') || m.includes('who are you') || m.includes('meet the') || m.includes('dr. ')) return showTeam();
+            if (m.includes('hour') || m.includes('open') || m.includes('time') || m.includes('when are you')) return showHours();
+            if (m.includes('contact') || m.includes('address') || m.includes('location') || m.includes('phone') || m.includes('email') || m.includes('call') || m.includes('directions')) return showContact();
+            if (m.includes('testimonial') || m.includes('review') || m.includes('patient') || m.includes('rating') || m.includes('feedback')) return showTestimonials();
+            if (m.includes('price') || m.includes('cost') || m.includes('how much') || m.includes('fee') || m.includes('afford')) return showPricing();
+            if (m.includes('emergency') || m.includes('pain') || m.includes('urgent') || m.includes('after hours') || m.includes('toothache')) return showEmergency();
+            if (m.includes('thank') || m.includes('thanks')) return "You're welcome! 😊 Is there anything else I can help you with at California Dental?";
+            if (m.includes('hello') || m.includes('hi ') || m === 'hi' || m.includes('hey')) return welcomeMessage();
+            return `I'd be happy to help! 🤔<br><br>Here are some things I can assist with:<br><br>• 📅 <strong>Book an appointment</strong><br>• 💉 <strong>Learn about our services</strong><br>• 👨‍⚕️ <strong>Meet our dentists</strong><br>• 🕐 <strong>Check hours</strong><br>• 📍 <strong>Get location info</strong><br><br>Just let me know what you need!`;
+        }
+
+        function startBooking() { return `📅 <strong>Appointment Booking</strong><br><br>Great! Let's schedule your appointment at California Dental.<br><br>First, may I have your <strong>full name</strong>, please?`; }
+
+        function handleBookingFlow(m) {
+            switch(appointmentState.step) {
+                case 1: appointmentState.name = message; appointmentState.step = 2; return `Thank you, ${appointmentState.name}! 😊<br><br>What is your <strong>phone number</strong>?`;
+                case 2: appointmentState.phone = message; appointmentState.step = 3; return `Perfect! And what is your <strong>email address</strong>?`;
+                case 3: appointmentState.email = message; appointmentState.step = 4; return showServiceSelection();
+                case 4: appointmentState.service = extractService(m); appointmentState.step = 5; return `Great! You selected <strong>${appointmentState.service}</strong>.<br><br>What <strong>date</strong> would you prefer? (We can check available slots for the next 30 days)`;
+                case 5: const dateMatch = extractDate(m); if (dateMatch) { appointmentState.date = dateMatch; appointmentState.step = 6; return showTimeSlots(); } return `I need a date to check availability. 📅<br><br>When would you like to come in? (e.g., "tomorrow", "next Tuesday", "January 15th")`;
+                case 6: const timeMatch = extractTime(m); if (timeMatch) { appointmentState.time = timeMatch; appointmentState.step = 7; return confirmBooking(); } return `What time works for you? ⏰<br><br>Available slots: ${calendarSlots[appointmentState.date]?.join(', ') || 'Please try another date'}`;
+                case 7: if (m.includes('yes') || m.includes('confirm') || m.includes('sure') || m.includes('ok') || m.includes('okay')) { appointmentState.step = 0; return completeBooking(); } appointmentState.step = 5; return `No problem! Let's try a different time. 🕐<br><br>What time would you prefer?`;
+            }
+        }
+
+        function showServices() {
+            let services = CONFIG.services.map((s, i) => `${i + 1}. <strong>${s.name}</strong> - ${s.description} (${s.price})`).join('<br>');
+            return `💉 <strong>Our Services</strong><br><br>${services}<br><br>Would you like to book an appointment for any of these services?`;
+        }
+
+        function showTeam() { return `👨‍⚕️ <strong>Our Dental Team</strong><br><br>• <strong>Dr. Hakeem</strong> - General Dentistry<br>• <strong>Dr. Samara</strong> - Cosmetic Dentistry<br>• <strong>Dr. Ali</strong> - Dental Implants<br><br>Would you like to book an appointment with any of our dentists?`; }
+
+        function showHours() { return `🕐 <strong>Hours of Operation</strong><br><br>• Monday - Friday: 9:00 AM - 5:00 PM<br>• Saturday: Closed<br>• Sunday: Closed<br><br>Would you like to book an appointment?`; }
+
+        function showContact() { return `📍 <strong>Contact Information</strong><br><br>📞 <strong>Phone:</strong> ${CONFIG.phone}<br>📧 <strong>Email:</strong> ${CONFIG.email}<br>📍 <strong>Address:</strong> ${CONFIG.address}<br><br>How can we help you?`; }
+
+        function showTestimonials() { return `⭐ <strong>Patient Reviews</strong><br><br>"Excellent care and friendly staff!" - Local Patient<br><br>"Best dentist in San Fernando!" - Happy Patient<br><br>"Professional and affordable!" - Grateful Patient<br><br>Would you like to book an appointment?`; }
+
+        function showPricing() { return `💰 <strong>Starting Prices</strong><br><br>• General Dentistry: $150 - $300<br>• Teeth Whitening: $300 - $600<br>• Veneers: $800 - $1,500 each<br>• Dental Implants: $1,500 - $3,000 per implant<br><br>Would you like to book a consultation?`; }
+
+        function showEmergency() { return `🚨 <strong>Emergency Care</strong><br><br>For dental emergencies, please call us immediately at <strong>${CONFIG.phone}</strong>.<br><br>We offer same-day emergency appointments for:<br>• Severe tooth pain<br>• Broken or knocked-out teeth<br>• Swelling or infection<br>• Bleeding that won't stop<br><br>Is this an emergency? Call us now!`; }
+
+        function showServiceSelection() { let services = CONFIG.services.map((s, i) => `${i + 1}. ${s.name}`).join('<br>'); return `What type of appointment would you like? 🦷<br><br>${services}<br><br>Just type the service name or number:`; }
+
+        function extractService(m) { for (let i = 0; i < CONFIG.services.length; i++) { if (m.includes(CONFIG.services[i].name.toLowerCase()) || m.includes(String(i + 1))) return CONFIG.services[i].name; } return 'General Consultation'; }
+
+        function extractDate(m) {
+            const today = new Date();
+            if (m.includes('today')) return today.toISOString().split('T')[0];
+            if (m.includes('tomorrow')) { today.setDate(today.getDate() + 1); return today.toISOString().split('T')[0]; }
+            const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            for (let i = 1; i <= 7; i++) { if (m.includes('next ' + days[i % 7]) || m.includes('this ' + days[i % 7])) { const target = new Date(); while (target.getDay() !== i % 7) target.setDate(target.getDate() + 1); return target.toISOString().split('T')[0]; } }
+            const match = m.match(/(\d{1,2})[\/\-](\d{1,2})/);
+            if (match) { const date = new Date(today.getFullYear(), parseInt(match[1]) - 1, parseInt(match[2])); if (date >= today) return date.toISOString().split('T')[0]; }
+            return null;
+        }
+
+        function extractTime(m) {
+            const times = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'];
+            for (let t of times) { if (m.includes(t.toLowerCase()) || m.includes(t.replace(':00', '').toLowerCase())) return t; }
+            if (m.includes('morning')) return '10:00 AM';
+            if (m.includes('afternoon')) return '2:00 PM';
+            if (m.includes('early')) return '9:00 AM';
+            return null;
+        }
+
+        function showTimeSlots() {
+            const date = new Date(appointmentState.date);
+            const options = { weekday: 'long', month: 'long', day: 'numeric' };
+            const dateStr = date.toLocaleDateString('en-US', options);
+            const slots = calendarSlots[appointmentState.date] || [];
+            if (slots.length === 0) { appointmentState.step = 5; return `Sorry, we don't have availability on that date. 📅<br><br>What other date would work for you?`; }
+            return `Available times for <strong>${dateStr}</strong>:<br><br>${slots.map((s, i) => `<button onclick="selectTime('${s}')" class="bg-teal-100 hover:bg-teal-200 text-teal-700 px-4 py-2 rounded-lg m-1 transition text-sm">${s}</button>`).join('')}<br><br>Or type your preferred time:`;
+        }
+
+        function selectTime(time) { appointmentState.time = time; appointmentState.step = 7; addMessage(time, true); setTimeout(() => { removeTyping(); addMessage(getBotResponse(''), false); }, 500); }
+
+        function confirmBooking() {
+            const date = new Date(appointmentState.date);
+            const dateStr = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+            return `📋 <strong>Appointment Summary</strong><br><br>• 👤 <strong>Name:</strong> ${appointmentState.name}<br>• 📞 <strong>Phone:</strong> ${appointmentState.phone}<br>• 📧 <strong>Email:</strong> ${appointmentState.email}<br>• 🦷 <strong>Service:</strong> ${appointmentState.service}<br>• 📅 <strong>Date:</strong> ${dateStr}<br>• ⏰ <strong>Time:</strong> ${appointmentState.time}<br><br>Is this correct? Please confirm with <strong>"Yes"</strong> to book.`;
+        }
+
+        function completeBooking() {
+            const date = new Date(appointmentState.date);
+            const dateStr = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+            sendConfirmationEmail();
+            return `✅ <strong>Appointment Confirmed!</strong> 🎉<br><br>Your appointment has been booked:<br><br>📅 <strong>${dateStr}</strong> at <strong>${appointmentState.time}</strong><br>🦷 <strong>${appointmentState.service}</strong><br><br>📧 A confirmation email has been sent to <strong>${appointmentState.email}</strong><br>📞 We will call you at <strong>${appointmentState.phone}</strong> to remind you.<br><br>📍 <strong>Location:</strong> ${CONFIG.address}<br><br>Thank you for choosing California Dental! 🦷`;
+        }
+
+        // EmailJS Configuration - Replace with your credentials
+        const EMAILJS_CONFIG = {
+            publicKey: 'YOUR_EMAILJS_PUBLIC_KEY',
+            serviceId: 'YOUR_EMAILJS_SERVICE_ID',
+            templateId: 'YOUR_EMAILJS_TEMPLATE_ID'
+        };
+
+        // Initialize EmailJS
+        (function() {
+            emailjs.init(EMAILJS_CONFIG.publicKey);
+        })();
+
+        function sendConfirmationEmail() {
+            const date = new Date(appointmentState.date);
+            const dateStr = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+            
+            const templateParams = {
+                to_name: appointmentState.name,
+                to_email: appointmentState.email,
+                service: appointmentState.service,
+                date: dateStr,
+                time: appointmentState.time,
+                phone: CONFIG.phone,
+                address: CONFIG.address
+            };
+
+            if (EMAILJS_CONFIG.publicKey !== 'YOUR_EMAILJS_PUBLIC_KEY') {
+                emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
+                    .then(function(response) {
+                        console.log('✅ Email sent successfully:', response);
+                    }, function(error) {
+                        console.log('❌ Email failed:', error);
+                    });
+            } else {
+                console.log('=== EMAIL CONFIRMATION (Demo Mode) ===');
+                console.log('To:', appointmentState.email);
+                console.log('Subject: Appointment Confirmation - California Dental');
+                console.log('Body:', templateParams);
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+            addMessage(message, true);
+            input.value = '';
+            addTyping();
+            setTimeout(() => {
+                removeTyping();
+                const response = getBotResponse(message);
+                addMessage(response, false);
+                speak(response.replace(/<[^>]*>/g, ''));
+            }, 600 + Math.random() * 400);
+        }
+    </script>
+</body>
+</html>
