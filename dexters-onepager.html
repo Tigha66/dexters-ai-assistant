@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexters AI - One Page Summary</title>
+    <style>
+        @page { margin: 0; size: A4 landscape; }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            margin: 0; 
+            padding: 15mm; 
+            background: #f3f4f6;
+            color: #1a1a1a;
+            height: 148mm;
+            overflow: hidden;
+        }
+        .page {
+            background: white;
+            width: 277mm;
+            height: 148mm;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+        }
+        .left {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        .right {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: white;
+            color: #1e3a5f;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        h1 { font-size: 28px; margin: 0 0 5px; }
+        .subtitle { font-size: 16px; opacity: 0.9; margin-bottom: 20px; }
+        .tagline { font-size: 14px; opacity: 0.8; margin-bottom: auto; }
+        .stats-row {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 15px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+        }
+        .stat-num { font-size: 24px; font-weight: bold; }
+        .stat-txt { font-size: 11px; opacity: 0.9; }
+        .demo-qr {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .demo-qr img { width: 100px; height: 100px; background: #eee; }
+        .demo-qr p { color: #1e3a5f; font-size: 12px; margin: 8px 0 0; font-weight: bold; }
+        
+        h2 { 
+            color: #1e3a5f; 
+            font-size: 18px; 
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 5px;
+            margin: 0 0 12px;
+        }
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+        .feature span { font-size: 16px; }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .pricing-card h3 { margin: 0 0 5px; font-size: 16px; }
+        .price { font-size: 28px; font-weight: bold; }
+        .price span { font-size: 14px; opacity: 0.8; }
+        
+        .cta {
+            background: #22c55e;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: auto;
+        }
+        .contact { font-size: 12px; color: #6b7280; text-align: center; margin-top: 10px; }
+        
+        .highlight-box {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .highlight-box h4 { margin: 0 0 5px; color: #92400e; font-size: 13px; }
+        .highlight-box p { margin: 0; font-size: 12px; color: #78350f; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="left">
+            <div class="logo">D</div>
+            <h1>Dexters AI</h1>
+            <p class="subtitle">24/7 Estate Agent Assistant</p>
+            <p class="tagline">Never miss a property lead again</p>
+            
+            <div class="stats-row">
+                <div class="stat-box">
+                    <div class="stat-num">98%</div>
+                    <div class="stat-txt">Response Rate</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">4.2x</div>
+                    <div class="stat-txt">More Viewings</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">40+</div>
+                    <div class="stat-txt">London Offices</div>
+                </div>
+            </div>
+            
+            <div class="demo-qr">
+                <div style="width: 80px; height: 80px; background: #eee; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #666; font-size: 10px;">[QR CODE]</div>
+                <p>📱 Scan for Demo</p>
+                <p style="font-size: 10px; margin: 5px 0 0;">tigha66.github.io/dexters-ai-assistant</p>
+            </div>
+        </div>
+        
+        <div class="right">
+            <h2>🎯 The Problem</h2>
+            <p style="font-size: 13px; margin: 0 0 10px;">78% of property enquiries go unanswered outside office hours. With 40+ offices, Dexters misses dozens of qualified leads every week.</p>
+            
+            <h2>✨ Key Features</h2>
+            <div class="features-list">
+                <div class="feature"><span>💬</span> 24/7 Instant Responses</div>
+                <div class="feature"><span>📅</span> Auto Calendar Booking</div>
+                <div class="feature"><span>🎯</span> Lead Qualification</div>
+                <div class="feature"><span>📧</span> Email & SMS Follow-up</div>
+                <div class="feature"><span>🏠</span> Property Feed Integration</div>
+                <div class="feature"><span>📊</span> CRM Integration</div>
+            </div>
+            
+            <h2>💰 Pricing</h2>
+            <div style="display: flex; gap: 10px;">
+                <div class="pricing-card" style="flex: 1;">
+                    <h3>Starter</h3>
+                    <div class="price">£99<span>/mo</span></div>
+                    <p style="font-size: 11px; opacity: 0.9; margin: 5px 0 0;">500 enquiries, calendar, email</p>
+                </div>
+                <div class="pricing-card" style="flex: 1.5;">
+                    <h3>⭐ Professional</h3>
+                    <div class="price">£199<span>/mo</span></div>
+                    <p style="font-size: 11px; opacity: 0.9; margin: 5px 0 0;">Unlimited, SMS, CRM, qualify</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h4>🚀 Enterprise = White-Label Ready!</h4>
+                <p>Full white-label option available. Dexters AI can be re-branded as your own product to sell to other agents.</p>
+            </div>
+            
+            <div class="cta">📞 Book a Demo Call - 14-Day Free Trial</div>
+            <p class="contact">sales@dexters.ai | 020 7946 0958</p>
+        </div>
+    </div>
+</body>
+</html>
