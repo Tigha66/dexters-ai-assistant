@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate Agent AI Assistant | Dexters Lead & Viewing Bot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+        .glass-dark { background: rgba(15,23,42,0.8); backdrop-filter: blur(10px); }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+        .glow { box-shadow: 0 0 40px rgba(59,130,246,0.3); }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .typing { overflow: hidden; border-right: 2px solid #3b82f6; animation: blink 0.7s step-end infinite; }
+        @keyframes blink { 50% { border-color: transparent; } }
+        .property-card:hover { transform: translateY(-5px); }
+        .float { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-slate-300">
+    <!-- Header -->
+    <nav class="glass-dark fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white">D</div>
+                    <span class="text-xl font-semibold text-white">Dexters AI Assistant</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#features" class="hover:text-white transition">Features</a>
+                    <a href="#demo" class="hover:text-white transition">Live Demo</a>
+                    <a href="#pricing" class="hover:text-white transition">Pricing</a>
+                    <button onclick="startChat()" class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-lg text-white font-medium transition glow">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 bg-blue-600/20 border border-blue-500/30 rounded-full px-4 py-2 mb-6">
+                <span class="w-2 h-2 bg-green-400 rounded-full pulse"></span>
+                <span class="text-sm text-blue-400">Powered by AI • Available 24/7</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Never Miss a Property Lead Again
+            </h1>
+            <p class="text-xl text-slate-400 mb-10 max-w-3xl mx-auto">
+                Your AI-powered estate agent assistant that answers enquiries 24/7, books viewings automatically, qualifies leads, and sends brochures instantly.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="startChat()" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl text-white font-semibold text-lg transition glow">
+                    🚀 Try Live Demo
+                </button>
+                <a href="#features" class="glass px-8 py-4 rounded-xl text-white font-medium hover:bg-white/10 transition">
+                    Learn More
+                </a>
+            </div>
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16">
+                <div class="glass rounded-xl p-6">
+                    <div class="text-3xl font-bold text-white">98%</div>
+                    <div class="text-sm text-slate-400">Lead Response Rate</div>
+                </div>
+                <div class="glass rounded-xl p-6">
+                    <div class="text-3xl font-bold text-white">4.2x</div>
+                    <div class="text-sm text-slate-400">More Viewings Booked</div>
+                </div>
+                <div class="glass rounded-xl p-6">
+                    <div class="text-3xl font-bold text-white">24/7</div>
+                    <div class="text-sm text-slate-400">Always On Duty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chat Demo Section -->
+    <section id="demo" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">See It In Action</h2>
+                <p class="text-slate-400">Watch how the AI assistant handles property enquiries automatically</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Chat Interface -->
+                <div class="glass-dark rounded-2xl p-6 shadow-2xl">
+                    <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-700">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-white font-medium">Dexters AI Assistant</div>
+                            <div class="text-green-400 text-sm flex items-center space-x-1">
+                                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                                <span>Online</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Chat Messages -->
+                    <div id="chatMessages" class="space-y-4 mb-6 h-80 overflow-y-auto">
+                        <div class="flex space-x-3">
+                            <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xs">👤</span>
+                            </div>
+                            <div class="bg-slate-700 rounded-2xl rounded-tl-none px-4 py-3 max-w-xs">
+                                <p class="text-sm">Hi, is the 2-bed apartment in Leeds still available?</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xs">🤖</span>
+                            </div>
+                            <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">
+                                <p class="text-sm">Good afternoon! I'd be happy to help with that property. Let me check the availability for you...</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xs">🤖</span>
+                            </div>
+                            <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">
+                                <p class="text-sm">✅ <strong>Great news!</strong> The 2-bed apartment at Leeds is still available. Here's a quick summary:</p>
+                                <div class="mt-2 bg-slate-800 rounded-lg p-3 text-sm">
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div>💷 <strong>Price:</strong> £325,000</div>
+                                        <div>📐 <strong>Size:</strong> 75 sqm</div>
+                                        <div>🛏️ <strong>Beds:</strong> 2</div>
+                                        <div>🚿 <strong>Baths:</strong> 2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xs">👤</span>
+                            </div>
+                            <div class="bg-slate-700 rounded-2xl rounded-tl-none px-4 py-3 max-w-xs">
+                                <p class="text-sm">Can I book a viewing for this weekend?</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xs">🤖</span>
+                            </div>
+                            <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">
+                                <p class="text-sm">Absolutely! Here are the available slots this weekend:</p>
+                                <div class="mt-2 grid grid-cols-2 gap-2">
+                                    <button onclick="selectSlot(this)" class="bg-green-600 hover:bg-green-700 rounded-lg py-2 px-3 text-sm text-white transition">📅 Sat 10:00 AM</button>
+                                    <button onclick="selectSlot(this)" class="bg-green-600 hover:bg-green-700 rounded-lg py-2 px-3 text-sm text-white transition">📅 Sat 2:00 PM</button>
+                                    <button onclick="selectSlot(this)" class="bg-green-600 hover:bg-green-700 rounded-lg py-2 px-3 text-sm text-white transition">📅 Sun 11:00 AM</button>
+                                    <button onclick="selectSlot(this)" class="bg-green-600 hover:bg-green-700 rounded-lg py-2 px-3 text-sm text-white transition">📅 Sun 3:00 PM</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bookingConfirmation" class="hidden">
+                            <div class="flex space-x-3">
+                                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-xs">🤖</span>
+                                </div>
+                                <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">
+                                    <p class="text-sm">🎉 <strong>Viewing Confirmed!</strong></p>
+                                    <p class="text-sm mt-1">Saturday, 10:00 AM at Leeds property.</p>
+                                    <p class="text-sm mt-1">📧 Confirmation sent to your email.</p>
+                                    <p class="text-xs text-blue-300 mt-2">Added to Dexters CRM & Calendar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Input -->
+                    <div class="flex space-x-2 pt-4 border-t border-slate-700">
+                        <input type="text" id="demoInput" placeholder="Ask about a property..." class="flex-1 bg-slate-700 border-none rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500">
+                        <button onclick="sendDemoMessage()" class="bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-xl text-white transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Property Card -->
+                <div class="space-y-6">
+                    <div class="glass-dark rounded-2xl p-6 property-card transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop" alt="Leeds Apartment" class="w-full h-48 object-cover rounded-xl mb-4">
+                            <span class="absolute top-3 left-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full">Available</span>
+                            <span class="absolute top-3 right-3 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">2 Bed</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Modern 2-Bed Apartment</h3>
+                        <p class="text-slate-400 text-sm mb-3">📍 Leeds City Centre</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-4 text-sm">
+                                <span>🛏️ 2 Beds</span>
+                                <span>🚿 2 Baths</span>
+                                <span>📐 75m²</span>
+                            </div>
+                            <div class="text-2xl font-bold text-blue-400">£325,000</div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-700 flex space-x-3">
+                            <button class="flex-1 bg-blue-600 hover:bg-blue-700 py-2 rounded-lg text-white text-sm font-medium transition">📄 Download Brochure</button>
+                            <button onclick="startChat()" class="flex-1 bg-green-600 hover:bg-green-700 py-2 rounded-lg text-white text-sm font-medium transition">📞 Book Viewing</button>
+                        </div>
+                    </div>
+
+                    <!-- Features List -->
+                    <div class="glass rounded-xl p-6">
+                        <h4 class="text-white font-semibold mb-4">🤖 What This Bot Does:</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-400">✓</span>
+                                <span>Answers property enquiries instantly</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-400">✓</span>
+                                <span>Checks property availability in real-time</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-400">✓</span>
+                                <span>Shares photos, EPC & property details</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-400">✓</span>
+                                <span>Books viewings via integrated calendar</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-400">✓</span>
+                                <span>Sends brochures via email/SMS</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-400">✓</span>
+                                <span>Logs leads to CRM / Google Sheets</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Powerful Features</h2>
+                <p class="text-slate-400 text-lg">Everything you need to convert more leads into viewings</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass rounded-2xl p-8 hover:bg-white/5 transition">
+                    <div class="w-14 h-14 bg-blue-600/30 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">💬</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">24/7 Instant Responses</h3>
+                    <p class="text-slate-400">Never miss an enquiry again. AI answers instantly at any time, capturing leads when they're hot.</p>
+                </div>
+                <div class="glass rounded-2xl p-8 hover:bg-white/5 transition">
+                    <div class="w-14 h-14 bg-green-600/30 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">📅</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Auto Calendar Booking</h3>
+                    <p class="text-slate-400">Integrated calendar system lets prospects book viewings instantly without back-and-forth.</p>
+                </div>
+                <div class="glass rounded-2xl p-8 hover:bg-white/5 transition">
+                    <div class="w-14 h-14 bg-purple-600/30 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Lead Qualification</h3>
+                    <p class="text-slate-400">Automatically qualify buyers/tenants with smart questions. Focus on serious prospects only.</p>
+                </div>
+                <div class="glass rounded-2xl p-8 hover:bg-white/5 transition">
+                    <div class="w-14 h-14 bg-orange-600/30 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">📧</span>
+                    </div>
+                    <h3 class="text-xl font-bold3">Email & text-white mb- SMS Follow-up</h3>
+                    <p class="text-slate-400">Automated follow-ups with property brochures, viewing confirmations, and reminders.</p>
+                </div>
+                <div class="glass rounded-2xl p-8 hover:bg-white/5 transition">
+                    <div class="w-14 h-14 bg-pink-600/30 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🏠</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Property Feed Integration</h3>
+                    <p class="text-slate-400">Connect to Rightmove, Zoopla, or use CSV uploads. Always shows accurate, up-to-date listings.</p>
+                </div>
+                <div class="glass rounded-2xl p-8 hover:bg-white/5 transition">
+                    <div class="w-14 h-14 bg-cyan-600/30 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">📊</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">CRM Integration</h3>
+                    <p class="text-slate-400">Logs all leads to Google Sheets or your existing CRM. Track every interaction automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 px-4 glass-dark">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Workflow Example</h2>
+                <p class="text-slate-400 text-lg">From enquiry to booked viewing in minutes</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">1</div>
+                    <h4 class="text-white font-semibold mb-2">Customer Enquires</h4>
+                    <p class="text-slate-400 text-sm">"Is the 2-bed in Leeds available?"</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">2</div>
+                    <h4 class="text-white font-semibold mb-2">AI Checks & Responds</h4>
+                    <p class="text-slate-400 text-sm">Verifies availability, shares photos & EPC</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">3</div>
+                    <h4 class="text-white font-semibold mb-2">Books Viewing</h4>
+                    <p class="text-slate-400 text-sm">Customer selects a time slot</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white">4</div>
+                    <h4 class="text-white font-semibold mb-2">Confirmed & Logged</h4>
+                    <p class="text-slate-400 text-sm">Email sent, CRM updated, agent notified</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-slate-400 text-lg">Start converting more leads today</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass rounded-2xl p-8">
+                    <h3 class="text-xl font-semibold text-white mb-2">Starter</h3>
+                    <div class="text-4xl font-bold text-white mb-4">£99<span class="text-lg text-slate-400">/mo</span></div>
+                    <ul class="space-y-3 text-slate-400 mb-8">
+                        <li>✓ 500 enquiries/month</li>
+                        <li>✓ 24/7 AI responses</li>
+                        <li>✓ Calendar integration</li>
+                        <li>✓ Email notifications</li>
+                    </ul>
+                    <button onclick="selectPlan('starter')" class="w-full glass hover:bg-blue-600 py-3 rounded-xl text-white font-medium transition">Get Started</button>
+                </div>
+                <div class="glass rounded-2xl p-8 glow border-blue-500 relative">
+                    <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm">Most Popular</span>
+                    <h3 class="text-xl font-semibold text-white mb-2">Professional</h3>
+                    <div class="text-4xl font-bold text-white mb-4">£199<span class="text-lg text-slate-400">/mo</span></div>
+                    <ul class="space-y-3 text-slate-400 mb-8">
+                        <li>✓ Unlimited enquiries</li>
+                        <li>✓ SMS notifications</li>
+                        <li>✓ CRM integration</li>
+                        <li>✓ Lead qualification</li>
+                        <li>✓ Analytics dashboard</li>
+                    </ul>
+                    <button onclick="selectPlan('professional')" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-xl text-white font-medium transition">Get Started</button>
+                </div>
+                <div class="glass rounded-2xl p-8">
+                    <h3 class="text-xl font-semibold text-white mb-2">Enterprise</h3>
+                    <div class="text-4xl font-bold text-white mb-4">Custom</div>
+                    <ul class="space-y-3 text-slate-400 mb-8">
+                        <li>✓ Everything in Pro</li>
+                        <li>✓ Multiple branches</li>
+                        <li>✓ Custom integrations</li>
+                        <li>✓ Dedicated support</li>
+                        <li>✓ White-label option</li>
+                    </ul>
+                    <button onclick="selectPlan('enterprise')" class="w-full glass hover:bg-blue-600 py-3 rounded-xl text-white font-medium transition">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="py-20 px-4 glass-dark">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Calculate Your ROI</h2>
+            <p class="text-slate-400 mb-8">Estate agents who use AI assistants see conversion rates jump from typical 15-20% to 50%+ because no lead is ever missed.</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass rounded-xl p-6">
+                    <div class="text-3xl font-bold text-green-400 mb-2">+40%</div>
+                    <div class="text-white">More Viewings Booked</div>
+                </div>
+                <div class="glass rounded-xl p-6">
+                    <div class="text-3xl font-bold text-green-400 mb-2">-80%</div>
+                    <div class="text-white">Time Wasted on Enquiries</div>
+                </div>
+                <div class="glass rounded-xl p-6">
+                    <div class="text-3xl font-bold text-green-400 mb-2">24/7</div>
+                    <div class="text-white">Never Miss a Lead</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Convert More Leads?</h2>
+            <p class="text-slate-400 text-lg mb-8">Join forward-thinking estate agents using AI to boost bookings and grow revenue.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="startChat()" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl text-white font-semibold text-lg transition glow">
+                    🚀 Start Free Trial
+                </button>
+                <button onclick="bookDemo()" class="glass hover:bg-white/10 px-8 py-4 rounded-xl text-white font-medium text-lg transition">
+                    📞 Book a Demo
+                </button>
+            </div>
+            <p class="text-slate-500 text-sm mt-6">No credit card required • 14-day free trial • Cancel anytime</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-dark py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white">D</div>
+                        <span class="text-xl font-semibold text-white">Dexters AI</span>
+                    </div>
+                    <p class="text-slate-400 text-sm">London's leading estate agent AI assistant. Never miss a property lead again.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#features" class="hover:text-white">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white">Integrations</a></li>
+                        <li><a href="#" class="hover:text-white">API Docs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>📧 sales@dexters.ai</li>
+                        <li>📞 020 7946 0958</li>
+                        <li>📍 London, UK</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 mt-8 pt-8 text-center text-slate-500 text-sm">
+                © 2025 Dexters AI Assistant. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Widget -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleChat()" class="w-16 h-16 bg-blue-600 hover:bg-blue-700 rounded-full shadow-2xl flex items-center justify-center text-3xl transition glow float">
+            💬
+        </button>
+    </div>
+
+    <!-- Chat Popup -->
+    <div id="chatPopup" class="fixed bottom-24 right-6 z-50 hidden">
+        <div class="glass-dark rounded-2xl w-96 shadow-2xl overflow-hidden">
+            <div class="bg-blue-600 p-4 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                        <span class="text-xl">🤖</span>
+                    </div>
+                    <div>
+                        <div class="text-white font-medium">Dexters AI Assistant</div>
+                        <div class="text-blue-200 text-xs flex items-center space-x-1">
+                            <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                            <span>Online</span>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-white hover:text-blue-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="popupChatMessages" class="h-80 p-4 overflow-y-auto space-y-4 bg-slate-900">
+                <div class="flex space-x-3">
+                    <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-xs">🤖</span>
+                    </div>
+                    <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-[220px]">
+                        <p class="text-sm">Hello! 👋 I'm Dexters AI assistant. How can I help you today?</p>
+                    </div>
+                </div>
+                <div class="flex space-x-2 flex-wrap">
+                    <button onclick="quickQuestion(this)" class="bg-slate-700 hover:bg-slate-600 rounded-full px-4 py-2 text-xs text-white transition">🏠 Browse properties</button>
+                    <button onclick="quickQuestion(this)" class="bg-slate-700 hover:bg-slate-600 rounded-full px-4 py-2 text-xs text-white transition">📅 Book a viewing</button>
+                    <button onclick="quickQuestion(this)" class="bg-slate-700 hover:bg-slate-600 rounded-full px-4 py-2 text-xs text-white transition">💰 Get a valuation</button>
+                </div>
+            </div>
+            <div class="p-4 border-t border-slate-700">
+                <div class="flex space-x-2">
+                    <input type="text" id="popupInput" placeholder="Type your message..." class="flex-1 bg-slate-700 border-none rounded-xl px-4 py-3 text-white placeholder-slate-400 text-sm focus:ring-2 focus:ring-blue-500">
+                    <button onclick="sendPopupMessage()" class="bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-xl text-white transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Call Button -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <button class="w-14 h-14 bg-green-600 hover:bg-green-700 rounded-full shadow-2xl flex items-center justify-center text-2xl transition glow">
+            📞
+        </button>
+    </div>
+
+    <script>
+        // Demo chat functionality
+        function selectSlot(btn) {
+            document.querySelectorAll('#demo button').forEach(b => {
+                b.classList.remove('ring-2', 'ring-yellow-400');
+            });
+            btn.classList.add('ring-2', 'ring-yellow-400');
+            setTimeout(() => {
+                document.getElementById('bookingConfirmation').classList.remove('hidden');
+                document.getElementById('bookingConfirmation').scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+        }
+
+        function sendDemoMessage() {
+            const input = document.getElementById('demoInput
