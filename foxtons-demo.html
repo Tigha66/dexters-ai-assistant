@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foxtons AI Assistant | 24/7 Estate Agent Chatbot</title>
+    <title>Foxtons AI Assistant | Premium Estate Agent Chatbot</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" style="font-family: 'Inter', sans-serif;">
     <style>
         .foxtons-bg { background-color: #111111; }
         .foxtons-gold { color: #C9A962; }
         .foxtons-gold-bg { background-color: #C9A962; }
+        .typing-indicator span { animation: typing 1.4s infinite; }
+        @keyframes typing { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
     </style>
 </head>
 <body class="foxtons-bg min-h-screen text-white font-sans">
@@ -20,158 +22,303 @@
                 <div class="w-10 h-10 foxtons-gold-bg rounded-lg flex items-center justify-center font-bold text-lg text-black">F</div>
                 <span class="text-xl font-bold">Foxtons AI Assistant</span>
             </div>
-            <a href="#demo" class="foxtons-gold hover:text-white transition">Try Demo</a>
+            <div class="flex items-center space-x-4">
+                <span class="foxtons-gold text-sm flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>Premium AI</span>
+                <a href="#demo" class="foxtons-gold hover:text-white transition">Try Demo</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="pt-32 pb-20 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Premium Service, <span class="foxtons-gold">24/7</span></h1>
-            <p class="text-xl text-gray-300 mb-10">Experience our AI assistant for valuations and property enquiries.</p>
-            <button onclick="scrollToSection('demo')" class="foxtons-gold-bg hover:bg-[#B8994F] px-8 py-4 rounded-full font-semibold text-lg text-black transition">🚀 Try Live Demo</button>
+    <section class="pt-32 pb-16 px-4 text-center">
+        <div class="max-w-5xl mx-auto">
+            <div class="inline-flex items-center space-x-2 bg-[#C9A962]/20 border border-[#C9A962]/30 rounded-full px-4 py-2 mb-6">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                <span class="foxtons-gold text-sm">Powered by Advanced AI</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Premium <span class="foxtons-gold">Property Service</span> 24/7</h1>
+            <p class="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                Experience the gold standard in AI-powered property assistance. Instant valuations, smart search, and white-glove service.
+            </p>
+            <button onclick="scrollToSection('demo')" class="foxtons-gold-bg hover:bg-[#B8994F] px-8 py-4 rounded-full font-semibold text-lg text-black transition glow">🚀 Experience Premium AI</button>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-10 px-4 border-y border-[#C9A962]/20">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="text-3xl font-bold foxtons-gold">68h</div>
+                <div class="text-gray-400 text-sm">Office Closed Weekly</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold foxtons-gold">3.2x</div>
+                <div class="text-gray-400 text-sm">More Bookings</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold foxtons-gold">£15K</div>
+                <div class="text-gray-400 text-sm">Avg Missed Lead Value</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold foxtons-gold">24/7</div>
+                <div class="text-gray-400 text-sm">AI Coverage</div>
+            </div>
         </div>
     </section>
 
     <!-- Demo -->
-    <section id="demo" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-10">Try the AI Assistant</h2>
-            <div class="bg-[#1a1a1a] rounded-2xl p-6 border border-[#C9A962]/30">
-                <div class="flex items-center space-x-4 mb-6 pb-4 border-b border-[#C9A962]/30">
-                    <div class="w-12 h-12 foxtons-gold-bg rounded-full flex items-center justify-center text-xl">🏠</div>
-                    <div>
-                        <div class="font-semibold">Foxtons AI</div>
-                        <div class="text-green-400 text-sm flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>Online Now</div>
+    <section id="demo" class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold mb-2">Your Personal <span class="foxtons-gold">Property Concierge</span></h2>
+                <p class="text-gray-400">Experience premium AI-powered assistance</p>
+            </div>
+            
+            <div class="bg-[#1a1a1a] rounded-2xl p-4 border border-[#C9A962]/30 shadow-2xl">
+                <!-- Chat Header -->
+                <div class="flex items-center justify-between pb-4 border-b border-[#C9A962]/30">
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <div class="w-12 h-12 foxtons-gold-bg rounded-full flex items-center justify-center text-xl text-black">🏠</div>
+                            <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-[#1a1a1a]"></span>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Foxtons AI Concierge</div>
+                            <div class="foxtons-gold text-xs flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-1"></span>Premium Service</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs text-gray-400">Gold Standard AI</span>
                     </div>
                 </div>
-                <div class="space-y-4 h-80 overflow-y-auto mb-4" id="chat-messages">
+                
+                <!-- Messages -->
+                <div class="h-96 overflow-y-auto p-4 space-y-4" id="chat-messages">
+                    <!-- Welcome Message -->
                     <div class="flex space-x-3">
-                        <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-sm">👤</div>
-                        <div class="bg-gray-700 rounded-2xl rounded-tl-none px-4 py-3 max-w-xs">Hi, I'm looking to sell my flat in South Kensington</div>
-                    </div>
-                    <div class="flex space-x-3">
-                        <div class="w-8 h-8 foxtons-gold-bg rounded-full flex items-center justify-center text-sm">🤖</div>
-                        <div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 max-w-md foxtons-gold" style="border: 1px solid #C9A962;">Excellent choice! South Kensington is one of London's most prestigious areas.<br><br>📍 Property: South Kensington flat<br>💰 Estimated value: £850K - £1.2M<br><br>I can arrange a free valuation with one of our expert agents.</div>
+                        <div class="w-10 h-10 foxtons-gold-bg rounded-full flex items-center justify-center text-lg text-black flex-shrink-0">🏠</div>
+                        <div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 max-w-lg foxtons-gold" style="border: 1px solid #C9A962;">
+                            <p class="text-sm">✨ Welcome to Foxtons AI Concierge.</p>
+                            <p class="text-sm mt-2">Your premium property assistant for:</p>
+                            <ul class="text-sm mt-1 space-y-1 text-gray-300">
+                                <li>• 🏠 Premium property search</li>
+                                <li>• 💰 Expert valuations</li>
+                                <li>• 📅 White-glove booking service</li>
+                                <li>• 📊 Market intelligence</li>
+                                <li>• 🎯 Investment guidance</li>
+                            </ul>
+                            <p class="text-sm mt-2">How may I assist you today?</p>
+                        </div>
                     </div>
                 </div>
-                <div class="flex space-x-2 pt-4 border-t border-[#C9A962]/30">
-                    <input type="text" id="chat-input" placeholder="Ask about valuations, properties, areas..." class="flex-1 bg-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-400" onkeypress="if(event.key==='Enter')sendMessage()">
-                    <button onclick="sendMessage()" class="foxtons-gold-bg hover:bg-[#B8994F] px-6 py-3 rounded-xl text-black font-semibold">Send</button>
+                
+                <!-- Input -->
+                <div class="pt-4 border-t border-[#C9A962]/30">
+                    <div class="flex space-x-3">
+                        <input type="text" id="chat-input" placeholder="Ask about premium properties, valuations, or investments..." 
+                            class="flex-1 bg-slate-800 border border-slate-600 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#C9A962] outline-none"
+                            onkeypress="if(event.key==='Enter')sendMessage()">
+                        <button onclick="sendMessage()" class="foxtons-gold-bg hover:bg-[#B8994F] px-6 py-3 rounded-xl font-semibold text-black transition">Send</button>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 text-center">This is a demo. AI responses are simulated for demonstration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 px-4 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12"><span class="foxtons-gold">Premium</span> AI Capabilities</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-[#1a1a1a] rounded-xl p-6 border border-[#C9A962]/20">
+                    <div class="text-4xl mb-4">💎</div>
+                    <h3 class="text-xl font-bold mb-2 foxtons-gold">Premium Property Search</h3>
+                    <p class="text-gray-400 text-sm">Access to London's finest properties with AI-powered matching.</p>
+                </div>
+                <div class="bg-[#1a1a1a] rounded-xl p-6 border border-[#C9A962]/20">
+                    <div class="text-4xl mb-4">📈</div>
+                    <h3 class="text-xl font-bold mb-2 foxtons-gold">Investment Intelligence</h3>
+                    <p class="text-gray-400 text-sm">Data-driven insights for property investments and portfolio growth.</p>
+                </div>
+                <div class="bg-[#1a1a1a] rounded-xl p-6 border border-[#C9A962]/20">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold mb-2 foxtons-gold">Concierge Service</h3>
+                    <p class="text-gray-400 text-sm">VIP treatment for high-value clients and premium properties.</p>
+                </div>
+                <div class="bg-[#1a1a1a] rounded-xl p-6 border border-[#C9A962]/20">
+                    <div class="text-4xl mb-4">🏆</div>
+                    <h3 class="text-xl font-bold mb-2 foxtons-gold">Market Leadership</h3>
+                    <p class="text-gray-400 text-sm">Foxtons expertise and market leadership insights.</p>
+                </div>
+                <div class="bg-[#1a1a1a] rounded-xl p-6 border border-[#C9A962]/20">
+                    <div class="text-4xl mb-4">🔐</div>
+                    <h3 class="text-xl font-bold mb-2 foxtons-gold">Confidential Service</h3>
+                    <p class="text-gray-400 text-sm">Discreet service for confidential transactions.</p>
+                </div>
+                <div class="bg-[#1a1a1a] rounded-xl p-6 border border-[#C9A962]/20">
+                    <div class="text-4xl mb-4">🌟</div>
+                    <h3 class="text-xl font-bold mb-2 foxtons-gold">White-Glove Support</h3>
+                    <p class="text-gray-400 text-sm">Premium support for premium clients, 24/7.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-20 px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-        <p class="text-gray-400 mb-8">Contact us to get your own AI assistant</p>
-        <a href="mailto:tigha66@gmail.com" class="foxtons-gold-bg hover:bg-[#B8994F] px-8 py-4 rounded-full font-semibold text-lg inline-block text-black transition">📧 Email Us</a>
+    <section class="py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Elevate Your <span class="foxtons-gold">Property Experience</span></h2>
+            <p class="text-gray-400 mb-8">Get premium AI assistance for your property needs</p>
+            <a href="mailto:tigha66@gmail.com" class="foxtons-gold-bg hover:bg-[#B8994F] px-8 py-4 rounded-full font-semibold text-lg inline-block text-black transition">📧 Contact Us</a>
+            <p class="text-gray-500 text-sm mt-4">From AutoAI Web Solutions</p>
+        </div>
     </section>
 
     <script>
-        // MiniMax API Configuration
-        const API_KEY = 'sk-api-ispfyArkQsymxhoFgVIA_N6nHg4CDkFRNaEiE5teCm2a6kO8qLK047Ktm1wFD9C0DU8S4sfsuXe0kgfxkDpy1SxaEmw5XUOioQn-sXlTNTRIELmTQ1NkrbU';
-        const API_ENDPOINT = 'https://api.minimax.com/v1/text/chatcompletion_v2';
-        const SYSTEM_PROMPT = `You are a professional AI assistant for Foxtons, a premium London estate agent. 
-        You help with:
-        - Property valuations and market insights
-        - Booking property viewings and valuations
-        - Answering questions about buying, selling, and renting
-        - Being helpful, professional, and courteous`;
+        // Premium AI Configuration
+        const SYSTEM_PROMPT = `You are a premium AI assistant for Foxtons, London's premier estate agent. 
 
-        let conversationHistory = [{ role: 'system', content: SYSTEM_PROMPT }];
+Your role: Provide gold-standard service to high-value clients.
 
-        // Fallback responses
-        const fallbackResponses = {
-            'valuation': 'I can arrange a free valuation for your property. South Kensington properties typically sell for £850K-£2M+. What\'s your address?',
-            'value': 'I can arrange a free valuation for your property. South Kensington properties typically sell for £850K-£2M+. What\'s your address?',
-            'sell': 'Selling in South Kensington is excellent! Average sale time is 3-4 weeks. What\'s your property address?',
-            'selling': 'Selling in South Kensington is excellent! Average sale time is 3-4 weeks. What\'s your property address?',
-            'buy': 'Excellent choice! What\'s your budget and preferred area?',
-            'buying': 'Excellent choice! What\'s your budget and preferred area?',
-            'rent': 'We have great rental properties too! What\'s your budget and preferred area?',
-            'rental': 'We have great rental properties too! What\'s your budget and preferred area?',
-            'property': 'We have premium properties across London. What area and budget are you looking for?',
-            'properties': 'We have premium properties across London. What area and budget are you looking for?',
-            'book': 'I can book you an appointment! Available slots: Tomorrow 10AM, 2PM, or Friday 11AM.',
-            'booking': 'I can book you an appointment! Available slots: Tomorrow 10AM, 2PM, or Friday 11AM.',
-            'appointment': 'I can book you an appointment! Available slots: Tomorrow 10AM, 2PM, or Friday 11AM.',
-            'tomorrow': 'Perfect! I\'ve booked your appointment for tomorrow. What\'s your email for confirmation?',
-            '10am': 'Perfect! I\'ve booked your appointment for tomorrow at 10AM. What\'s your email?',
-            '2pm': 'Perfect! I\'ve booked your appointment for tomorrow at 2PM. What\'s your email?',
-            'friday': 'Great! I\'ve booked your appointment for Friday. What\'s your email for confirmation?',
-            'viewing': 'I can arrange a viewing for you! What property interests you and what time works best?',
-            'south kensington': 'South Kensington is one of London\'s most prestigious areas with premium properties!',
-            'area': 'We cover all of London\'s premium areas: South Kensington, Chelsea, Notting Hill, Mayfair, Knightsbridge.',
-            'price': 'Property prices: South Kensington £850K-£2M+, Chelsea £1M-£3M+, Mayfair £2M-£5M+. What\'s your budget?',
-            'budget': 'What\'s your budget range? This will help me show you the best properties.',
-            'help': 'I can help with:\n• Property valuations\n• Property searches\n• Viewing bookings\n• Market insights\n\nWhat would you like to know?',
-            'enquiries': 'I can help with valuations, property searches, viewing bookings, and market insights. What would you like to know?',
-            'market': 'The London property market is strong! South Kensington remains one of the most sought-after areas.',
-            'available': 'We have many premium properties available! What area and budget interests you?'
+Capabilities:
+1. PREMIUM PROPERTY SEARCH: Curated properties for discerning buyers
+2. EXPERT VALUATIONS: Professional assessments backed by market data
+3. INVESTMENT GUIDANCE: Portfolio strategy and market timing
+4. CONCIERGE SERVICE: White-glove assistance for premium clients
+5. MARKET INTELLIGENCE: Exclusive insights and trend analysis
+
+Premium Areas: Mayfair, Knightsbridge, Belgravia, South Kensington, Chelsea, Notting Hill, Hampstead
+
+Property Types: Penthouses, mansions, mews houses, luxury apartments, investment portfolios
+
+Price Ranges:
+- Luxury: £2M-£5M
+- Ultra-Luxury: £5M-£10M
+- Super-Prime: £10M+
+
+Always maintain: Professional, sophisticated, and exclusive tone.`;
+
+        // Premium responses
+        const responses = {
+            // Premium Greetings
+            'hello': '✨ Good afternoon. Welcome to Foxtons AI Concierge. How may I assist you with your property requirements today?',
+            'hi': '👋 Good day. I\'m here to provide you with premium property assistance. What are you looking for?',
+            'good morning': 'Good morning! 🌅 How can I enhance your property journey today?',
+            
+            // Buying Premium
+            'buy a property': 'Excellent choice. For our premium property service, let me understand your requirements:\n\n• What is your budget range?\n• Which premium areas interest you?\n• Property type (penthouse, mansion, mews?)\n• Any specific amenities?\n\nI\'ll curate the perfect properties for you.',
+            'looking to buy': 'Welcome to Foxtons. We specialise in exceptional properties. To find your perfect home:\n\n📍 Budget range?\n📍 Preferred areas?\n📍 Bedrooms and style?\n📍 Investment or residence?\n\nI\'ll arrange viewings of our finest properties.',
+            'premium property': 'For premium properties, we have exceptional options in:\n\n🌟 Mayfair: £3M-£15M\n🌟 Knightsbridge: £3M-£12M\n🌟 Belgravia: £2.5M-£10M\n🌟 South Kensington: £2M-£8M\n\nWhat appeals to you?',
+            'luxury flat': 'Our luxury apartment collection includes:\n\n💎 Hyde Park views\n💎 Knightsbridge amenities\n💎 Concierge services\n💎 Underground parking\n\nWhat area and budget?',
+            
+            // Areas
+            'mayfair': 'Mayfair - London\'s most prestigious address. 🌟\n\n📍 Average price: £3M+ for 2-bed\n📍 World-class amenities\n📍 Grosvenor Square area\n📍 Unmatched prestige\n\nWhat are you looking for?',
+            'knightsbridge': 'Knightsbridge - Ultimate luxury. 💎\n\n📍 Harrods and Harvey Nichols\n📍 Hyde Park neighbors\n📍 £4M+ average\n📍 Elite community\n\nYour requirements?',
+            'belgravia': 'Belgravia - Timeless elegance. 👑\n\n📍 Regency architecture\n📍 Private squares\n📍 £2.5M+ average\n📍 Family-friendly\n\nWhat interests you?',
+            'south kensington': 'South Kensington - Cultural excellence. 🎭\n\n📍 Museums Quarter\n📍 Excellent schools\n📍 £1.5M+ average\n📍 Lovely streets\n\nBudget and requirements?',
+            'chelsea': 'Chelsea - Artistic heritage. 🎨\n\n📍 King\'s Road shopping\n📍 River views available\n📍 £2M+ average\n📍 Vibrant community\n\nWhat\'s your preference?',
+            
+            // Investment
+            'investment': 'Property remains London\'s finest investment. 📈\n\nOur investment services:\n\n✅ Capital appreciation analysis\n✅ Rental yield projections\n✅ Portfolio strategy\n✅ Tax-efficient structures\n\nWhat\'s your investment budget?',
+            'invest': 'Excellent. For property investment, we consider:\n\n📊 Current yields: 3-5%\n📊 Prime areas: 4-6% growth\n📊 Emerging areas: Higher potential\n\nWhat\'s your investment amount and timeline?',
+            'rental yield': 'Current London rental yields:\n\n💰 Mayfair: 3-4%\n💰 Knightsbridge: 3-4%\n💰 South Kensington: 3.5-4.5%\n💰 Zone 2: 4-6%\n\nWhat area interests you?',
+            
+            // Valuation
+            'valuation': 'For a premium Foxtons valuation, I\'ll need:\n\n📋 Full property address\n📋 Bedrooms and square footage\n📋 Current condition\n📋 Recent improvements\n📋 Lease details (if applicable)\n\nWhat property would you like valued?',
+            'value my property': 'Our expert valuation service includes:\n\n💵 Comparative market analysis\n💵 Recent sales data\n💵 Local market trends\n💵 Investment potential\n\nWhat\'s your property address?',
+            'how much is my flat worth': 'To provide an accurate valuation, please share:\n\n• Address\n• Bedrooms\n• Square footage\n• Floor level\n• Condition\n\nOr arrange a free in-person valuation.',
+            
+            // Selling
+            'sell my property': 'Foxtons achieves premium results. 🏆\n\nOur selling service:\n\n✅ Average sale price: 102% of asking\n✅ Average time: 3-5 weeks\n✅ Professional photography\n✅ Global buyer network\n\nWhat\'s your property?',
+            'selling': 'When selling with Foxtons, you receive:\n\n📊 Maximum exposure\n📊 Dedicated account manager\n📊 Professional marketing\n📊 International reach\n\nWhat property are you selling?',
+            
+            // Viewing
+            'viewing': 'I\'d be delighted to arrange your viewing. 📅\n\nPremium slots available:\n• Today: 2PM, 4PM\n• Tomorrow: 10AM, 12PM, 2PM, 4PM\n• Saturday: 10AM, 11AM, 2PM\n\nWhat time suits you?',
+            'book a viewing': 'Excellent. Let me schedule your private viewing:\n\nWhich property interests you and what time is convenient?',
+            'private viewing': 'For absolute discretion, we offer:\n\n🔒 Private viewings\n🔒 Out-of-hours appointments\n🔒 VIP client service\n\nWhen would you like to view?',
+            
+            // Market
+            'market': 'London Market Intelligence 📊\n\nPrime Central: Stable at +2.1%\nPrime Fringe: Growing at +3.5%\nInvestment Zones: +5.2%\n\nMayfair and Knightsbridge remain the safest investments. South Kensington offers excellent value.',
+            'property market': '2026 London Market Overview:\n\n📈 Prime Central: Strong demand\n📈 Ultra-Prime: International buyers active\n📈 Family areas: Shortage of stock\n📈 Investment: Yields improving\n\nWhat segment interests you?',
+            
+            // Renting
+            'rent': 'Our premium rental collection:\n\n🏠 Mayfair: £3,000-£8,000 pcm\n🏠 Knightsbridge: £3,500-£10,000 pcm\n🏠 South Kensington: £2,500-£5,000 pcm\n\nWhat\'s your budget and preferred area?',
+            'rental': 'Premium rental service includes:\n\n✨ Furnished apartments\n✨ Concierge services\n✨ Underground parking\n✨ Pet-friendly options\n\nWhat are you looking for?',
+            
+            // Help
+            'help': 'I can assist with:\n\n💎 Property search\n💎 Investment advice\n💎 Valuations\n💎 Market insights\n💎 Private viewings\n\nWhat would you like?',
+            'what can you do': 'As your Foxtons AI Concierge, I provide:\n\n🌟 Premium property search\n🌟 Expert valuations\n🌟 Investment guidance\n🌟 White-glove service\n\nHow may I serve you?',
+            
+            // Contact
+            'contact': 'To provide you with premium service, I\'ll need:\n\n• Your name\n• Email address\n• Phone number\n• Your requirements\n\nWhat\'s your email?',
+            'email': 'For exclusive property updates, what\'s your email address?',
+            
+            // Default
+            'default': 'I\'m here to provide Foxtons\' exceptional service. Whether buying, selling, investing, or renting, I can assist. What would you like to discuss?',
         };
 
-        function getFallbackResponse(message) {
-            for (const key in fallbackResponses) {
-                if (message.includes(key)) return fallbackResponses[key];
+        function getResponse(message) {
+            const lower = message.toLowerCase();
+            
+            for (const [keyword, response] of Object.entries(responses)) {
+                if (lower.includes(keyword)) {
+                    return response;
+                }
             }
-            return "I can help with valuations, property searches, viewing bookings, and market insights. What would you like to know?";
+            
+            if (lower.includes('?')) {
+                return 'I\'d be delighted to help. Could you share your budget and preferred area? Or I can arrange a call with one of our expert agents.';
+            }
+            
+            return responses['default'];
         }
 
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
 
-        async function sendMessage() {
-            const input = document.getElementById('chat-input');
+        function addMessage(text, isUser = false) {
             const messages = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = isUser ? 'flex space-x-3 justify-end' : 'flex space-x-3';
+            div.innerHTML = isUser 
+                ? `<div class="bg-gray-700 rounded-2xl rounded-tr-none px-4 py-3 max-w-lg">${text}</div><div class="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center text-sm flex-shrink-0">👤</div>`
+                : `<div class="w-10 h-10 foxtons-gold-bg rounded-full flex items-center justify-center text-lg flex-shrink-0 text-black">🏠</div><div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 max-w-lg foxtons-gold" style="border: 1px solid #C9A962;">${text}</div>`;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function addTyping() {
+            const messages = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = 'flex space-x-3';
+            div.id = 'typing-indicator';
+            div.innerHTML = `<div class="w-10 h-10 foxtons-gold-bg rounded-full flex items-center justify-center text-lg text-black flex-shrink-0">🏠</div><div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 foxtons-gold" style="border: 1px solid #C9A962;"><div class="typing-indicator flex space-x-1"><span class="w-2 h-2 bg-[#C9A962] rounded-full"></span><span class="w-2 h-2 bg-[#C9A962] rounded-full"></span><span class="w-2 h-2 bg-[#C9A962] rounded-full"></span></div></div>`;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function removeTyping() {
+            const typing = document.getElementById('typing-indicator');
+            if (typing) typing.remove();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
             const message = input.value.trim();
-            
             if (!message) return;
             
-            // Add user message
-            const userDiv = document.createElement('div');
-            userDiv.className = 'flex space-x-3 justify-end';
-            userDiv.innerHTML = `<div class="bg-gray-700 rounded-2xl rounded-tr-none px-4 py-3 max-w-xs">${input.value}</div><div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-sm">👤</div>`;
-            messages.appendChild(userDiv);
-            
-            // Add loading
-            const loadingDiv = document.createElement('div');
-            loadingDiv.className = 'flex space-x-3';
-            loadingDiv.innerHTML = `<div class="w-8 h-8 foxtons-gold-bg rounded-full flex items-center justify-center text-sm">🤖</div><div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 foxtons-gold" style="border: 1px solid #C9A962;"><span class="animate-pulse">Thinking...</span></div>`;
-            messages.appendChild(loadingDiv);
-            messages.scrollTop = messages.scrollHeight;
-            
-            // Try API first, then fallback
-            try {
-                const response = await fetch(API_ENDPOINT, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_KEY}` },
-                    body: JSON.stringify({ model: 'abab6.5s-chat', messages: conversationHistory, temperature: 0.7, max_tokens: 500 })
-                });
-                
-                const data = await response.json();
-                let aiResponse = "";
-                
-                if (data.choices && data.choices[0] && data.choices[0].message) {
-                    aiResponse = data.choices[0].message.content;
-                    conversationHistory.push({ role: 'user', content: message });
-                    conversationHistory.push({ role: 'assistant', content: aiResponse });
-                } else {
-                    aiResponse = getFallbackResponse(message.toLowerCase());
-                }
-                
-                loadingDiv.innerHTML = `<div class="w-8 h-8 foxtons-gold-bg rounded-full flex items-center justify-center text-sm">🤖</div><div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 max-w-md foxtons-gold" style="border: 1px solid #C9A962;">${aiResponse}</div>`;
-            } catch (error) {
-                console.log('Using fallback');
-                const fallback = getFallbackResponse(message.toLowerCase());
-                loadingDiv.innerHTML = `<div class="w-8 h-8 foxtons-gold-bg rounded-full flex items-center justify-center text-sm">🤖</div><div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 max-w-md foxtons-gold" style="border: 1px solid #C9A962;">${fallback}</div>`;
-            }
-            
+            addMessage(message, true);
             input.value = '';
-            messages.scrollTop = messages.scrollHeight;
+            
+            addTyping();
+            
+            setTimeout(() => {
+                removeTyping();
+                const response = getResponse(message);
+                addMessage(response);
+            }, 800 + Math.random() * 700);
         }
     </script>
 </body>

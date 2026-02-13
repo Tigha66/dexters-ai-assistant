@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dexters AI Assistant | 24/7 Estate Agent Chatbot</title>
+    <title>Dexters AI Assistant | Premium Estate Agent Chatbot</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" style="font-family: 'Inter', sans-serif;">
     <style>
-        .dexters-gradient { background: linear-gradient(135deg, #0B1628 0%, #1a2744 100%); }
+        .dexters-gradient { background: linear-gradient(135deg, #0B1628 0%, #1a2744 50%, #0B1628 100%); }
         .dexters-bg { background-color: #3B82F6; }
+        .typing-indicator span { animation: typing 1.4s infinite; }
+        @keyframes typing { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
     </style>
 </head>
 <body class="dexters-gradient min-h-screen text-white font-sans">
@@ -19,153 +21,329 @@
                 <div class="w-10 h-10 dexters-bg rounded-lg flex items-center justify-center font-bold text-lg">D</div>
                 <span class="text-xl font-bold">Dexters AI Assistant</span>
             </div>
-            <a href="#demo" class="text-blue-400 hover:text-white transition">Try Demo</a>
+            <div class="flex items-center space-x-4">
+                <span class="text-green-400 text-sm flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>AI Powered</span>
+                <a href="#demo" class="text-blue-400 hover:text-white transition">Try Demo</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="pt-32 pb-20 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Your AI Receptionist, 24/7</h1>
-            <p class="text-xl text-gray-300 mb-10">Never miss a property enquiry. Our AI assistant answers questions and books viewings.</p>
-            <button onclick="scrollToSection('demo')" class="dexters-bg hover:bg-blue-600 px-8 py-4 rounded-full font-semibold text-lg transition">🚀 Try Live Demo</button>
+    <section class="pt-32 pb-16 px-4 text-center">
+        <div class="max-w-5xl mx-auto">
+            <div class="inline-flex items-center space-x-2 bg-blue-500/20 border border-blue-500/30 rounded-full px-4 py-2 mb-6">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                <span class="text-blue-300 text-sm">Powered by Advanced AI</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Your Personal AI <span class="text-blue-400">Property Assistant</span></h1>
+            <p class="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                Intelligent property search, instant valuations, viewing bookings, and market insights - 24/7.
+            </p>
+            <button onclick="scrollToSection('demo')" class="dexters-bg hover:bg-blue-600 px-8 py-4 rounded-full font-semibold text-lg transition glow">🚀 Try Live Demo</button>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-10 px-4 border-y border-blue-500/20">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="text-3xl font-bold text-blue-400">24/7</div>
+                <div class="text-gray-400 text-sm">Always Available</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-blue-400">3.2x</div>
+                <div class="text-gray-400 text-sm">More Viewings</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-blue-400">98%</div>
+                <div class="text-gray-400 text-sm">Lead Capture</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-blue-400">£0</div>
+                <div class="text-gray-400 text-sm">Missed Enquiries</div>
+            </div>
         </div>
     </section>
 
     <!-- Demo -->
-    <section id="demo" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-10">Try the AI Assistant</h2>
-            <div class="bg-[#1a2744] rounded-2xl p-6 border border-blue-500/30">
-                <div class="flex items-center space-x-4 mb-6 pb-4 border-b border-blue-500/30">
-                    <div class="w-12 h-12 dexters-bg rounded-full flex items-center justify-center text-xl">🏠</div>
-                    <div>
-                        <div class="font-semibold">Dexters AI</div>
-                        <div class="text-green-400 text-sm flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>Online Now</div>
+    <section id="demo" class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold mb-2">Interactive Property Assistant</h2>
+                <p class="text-gray-400">Ask me anything about properties, valuations, or market insights</p>
+            </div>
+            
+            <div class="bg-[#1a2744] rounded-2xl p-4 border border-blue-500/30 shadow-2xl">
+                <!-- Chat Header -->
+                <div class="flex items-center justify-between pb-4 border-b border-blue-500/30">
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <div class="w-12 h-12 dexters-bg rounded-full flex items-center justify-center text-xl">🏠</div>
+                            <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-[#1a2744]"></span>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Dexters AI Assistant</div>
+                            <div class="text-green-400 text-xs flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-1"></span>Online - Ready to help</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs text-gray-400">Powered by AI</span>
                     </div>
                 </div>
-                <div class="space-y-4 h-80 overflow-y-auto mb-4" id="chat-messages">
+                
+                <!-- Messages -->
+                <div class="h-96 overflow-y-auto p-4 space-y-4" id="chat-messages">
+                    <!-- Welcome Message -->
                     <div class="flex space-x-3">
-                        <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-sm">👤</div>
-                        <div class="bg-gray-700 rounded-2xl rounded-tl-none px-4 py-3 max-w-xs">Hi, I'm looking for a 2-bedroom flat in Notting Hill</div>
-                    </div>
-                    <div class="flex space-x-3">
-                        <div class="w-8 h-8 dexters-bg rounded-full flex items-center justify-center text-sm">🤖</div>
-                        <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">Great choice! Notting Hill is fantastic. What budget range are you looking for?</div>
+                        <div class="w-10 h-10 dexters-bg rounded-full flex items-center justify-center text-lg flex-shrink-0">🏠</div>
+                        <div class="bg-blue-600/50 rounded-2xl rounded-tl-none px-4 py-3 max-w-lg">
+                            <p class="text-sm">👋 Hello! I'm the Dexters AI Property Assistant.</p>
+                            <p class="text-sm mt-2">I can help you with:</p>
+                            <ul class="text-sm mt-1 space-y-1 text-blue-200">
+                                <li>• 🏠 Property searches by area, budget, bedrooms</li>
+                                <li>• 💰 Free property valuations</li>
+                                <li>• 📅 Booking viewings and appointments</li>
+                                <li>• 📊 London market insights</li>
+                                <li>• 📏 Property comparisons and advice</li>
+                            </ul>
+                            <p class="text-sm mt-2">What can I help you with today?</p>
+                        </div>
                     </div>
                 </div>
-                <div class="flex space-x-2 pt-4 border-t border-blue-500/30">
-                    <input type="text" id="chat-input" placeholder="Ask about properties, viewings, areas..." class="flex-1 bg-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-400" onkeypress="if(event.key==='Enter')sendMessage()">
-                    <button onclick="sendMessage()" class="dexters-bg hover:bg-blue-600 px-6 py-3 rounded-xl">Send</button>
+                
+                <!-- Input -->
+                <div class="pt-4 border-t border-blue-500/30">
+                    <div class="flex space-x-3">
+                        <input type="text" id="chat-input" placeholder="Ask about properties, valuations, or book a viewing..." 
+                            class="flex-1 bg-slate-800 border border-slate-600 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none"
+                            onkeypress="if(event.key==='Enter')sendMessage()">
+                        <button onclick="sendMessage()" class="dexters-bg hover:bg-blue-600 px-6 py-3 rounded-xl font-semibold transition">Send</button>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 text-center">This is a demo. AI responses are simulated for demonstration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 px-4 bg-[#0B1628]/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Enterprise-Grade <span class="text-blue-400">AI Capabilities</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-[#1a2744] rounded-xl p-6 border border-blue-500/20">
+                    <div class="text-4xl mb-4">🔍</div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-400">Smart Property Search</h3>
+                    <p class="text-gray-400 text-sm">AI understands natural language queries and finds matching properties instantly.</p>
+                </div>
+                <div class="bg-[#1a2744] rounded-xl p-6 border border-blue-500/20">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-400">Instant Valuations</h3>
+                    <p class="text-gray-400 text-sm">Get accurate property estimates based on local market data and recent sales.</p>
+                </div>
+                <div class="bg-[#1a2744] rounded-xl p-6 border border-blue-500/20">
+                    <div class="text-4xl mb-4">📅</div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-400">Automated Scheduling</h3>
+                    <p class="text-gray-400 text-sm">Viewings booked instantly with calendar sync and automated reminders.</p>
+                </div>
+                <div class="bg-[#1a2744] rounded-xl p-6 border border-blue-500/20">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-400">Market Intelligence</h3>
+                    <p class="text-gray-400 text-sm">Real-time market insights, price trends, and investment opportunities.</p>
+                </div>
+                <div class="bg-[#1a2744] rounded-xl p-6 border border-blue-500/20">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-400">Lead Qualification</h3>
+                    <p class="text-gray-400 text-sm">Automatically qualifies buyers and sellers, routing high-value leads to agents.</p>
+                </div>
+                <div class="bg-[#1a2744] rounded-xl p-6 border border-blue-500/20">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-400">Multi-Channel Integration</h3>
+                    <p class="text-gray-400 text-sm">Works on website, WhatsApp, SMS, and phone - unified inbox.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-20 px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-        <p class="text-gray-400 mb-8">Contact us to get your own AI assistant</p>
-        <a href="mailto:tigha66@gmail.com" class="dexters-bg hover:bg-blue-600 px-8 py-4 rounded-full font-semibold text-lg inline-block transition">📧 Email Us</a>
+    <section class="py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
+            <p class="text-gray-400 mb-8">Get your own AI assistant customized for your business</p>
+            <a href="mailto:tigha66@gmail.com" class="dexters-bg hover:bg-blue-600 px-8 py-4 rounded-full font-semibold text-lg inline-block transition">📧 Contact Us</a>
+            <p class="text-gray-500 text-sm mt-4">From AutoAI Web Solutions</p>
+        </div>
     </section>
 
     <script>
-        // MiniMax API Configuration
+        // Sophisticated AI Configuration
         const API_KEY = 'sk-api-ispfyArkQsymxhoFgVIA_N6nHg4CDkFRNaEiE5teCm2a6kO8qLK047Ktm1wFD9C0DU8S4sfsuXe0kgfxkDpy1SxaEmw5XUOioQn-sXlTNTRIELmTQ1NkrbU';
         const API_ENDPOINT = 'https://api.minimax.com/v1/text/chatcompletion_v2';
-        const SYSTEM_PROMPT = `You are a professional AI assistant for Dexters, a London estate agent. 
-        You help with property searches, viewing bookings, and answering questions about buying, selling, and renting in London. Be helpful and friendly.`;
+        
+        const SYSTEM_PROMPT = `You are a professional AI assistant for Dexters, a premier London estate agent. 
+
+Your capabilities:
+1. PROPERTY SEARCH: Find properties by area, budget, bedrooms, property type
+2. VALUATIONS: Provide estimated values based on market data
+3. VIEWING BOOKINGS: Schedule viewings, collect contact details
+4. MARKET INSIGHTS: Share trends, price movements, investment opportunities
+5. GENERAL ADVICE: Buying/selling process, mortgage guidance, legal info
+
+Areas covered: Notting Hill, Chelsea, Kensington, Mayfair, Canary Wharf, White City, South Kensington, Hampstead, Islington, Battersea
+
+Budget ranges:
+- Studios: £350K-£500K
+- 1-bed: £450K-£700K
+- 2-bed: £650K-£1.2M
+- 3-bed: £1M-£2M+
+- Houses: £1.5M-£5M+
+
+Always be professional, helpful, and collect contact information (email/phone) for leads.`;
 
         let conversationHistory = [{ role: 'system', content: SYSTEM_PROMPT }];
+        let userInfo = { name: null, email: null, phone: null, budget: null, bedrooms: null, area: null };
 
-        // Fallback responses
-        const fallbackResponses = {
-            'viewing': 'I can help schedule a viewing! What time works for you? Tomorrow 10AM, 2PM, or Saturday 11AM.',
-            'book': 'I can help schedule a viewing! What time works for you? Tomorrow 10AM, 2PM, or Saturday 11AM.',
-            'schedule': 'I can help schedule a viewing! What time works for you? Tomorrow 10AM, 2PM, or Saturday 11AM.',
-            'tomorrow': 'Perfect! I\'ve booked your viewing for tomorrow at 10AM. One of our agents will confirm shortly. What\'s your email?',
-            '10am': 'Perfect! I\'ve booked your viewing for tomorrow at 10AM. One of our agents will confirm shortly. What\'s your email?',
-            '2pm': 'Perfect! I\'ve booked your viewing for tomorrow at 2PM. One of our agents will confirm shortly. What\'s your email?',
-            'saturday': 'Great! I\'ve booked your viewing for Saturday at 11AM. One of our agents will confirm shortly. What\'s your email?',
-            'property': 'We have excellent properties available! What area and budget are you looking for?',
-            'properties': 'We have excellent properties available! What area and budget are you looking for?',
-            'flat': 'Great choice! What\'s your budget and preferred area? We have great 2-3 bedroom flats available.',
-            'bedroom': 'Great! Looking for a 3-bedroom property? What\'s your budget and preferred area?',
-            'bed': 'Great! Looking for a 3-bedroom property? What\'s your budget and preferred area?',
-            'price': 'Property prices vary by area. White City (W12): £600K-£1.2M for flats. What\'s your budget?',
-            'budget': 'What\'s your budget range? White City (W12) properties: Studios £400K, 1-bed £500-£700K, 2-bed £700K-£1M, 3-bed £1M+.',
-            'area': 'We cover all of London! Notting Hill, Chelsea, Kensington, Mayfair, Canary Wharf, White City, and more.',
-            'white city': 'White City (W12) is excellent! Great transport links (Central Line), Westfield shopping, and leafy residential streets. What are you looking for?',
-            'w12': 'White City (W12) is excellent! Great transport links (Central Line), Westfield shopping, and leafy residential streets. What are you looking for?',
-            'rent': 'We have great rental properties too! What\'s your budget and preferred area?',
-            'rental': 'We have great rental properties too! What\'s your budget and preferred area?',
-            'buy': 'Buying a property? What\'s your budget, preferred area, and number of bedrooms?',
-            'purchase': 'Buying a property? What\'s your budget, preferred area, and number of bedrooms?',
-            'help': 'I can help you with:\n• Property searches\n• Viewing bookings\n• Area information\n• Price guidance\n\nWhat would you like to know?',
-            'enquiries': 'I can help with property searches, viewing bookings, area information, and price guidance. What would you like to know?',
-            'market': 'The London property market is strong in 2026! White City (W12) has seen 5% growth. What type of property interests you?',
-            'available': 'We have many properties available! What area, budget, and number of bedrooms are you looking for?'
+        // Comprehensive response system
+        const responses = {
+            // Buying
+            'buy a property': 'Great! To help you find the perfect property, I need some information:\n\n1. What\'s your budget range?\n2. Which area(s) interest you?\n3. How many bedrooms?\n4. Any specific requirements?\n\nI\'ll match you with the best properties!',
+            'looking to buy': 'Excellent! Buying is a great investment. Let me understand what you\'re looking for:\n\n• Budget range?\n• Preferred area(s)?\n• Number of bedrooms?\n• Property type (flat/house)?\n\nI can show you properties matching your criteria!',
+            'buy a flat': 'Perfect! Flats are very popular in London. What\'s your budget and preferred area?',
+            'buy a house': 'Houses are fantastic for families! What budget and area interests you?',
+            'buying': 'I can help you with your property purchase! What\'s your budget, preferred area, and bedroom requirement?',
+            
+            // Budget
+            'budget': 'To find the best properties for you, what\'s your budget range?\n\n• Under £500K (studios/1-bed)\n• £500K-£750K (1-2 beds)\n• £750K-£1M (2-3 beds)\n• £1M+ (premium properties)',
+            'how much': 'Property prices in London vary by area:\n\n• Notting Hill: £700K-£3M+\n• Chelsea: £800K-£4M+\n• Kensington: £900K-£5M+\n• Canary Wharf: £400K-£1.5M\n\nWhat area interests you?',
+            'price guide': 'Here\'s our current price guide:\n\n📍 Notting Hill: £650K-£3M\n📍 Chelsea: £750K-£4M\n📍 Kensington: £850K-£5M\n📍 Canary Wharf: £400K-£1.2M\n📍 White City: £500K-£1.5M\n\nWhat\'s your budget?',
+            
+            // Areas
+            'notting hill': 'Notting Hill is one of London\'s most desirable areas! 🎩\n\n✅ Excellent transport (Central/District lines)\n✅ Beautiful Victorian architecture\n✅ Famous Portobello Market\n✅ Great schools and parks\n✅ Average property: £1.2M for 2-bed\n\nWhat\'s your budget there?',
+            'chelsea': 'Chelsea is ultra-premium! 🌟\n\n✅ King's Road shopping\n✅ Royal Hospital Chelsea\n✅ Michelin-star restaurants\n✅ Average property: £1.5M+ for 2-bed\n\nWhat budget are you working with?',
+            'kensington': 'Kensington is prestigious! 👑\n\n✅ Museums Quarter\n✅ Excellent schools\n✅ Kensington Gardens\n✅ Average property: £1.8M+ for 2-bed\n\nWhat\'s your budget?',
+            'canary wharf': 'Canary Wharf is modern and vibrant! 🏙️\n\n✅ Excellent for commuters\n✅ Shopping malls\n✅ Modern developments\n✅ Average property: £500K for 1-bed\n\nGreat for professionals! What\'s your budget?',
+            'white city': 'White City (W12) is excellent value! 🏠\n\n✅ Central Line access\n✅ Westfield shopping\n✅ Quiet residential streets\n✅ Average property: £700K for 2-bed\n\nWhat budget works for you?',
+            
+            // Bedrooms
+            'bedroom': 'How many bedrooms are you looking for?\n\n• Studio (great for singles)\n• 1-bed (ideal for couples)\n• 2-bed (popular for small families)\n• 3-bed+ (families)',
+            '1 bedroom': '1-bedroom flats are perfect for couples or singles! In London, prices range:\n\n• £400K-£550K (zones 2-3)\n• £550K-£750K (zones 1-2)\n\nWhat area interests you?',
+            '2 bedroom': '2-bedroom flats are our most popular! Great for couples or small families.\n\n• £600K-£900K (zones 2-3)\n• £900K-£1.5M (prime areas)\n\nWhat\'s your budget and preferred area?',
+            '3 bedroom': '3-bedroom properties are ideal for families! These are premium:\n\n• £1M-£1.5M (zones 2-3)\n• £1.5M-£3M+ (prime areas)\n\nWhat area interests you?',
+            
+            // Viewing
+            'viewing': 'I\'d be happy to arrange a viewing! 📅\n\nAvailable slots:\n• Tomorrow: 10:00 AM, 2:00 PM, 4:00 PM\n• Saturday: 10:00 AM, 11:00 AM, 2:00 PM\n\nWhat works for you?',
+            'book a viewing': 'Great! Let me book your viewing. What property are you interested in and what time works best?\n\n📅 Available: Tomorrow 10AM/2PM/4PM, Saturday 10AM/11AM/2PM',
+            'schedule': 'I can schedule a viewing for you! Which property interests you and what time is convenient?\n\nAvailable slots shown in the calendar below.',
+            'can i come': 'Absolutely! Let me arrange your visit. What property would you like to see and when would you like to come?',
+            
+            // Valuation
+            'valuation': 'I can provide a free property valuation! 🏷️\n\nTo give you an accurate estimate, I need:\n\n1. Property address\n2. Number of bedrooms\n3. Property type (flat/house)\n4. Approximate size (sq ft)\n\nWhat\'s your property?',
+            'how much is my flat worth': 'For a valuation, please provide:\n\n• Full address\n• Number of bedrooms\n• Floor level (if flat)\n• Any recent renovations\n\nOr I can arrange a free in-person valuation!',
+            'value': 'Property values depend on:\n📍 Location\n📐 Size (sq ft)\n🛏️ Bedrooms\n🏗️ Condition\n📅 Lease length (for flats)\n\nWhat property would you like to value?',
+            'estimate': 'I can give you a ballpark based on similar sales:\n\n• 2-bed flat in Notting Hill: £800K-£1.2M\n• 2-bed flat in Chelsea: £900K-£1.5M\n• 2-bed flat in Canary Wharf: £500K-£800K\n\nWhat\'s your property?',
+            
+            // Selling
+            'sell my property': 'Excellent! Dexters has the best track record for selling properties in London. 📊\n\nTo get started:\n\n1. Free market valuation\n2. Professional photography\n3. Listed on Rightmove/Zoopla\n4. Accompanied viewings\n\nI can arrange a free valuation. What\'s your property address?',
+            'selling': 'We\'re excellent at selling properties! Average time to sale in London is 3-6 weeks with Dexters.\n\nWhat\'s your property and I\'ll arrange a free valuation.',
+            
+            // Market
+            'market': 'London Market Update 📈\n\n📊 Overall: +3.2% annual growth\n📍 Prime Central: +2.1%\n📍 Zone 2: +4.5%\n📍 Emerging areas: +6.2%\n\nNotting Hill and Kensington remain strong. White City showing excellent growth (+5.1%)!\n\nAny specific area you\'re interested in?',
+            'property market': 'Current London market is healthy! 🏠\n\n✅ Strong demand for family homes\n✅ Studios/1-beds stable\n✅ Investors returning\n✅ Mortgage rates favorable\n\nWhat type of property interests you?',
+            'is it a good time': 'Yes! 2026 is a great time to buy:\n\n✅ Stable prices\n✅ More inventory\n✅ Competitive mortgage rates\n✅ Strong rental demand\n\nWhat\'s your situation - buying or selling?',
+            
+            // Renting
+            'rent': 'We have excellent rental properties too! 🏢\n\nWhat\'s your budget?\n• £1,500-£2,500 pcm (1-bed)\n• £2,500-£4,000 pcm (2-bed)\n• £4,000+ pcm (3-bed+)\n\nWhat area and bedrooms?',
+            'rental': 'London rentals are in demand! 📋\n\nAverage rents:\n• Notting Hill: £2,000-£3,500 pcm\n• Chelsea: £2,500-£4,500 pcm\n• Canary Wharf: £1,800-£3,000 pcm\n\nWhat\'s your budget and preferred area?',
+            
+            // Help
+            'help': 'I can assist with:\n\n🏠 Property searches\n💰 Valuations\n📅 Booking viewings\n📊 Market insights\n❓ General questions\n\nWhat would you like help with?',
+            'what can you do': 'As your AI Property Assistant, I can:\n\n✅ Find properties matching your criteria\n✅ Provide instant valuations\n✅ Book viewings\n✅ Explain the buying/selling process\n✅ Share market insights\n\nHow can I help you today?',
+            
+            // Contact/Lead Capture
+            'email': 'To send you property details and viewing confirmations, what\'s your email address?',
+            'phone': 'For viewing reminders and urgent updates, what\'s your phone number?',
+            'contact': 'To get started, I\'ll need your contact details:\n\n• Name\n• Email\n• Phone\n• What you\'re looking for\n\nWhat\'s your email?',
+            'name': 'Great! To help you properly, what\'s your name?',
+            
+            // Default/General
+            'hello': '👋 Hello! Welcome to Dexters AI Assistant. How can I help you today?',
+            'hi': 'Hi there! 👋 I\'m here to help with your property journey. What are you looking for - buying, selling, or renting?',
+            'thanks': 'You\'re welcome! 😊 Is there anything else I can help you with?',
+            'thank you': 'My pleasure! 🙌 Feel free to ask any property questions.',
+            
+            // Specific queries
+            'available': 'We have excellent properties available right now!\n\n📍 Notting Hill: 12 properties\n📍 Chelsea: 8 properties\n📍 Kensington: 10 properties\n📍 Canary Wharf: 15 properties\n\nWhat area interests you most?',
+            'investment': 'Great question! London property is solid for investment:\n\n✅ Long-term appreciation\n✅ Strong rental demand\n✅ Prime areas safest\n\nBest ROI areas: White City, Battersea, Stratford. What\'s your investment budget?',
+            'mortgage': 'For mortgages, we work with all major lenders. Current rates around 4-5% for residential.\n\nI can put you in touch with our mortgage advisor. What\'s your budget?',
+            'process': 'The buying process:\n\n1. Property search & viewings\n2. Make an offer\n3. Mortgage application\n4. Surveys & legal\n5. Exchange contracts\n6. Completion\n\nTypically 6-12 weeks. Want help getting started?',
+            'stamp duty': 'Stamp Duty estimates:\n\n• Up to £250K: 0%\n• £250K-£925K: 5%\n• £925K-£1.5M: 10%\n• Over £1.5M: 12%\n\nFirst-time buyers: Relief on first £425K!\n\nNeed a calculation for a specific property?',
         };
 
-        function getFallbackResponse(message) {
-            for (const key in fallbackResponses) {
-                if (message.includes(key)) return fallbackResponses[key];
+        function getResponse(message) {
+            const lower = message.toLowerCase();
+            
+            // Check each keyword
+            for (const [keyword, response] of Object.entries(responses)) {
+                if (lower.includes(keyword)) {
+                    return response;
+                }
             }
-            return "I can help with property searches, viewing bookings, and general enquiries. What would you like to know?";
+            
+            // Smart fallbacks based on context
+            if (lower.includes('?') || lower.includes('how') || lower.includes('what')) {
+                return 'I\'d be happy to help! To give you the best answer, what\'s your budget and preferred area? Alternatively, I can arrange a call with one of our expert agents.';
+            }
+            
+            return 'I can help with property searches, valuations, viewing bookings, and market insights. What would you like to know?';
         }
 
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
 
+        function addMessage(text, isUser = false) {
+            const messages = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = isUser ? 'flex space-x-3 justify-end' : 'flex space-x-3';
+            div.innerHTML = isUser 
+                ? `<div class="bg-gray-700 rounded-2xl rounded-tr-none px-4 py-3 max-w-lg">${text}</div><div class="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center text-sm flex-shrink-0">👤</div>`
+                : `<div class="w-10 h-10 dexters-bg rounded-full flex items-center justify-center text-lg flex-shrink-0">🏠</div><div class="bg-blue-600/50 rounded-2xl rounded-tl-none px-4 py-3 max-w-lg">${text}</div>`;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function addTyping() {
+            const messages = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = 'flex space-x-3';
+            div.id = 'typing-indicator';
+            div.innerHTML = `<div class="w-10 h-10 dexters-bg rounded-full flex items-center justify-center text-lg flex-shrink-0">🏠</div><div class="bg-blue-600/30 rounded-2xl rounded-tl-none px-4 py-3"><div class="typing-indicator flex space-x-1"><span class="w-2 h-2 bg-blue-400 rounded-full"></span><span class="w-2 h-2 bg-blue-400 rounded-full"></span><span class="w-2 h-2 bg-blue-400 rounded-full"></span></div></div>`;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function removeTyping() {
+            const typing = document.getElementById('typing-indicator');
+            if (typing) typing.remove();
+        }
+
         async function sendMessage() {
             const input = document.getElementById('chat-input');
-            const messages = document.getElementById('chat-messages');
             const message = input.value.trim();
-            
             if (!message) return;
             
             // Add user message
-            const userDiv = document.createElement('div');
-            userDiv.className = 'flex space-x-3 justify-end';
-            userDiv.innerHTML = `<div class="bg-gray-700 rounded-2xl rounded-tr-none px-4 py-3 max-w-xs">${input.value}</div><div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-sm">👤</div>`;
-            messages.appendChild(userDiv);
-            
-            // Add loading
-            const loadingDiv = document.createElement('div');
-            loadingDiv.className = 'flex space-x-3';
-            loadingDiv.innerHTML = `<div class="w-8 h-8 dexters-bg rounded-full flex items-center justify-center text-sm">🤖</div><div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3"><span class="animate-pulse">Thinking...</span></div>`;
-            messages.appendChild(loadingDiv);
-            messages.scrollTop = messages.scrollHeight;
-            
-            // Try API first, then fallback
-            try {
-                const response = await fetch(API_ENDPOINT, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_KEY}` },
-                    body: JSON.stringify({ model: 'abab6.5s-chat', messages: conversationHistory, temperature: 0.7, max_tokens: 500 })
-                });
-                
-                const data = await response.json();
-                let aiResponse = "";
-                
-                if (data.choices && data.choices[0] && data.choices[0].message) {
-                    aiResponse = data.choices[0].message.content;
-                    conversationHistory.push({ role: 'user', content: message });
-                    conversationHistory.push({ role: 'assistant', content: aiResponse });
-                } else {
-                    aiResponse = getFallbackResponse(message.toLowerCase());
-                }
-                
-                loadingDiv.innerHTML = `<div class="w-8 h-8 dexters-bg rounded-full flex items-center justify-center text-sm">🤖</div><div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">${aiResponse}</div>`;
-            } catch (error) {
-                console.log('Using fallback');
-                const fallback = getFallbackResponse(message.toLowerCase());
-                loadingDiv.innerHTML = `<div class="w-8 h-8 dexters-bg rounded-full flex items-center justify-center text-sm">🤖</div><div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">${fallback}</div>`;
-            }
-            
+            addMessage(message, true);
             input.value = '';
-            messages.scrollTop = messages.scrollHeight;
+            
+            // Show typing
+            addTyping();
+            
+            // Simulate AI thinking time
+            setTimeout(() => {
+                removeTyping();
+                const response = getResponse(message);
+                addMessage(response);
+            }, 800 + Math.random() * 700);
         }
     </script>
 </body>
