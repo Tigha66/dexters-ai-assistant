@@ -60,7 +60,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <div class="w-8 h-8 dexters-bg rounded-full flex items-center justify-center text-sm">🤖</div>
-                        <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">Great choice! Notting Hill is fantastic. Let me help you find the perfect property.<br><br>📍 Area: Notting Hill<br>🛏️ Bedrooms: 2<br><br>I can show you available properties. What’s your budget range?</div>
+                        <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">Great choice! Notting Hill is fantastic. Let me help you find the perfect property.<br><br>📍 Area: Notting Hill<br>🛏️ Bedrooms: 2<br><br>I can show you available properties. What's your budget range?</div>
                     </div>
                     <div class="flex space-x-3">
                         <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-sm">👤</div>
@@ -114,27 +114,31 @@
     </section>
 
     <script>
-        const responses = {
-            'viewing': 'I can help schedule a viewing! What time works for you? We have availability tomorrow at 10:00 AM, 2:00 PM, and Saturday at 11:00 AM.',
-            'book': 'I can help schedule a viewing! What time works for you? We have availability tomorrow at 10:00 AM, 2:00 PM, and Saturday at 11:00 AM.',
-            'property': 'We have excellent properties available! What area and budget are you looking for? I can match you with the perfect property.',
-            'price': 'Property prices vary by area and size. What specific property or area are you interested in?',
-            'area': 'We cover all of London! Popular areas include Notting Hill, Chelsea, Kensington, Mayfair, and Canary Wharf. Which interests you?',
-            'flat': 'Great choice! What’s your budget and preferred area? I can show you matching properties.',
-            'house': 'Excellent! What’s your budget, how many bedrooms, and preferred area?',
-            'rent': 'We have great rental properties too! What’s your budget and preferred area?',
-            'buy': 'Buying a property? What’s your budget, preferred area, and number of bedrooms?',
-            'help': 'I can help with: property searches, viewing bookings, area information, price guidance, and general enquiries.'
-        };
+        // MiniMax API Configuration
+        const API_KEY = 'sk-api-ispfyArkQsymxhoFgVIA_N6nHg4CDkFRNaEiE5teCm2a6kO8qLK047Ktm1wFD9C0DU8S4sfsuXe0kgfxkDpy1SxaEmw5XUOioQn-sXlTNTRIELmTQ1NkrbU';
+        const API_ENDPOINT = 'https://api.minimax.com/v1/text/chatcompletion_v2';
+        const SYSTEM_PROMPT = `You are a professional AI assistant for Dexters, a London estate agent. 
+        You help with:
+        - Property searches and recommendations
+        - Booking property viewings
+        - Answering questions about buying, selling, and renting
+        - Providing information about London areas (Notting Hill, Chelsea, Kensington, Mayfair, Canary Wharf)
+        - Being helpful, friendly, and professional
+        
+        Keep responses concise and helpful. If you can't answer something, offer to arrange a call with a human agent.`;
+
+        let conversationHistory = [
+            { role: 'system', content: SYSTEM_PROMPT }
+        ];
 
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
 
-        function sendMessage() {
+        async function sendMessage() {
             const input = document.getElementById('chat-input');
             const messages = document.getElementById('chat-messages');
-            const message = input.value.trim().toLowerCase();
+            const message = input.value.trim();
             
             if (!message) return;
             
@@ -147,26 +151,63 @@
             `;
             messages.appendChild(userDiv);
             
-            // Find response
-            let response = "I can help with property searches, viewing bookings, and general enquiries. What would you like to know?";
-            for (const key in responses) {
-                if (message.includes(key)) {
-                    response = responses[key];
-                    break;
-                }
-            }
+            // Add loading indicator
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'flex space-x-3';
+            loadingDiv.innerHTML = `
+                <div class="w-8 h-8 dexters-bg rounded-full flex items-center justify-center text-sm">🤖</div>
+                <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3">
+                    <span class="animate-pulse">Thinking...</span>
+                </div>
+            `;
+            messages.appendChild(loadingDiv);
+            messages.scrollTop = messages.scrollHeight;
             
-            // Add AI response
-            setTimeout(() => {
-                const aiDiv = document.createElement('div');
-                aiDiv.className = 'flex space-x-3';
-                aiDiv.innerHTML = `
+            // Add to conversation
+            conversationHistory.push({ role: 'user', content: message });
+            
+            try {
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${API_KEY}`
+                    },
+                    body: JSON.stringify({
+                        model: 'abab6.5s-chat',
+                        messages: conversationHistory,
+                        temperature: 0.7,
+                        max_tokens: 500
+                    })
+                });
+                
+                const data = await response.json();
+                
+                let aiResponse = "I'm having trouble connecting. Please try again or contact us directly.";
+                
+                if (data.choices && data.choices[0] && data.choices[0].message) {
+                    aiResponse = data.choices[0].message.content;
+                    conversationHistory.push({ role: 'assistant', content: aiResponse });
+                } else if (data.error) {
+                    aiResponse = "I encountered an error. Please contact us at tigha66@gmail.com";
+                    console.error('API Error:', data.error);
+                }
+                
+                // Update loading with real response
+                loadingDiv.innerHTML = `
                     <div class="w-8 h-8 dexters-bg rounded-full flex items-center justify-center text-sm">🤖</div>
-                    <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">${response}</div>
+                    <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">${aiResponse}</div>
                 `;
-                messages.appendChild(aiDiv);
-                messages.scrollTop = messages.scrollHeight;
-            }, 500);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                loadingDiv.innerHTML = `
+                    <div class="w-8 h-8 dexters-bg rounded-full flex items-center justify-center text-sm">🤖</div>
+                    <div class="bg-blue-600 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">
+                        Sorry, I encountered an error. Please try again or contact us at tigha66@gmail.com
+                    </div>
+                `;
+            }
             
             input.value = '';
             messages.scrollTop = messages.scrollHeight;

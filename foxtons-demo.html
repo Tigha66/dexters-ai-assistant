@@ -145,33 +145,35 @@
     </section>
 
     <script>
-        const responses = {
-            'valuation': 'I can arrange a free valuation for your property. South Kensington properties typically sell for £850K-£2M+ depending on size. Would you like me to book an appointment?',
-            'value': 'I can arrange a free valuation for your property. South Kensington properties typically sell for £850K-£2M+ depending on size. Would you like me to book an appointment?',
-            'sell': 'Selling in South Kensington is excellent right now! Average sale time is 3-4 weeks. I can arrange a free valuation and discuss our premium selling service.',
-            'buy': 'Excellent choice! What’s your budget and preferred area? I can show you available properties and arrange viewings.',
-            'rent': 'We have great rental properties too! What’s your budget and preferred area?',
-            'property': 'We have premium properties across London. What area and budget are you looking for?',
-            'book': 'I can book you an appointment! Available slots: Tomorrow 10AM, 2PM, or Friday 11AM. Which suits you?',
-            'appointment': 'I can book you an appointment! Available slots: Tomorrow 10AM, 2PM, or Friday 11AM. Which suits you?',
-            'viewing': 'I can arrange a viewing for you! What property are you interested in and what time works best?',
-            'south kensington': 'South Kensington is one of London\'s most prestigious areas! Properties here command premium prices. What would you like to know?',
-            'area': 'We cover all of London\'s premium areas: South Kensington, Chelsea, Notting Hill, Mayfair, and Knightsbridge.',
-            'price': 'Property prices vary by area. South Kensington: £850K-£2M+, Chelsea: £1M-£3M+, Mayfair: £2M-£5M+. What area interests you?',
-            'help': 'I can help with: valuations, property searches, viewing bookings, area information, and market insights. What would you like?'
-        };
+        // MiniMax API Configuration
+        const API_KEY = 'sk-api-ispfyArkQsymxhoFgVIA_N6nHg4CDkFRNaEiE5teCm2a6kO8qLK047Ktm1wFD9C0DU8S4sfsuXe0kgfxkDpy1SxaEmw5XUOioQn-sXlTNTRIELmTQ1NkrbU';
+        const API_ENDPOINT = 'https://api.minimax.com/v1/text/chatcompletion_v2';
+        const SYSTEM_PROMPT = `You are a professional AI assistant for Foxtons, a premium London estate agent. 
+        You help with:
+        - Property valuations and market insights
+        - Booking property viewings and valuations
+        - Answering questions about buying, selling, and renting
+        - Providing information about London areas (South Kensington, Chelsea, Notting Hill, Mayfair, Knightsbridge)
+        - Being helpful, professional, and courteous
+        
+        Keep responses concise and helpful. If you can't answer something, offer to arrange a call with a human agent.`;
+
+        let conversationHistory = [
+            { role: 'system', content: SYSTEM_PROMPT }
+        ];
 
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
 
-        function sendMessage() {
+        async function sendMessage() {
             const input = document.getElementById('chat-input');
             const messages = document.getElementById('chat-messages');
-            const message = input.value.trim().toLowerCase();
+            const message = input.value.trim();
             
             if (!message) return;
             
+            // Add user message
             const userDiv = document.createElement('div');
             userDiv.className = 'flex space-x-3 justify-end';
             userDiv.innerHTML = `
@@ -180,18 +182,67 @@
             `;
             messages.appendChild(userDiv);
             
-            let response = "I can help with valuations, property searches, viewing bookings, and market insights. What would you like to know?";
-            for (const key in responses) {
-                if (message.includes(key)) {
-                    response = responses[key];
-                    break;
+            // Add loading indicator
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'flex space-x-3';
+            loadingDiv.innerHTML = `
+                <div class="w-8 h-8 foxtons-gold-bg rounded-full flex items-center justify-center text-sm">🤖</div>
+                <div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 foxtons-gold" style="border: 1px solid #C9A962;">
+                    <span class="animate-pulse">Thinking...</span>
+                </div>
+            `;
+            messages.appendChild(loadingDiv);
+            messages.scrollTop = messages.scrollHeight;
+            
+            // Add to conversation
+            conversationHistory.push({ role: 'user', content: message });
+            
+            try {
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${API_KEY}`
+                    },
+                    body: JSON.stringify({
+                        model: 'abab6.5s-chat',
+                        messages: conversationHistory,
+                        temperature: 0.7,
+                        max_tokens: 500
+                    })
+                });
+                
+                const data = await response.json();
+                
+                let aiResponse = "I'm having trouble connecting. Please try again or contact us directly.";
+                
+                if (data.choices && data.choices[0] && data.choices[0].message) {
+                    aiResponse = data.choices[0].message.content;
+                    conversationHistory.push({ role: 'assistant', content: aiResponse });
+                } else if (data.error) {
+                    aiResponse = "I encountered an error. Please contact us at tigha66@gmail.com";
+                    console.error('API Error:', data.error);
                 }
+                
+                // Update loading with real response
+                loadingDiv.innerHTML = `
+                    <div class="w-8 h-8 foxtons-gold-bg rounded-full flex items-center justify-center text-sm">🤖</div>
+                    <div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 max-w-md foxtons-gold" style="border: 1px solid #C9A962;">${aiResponse}</div>
+                `;
+                
+            } catch (error) {
+                console.error('Error:', error);
+                loadingDiv.innerHTML = `
+                    <div class="w-8 h-8 foxtons-gold-bg rounded-full flex items-center justify-center text-sm">🤖</div>
+                    <div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 max-w-md foxtons-gold" style="border: 1px solid #C9A962;">
+                        Sorry, I encountered an error. Please try again or contact us at tigha66@gmail.com
+                    </div>
+                `;
             }
             
-            setTimeout(() => {
-                const aiDiv = document.createElement('div');
-                aiDiv.className = 'flex space-x-3';
-                aiDiv.innerHTML = `
+            input.value = '';
+            messages.scrollTop = messages.scrollHeight;
+        }
                     <div class="w-8 h-8 foxtons-gold-bg rounded-full flex items-center justify-center text-sm">🤖</div>
                     <div class="bg-[#2a2a2a] rounded-2xl rounded-tl-none px-4 py-3 max-w-md foxtons-gold" style="border: 1px solid #C9A962;">${response}</div>
                 `;
