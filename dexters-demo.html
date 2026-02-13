@@ -82,16 +82,29 @@
         const fallbackResponses = {
             'viewing': 'I can help schedule a viewing! What time works for you? Tomorrow 10AM, 2PM, or Saturday 11AM.',
             'book': 'I can help schedule a viewing! What time works for you? Tomorrow 10AM, 2PM, or Saturday 11AM.',
+            'schedule': 'I can help schedule a viewing! What time works for you? Tomorrow 10AM, 2PM, or Saturday 11AM.',
+            'tomorrow': 'Perfect! I\'ve booked your viewing for tomorrow at 10AM. One of our agents will confirm shortly. What\'s your email?',
+            '10am': 'Perfect! I\'ve booked your viewing for tomorrow at 10AM. One of our agents will confirm shortly. What\'s your email?',
+            '2pm': 'Perfect! I\'ve booked your viewing for tomorrow at 2PM. One of our agents will confirm shortly. What\'s your email?',
+            'saturday': 'Great! I\'ve booked your viewing for Saturday at 11AM. One of our agents will confirm shortly. What\'s your email?',
             'property': 'We have excellent properties available! What area and budget are you looking for?',
-            'price': 'Property prices vary by area and size. What specific property or area are you interested in?',
-            'area': 'We cover all of London! Notting Hill, Chelsea, Kensington, Mayfair, and Canary Wharf.',
-            'flat': 'Great choice! What\'s your budget and preferred area?',
-            'house': 'Excellent! What\'s your budget, bedrooms, and preferred area?',
+            'properties': 'We have excellent properties available! What area and budget are you looking for?',
+            'flat': 'Great choice! What\'s your budget and preferred area? We have great 2-3 bedroom flats available.',
+            'bedroom': 'Great! Looking for a 3-bedroom property? What\'s your budget and preferred area?',
+            'bed': 'Great! Looking for a 3-bedroom property? What\'s your budget and preferred area?',
+            'price': 'Property prices vary by area. White City (W12): £600K-£1.2M for flats. What\'s your budget?',
+            'budget': 'What\'s your budget range? White City (W12) properties: Studios £400K, 1-bed £500-£700K, 2-bed £700K-£1M, 3-bed £1M+.',
+            'area': 'We cover all of London! Notting Hill, Chelsea, Kensington, Mayfair, Canary Wharf, White City, and more.',
+            'white city': 'White City (W12) is excellent! Great transport links (Central Line), Westfield shopping, and leafy residential streets. What are you looking for?',
+            'w12': 'White City (W12) is excellent! Great transport links (Central Line), Westfield shopping, and leafy residential streets. What are you looking for?',
             'rent': 'We have great rental properties too! What\'s your budget and preferred area?',
+            'rental': 'We have great rental properties too! What\'s your budget and preferred area?',
             'buy': 'Buying a property? What\'s your budget, preferred area, and number of bedrooms?',
-            'help': 'I can help with: property searches, viewing bookings, area information, price guidance.',
-            'market': 'The London property market is diverse! Notting Hill remains very popular with strong demand. What type of property are you looking for?',
-            'notting hill': 'Notting Hill is one of London\'s most desirable areas with beautiful Victorian houses, vibrant Portobello Market, and excellent transport links.'
+            'purchase': 'Buying a property? What\'s your budget, preferred area, and number of bedrooms?',
+            'help': 'I can help you with:\n• Property searches\n• Viewing bookings\n• Area information\n• Price guidance\n\nWhat would you like to know?',
+            'enquiries': 'I can help with property searches, viewing bookings, area information, and price guidance. What would you like to know?',
+            'market': 'The London property market is strong in 2026! White City (W12) has seen 5% growth. What type of property interests you?',
+            'available': 'We have many properties available! What area, budget, and number of bedrooms are you looking for?'
         };
 
         function getFallbackResponse(message) {

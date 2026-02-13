@@ -85,19 +85,32 @@
 
         // Fallback responses
         const fallbackResponses = {
-            'valuation': 'I can arrange a free valuation for your property. South Kensington properties typically sell for £850K-£2M+.',
-            'value': 'I can arrange a free valuation for your property. South Kensington properties typically sell for £850K-£2M+.',
-            'sell': 'Selling in South Kensington is excellent right now! Average sale time is 3-4 weeks.',
+            'valuation': 'I can arrange a free valuation for your property. South Kensington properties typically sell for £850K-£2M+. What\'s your address?',
+            'value': 'I can arrange a free valuation for your property. South Kensington properties typically sell for £850K-£2M+. What\'s your address?',
+            'sell': 'Selling in South Kensington is excellent! Average sale time is 3-4 weeks. What\'s your property address?',
+            'selling': 'Selling in South Kensington is excellent! Average sale time is 3-4 weeks. What\'s your property address?',
             'buy': 'Excellent choice! What\'s your budget and preferred area?',
+            'buying': 'Excellent choice! What\'s your budget and preferred area?',
             'rent': 'We have great rental properties too! What\'s your budget and preferred area?',
+            'rental': 'We have great rental properties too! What\'s your budget and preferred area?',
             'property': 'We have premium properties across London. What area and budget are you looking for?',
+            'properties': 'We have premium properties across London. What area and budget are you looking for?',
             'book': 'I can book you an appointment! Available slots: Tomorrow 10AM, 2PM, or Friday 11AM.',
-            'viewing': 'I can arrange a viewing for you! What property and time works best?',
-            'south kensington': 'South Kensington is one of London\'s most prestigious areas!',
-            'area': 'We cover all of London\'s premium areas: South Kensington, Chelsea, Notting Hill, Mayfair.',
-            'price': 'Property prices vary by area. South Kensington: £850K-£2M+, Chelsea: £1M-£3M+.',
-            'help': 'I can help with: valuations, property searches, viewing bookings, and market insights.',
-            'market': 'The London property market is strong! South Kensington remains one of the most sought-after areas with consistent demand and premium prices. Would you like a free valuation?'
+            'booking': 'I can book you an appointment! Available slots: Tomorrow 10AM, 2PM, or Friday 11AM.',
+            'appointment': 'I can book you an appointment! Available slots: Tomorrow 10AM, 2PM, or Friday 11AM.',
+            'tomorrow': 'Perfect! I\'ve booked your appointment for tomorrow. What\'s your email for confirmation?',
+            '10am': 'Perfect! I\'ve booked your appointment for tomorrow at 10AM. What\'s your email?',
+            '2pm': 'Perfect! I\'ve booked your appointment for tomorrow at 2PM. What\'s your email?',
+            'friday': 'Great! I\'ve booked your appointment for Friday. What\'s your email for confirmation?',
+            'viewing': 'I can arrange a viewing for you! What property interests you and what time works best?',
+            'south kensington': 'South Kensington is one of London\'s most prestigious areas with premium properties!',
+            'area': 'We cover all of London\'s premium areas: South Kensington, Chelsea, Notting Hill, Mayfair, Knightsbridge.',
+            'price': 'Property prices: South Kensington £850K-£2M+, Chelsea £1M-£3M+, Mayfair £2M-£5M+. What\'s your budget?',
+            'budget': 'What\'s your budget range? This will help me show you the best properties.',
+            'help': 'I can help with:\n• Property valuations\n• Property searches\n• Viewing bookings\n• Market insights\n\nWhat would you like to know?',
+            'enquiries': 'I can help with valuations, property searches, viewing bookings, and market insights. What would you like to know?',
+            'market': 'The London property market is strong! South Kensington remains one of the most sought-after areas.',
+            'available': 'We have many premium properties available! What area and budget interests you?'
         };
 
         function getFallbackResponse(message) {
