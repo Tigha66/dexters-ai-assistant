@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partnership Proposal - Dexters White-Label AI</title>
+    <style>
+        @page { margin: 0; size: A4; }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            color: #1a1a1a;
+            line-height: 1.7;
+        }
+        .page { 
+            width: 210mm; 
+            min-height: 297mm; 
+            padding: 25mm; 
+            margin: 0 auto; 
+            background: white;
+            position: relative;
+        }
+        .cover {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white;
+            padding: 35mm;
+            margin: -25mm -25mm 25mm -25mm;
+            text-align: center;
+        }
+        .cover h1 { font-size: 38px; margin-bottom: 15px; }
+        .cover .subtitle { font-size: 22px; opacity: 0.9; margin-bottom: 40px; }
+        .cover .tagline { font-size: 16px; opacity: 0.8; }
+        .cover .logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            color: #1e3a5f;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: bold;
+            margin: 0 auto 30px;
+        }
+        .cover .meta {
+            margin-top: 50px;
+            opacity: 0.9;
+        }
+        
+        h2 { 
+            color: #1e3a5f; 
+            font-size: 22px; 
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 8px;
+            margin-top: 25px;
+        }
+        h3 { 
+            color: #2563eb; 
+            font-size: 18px; 
+            margin-top: 20px;
+        }
+        
+        .opportunity-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .opportunity-box h3 { color: #92400e; margin-top: 0; }
+        .revenue-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .revenue-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .revenue-card.highlight {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white;
+        }
+        .revenue-number { font-size: 36px; font-weight: bold; }
+        .revenue-label { font-size: 13px; margin-top: 5px; }
+        
+        .model-diagram {
+            background: #f0fdf4;
+            border: 2px solid #22c55e;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .model-diagram h3 { color: #166534; margin-top: 0; }
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .flow-box {
+            background: white;
+            border: 2px solid #22c55e;
+            border-radius: 10px;
+            padding: 15px 20px;
+            text-align: center;
+            min-width: 140px;
+        }
+        .flow-arrow { font-size: 24px; color: #22c55e; }
+        .flow-percent {
+            background: #dcfce7;
+            color: #166534;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .deal-terms {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .terms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .terms-table th {
+            background: #1e3a5f;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        .terms-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+        .benefit-icon { font-size: 28px; }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .cta-section h3 { color: white; font-size: 26px; margin: 0 0 10px; }
+        
+        .next-steps {
+            background: #eff6ff;
+            border: 2px solid #2563eb;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .next-steps h3 { color: #1e40af; margin-top: 0; }
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 12px 0;
+        }
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        .highlight { background: #fef3c7; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Cover -->
+        <div class="cover">
+            <div class="logo">D</div>
+            <h1>Strategic Partnership Proposal</h1>
+            <p class="subtitle">White-Label AI Assistant for Estate Agencies</p>
+            <p class="tagline">Turn Your Technology Into A Revenue Stream</p>
+            <div class="meta">
+                <p>Prepared by Tigha66</p>
+                <p>February 2026</p>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <h2>Executive Summary</h2>
+        <p>This proposal outlines a strategic partnership where <strong>Dexters</strong> becomes a <span class="highlight">white-label reseller</span> of the AI Estate Agent Assistant. Rather than using the technology internally, Dexters can <strong>license and resell it</strong> to other estate agencies across the UK, creating a <strong>new revenue stream</strong> of <span class="highlight">£84,000 - £500,000+ annually</span>.</p>
+
+        <!-- The Opportunity -->
+        <div class="opportunity-box">
+            <h3>💰 The Opportunity</h3>
+            <p>There are <strong>15,000+ estate agents</strong> in the UK. Most are struggling with the same problems: missed enquiries, slow response times, and inefficient booking systems. Dexters, with its proven technology and brand reputation, is perfectly positioned to become a <strong>technology provider</strong> to the industry.</p>
+        </div>
+
+        <!-- Revenue Projections -->
+        <h2>Revenue Projections</h2>
+        <div class="revenue-grid">
+            <div class="revenue-card">
+                <div class="revenue-number">£99</div>
+                <div class="revenue-label">Monthly per small agency</div>
+            </div>
+            <div class="revenue-card highlight">
+                <div class="revenue-number">£199</div>
+                <div class="revenue-label">Monthly per professional agency</div>
+            </div>
+            <div class="revenue-card">
+                <div class="revenue-number">£499</div>
+                <div class="revenue-label">Monthly per enterprise (white-label)</div>
+            </div>
+        </div>
+
+        <!-- Profit Scenarios -->
+        <div class="revenue-grid">
+            <div class="revenue-card">
+                <div class="revenue-number" style="font-size: 24px;">25</div>
+                <div class="revenue-label">Agencies</div>
+                <div style="margin-top: 10px; color: #22c55e; font-weight: bold;">£84,600/yr revenue</div>
+            </div>
+            <div class="revenue-card highlight">
+                <div class="revenue-number" style="font-size: 24px;">50</div>
+                <div class="revenue-label">Agencies</div>
+                <div style="margin-top: 10px; color: #22c55e; font-weight: bold;">£169,200/yr revenue</div>
+            </div>
+            <div class="revenue-card">
+                <div class="revenue-number" style="font-size: 24px;">100</div>
+                <div class="revenue-label">Agencies</div>
+                <div style="margin-top: 10px; color: #22c55e; font-weight: bold;">£338,400/yr revenue</div>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <h2>How The Partnership Works</h2>
+        <div class="model-diagram">
+            <h3>Revenue Flow Model</h3>
+            <div class="flow">
+                <div class="flow-box">
+                    <strong>Partner Agencies</strong><br>
+                    <span style="font-size: 12px;">Pay £199/mo to Dexters</span>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-box" style="background: #dcfce7;">
+                    <strong>Dexters</strong><br>
+                    <span style="font-size: 12px;">Keeps £139 (70%)</span>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-box">
+                    <strong>Tigha66</strong><br>
+                    <span style="font-size: 12px;">Gets £60 (30%)</span>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 14px; color: #166534;"><strong>Or:</strong> Dexters pays fixed license fee for full white-label rights (recommended)</p>
+        </div>
+
+        <!-- Deal Terms -->
+        <h2>Proposed Deal Terms</h2>
+        <div class="deal-terms">
+            <table class="terms-table">
+                <tr>
+                    <th style="width: 30%;">Component</th>
+                    <th>Option A (Revenue Share)</th>
+                    <th>Option B (Fixed License)</th>
+                </tr>
+                <tr>
+                    <td><strong>Model</strong></td>
+                    <td>Dexters sells to agencies, shares revenue</td>
+                    <td>Dexters pays for white-label rights</td>
+                </tr>
+                <tr>
+                    <td><strong>Your Revenue</strong></td>
+                    <td>30% of all subscription fees</td>
+                    <td>£500/month fixed</td>
+                </tr>
+                <tr>
+                    <td><strong>Dexters Keeps</strong></td>
+                    <td>70% (covers support, billing)</td>
+                    <td>100% of all sales</td>
+                </tr>
+                <tr>
+                    <td><strong>Min. Commitment</strong></td>
+                    <td>10 agencies in year 1</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td><strong>Support</strong></td>
+                    <td>Shared support model</td>
+                    <td>Dexters handles all support</td>
+                </tr>
+                <tr>
+                    <td><strong>White-Label</strong></td>
+                    <td>Full Dexters branding</td>
+                    <td>Full Dexters branding</td>
+                </tr>
+            </table>
+            <p style="margin-top: 15px; font-size: 14px; color: #166534;"><strong>Recommendation:</strong> Option B is simpler with predictable income. Option A scales better if Dexters aggressively sells.</p>
+        </div>
+
+        <!-- What You Provide -->
+        <h2>What Tigha66 Provides</h2>
+        <div class="benefits-grid">
+            <div class="benefit">
+                <span class="benefit-icon">🤖</span>
+                <div>
+                    <strong>AI Technology</strong>
+                    <p style="margin: 5px 0 0; font-size: 13px;">Core AI assistant with full functionality</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">🔧</span>
+                <div>
+                    <strong>Ongoing Development</strong>
+                    <p style="margin: 5px 0 0; font-size: 13px;">New features, improvements, bug fixes</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">📚</span>
+                <div>
+                    <strong>Documentation</strong>
+                    <p style="margin: 5px 0 0; font-size: 13px;">Setup guides, API docs, training materials</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">🎨</span>
+                <div>
+                    <strong>White-Label Branding</strong>
+                    <p style="margin: 5px 0 0; font-size: 13px;">Remove all third-party branding</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- What Dexters Provides -->
+        <h2>What Dexters Provides</h2>
+        <div class="benefits-grid">
+            <div class="benefit">
+                <span class="benefit-icon">🏢</span>
+                <div>
+                    <strong>Brand Trust</strong>
+                    <p style="margin: 5px 0 0; font-size: 13px;">Reputable estate agent brand</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">🤝</span>
+                <div>
+                    <strong>Sales Channel</strong>
+                    <p style="margin: 5px 0 0; font-size: 13px;">Existing network, referrals, industry connections</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">💳</span>
+                <div>
+                    <strong>Billing & Invoicing</strong>
+                    <p style="margin: 5px 0 0; font-size: 13px;">Handle customer payments</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">📞</span>
+                <div>
+                    <strong>Customer Support</strong>
+                    <p style="margin: 5px 0 0; font-size: 13px;">First-line support for partner agencies</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="next-steps">
+            <h3>🚀 Next Steps</h3>
+            <div class="step">
+                <div class="step-num">1</div>
+                <div><strong>Call:</strong> 15-minute demo call to discuss requirements</div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div><strong>Sign:</strong> Partnership agreement (5 pages)</div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div><strong>Deploy:</strong> White-label instance for Dexters</div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div><strong>Launch:</strong> Go to market with first agencies</div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h3>Ready to Build a New Revenue Stream?</h3>
+            <p>Let's discuss how this partnership can work for Dexters.</p>
+            <div style="background: white; color: #1e3a5f; padding: 15px 30px; border-radius: 8px; display: inline-block; margin-top: 15px; font-weight: bold;">
+                📧 tigha66@gmail.com | 📞 [Your Phone]
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Confidential Partnership Proposal | February 2026</p>
+            <p>Questions? Reach out anytime.</p>
+        </div>
+    </div>
+</body>
+</html>
