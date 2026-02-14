@@ -468,6 +468,160 @@
         </div>
     </section>
 
+    <!-- AI Voice Agent Section -->
+    <section class="py-16 bg-navy text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-1">
+                    <span class="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-medium mb-4">🎧 NEW! AI Voice Agent</span>
+                    <h2 class="text-3xl font-bold mb-4">Never Miss an Emergency Call Again</h2>
+                    <p class="text-slate-300 mb-6">
+                        Our AI Voice Agent answers your phone 24/7, handles customer inquiries, 
+                        books appointments, and routes emergencies — while you focus on the job.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3">
+                            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center text-xs">✓</span>
+                            <span>Answers calls instantly, 24/7</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center text-xs">✓</span>
+                            <span>Routes emergencies immediately</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center text-xs">✓</span>
+                            <span>Books appointments on your calendar</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center text-xs">✓</span>
+                            <span>Sends you SMS with job details</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-hover transition">Get a Quote</a>
+                </div>
+                <div class="flex-shrink-0 bg-white/10 backdrop-blur rounded-2xl p-8 text-center">
+                    <div class="text-8xl mb-4">🎧</div>
+                    <p class="text-accent font-bold text-2xl mb-2">AI Voice Agent</p>
+                    <p class="text-slate-300">£149/month</p>
+                    <p class="text-slate-400 text-sm mt-2">Unlimited calls • 24/7 coverage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="fixed bottom-6 right-6 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden" style="width: 380px; max-width: calc(100vw - 32px);">
+            <div class="bg-navy text-white p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-xl">🤖</div>
+                        <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white"></div>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Britannia AI</div>
+                        <div class="text-xs text-slate-300">Online</div>
+                    </div>
+                </div>
+                <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full hover:bg-white/30 transition">✕</button>
+            </div>
+            <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50" style="height: 320px;"></div>
+            <div class="p-4 border-t bg-white">
+                <div class="flex space-x-2">
+                    <input type="text" id="chat-input" placeholder="Type your message..." class="flex-1 bg-slate-100 rounded-full px-4 py-3 text-sm focus:ring-2 focus:ring-navy outline-none">
+                    <button onclick="sendMessage()" class="bg-navy text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-navy-light transition">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button onclick="openChat()" id="chat-toggle" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-accent rounded-full shadow-2xl flex items-center justify-center text-2xl hover:bg-accent-hover transition shadow-lg animate-pulse">
+        💬
+    </button>
+
+    <script>
+        const CONFIG = {
+            name: 'Britannia Plumbers',
+            phone: '020 4532 6500',
+            email: 'support@britanniaplumbers.co.uk'
+        };
+        let chatInitialized = false;
+        
+        function openChat() {
+            document.getElementById('chatbot-widget').classList.remove('hidden');
+            document.getElementById('chat-toggle').classList.add('hidden');
+            if (!chatInitialized) {
+                addChatMessage(welcomeChatMessage(), false);
+                chatInitialized = true;
+            }
+        }
+        
+        function closeChat() {
+            document.getElementById('chatbot-widget').classList.add('hidden');
+            document.getElementById('chat-toggle').classList.remove('hidden');
+        }
+        
+        function addChatMessage(text, isUser) {
+            const div = document.createElement('div');
+            div.className = isUser ? 'flex justify-end' : 'flex justify-start';
+            div.innerHTML = isUser 
+                ? `<div class="bg-navy text-white rounded-2xl rounded-tr-none px-4 py-3 max-w-[85%] text-sm">${text}</div>`
+                : `<div class="bg-white border border-slate-200 rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%] text-sm shadow-sm">${text}</div>`;
+            document.getElementById('chat-messages').appendChild(div);
+            div.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function welcomeChatMessage() {
+            return `👋 Hi! I'm the Britannia Plumbers AI assistant.<br><br>
+I can help with:<br>
+• 🚨 <strong>Emergency plumbing</strong><br>
+• 💷 <strong>Get a quote</strong><br>
+• 📅 <strong>Book appointment</strong><br>
+• ❓ <strong>General questions</strong><br><br>
+How can I help you today?`;
+        }
+        
+        function getChatResponse(message) {
+            const m = message.toLowerCase();
+            if (m.includes('emergency') || m.includes('leak') || m.includes('burst') || m.includes('help')) {
+                return `🚨 <strong>Emergency?</strong><br><br>Call us immediately: <a href="tel:02045326500" class="text-accent font-bold">020 4532 6500</a><br><br>Or describe your issue and we'll call you back.`;
+            }
+            if (m.includes('quote') || m.includes('price') || m.includes('cost') || m.includes('how much')) {
+                return `💷 <strong>Get a Free Quote</strong><br><br>Fill out our <a href="#contact" class="text-accent font-bold">contact form</a> and we'll get back to you within 2 hours!<br><br>Or call us on <a href="tel:02045326500" class="text-accent">020 4532 6500</a>`;
+            }
+            if (m.includes('book') || m.includes('appointment') || m.includes('schedule')) {
+                return `📅 <strong>Book an Appointment</strong><br><br>Fill out our <a href="#contact" class="text-accent font-bold">contact form</a> with your preferred date/time.<br><br>We'll confirm within 2 hours!`;
+            }
+            if (m.includes('service') || m.includes('what do you do') || m.includes('offer')) {
+                return `🔧 <strong>Our Services</strong><br><br>• Emergency Plumbing<br>• Boiler & Heating<br>• Bathroom Installations<br>• Leak Detection<br>• Blocked Drains<br>• Tap & Toilet Repairs<br><br><a href="#services" class="text-accent font-bold">View all services →</a>`;
+            }
+            if (m.includes('contact') || m.includes('phone') || m.includes('call') || m.includes('address')) {
+                return `📞 <strong>Contact Us</strong><br><br>📞 Phone: <a href="tel:02045326500" class="text-accent">020 4532 6500</a><br>✉️ Email: <a href="mailto:support@britanniaplumbers.co.uk" class="text-accent">support@britanniaplumbers.co.uk</a><br>📍 Address: 18-24 Turnham Green Terrace, Chiswick, London W4 1QP`;
+            }
+            if (m.includes('thank') || m.includes('thanks')) {
+                return "You're welcome! 😊 Anything else I can help with?";
+            }
+            if (m.includes('hello') || m.includes('hi') || m === 'hi') {
+                return welcomeChatMessage();
+            }
+            return `I'd be happy to help! 🤔<br><br>Try: "Get a quote", "Emergency", "Book appointment", or "What services?"`;
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+            addChatMessage(message, true);
+            input.value = '';
+            setTimeout(() => { addChatMessage(getChatResponse(message), false); }, 300);
+        }
+        
+        document.getElementById('chat-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+
     <!-- Footer -->
     <footer class="bg-navy text-white py-12">
         <div class="max-w-6xl mx-auto px-4">
