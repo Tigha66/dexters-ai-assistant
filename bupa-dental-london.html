@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bupa Dental Care London | AI Dental Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        :root { --primary: #0ea5e9; --primary-dark: #0284c7; --accent: #06b6d4; }
+        .gradient-bg { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); }
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl">🦷</span>
+                </div>
+                <div>
+                    <span class="font-bold text-lg text-slate-800">Smile Studio</span>
+                    <span class="text-xs text-slate-500 block -mt-1">London Dental Practice</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-6 text-sm text-slate-600">
+                <a href="#services" class="hover:text-sky-600 transition">Services</a>
+                <a href="#about" class="hover:text-sky-600 transition">About</a>
+                <a href="#contact" class="hover:text-sky-600 transition">Contact</a>
+                <a href="#chatbot" class="text-sky-600 font-medium">Book Online</a>
+            </div>
+            <a href="#chatbot" class="bg-sky-500 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-sky-600 transition">Book Appointment</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-gradient text-white py-16 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center bg-sky-500/20 px-4 py-2 rounded-full text-sky-300 text-sm mb-6">
+                <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                AI Assistant Available 24/7
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Your Smile, Our Priority</h1>
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                Providing NHS and private dental care across England in the heart of London. Book appointments, 
+                get instant answers, and access emergency support — 24 hours a day.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#chatbot" class="bg-sky-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-sky-600 transition shadow-lg shadow-sky-500/25">
+                    🤖 Chat with AI Assistant
+                </a>
+                <a href="tel:02012345678" class="bg-white/10 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition">
+                    📞 Call: 020 7123 4567
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info Bar -->
+    <section class="bg-sky-500 text-white py-4">
+        <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-8 text-sm">
+            <span>📍 50 Regent Street, London W1B 5SR</span>
+            <span>📞 020 1234 5678</span>
+            <span>✉️ info@bupa.co.uk/dental</span>
+            <span>🕐 Mon-Sat 8AM-8PM</span>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Our Dental Services</h2>
+            <p class="text-slate-600 text-center mb-12">Comprehensive care for the whole family</p>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🧹</div>
+                    <h3 class="font-bold mb-2">Check-ups & Cleaning</h3>
+                    <p class="text-sm text-slate-500">NHS & Private examinations</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">✨</div>
+                    <h3 class="font-bold mb-2">Teeth Whitening</h3>
+                    <p class="text-sm text-slate-500">Professional whitening</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🦷</div>
+                    <h3 class="font-bold mb-2">Fillings & Crowns</h3>
+                    <p class="text-sm text-slate-500">White fillings, ceramic crowns</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">👶</div>
+                    <h3 class="font-bold mb-2">Family Dentistry</h3>
+                    <p class="text-sm text-slate-500">Children's dentistry</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">💎</div>
+                    <h3 class="font-bold mb-2">Veneers & Implants</h3>
+                    <p class="text-sm text-slate-500">Porcelain veneers</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">😬</div>
+                    <h3 class="font-bold mb-2">Invisalign</h3>
+                    <p class="text-sm text-slate-500">Clear aligners</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🚨</div>
+                    <h3 class="font-bold mb-2">Emergency Care</h3>
+                    <p class="text-sm text-slate-500">Same-day appointments</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">💰</div>
+                    <h3 class="font-bold mb-2">Finance Available</h3>
+                    <p class="text-sm text-slate-500">0% APR up to 24 months</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NHS vs Private -->
+    <section class="py-12 px-4 bg-slate-100">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h2 class="text-2xl font-bold text-center mb-8">NHS vs Private Treatment</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 rounded-xl p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-2">🏥</span>
+                            <h3 class="font-bold text-lg">NHS Treatment</h3>
+                        </div>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li>✓ Band 1 (£26.80): Examination, X-ray</li>
+                            <li>✓ Band 2 (£73.50): Fillings, extractions</li>
+                            <li>✓ Band 3 (£319.10): Crowns, dentures</li>
+                            <li>✓ Free for: Under 18, pregnant, low income</li>
+                        </ul>
+                    </div>
+                    <div class="bg-sky-50 rounded-xl p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-2">⭐</span>
+                            <h3 class="font-bold text-lg">Private Treatment</h3>
+                        </div>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li>✓ Same-day appointments</li>
+                            <li>✓ White fillings on all teeth</li>
+                            <li>✓ Premium materials</li>
+                            <li>✓ Finance options</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot Demo -->
+    <section id="chatbot" class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-8">
+                <span class="inline-block bg-sky-100 text-sky-700 px-4 py-1 rounded-full text-sm font-medium mb-4">🤖 Try Our AI Assistant</span>
+                <h2 class="text-3xl font-bold mb-4">Book an Appointment Online</h2>
+                <p class="text-slate-600">Our AI assistant is available 24/7 to help you book appointments and answer questions</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="gradient-bg text-white p-4 flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white flex items-center justify-center">
+                                <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Bupa AI</div>
+                            <div class="text-xs text-sky-100">Online • Ready to help</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button onclick="toggleVoice()" id="voice-btn" class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">🎤</button>
+                        <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">✕</button>
+                    </div>
+                </div>
+                <div id="chat-messages" class="h-96 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-slate-50 to-white" style="height: 400px;"></div>
+                <div id="voice-status" class="hidden bg-sky-50 px-4 py-2 flex items-center justify-center space-x-2 border-t">
+                    <div class="flex space-x-1">
+                        <div class="w-1 bg-sky-500 rounded voice-wave" style="animation-delay: 0s;"></div>
+                        <div class="w-1 bg-sky-500 rounded voice-wave" style="animation-delay: 0.2s;"></div>
+                        <div class="w-1 bg-sky-500 rounded voice-wave" style="animation-delay: 0.4s;"></div>
+                        <div class="w-1 bg-sky-500 rounded voice-wave" style="animation-delay: 0.6s;"></div>
+                        <div class="w-1 bg-sky-500 rounded voice-wave" style="animation-delay: 0.8s;"></div>
+                    </div>
+                    <span class="text-sm text-sky-600">Listening...</span>
+                </div>
+                <div class="p-4 border-t bg-white">
+                    <div class="flex space-x-2">
+                        <input type="text" id="chat-input" placeholder="Type your message..." class="flex-1 bg-slate-100 rounded-full px-4 py-3 focus:ring-2 focus:ring-sky-500 outline-none" onkeypress="if(event.key==='Enter')sendMessage()">
+                        <button onclick="sendMessage()" class="gradient-bg text-white w-12 h-12 rounded-full flex items-center justify-center hover:shadow-lg transition">➤</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 flex flex-wrap justify-center gap-3">
+                <button onclick="quickQuestion('I want to book an appointment')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-sky-50 hover:border-sky-300 transition">📅 Book appointment</button>
+                <button onclick="quickQuestion('How much are NHS prices?')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-sky-50 hover:border-sky-300 transition">💷 NHS prices</button>
+                <button onclick="quickQuestion('Do you do emergency appointments?')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-sky-50 hover:border-sky-300 transition">🚨 Emergency</button>
+                <button onclick="quickQuestion('What are your opening hours?')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-sky-50 hover:border-sky-300 transition">🕐 Opening hours</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location -->
+    <section id="contact" class="py-16 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Visit Our Practice</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <h3 class="font-bold text-xl mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">📍</span>
+                            <div>
+                                <p class="font-medium">Address</p>
+                                <p class="text-slate-600">50 Regent Street<br>London W1B 5SR</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">📞</span>
+                            <div>
+                                <p class="font-medium">Phone</p>
+                                <p class="text-slate-600">020 1234 5678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">✉️</span>
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <p class="text-slate-600">info@bupa.co.uk/dental</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <h3 class="font-bold text-xl mb-6">Opening Hours</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between py-2 border-b border-slate-200">
+                            <span>Monday - Friday</span><span>8:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-slate-200">
+                            <span>Saturday</span><span>9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-2 text-slate-500">
+                            <span>Sunday</span><span>Closed</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-orange-50 border border-orange-200 rounded-lg p-4">
+                        <p class="text-orange-800 text-sm"><strong>Emergency?</strong> Call 020 1234 5678 for same-day emergency appointments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <span class="text-2xl">🦷</span>
+                <span class="text-xl font-bold">Bupa Dental Care London</span>
+            </div>
+            <p class="text-slate-400 text-sm">NHS & Private Dental Care • Bupa (British United Provident Association) • GDC Registered</p>
+            <p class="text-slate-500 text-xs mt-4">© 2026 Bupa Dental Care London</p>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <button onclick="openChat()" id="chat-toggle" class="fixed bottom-6 right-6 z-40 w-16 h-16 gradient-bg rounded-full shadow-2xl flex items-center justify-center text-3xl hover:scale-110 transition shadow-lg">
+        <span>💬</span>
+    </button>
+
+    <script>
+        const CONFIG = {
+            practiceName: 'Bupa Dental Care London',
+            phone: '020 7123 4567',
+            email: 'london@bupa.co.uk',
+            address: '50 Regent Street, London W1B 5SR',
+            nhsPrices: { band1: '£26.80', band2: '£73.50', band3: '£319.10' },
+            services: ['Dental Check-up', 'Scale & Polish', 'White Fillings', 'Root Canal Treatment', 'Extractions', 'Crowns & Bridges', 'Dentures', 'Teeth Whitening', 'Veneers', 'Dental Implants', 'Invisalign', 'Emergency Dental Care', 'Sedation Dentistry', 'Children'\''s Dentistry', 'Dental Plans']
+        };
+
+        let appointmentState = { step: 0, name: '', phone: '', email: '', service: '', type: '', date: '', time: '', notes: '' };
+        const calendarSlots = generateCalendarSlots();
+
+        function generateCalendarSlots() {
+            const slots = {};
+            const today = new Date();
+            for (let i = 1; i <= 30; i++) {
+                const date = new Date(today);
+                date.setDate(today.getDate() + i);
+                const dateStr = date.toISOString().split('T')[0];
+                if (date.getDay() !== 0) {
+                    slots[dateStr] = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM'];
+                }
+            }
+            return slots;
+        }
+
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = SpeechRecognition ? new SpeechRecognition() : null;
+        let isListening = false;
+
+        if (recognition) {
+            recognition.continuous = false;
+            recognition.interimResults = true;
+            recognition.lang = 'en-US';
+            recognition.onresult = (event) => {
+                const transcript = event.results[event.results.length - 1][0].transcript;
+                document.getElementById('chat-input').value = transcript;
+                if (event.results[0].isFinal) sendMessage();
+            };
+            recognition.onend = () => { isListening = false; document.getElementById('voice-status').classList.add('hidden'); };
+        }
+
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text.replace(/<[^>]*>/g, ''));
+                utterance.rate = 1; window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function openChat() { document.getElementById('chat-widget').classList.remove('hidden'); document.getElementById('chat-toggle').classList.add('hidden'); if (document.getElementById('chat-messages').children.length === 0) { addMessage(welcomeMessage(), false); } }
+        function closeChat() { document.getElementById('chat-widget').classList.add('hidden'); document.getElementById('chat-toggle').classList.remove('hidden'); }
+        function toggleVoice() { if (!recognition) { alert('Voice not supported. Use Chrome or Edge.'); return; } if (isListening) { recognition.stop(); isListening = false; document.getElementById('voice-status').classList.add('hidden'); } else { recognition.start(); isListening = true; document.getElementById('voice-status').classList.remove('hidden'); } }
+        function quickQuestion(q) { document.getElementById('chat-input').value = q; sendMessage(); }
+        
+        function addMessage(text, isUser = false) {
+            const messages = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = isUser ? 'flex justify-end' : 'flex justify-start';
+            div.innerHTML = isUser ? `<div class="bg-sky-500 text-white rounded-2xl rounded-tr-none px-4 py-3 max-w-[85%]">${text}</div>` : `<div class="bg-white border border-slate-200 rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%] shadow-sm">${text}</div>`;
+            messages.appendChild(div); messages.scrollTop = messages.scrollHeight;
+        }
+
+        function addTyping() {
+            const messages = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = 'flex justify-start'; div.id = 'typing';
+            div.innerHTML = `<div class="bg-white border border-slate-200 rounded-2xl rounded-tl-none px-4 py-3 shadow-sm"><div class="flex space-x-1"><div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce"></div><div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div><div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div></div></div>`;
+            messages.appendChild(div); messages.scrollTop = messages.scrollHeight;
+        }
+
+        function removeTyping() { const typing = document.getElementById('typing'); if (typing) typing.remove(); }
+
+        function welcomeMessage() { return `👋 Welcome to <strong>${CONFIG.practiceName}</strong> — UK's Leading Dental Provider! 🦷<br><br>I'm your Bupa AI assistant. I can help you with:<br><br>• 📅 <strong>Booking appointments</strong><br>• 💷 <strong>NHS & private pricing</strong><br>• 🚨 <strong>Emergency dental care</strong><br>• ❓ <strong>Questions about treatments</strong><br>• 📋 <strong>Dental plan inquiries</strong><br><br>How can I help you today?`; }
+
+        function getBotResponse(message) {
+            const m = message.toLowerCase();
+            if (appointmentState.step > 0) return handleBookingFlow(m);
+            if (m.includes('emergency') || m.includes('pain') || m.includes('swelling') || m.includes('toothache')) return `🚨 <strong>Emergency?</strong> Call ${CONFIG.phone} now for same-day emergency appointments.`;
+            if (m.includes('appointment') || m.includes('book') || m.includes('schedule')) { appointmentState.step = 1; return startBooking(); }
+            if (m.includes('nhs') || m.includes('price') || m.includes('cost') || m.includes('how much')) return `💷 <strong>NHS Prices:</strong><br>• Band 1: ${CONFIG.nhsPrices.band1}<br>• Band 2: ${CONFIG.nhsPrices.band2}<br>• Band 3: ${CONFIG.nhsPrices.band3}<br><br>Free for under 18, pregnant, or low income.`;
+            if (m.includes('opening') || m.includes('hour') || m.includes('time')) return `🕐 <strong>Opening Hours:</strong><br>• Mon-Fri: 8AM-8PM<br>• Saturday: 9AM-5PM<br>• Sunday: Closed`;
+            if (m.includes('location') || m.includes('address') || m.includes('where')) return `📍 <strong>${CONFIG.practiceName}</strong><br>${CONFIG.address}<br><br>Nearest stations: Tottenham Court Road, Goodge Street`;
+            if (m.includes('contact') || m.includes('phone') || m.includes('call')) return `📞 <strong>Contact Bupa Dental Care London:</strong><br>Phone: ${CONFIG.phone}<br>Email: ${CONFIG.email}<br>Address: ${CONFIG.address}<br><br><strong>Dental Plans:</strong> Call 0800 138 8822 or visit bupa.co.uk/dental/Bupa`;
+            if (m.includes('plan') || m.includes('Bupa') || m.includes('payment')) return `📋 <strong>Bupa Dental Plans:</strong><br><br>• <strong>Bupa Membership:</strong> £12.50/mo - 2 check-ups + hygiene visit<br>• <strong>Bupa Comprehensive:</strong> £22.50/mo - Full private care<br>• <strong>Children's Plan:</strong> £6/mo - For under 18s<br><br>Includes worldwide emergency cover. Visit bupa.co.uk/dental/Bupa or call 0800 138 8822`;
+            if (m.includes('register') || m.includes('new patient') || m.includes('taking new')) return `👋 <strong>New Patients Welcome at Bupa!</strong><br><br>We accept both NHS and private patients.<br><br>To register:<br>1. Book your first appointment online<br>2. Complete your medical history form<br>3. Visit us at ${CONFIG.address}<br><br>Your first appointment includes a comprehensive examination. Book now!`;
+            if (m.includes('whitening')) return `✨ <strong>Teeth Whitening:</strong><br>• Enlighten: £295<br>• Zoom: £350<br><br>Book a free consultation!`;
+            if (m.includes('filling')) return `🦷 <strong>White Fillings:</strong><br>• NHS: Back teeth only<br>• Private: From £80<br><br>Book a consultation!`;
+            if (m.includes('thank') || m.includes('thanks')) return "You're welcome! 😊 Anything else I can help with?";
+            if (m.includes('hello') || m.includes('hi') || m === 'hi') return welcomeMessage();
+            return `I'd be happy to help! 🤔<br><br>Try: "Book appointment", "NHS prices", "Opening hours", or "Emergency"`;
+        }
+
+        function startBooking() { return `📅 <strong>Book an Appointment</strong><br><br>Let's schedule your visit!<br><br>First, may I have your <strong>full name</strong>, please?`; }
+
+        function handleBookingFlow(m) {
+            switch(appointmentState.step) {
+                case 1: appointmentState.name = message; appointmentState.step = 2; return `Thank you, ${appointmentState.name}! 😊<br><br>What is your <strong>phone number</strong>?`;
+                case 2: appointmentState.phone = message; appointmentState.step = 3; return `Perfect! And what is your <strong>email address</strong>?`;
+                case 3: appointmentState.email = message; appointmentState.step = 4; return `Great! NHS or <strong>Private</strong> appointment?`;
+                case 4: appointmentState.type = m.includes('private') ? 'Private' : 'NHS'; appointmentState.step = 5; return `Perfect! What <strong>type of appointment</strong>? (Check-up, Filling, Toothache, Whitening, etc.)`;
+                case 5: appointmentState.service = message; appointmentState.step = 6; return `${appointmentState.service} noted! 📅<br><br>When would you like to come in? (e.g., "tomorrow", "next week", "Friday")`;
+                case 6: const dateMatch = extractDate(m); if (dateMatch) { appointmentState.date = dateMatch; appointmentState.step = 7; return showTimeSlots(); } return `When works for you? (e.g., "tomorrow 10am", "next Monday")`;
+                case 7: const timeMatch = extractTime(m); if (timeMatch) { appointmentState.time = timeMatch; appointmentState.step = 8; return confirmBooking(); } return `What time? ⏰<br><br>Available: ${calendarSlots[appointmentState.date]?.join(', ') || 'Select different date'}`;
+                case 8: if (m.includes('yes') || m.includes('confirm') || m.includes('ok') || m.includes('book')) { appointmentState.step = 0; return completeBooking(); } appointmentState.step = 6; return `Let's try again. 🕐<br><br>What date and time works best?`;
+            }
+        }
+
+        function extractDate(m) {
+            const today = new Date();
+            if (m.includes('today')) return today.toISOString().split('T')[0];
+            if (m.includes('tomorrow')) { today.setDate(today.getDate() + 1); return today.toISOString().split('T')[0]; }
+            if (m.includes('next week')) { today.setDate(today.getDate() + 7); return today.toISOString().split('T')[0]; }
+            const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            for (let i = 1; i <= 7; i++) { if (m.includes(days[i % 7])) { const target = new Date(); while (target.getDay() !== i % 7) target.setDate(target.getDate() + 1); return target.toISOString().split('T')[0]; } }
+            return null;
+        }
+
+        function extractTime(m) {
+            const times = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM'];
+            for (let t of times) { if (m.includes(t.toLowerCase())) return t; }
+            if (m.includes('morning')) return '10:00 AM';
+            if (m.includes('afternoon')) return '2:00 PM';
+            return null;
+        }
+
+        function showTimeSlots() {
+            const date = new Date(appointmentState.date);
+            const dateStr = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+            const slots = calendarSlots[appointmentState.date] || [];
+            return `Available for <strong>${dateStr}</strong>:<br><br>${slots.map(s => `<button onclick="selectTime('${s}')" class="bg-sky-100 hover:bg-sky-200 text-sky-700 px-3 py-1 rounded text-sm m-1">${s}</button>`).join('')}<br><br>Or type your preferred time:`;
+        }
+
+        function selectTime(time) { appointmentState.time = time; appointmentState.step = 8; addMessage(time, true); setTimeout(() => { removeTyping(); addMessage(getBotResponse(''), false); }, 500); }
+
+        function confirmBooking() {
+            const date = new Date(appointmentState.date);
+            const dateStr = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+            return `📋 <strong>Booking Summary</strong><br><br>• 👤 ${appointmentState.name}<br>• 📞 ${appointmentState.phone}<br>• 📧 ${appointmentState.email}<br>• 🦷 ${appointmentState.service}<br>• 📅 ${dateStr}<br>• ⏰ ${appointmentState.time}<br>• 🏷️ ${appointmentState.type}<br><br>Confirm? Reply <strong>"Yes"</strong> to book.`;
+        }
+
+        function completeBooking() {
+            const date = new Date(appointmentState.date);
+            const dateStr = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+            return `✅ <strong>Appointment Confirmed!</strong><br><br>📅 <strong>${dateStr}</strong> at <strong>${appointmentState.time}</strong><br>🦷 ${appointmentState.service} (${appointmentState.type})<br><br>📞 We will call you at ${appointmentState.phone} to confirm.<br>📧 Confirmation sent to ${appointmentState.email}<br><br>📍 ${CONFIG.address}<br><br>See you soon! 🦷`;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+            addMessage(message, true);
+            input.value = '';
+            addTyping();
+            setTimeout(() => { removeTyping(); const response = getBotResponse(message); addMessage(response, false); speak(response.replace(/<[^>]*>/g, '')); }, 600);
+        }
+    </script>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden" style="width: 420px; max-width: calc(100vw - 32px);">
+            <div class="gradient-bg text-white p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                        <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white flex items-center justify-center">
+                            <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Bupa AI</div>
+                        <div class="text-xs text-sky-100">Online • Ready to help</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button onclick="toggleVoice()" class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">🎤</button>
+                    <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">✕</button>
+                </div>
+            </div>
+            <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50" style="height: 350px;"></div>
+            <div id="voice-status" class="hidden bg-sky-50 px-4 py-2 flex items-center justify-center space-x-2 border-t">
+                <div class="flex space-x-1">
+                    <div class="w-1 bg-sky-500 rounded" style="animation-delay: 0s;"></div>
+                    <div class="w-1 bg-sky-500 rounded" style="animation-delay: 0.2s;"></div>
+                    <div class="w-1 bg-sky-500 rounded" style="animation-delay: 0.4s;"></div>
+                </div>
+                <span class="text-sm text-sky-600">Listening...</span>
+            </div>
+            <div class="p-4 border-t bg-white">
+                <div class="flex space-x-2">
+                    <input type="text" id="chat-input" placeholder="Type your message..." class="flex-1 bg-slate-100 rounded-full px-4 py-2 focus:ring-2 focus:ring-sky-500 outline-none" onkeypress="if(event.key==='Enter')sendMessage()">
+                    <button onclick="sendMessage()" class="gradient-bg text-white w-10 h-10 rounded-full flex items-center justify-center hover:shadow-lg transition">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
