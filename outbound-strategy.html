@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outbound Strategy | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-slate-800">🎯 Outbound Strategy</h1>
+            <a href="sell-ai-bots.html" class="text-sky-600 hover:underline">← Back to Sales</a>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        
+        <!-- Progress Tracker -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-lg font-bold mb-4">📊 Daily Targets</h2>
+            <div class="grid md:grid-cols-4 gap-4">
+                <div class="bg-blue-50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-blue-600" id="calls-today">0</div>
+                    <div class="text-sm text-slate-600">Calls Today</div>
+                </div>
+                <div class="bg-green-50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-green-600" id="emails-today">0</div>
+                    <div class="text-sm text-slate-600">Emails Sent</div>
+                </div>
+                <div class="bg-purple-50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-purple-600" id="demos-booked">0</div>
+                    <div class="text-sm text-slate-600">Demos Booked</div>
+                </div>
+                <div class="bg-orange-50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-orange-600" id="conversion-rate">0%</div>
+                    <div class="text-sm text-slate-600">Conversion Rate</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategy 1: Dental Chains -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <div class="flex items-center mb-6">
+                <span class="text-3xl mr-4">🦷</span>
+                <div>
+                    <h2 class="text-xl font-bold">Strategy 1: Dental Chains</h2>
+                    <p class="text-slate-500">Target Mydentist, Bupa, Rodericks, Oasis</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Day 1: Research -->
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="font-bold text-lg">📅 Day 1: Research & List Building</h3>
+                    <p class="text-slate-600 mb-2">Find London locations for each chain:</p>
+                    <ul class="text-sm space-y-1">
+                        <li>• <strong>Mydentist:</strong> Search "mydentist london locations" → Find practices</li>
+                        <li>• <strong>Bupa:</strong> bupa.co.uk/dentists → London practices</li>
+                        <li>• <strong>Rodericks:</strong> rodericksdental.co.uk/locations</li>
+                        <li>• <strong>Oasis:</strong> oasisdentalcare.com/find-a-practice</li>
+                    </ul>
+                </div>
+
+                <!-- Day 2-3: Email -->
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="font-bold text-lg">📧 Days 2-3: Email Outreach</h3>
+                    <p class="text-slate-600 mb-2">Send 20-30 emails per day using templates:</p>
+                    <div class="bg-slate-100 rounded-lg p-4 mt-2">
+                        <p class="font-medium text-sm mb-2">Subject: Never Miss a Dental Emergency Again? 🤖</p>
+                        <p class="text-xs text-slate-500">Use email-templates-dental.html for full templates</p>
+                    </div>
+                </div>
+
+                <!-- Day 4-5: Follow-up -->
+                <div class="border-l-4 border-orange-500 pl-4">
+                    <h3 class="font-bold text-lg">📱 Days 4-5: Follow-up & WhatsApp</h3>
+                    <p class="text-slate-600 mb-2">If no response after 3 days:</p>
+                    <ul class="text-sm space-y-1">
+                        <li>1. Send WhatsApp follow-up (use template)</li>
+                        <li>2. Call practice directly: "Quick question about your chatbot"</li>
+                        <li>3. Connect on LinkedIn with practice manager</li>
+                    </ul>
+                </div>
+
+                <!-- Script -->
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                    <h3 class="font-bold text-yellow-800 mb-2">📞 Phone Script (30 seconds)</h3>
+                    <p class="text-sm text-yellow-800">"Hi, I'm [Name] from AutoAI. We help dental practices capture more bookings through AI chatbots. I sent you an email earlier this week about it. Do you have 30 seconds to hear if it could help [Practice Name]?"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategy 2: NHS Practices -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <div class="flex items-center mb-6">
+                <span class="text-3xl mr-4">🇬🇧</span>
+                <div>
+                    <h2 class="text-xl font-bold">Strategy 2: NHS Dental Practices</h2>
+                    <p class="text-slate-500">Focus on NHS Band pricing & patient retention</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Finding NHS Practices -->
+                <div>
+                    <h3 class="font-bold mb-3">🔍 Where to Find NHS Practices</h3>
+                    <ol class="text-sm space-y-2">
+                        <li>1. <strong>NHS Find a Dentist:</strong><br>
+                            <span class="text-slate-500">https://www.nhs.uk/service-search/find-a-dentist</span></li>
+                        <li>2. <strong>GDC Register:</strong><br>
+                            <span class="text-slate-500">https://www.gdc-uk.org/register</span></li>
+                        <li>3. <strong>Yell.com:</strong> "NHS dentist london"</li>
+                        <li>4. <strong>Google Maps:</strong> "NHS dentist near me"</li>
+                    </ol>
+                </div>
+
+                <!-- Key Selling Points -->
+                <div>
+                    <h3 class="font-bold mb-3">💰 Key NHS Selling Points</h3>
+                    <ul class="text-sm space-y-2">
+                        <li>✅ "NHS patients call when you're closed"</li>
+                        <li>✅ "Missed appointments = lost revenue"</li>
+                        <li>✅ "Automate Band 1/2/3 price questions"</li>
+                        <li>✅ "Emergency routing after hours"</li>
+                        <li>✅ "Reduce phone queue wait times"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- NHS Email Template -->
+            <div class="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <h3 class="font-bold text-blue-800 mb-2">📧 NHS Practice Email Subject:</h3>
+                <p class="font-medium">"Reduce Missed NHS Appointments with AI?"</p>
+                <h4 class="font-bold text-blue-800 mt-4 mb-2">Email Body (Short Version):</h4>
+                <p class="text-sm text-slate-700">"Hi [Practice Name],<br><br>I'm from AutoAI Web Solutions. We help NHS dental practices automate patient inquiries 24/7.<br><br>Our London clients see:<br>
+                • 40% fewer missed calls<br>
+                • More NHS appointments booked online<br>
+                • Instant answers to Band 1/2/3 questions<br><br>
+                5-min demo: [link]<br><br>
+                Cheers,<br>[Name]"</p>
+            </div>
+        </div>
+
+        <!-- Strategy 3: New Niches -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <div class="flex items-center mb-6">
+                <span class="text-3xl mr-4">🎯</span>
+                <div>
+                    <h2 class="text-xl font-bold">Strategy 3: New Niches</h2>
+                    <p class="text-slate-500">Vets, Physios, Optometrists</p>
+                </div>
+            </div>
+
+            <!-- Vet Outreach -->
+            <div class="mb-6">
+                <h3 class="font-bold text-lg mb-3">🐕 Vets - Key Angles</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-green-50 rounded-lg p-4">
+                        <h4 class="font-bold text-green-800 mb-2">Pain Points</h4>
+                        <ul class="text-sm text-green-700 space-y-1">
+                            <li>• Emergency calls at 2AM</li>
+                            <li>• "How much is a consultation?"</li>
+                            <li>• "Do you take new patients?"</li>
+                            <li>• Repeat vaccination reminders</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-4">
+                        <h4 class="font-bold text-blue-800 mb-2">Vet Email Subject</h4>
+                        <p class="font-medium text-sm">"24/7 Pet Care - Never Miss an Emergency?"</p>
+                        <p class="text-xs text-slate-500 mt-2">Use: vet-clinic-london.html demo</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Physio Outreach -->
+            <div class="mb-6">
+                <h3 class="font-bold text-lg mb-3">🏥 Physios - Key Angles</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-purple-50 rounded-lg p-4">
+                        <h4 class="font-bold text-purple-800 mb-2">Pain Points</h4>
+                        <ul class="text-sm text-purple-700 space-y-1">
+                            <li>• "Do you take my insurance?"</li>
+                            <li>• "How much for initial consult?"</li>
+                            <li>• Injury Q&A (back pain, sports injuries)</li>
+                            <li>• Appointment availability questions</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-4">
+                        <h4 class="font-bold text-blue-800 mb-2">Physio Email Subject</h4>
+                        <p class="font-medium text-sm">"Capture More Physio Referrals with AI?"</p>
+                        <p class="text-xs text-slate-500 mt-2">Use: physio-clinic-london.html demo</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optometrist Outreach -->
+            <div>
+                <h3 class="font-bold text-lg mb-3">👁️ Optometrists - Key Angles</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-teal-50 rounded-lg p-4">
+                        <h4 class="font-bold text-teal-800 mb-2">Pain Points</h4>
+                        <ul class="text-sm text-teal-700 space-y-1">
+                            <li>• "Am I eligible for free NHS eye test?"</li>
+                            <li>• "How much are glasses?"</li>
+                            <li>• "Do you do OCT scans?"</li>
+                            <li>• Appointment booking for tests</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-4">
+                        <h4 class="font-bold text-blue-800 mb-2">Optom Email Subject</h4>
+                        <p class="font-medium text-sm">"Automate NHS Eye Test Inquiries?"</p>
+                        <p class="text-xs text-slate-500 mt-2">Use: optometrist-london.html demo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tracking Spreadsheet -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">📊 Tracking Template (Copy to Sheets)</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b">
+                            <th class="text-left py-2">Practice Name</th>
+                            <th class="text-left py-2">Chain</th>
+                            <th class="text-left py-2">Contact</th>
+                            <th class="text-left py-2">Email</th>
+                            <th class="text-left py-2">Phone</th>
+                            <th class="text-left py-2">Date Contacted</th>
+                            <th class="text-left py-2">Method</th>
+                            <th class="text-left py-2">Status</th>
+                            <th class="text-left py-2">Follow-up</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-600">
+                        <tr class="border-b"><td colspan="9" class="py-2 text-slate-400">Copy this structure to Google Sheets...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs text-slate-500 mt-2">Status options: Not contacted → Email sent → Follow-up → Demo booked → Proposal sent → Closed Won/Lost</p>
+        </div>
+
+        <!-- Daily Schedule -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">📅 Suggested Daily Schedule</h2>
+            <div class="grid md:grid-cols-5 gap-4 text-sm">
+                <div class="bg-slate-100 rounded-lg p-4">
+                    <h3 class="font-bold mb-2">Mon</h3>
+                    <ul class="space-y-1 text-slate-600">
+                        <li>• Research 10 practices</li>
+                        <li>• Send 20 emails</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-100 rounded-lg p-4">
+                    <h3 class="font-bold mb-2">Tue</h3>
+                    <ul class="space-y-1 text-slate-600">
+                        <li>• Follow-up Week 1</li>
+                        <li>• Send 15 emails</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-100 rounded-lg p-4">
+                    <h3 class="font-bold mb-2">Wed</h3>
+                    <ul class="space-y-1 text-slate-600">
+                        <li>• Phone calls</li>
+                        <li>• 10 demos</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-100 rounded-lg p-4">
+                    <h3 class="font-bold mb-2">Thu</h3>
+                    <ul class="space-y-1 text-slate-600">
+                        <li>• Follow-up Week 2</li>
+                        <li>• Send 20 emails</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-100 rounded-lg p-4">
+                    <h3 class="font-bold mb-2">Fri</h3>
+                    <ul class="space-y-1 text-slate-600">
+                        <li>• Close the week</li>
+                        <li>• Send proposals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-white py-8 mt-8">
+        <div class="max-w-5xl mx-auto px-4 text-center text-sm text-slate-400">
+            <p>📧 Templates: /email-templates-dental.html</p>
+            <p>📊 Pricing: /nhs-dental-pricing.html</p>
+            <p>🌐 Demo Pages: vet-clinic-london.html, physio-clinic-london.html, optometrist-london.html</p>
+            <p class="mt-4">© 2026 AutoAI Web Solutions</p>
+        </div>
+    </footer>
+</body>
+</html>
