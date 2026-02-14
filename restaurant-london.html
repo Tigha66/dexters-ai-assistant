@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Restaurant AI Chatbot | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl">🍽️</span>
+                <span class="font-bold text-lg text-slate-800">The London Kitchen</span>
+                <span class="text-xs text-slate-500">| Modern British Cuisine</span>
+            </div>
+            <a href="#chatbot" class="bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition">Book Table</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-gradient text-white py-16 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center bg-orange-500/20 px-4 py-2 rounded-full text-orange-300 text-sm mb-6">
+                <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                AI Assistant Available 24/7
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Book Your Table Instantly</h1>
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                Modern British dining in London. Reserve online, check menu, 
+                ask dietary requirements — 24 hours a day.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#chatbot" class="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-orange-600 transition shadow-lg shadow-orange-500/25">
+                    🤖 Chat with AI Assistant
+                </a>
+                <a href="tel:02012345678" class="bg-white/10 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition">
+                    📞 Call: 020 1234 5678
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info -->
+    <section class="bg-orange-500 text-white py-4">
+        <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-8 text-sm">
+            <span>📍 45 King Street, London W1D 2DZ</span>
+            <span>📞 020 1234 5678</span>
+            <span>✉️ reservations@londonkitchen.co.uk</span>
+            <span>🕐 Daily 12PM-11PM</span>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Modern British Cuisine</h2>
+                    <p class="text-slate-600 mb-4">
+                        Located in the heart of London, The London Kitchen serves fresh, 
+                        seasonal British dishes with a modern twist. Our ingredients are 
+                        sourced from sustainable local farms and suppliers.
+                    </p>
+                    <p class="text-slate-600 mb-4">
+                        Whether you're joining us for a quick lunch, business dinner, 
+                        or special occasion, we promise an unforgettable dining experience.
+                    </p>
+                    <div class="flex gap-4 mt-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-orange-500">4.8★</div>
+                            <div class="text-xs text-slate-500">Google Reviews</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-orange-500">2,500+</div>
+                            <div class="text-xs text-slate-500">Happy Customers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-orange-500">2019</div>
+                            <div class="text-xs text-slate-500">Established</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-200 rounded-xl h-64 flex items-center justify-center">
+                    <span class="text-slate-400">Restaurant Image Placeholder</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview -->
+    <section class="py-16 px-4 bg-slate-100">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Our Menu</h2>
+            <p class="text-slate-600 text-center mb-12">Seasonal British cuisine with modern techniques</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Starters -->
+                <div class="bg-white rounded-xl p-6 shadow">
+                    <h3 class="font-bold text-lg mb-4 border-b pb-2">Starters • £8-£14</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between"><span>Beef Tartare</span><span class="font-medium">£14</span></li>
+                        <li class="flex justify-between"><span>Roasted Beet Salad</span><span class="font-medium">£10</span></li>
+                        <li class="flex justify-between"><span>Scallops & Pea Puree</span><span class="font-medium">£13</span></li>
+                        <li class="flex justify-between"><span>Homemade Soup</span><span class="font-medium">£8</span></li>
+                        <li class="flex justify-between"><span>Crispy Squid</span><span class="font-medium">£11</span></li>
+                    </ul>
+                </div>
+                <!-- Mains -->
+                <div class="bg-white rounded-xl p-6 shadow">
+                    <h3 class="font-bold text-lg mb-4 border-b pb-2">Mains • £18-£32</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between"><span>Pan-Roasted Sea Bass</span><span class="font-medium">£26</span></li>
+                        <li class="flex justify-between"><span>Dry-Aged Ribeye Steak</span><span class="font-medium">£32</span></li>
+                        <li class="flex justify-between"><span>Roasted Chicken</span><span class="font-medium">£22</span></li>
+                        <li class="flex justify-between"><span>Wild Mushroom Risotto</span><span class="font-medium">£19</span></li>
+                        <li class="flex justify-between"><span>Fish & Chips</span><span class="font-medium">£18</span></li>
+                    </ul>
+                </div>
+                <!-- Desserts -->
+                <div class="bg-white rounded-xl p-6 shadow">
+                    <h3 class="font-bold text-lg mb-4 border-b pb-2">Desserts • £7-£10</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between"><span>Sticky Toffee Pudding</span><span class="font-medium">£9</span></li>
+                        <li class="flex justify-between"><span>Chocolate Fondant</span><span class="font-medium">£10</span></li>
+                        <li class="flex justify-between"><span>Seasonal Fruit Crumble</span><span class="font-medium">£8</span></li>
+                        <li class="flex justify-between"><span>Cheese Selection</span><span class="font-medium">£12</span></li>
+                        <li class="flex justify-between"><span>Ice Cream (3 scoops)</span><span class="font-medium">£7</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dietary Info -->
+    <section class="py-12 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-6">🍽️ Dietary Requirements</h2>
+            <p class="text-slate-600 mb-8">We cater for all dietary needs. Just ask!</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm">✓ Vegetarian</span>
+                <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm">✓ Vegan</span>
+                <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm">✓ Gluten-Free</span>
+                <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm">✓ Dairy-Free</span>
+                <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm">✓ Nut-Free</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <section id="chatbot" class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-8">
+                <span class="inline-block bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-sm font-medium mb-4">🤖 Try Our AI Assistant</span>
+                <h2 class="text-3xl font-bold mb-4">Book a Table</h2>
+                <p class="text-slate-600">Available 24/7 to take your reservation</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-orange-500 text-white p-4 flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                        <div>
+                            <div class="font-semibold">London Kitchen AI</div>
+                            <div class="text-xs text-orange-200">Online • Ready to help</div>
+                        </div>
+                    </div>
+                    <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full hover:bg-white/30 transition">✕</button>
+                </div>
+                <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50" style="height: 350px;"></div>
+                <div class="p-4 border-t bg-white">
+                    <div class="flex space-x-2">
+                        <input type="text" id="chat-input" placeholder="Ask about reservations, menu, dietary..." class="flex-1 bg-slate-100 rounded-full px-4 py-3 focus:ring-2 focus:ring-orange-500 outline-none" onkeypress="if(event.key==='Enter')sendMessage()">
+                        <button onclick="sendMessage()" class="bg-orange-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-orange-600 transition">➤</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 flex flex-wrap justify-center gap-3">
+                <button onclick="quickQuestion('I want to book a table')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-orange-50 hover:border-orange-300 transition">📅 Book table</button>
+                <button onclick="quickQuestion('Do you have tables available?')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-orange-50 hover:border-orange-300 transition">🪑 Availability</button>
+                <button onclick="quickQuestion('What are your opening hours?')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-orange-50 hover:border-orange-300 transition">🕐 Opening hours</button>
+                <button onclick="quickQuestion('Is there parking?')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-orange-50 hover:border-orange-300 transition">🚗 Parking</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opening Hours & Location -->
+    <section class="py-16 px-4 bg-slate-100">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-8">
+                    <h3 class="font-bold text-xl mb-6">🕐 Opening Hours</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between py-2 border-b"><span>Monday - Thursday</span><span>12:00 PM - 10:00 PM</span></div>
+                        <div class="flex justify-between py-2 border-b"><span>Friday - Saturday</span><span>12:00 PM - 11:00 PM</span></div>
+                        <div class="flex justify-between py-2 border-b"><span>Sunday</span><span>12:00 PM - 9:00 PM</span></div>
+                    </div>
+                    <div class="mt-6 bg-orange-50 border border-orange-200 rounded-lg p-4">
+                        <p class="text-orange-800 text-sm"><strong>Last orders:</strong> 30 minutes before closing</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-8">
+                    <h3 class="font-bold text-xl mb-6">📍 Find Us</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">📍</span>
+                            <div><p class="font-medium">Address</p><p class="text-slate-600">45 King Street<br>London W1D 2DZ</p></div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">🚇</span>
+                            <div><p class="font-medium">Nearest Stations</p><p class="text-slate-600">Tottenham Court Road (Central & Elizabeth)<br>Goodge Street (Northern)</p></div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">🅿️</span>
+                            <div><p class="font-medium">Parking</p><p class="text-slate-600">NCP Oxford Street (5 min walk)</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <span class="text-2xl">🍽️</span>
+                <span class="text-xl font-bold">The London Kitchen</span>
+            </div>
+            <p class="text-slate-400 text-sm">Modern British Cuisine • Fresh • Seasonal • Local</p>
+            <p class="text-slate-500 text-xs mt-4">© 2026 The London Kitchen</p>
+        </div>
+    </footer>
+
+    <button onclick="openChat()" id="chat-toggle" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-orange-500 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:bg-orange-600 transition shadow-lg">💬</button>
+
+    <script>
+        const CONFIG = {
+            name: 'The London Kitchen',
+            phone: '020 1234 5678',
+            email: 'reservations@londonkitchen.co.uk',
+            address: '45 King Street, London W1D 2DZ',
+            hours: 'Mon-Thu: 12PM-10PM, Fri-Sat: 12PM-11PM, Sun: 12PM-9PM'
+        };
+        let bookingState = { step: 0, name: '', phone: '', email: '', guests: '', date: '', time: '', notes: '' };
+        
+        function openChat() { document.getElementById('chat-widget').classList.remove('hidden'); document.getElementById('chat-toggle').classList.add('hidden'); if (!window.initialized) { addMessage(welcomeMessage(), false); window.initialized = true; } }
+        function closeChat() { document.getElementById('chat-widget').classList.add('hidden'); document.getElementById('chat-toggle').classList.remove('hidden'); }
+        function quickQuestion(q) { document.getElementById('chat-input').value = q; sendMessage(); }
+        
+        function addMessage(text, isUser) {
+            const div = document.createElement('div');
+            div.className = isUser ? 'flex justify-end' : 'flex justify-start';
+            div.innerHTML = isUser ? `<div class="bg-orange-500 text-white rounded-2xl rounded-tr-none px-4 py-3 max-w-[85%]">${text}</div>` : `<div class="bg-white border border-slate-200 rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%] shadow-sm">${text}</div>`;
+            document.getElementById('chat-messages').appendChild(div); div.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function welcomeMessage() { return `👋 Welcome to <strong>${CONFIG.name}</strong>! 🍽️<br><br>I'm your restaurant AI assistant. I can help with:<br><br>• 📅 <strong>Table reservations</strong><br>• 📋 <strong>Menu questions</strong><br>• 🍽️ <strong>Dietary requirements</strong><br>• 🕐 <strong>Opening hours</strong><br>• 📍 <strong>Location & parking</strong><br><br>How can I help you today?`; }
+
+        function getBotResponse(message) {
+            const m = message.toLowerCase();
+            if (bookingState.step > 0) return handleBooking(m);
+            if (m.includes('book') || m.includes('reservation') || m.includes('table') || m.includes('table for')) { bookingState.step = 1; return `📅 <strong>Make a Reservation</strong><br><br>I'd love to book your table! 🍽️<br><br>First, what is your <strong>name</strong>?`; }
+            if (m.includes('hour') || m.includes('open') || m.includes('time')) return `🕐 <strong>Opening Hours</strong><br><br>• Mon-Thu: 12PM - 10PM<br>• Fri-Sat: 12PM - 11PM<br>• Sun: 12PM - 9PM<br><br>Last orders 30 mins before closing.`;
+            if (m.includes('menu') || m.includes('what do you') || m.includes('serve')) return `📋 <strong>Our Menu</strong><br><br>• Starters: £8-£14 (Beef Tartare, Scallops, Soup)<br>• Mains: £18-£32 (Sea Bass, Ribeye, Chicken)<br>• Desserts: £7-£10 (Toffee Pudding, Chocolate Fondant)<br><br>Full menu available at our website. Vegetarians, vegans, and gluten-free options available!`;
+            if (m.includes('dietary') || m.includes('vegetarian') || m.includes('vegan') || m.includes('gluten')) return `🍽️ <strong>Dietary Requirements</strong><br><br>We cater for ALL dietary needs:<br>✅ Vegetarian & Vegan<br>✅ Gluten-Free<br>✅ Dairy-Free<br>✅ Nut-Free<br>✅ Halal & Kosher (with notice)<br><br>Just let us know when you book!`;
+            if (m.includes('location') || m.address') || m.includes('where') || m.includes('parking')) return `📍 <strong>${CONFIG.name}</strong><br>${CONFIG.address}<br><br>🚇 Near Tottenham Court Road & Goodge Street stations<br>🅿️ NCP Oxford Street (5 min walk)`;
+            if (m.includes('contact') || m.includes('phone') || m.includes('call')) return `📞 <strong>Contact:</strong><br>Phone: ${CONFIG.phone}<br>Email: ${CONFIG.email}`;
+            if (m.includes('price') || m.includes('cost') || m.includes('average')) return `💷 <strong>Average Prices</strong><br><br>• Starters: £8-£14<br>• Mains: £18-£32<br>• Desserts: £7-£10<br>• Three-course set menu: £35<br><br>Wine list from £24 bottle.`;
+            if (m.includes('hello') || m.includes('hi')) return welcomeMessage();
+            return `I'd be happy to help! 🤔<br><br>Try: "Book a table", "Menu", "Opening hours", or "Dietary info"`;
+        }
+
+        function handleBooking(m) {
+            switch(bookingState.step) {
+                case 1: bookingState.name = message; bookingState.step = 2; return `Thanks, ${bookingState.name}! 😊<br><br>How many <strong>guests</strong>?`;
+                case 2: bookingState.guests = message; bookingState.step = 3; return `Perfect! ${bookingState.guests} guests. 📅<br><br>What <strong>date</strong>? (e.g., "Friday", "tomorrow", "February 14th")`;
+                case 3: bookingState.date = message; bookingState.step = 4; return `Got it! ${bookingState.date}. 🕐<br><br>What <strong>time</strong> works for you?`;
+                case 4: bookingState.time = message; bookingState.step = 5; return `${bookingState.time} noted! 📅<br><br>What is your <strong>phone number</strong>?`;
+                case 5: bookingState.phone = message; bookingState.step = 6; return `Thanks! One last thing - your <strong>email</strong>?`;
+                case 6: bookingState.email = message; bookingState.step = 7; return confirmBooking();
+                case 7: if (m.includes('yes') || m.includes('confirm') || m.includes('ok')) { bookingState.step = 0; return completeBooking(); } bookingState.step = 4; return `No problem! Let's try a different time. 🕐<br><br>What time works better?`;
+            }
+        }
+
+        function confirmBooking() {
+            return `📋 <strong>Reservation Summary</strong><br><br>• 👤 ${bookingState.name}<br>• 👥 ${bookingState.guests} guests<br>• 📅 ${bookingState.date}<br>• 🕐 ${bookingState.time}<br>• 📞 ${bookingState.phone}<br>• ✉️ ${bookingState.email}<br><br>Reply <strong>"Yes"</strong> to confirm!`;
+        }
+
+        function completeBooking() {
+            return `✅ <strong>Reservation Confirmed! 🎉</strong><br><br>Table for ${bookingState.guests} on ${bookingState.date} at ${bookingState.time}.<br><br>📞 We'll call you at ${bookingState.phone} to confirm.<br>📧 Confirmation sent to ${bookingState.email}<br><br>📍 ${CONFIG.address}<br><br>See you soon! 🍽️`;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+            addMessage(message, true);
+            input.value = '';
+            setTimeout(() => { addMessage(bookingState.step > 0 ? handleBooking(message) : getBotResponse(message), false); }, 300);
+        }
+    </script>
+
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden" style="width: 420px; max-width: calc(100vw - 32px);">
+            <div class="bg-orange-500 text-white p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                    <div><div class="font-semibold">${CONFIG.name} AI</div><div class="text-xs text-orange-200">Online</div></div>
+                </div>
+                <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full">✕</button>
+            </div>
+            <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50" style="height: 350px;"></div>
+            <div class="p-4 border-t bg-white">
+                <div class="flex space-x-2">
+                    <input type="text" id="chat-input" placeholder="Ask about reservations..." class="flex-1 bg-slate-100 rounded-full px-4 py-3" onkeypress="if(event.key==='Enter')sendMessage()">
+                    <button onclick="sendMessage()" class="bg-orange-500 text-white w-12 h-12 rounded-full">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

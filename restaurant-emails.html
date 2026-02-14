@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   title>Ready-to-Send Emails | Restaurants London</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <header class="bg-white shadow-sm py-4">
+        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-slate-800">🍽️ Restaurant Ready-to-Send Emails</h1>
+            <a href="sell-ai-bots.html" class="text-sky-600 hover:underline">← Back to Sales</a>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+            <h2 class="font-bold text-blue-800 mb-2">📋 How to Use</h2>
+            <ol class="text-sm text-blue-700 space-y-1">
+                <li>1. Search for restaurants on Google/Yelp/OpenTable</li>
+                <li>2. Find their contact email (usually info@ or reservations@)</li>
+                <li>3. Click "Copy Email" below</li>
+                <li>4. Paste into Gmail/Outlook and send!</li>
+            </ol>
+        </div>
+
+        <!-- Restaurant Templates -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6 flex items-center">
+                <span class="text-2xl mr-2">🍽️</span> Restaurant Email Templates
+            </h2>
+
+            <div class="space-y-6">
+                <!-- Template 1: General Restaurant -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 1: General Restaurant</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email1">
+                        <p class="font-bold mb-2">Subject: Never Miss a Table Booking Again? 🤖</p>
+                        <p>Hi [Restaurant Name] Team,<br><br>
+                        I'm from AutoAI Web Solutions. We help London restaurants automate bookings and capture more reservations.<br><br>
+                        Here's what we do:<br>
+                        ✅ Answer "Do you have tables?" 24/7<br>
+                        ✅ Take table reservations through chat<br>
+                        ✅ Handle dietary requirement questions<br>
+                        ✅ Reduce no-shows with confirmations<br><br>
+                        One London restaurant saw 35% more online bookings after launching our chatbot.<br><br>
+                        Would a quick 5-minute demo help you see if this could work for [Restaurant Name]?<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email1')" class="mt-3 bg-orange-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-600 transition">📋 Copy Email</button>
+                </div>
+
+                <!-- Template 2: With Online Booking -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 2: Restaurants with Bookatable/OpenTable</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email2">
+                        <p class="font-bold mb-2">Subject: Enhance Your Booking System? 🤖</p>
+                        <p>Hi [Restaurant Name],<br><br>
+                        AutoAI Web Solutions here. We help restaurants capture more bookings.<br><br>
+                        Even with [OpenTable/Bookatable], you might be missing bookings from:<br>
+                        • Instagram DMs<br>
+                        • Website enquiries<br>
+                        • Phone calls outside hours<br><br>
+                        Our chatbot works alongside your existing system to capture every inquiry.<br><br>
+                        See it in action: 5-min demo available.<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email2')" class="mt-3 bg-orange-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-600 transition">📋 Copy Email</button>
+                </div>
+
+                <!-- Template 3: No Online Booking -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 3: Phone-Only Restaurants</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email3">
+                        <p class="font-bold mb-2">Subject: Take Tables While You Sleep? 🤖</p>
+                        <p>Hi [Restaurant Name],<br><br>
+                        Does this sound familiar?<br>
+                        "Hi, do you have a table for 4 this Saturday?" → You reply Monday → Guest booked elsewhere.<br><br>
+                        Our AI chatbot answers booking inquiries 24/7, even when you're closed.<br><br>
+                        Results: 40% more reservations captured.<br><br>
+                        Quick demo? Reply YES and I'll send you a link.<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email3')" class="mt-3 bg-orange-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-600 transition">📋 Copy Email</button>
+                </div>
+
+                <!-- Template 4: High-Volume -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 4: Busy/Popular Restaurants</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email4">
+                        <p class="font-bold mb-2">Subject: Reduce Booking Enquiries by 50%? 🤖</p>
+                        <p>Hi [Restaurant Name],<br><br>
+                        I know a busy restaurant like yours gets hundreds of booking questions.<br><br>
+                        What if you could:<br>
+                        ✅ Answer "Is there a table?" instantly<br>
+                        ✅ Collect dietary requirements automatically<br>
+                        ✅ Send confirmation texts<br><br>
+                        All while your team focuses on serving guests.<br><br>
+                        Let's show you how it works. 5 minutes?<br><br>
+                        Best,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email4')" class="mt-3 bg-orange-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-600 transition">📋 Copy Email</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Find Resources -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">🔍 Where to Find Restaurants</h2>
+            <div class="grid md:grid-cols-4 gap-4 text-sm">
+                <a href="https://www.opentable.co.uk/london-restaurants" target="_blank" class="bg-orange-50 p-4 rounded-lg hover:bg-orange-100 transition">
+                    <strong>OpenTable UK</strong>
+                    <p class="text-slate-500 mt-1">London restaurants with booking systems</p>
+                </a>
+                <a href="https://www.bookatable.co.uk/london" target="_blank" class="bg-red-50 p-4 rounded-lg hover:bg-red-100 transition">
+                    <strong>Bookatable</strong>
+                    <p class="text-slate-500 mt-1">London restaurant listings</p>
+                </a>
+                <a href="https://www.yelp.co.uk/search?find_desc=Restaurants&find_loc=London" target="_blank" class="bg-yellow-50 p-4 rounded-lg hover:bg-yellow-100 transition">
+                    <strong>Yelp London</strong>
+                    <p class="text-slate-500 mt-1">Restaurant listings with reviews</p>
+                </a>
+                <a href="https://www.google.com/search?q=restaurants+london+top+rated" target="_blank" class="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 transition">
+                    <strong>Google Search</strong>
+                    <p class="text-slate-500 mt-1">Top rated restaurants London</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Restaurant Data Finder -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">📝 Restaurant Data Collection Sheet</h2>
+            <p class="text-slate-600 mb-4">Create this in Google Sheets to track your outreach:</p>
+            <div class="bg-slate-100 rounded-lg p-4 overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b">
+                            <th class="text-left py-2">Restaurant Name</th>
+                            <th class="text-left py-2">Area</th>
+                            <th class="text-left py-2">Cuisine</th>
+                            <th class="text-left py-2">Email</th>
+                            <th class="text-left py-2">Phone</th>
+                            <th class="text-left py-2">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-600">
+                        <tr class="border-b"><td colspan="6" class="py-2 text-slate-400">Copy this structure to Google Sheets...</td></tr>
+                        <tr class="border-b bg-orange-50"><td>The London Kitchen</td><td>West End</td><td>Modern British</td><td>[Find email]</td><td>[Find phone]</td><td>Not Contacted</td></tr>
+                        <tr><td colspan="6" class="py-2 text-slate-400">Add your restaurants below...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pain Points to Mention -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">💬 Key Pain Points to Mention</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
+                <div class="bg-red-50 rounded-lg p-4">
+                    <h3 class="font-bold text-red-800 mb-2">😩 The Problem</h3>
+                    <ul class="text-red-700 space-y-1">
+                        <li>• "Do you have tables?" → 100x per week</li>
+                        <li>• Missed calls = missed bookings</li>
+                        <li>• "What's your menu?" → repetitive</li>
+                        <li>• Dietary questions constantly</li>
+                        <li>• No-shows without reminders</li>
+                    </ul>
+                </div>
+                <div class="bg-green-50 rounded-lg p-4">
+                    <h3 class="font-bold text-green-800 mb-2">✅ The Solution</h3>
+                    <ul class="text-green-700 space-y-1">
+                        <li>• Instant answers 24/7</li>
+                        <li>• Book through chat</li>
+                        <li>• Auto-collect dietary needs</li>
+                        <li>• Send confirmation texts</li>
+                        <li>• Reduce no-shows</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-white py-8 mt-8">
+        <div class="max-w-5xl mx-auto px-4 text-center text-sm text-slate-400">
+            <p>📧 Restaurant chatbot demo: restaurant-london.html</p>
+            <p class="mt-4">© 2026 AutoAI Web Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyEmail(id) {
+            const emailDiv = document.getElementById(id);
+            const text = emailDiv.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Email copied! Paste into your email client.');
+            });
+        }
+    </script>
+</body>
+</html>
