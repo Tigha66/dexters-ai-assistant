@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready-to-Send Emails | Dental Practices</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <header class="bg-white shadow-sm py-4">
+        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-slate-800">📧 Ready-to-Send Emails</h1>
+            <a href="outbound-strategy.html" class="text-sky-600 hover:underline">← Back to Strategy</a>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        
+        <!-- Instructions -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+            <h2 class="font-bold text-blue-800 mb-2">📋 How to Use</h2>
+            <ol class="text-sm text-blue-700 space-y-1">
+                <li>1. Find the practice below</li>
+                <li>2. Click "Copy Email" to copy to clipboard</li>
+                <li>3. Paste into your email client (Gmail, Outlook)</li>
+                <li>4. Replace [PLACEHOLDERS] with actual details</li>
+                <li>5. Send!</li>
+            </ol>
+        </div>
+
+        <!-- Mydentist Practices -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6 flex items-center">
+                <span class="text-2xl mr-2">🦷</span> Mydentist London Practices
+            </h2>
+
+            <div class="space-y-6">
+                <!-- Practice 1 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold">1. Mydentist West London</h3>
+                            <p class="text-sm text-slate-500">147 King Street, Hammersmith, London W6 9LP</p>
+                        </div>
+                        <button onclick="copyEmail('email1')" class="bg-sky-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-sky-600 transition">📋 Copy Email</button>
+                    </div>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email1">
+                        <p class="font-bold mb-2">Subject: Never Miss a Dental Emergency Again? 🤖</p>
+                        <p>Hi Practice Manager,<br><br>
+                        I'm reaching out from AutoAI Web Solutions. We help Mydentist practices like yours automate patient inquiries and capture bookings 24/7.<br><br>
+                        Here's what we do:<br>
+                        ✅ Answer "Are you taking new patients?" instantly<br>
+                        ✅ Book appointments directly through chat<br>
+                        ✅ Handle NHS/private patient routing<br>
+                        ✅ Route emergency toothache calls to your phone<br><br>
+                        Our London clients see: 40% more online bookings, 60% fewer missed calls.<br><br>
+                        Would a quick 5-minute demo work for you?<br><br>
+                        Best,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions<br>
+                        info@autoaiwebsolutions.com
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Practice 2 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold">2. Mydentist Central London</h3>
+                            <p class="text-sm text-slate-500">45 Margaret Street, Fitzrovia, London W1W 8SB</p>
+                        </div>
+                        <button onclick="copyEmail('email2')" class="bg-sky-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-sky-600 transition">📋 Copy Email</button>
+                    </div>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email2">
+                        <p class="font-bold mb-2">Subject: 24/7 Booking System for Mydentist? 🤖</p>
+                        <p>Hi Practice Manager,<br><br>
+                        I'm from AutoAI Web Solutions. We help dental practices automate patient inquiries 24/7.<br><br>
+                        For practices like yours, we help with:<br>
+                        ✅ Instant answers to NHS pricing questions<br>
+                        ✅ New patient registration flow<br>
+                        ✅ Appointment booking automation<br>
+                        ✅ Emergency call routing<br><br>
+                        Results: 40% increase in bookings, 60% fewer missed calls.<br><br>
+                        Could I send you a quick demo link?<br><br>
+                        Best,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Practice 3 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold">3. Mydentist South London</h3>
+                            <p class="text-sm text-slate-500">125 Streatham High Road, Streatham, London SW16 1AB</p>
+                        </div>
+                        <button onclick="copyEmail('email3')" class="bg-sky-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-sky-600 transition">📋 Copy Email</button>
+                    </div>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email3">
+                        <p class="font-bold mb-2">Subject: Reduce Missed Calls at Your Practice? 🤖</p>
+                        <p>Hi Practice Manager,<br><br>
+                        AutoAI Web Solutions here. We help dental practices capture every inquiry.<br><br>
+                        The problem: Patients call when you're closed, and you lose them to competitors.<br><br>
+                        Our solution: AI chatbot that:<br>
+                        • Books appointments 24/7<br>
+                        • Answers pricing questions<br>
+                        • Routes emergencies to your phone<br><br>
+                        Ready to see it in action? 5-min demo available.<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Practice 4 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold">4. Mydentist East London</h3>
+                            <p class="text-sm text-slate-500">234 Commercial Road, Whitechapel, London E1 2BU</p>
+                        </div>
+                        <button onclick="copyEmail('email4')" class="bg-sky-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-sky-600 transition">📋 Copy Email</button>
+                    </div>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email4">
+                        <p class="font-bold mb-2">Subject: East London Dental Practice - Book More Online? 🤖</p>
+                        <p>Hi Practice Manager,<br><br>
+                        We help dental practices in London automate patient communications.<br><br>
+                        For Mydentist East London, we can help with:<br>
+                        ✅ New patient inquiries 24/7<br>
+                        ✅ NHS appointment bookings<br>
+                        ✅ Denplan questions answered<br>
+                        ✅ Emergency routing<br><br>
+                        One practice saw 45% more online bookings in month one.<br><br>
+                        Quick demo available. Interested?<br><br>
+                        Best,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Practice 5 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold">5. Mydentist North London</h3>
+                            <p class="text-sm text-slate-500">89 Junction Road, Archway, London N19 5PX</p>
+                        </div>
+                        <button onclick="copyEmail('email5')" class="bg-sky-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-sky-600 transition">📋 Copy Email</button>
+                    </div>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email5">
+                        <p class="font-bold mb-2">Subject: Automate Your Dental Practice in Archway? 🤖</p>
+                        <p>Hi Practice Manager,<br><br>
+                        AutoAI Web Solutions - we build AI chatbots for dental practices.<br><br>
+                        What we do:<br>
+                        • Answer "Are you taking new NHS patients?" instantly<br>
+                        • Book appointments through chat<br>
+                        • Send confirmation emails<br>
+                        • Route emergencies<br><br>
+                        40% more bookings for our dental clients. 5-min demo?<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bupa Practices -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6 flex items-center">
+                <span class="text-2xl mr-2">🏥</span> Bupa Dental Care London
+            </h2>
+
+            <div class="space-y-6">
+                <!-- Practice 6 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold">6. Bupa Dental Care Marylebone</h3>
+                            <p class="text-sm text-slate-500">125 George Street, Marylebone, London W1U 6RZ</p>
+                        </div>
+                        <button onclick="copyEmail('email6')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">📋 Copy Email</button>
+                    </div>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email6">
+                        <p class="font-bold mb-2">Subject: Enhance Your Bupa Patient Experience with AI 🤖</p>
+                        <p>Hi Practice Manager,<br><br>
+                        I'm from AutoAI Web Solutions. We help Bupa practices provide exceptional 24/7 patient support.<br><br>
+                        As a Bupa practice, you know patient experience is everything:<br>
+                        ✅ 24/7 instant responses<br>
+                        ✅ Bupa membership inquiries handled<br>
+                        ✅ Automated appointment booking<br>
+                        ✅ Emergency routing<br><br>
+                        35% increase in online bookings for our clients.<br><br>
+                        Would a 5-minute demo work for you?<br><br>
+                        Best,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Practice 7 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold">7. Bupa Dental Care Canary Wharf</h3>
+                            <p class="text-sm text-slate-500">Canada Place, Canary Wharf, London E14 5AX</p>
+                        </div>
+                        <button onclick="copyEmail('email7')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">📋 Copy Email</button>
+                    </div>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email7">
+                        <p class="font-bold mb-2">Subject: Canary Wharf Dental Practice - 24/7 Booking? 🤖</p>
+                        <p>Hi Practice Manager,<br><br>
+                        AutoAI Web Solutions here. We help dental practices in Canary Wharf capture more patients.<br><br>
+                        Busy professionals need 24/7 booking. Our chatbot:<br>
+                        • Books appointments anytime<br>
+                        • Answers Bupa questions<br>
+                        • Routes urgent cases<br><br>
+                        See the demo: 5 minutes. Interest?<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Practice 8 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold">8. Bupa Dental Care Kensington</h3>
+                            <p class="text-sm text-slate-500">197 Kensington High Street, London W8 6BA</p>
+                        </div>
+                        <button onclick="copyEmail('email8')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">📋 Copy Email</button>
+                    </div>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email8">
+                        <p class="font-bold mb-2">Subject: Premium Dental Care - AI Patient Support? 🤖</p>
+                        <p>Hi Practice Manager,<br><br>
+                        We help premium dental practices like yours in Kensington automate patient care.<br><br>
+                        For Bupa Kensington:<br>
+                        ✅ 24/7 patient inquiries<br>
+                        ✅ Private treatment inquiries<br>
+                        ✅ Appointment booking<br>
+                        ✅ Membership questions<br><br>
+                        Enhance your patient experience. Quick demo?<br><br>
+                        Best,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Practice 9 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold">9. Bupa Dental Care Chelsea</h3>
+                            <p class="text-sm text-slate-500">375 King's Road, Chelsea, London SW3 5UW</p>
+                        </div>
+                        <button onclick="copyEmail('email9')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">📋 Copy Email</button>
+                    </div>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email9">
+                        <p class="font-bold mb-2">Subject: Chelsea Dental Practice - Patient Communication? 🤖</p>
+                        <p>Hi Practice Manager,<br><br>
+                        AutoAI Web Solutions - AI chatbots for dental practices.<br><br>
+                        Chelsea patients expect premium service. We help you deliver:<br>
+                        • Instant answers 24/7<br>
+                        • Easy online booking<br>
+                        • Emergency routing<br><br>
+                        One Bupa practice saw 50% more inquiries captured.<br><br>
+                        5-minute demo available.<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Practice 10 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold">10. Bupa Dental Care City of London</h3>
+                            <p class="text-sm text-slate-500">1 King Street, City of London, London EC2V 8AU</p>
+                        </div>
+                        <button onclick="copyEmail('email10')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">📋 Copy Email</button>
+                    </div>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email10">
+                        <p class="font-bold mb-2">Subject: City of London Dental - Never Miss a Patient? 🤖</p>
+                        <p>Hi Practice Manager,<br><br>
+                        AutoAI Web Solutions here. We help City practices capture every patient inquiry.<br><br>
+                        City professionals need convenience:<br>
+                        • Book appointments 24/7<br>
+                        • Instant pricing answers<br>
+                        • NHS & private options<br><br>
+                        40% more bookings, 60% fewer missed calls.<br><br>
+                        Quick demo? Let me know!<br><br>
+                        Best,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Tips -->
+        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-8">
+            <h3 class="font-bold text-yellow-800 mb-2">💡 Pro Tips</h3>
+            <ul class="text-sm text-yellow-700 space-y-1">
+                <li>• Send emails Tue-Thu mornings for best response rates</li>
+                <li>• Follow up after 3 days if no response</li>
+                <li>• Use WhatsApp follow-up for non-responders</li>
+                <li>• Add your LinkedIn profile link in email signature</li>
+                <li>• Keep subject lines under 50 characters</li>
+            </ul>
+        </div>
+
+        <!-- Find More -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">🔍 Find More Practices</h2>
+            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                <a href="https://www.mydentist.co.uk/find-a-practice" target="_blank" class="bg-sky-50 p-4 rounded-lg hover:bg-sky-100 transition">
+                    <strong>Mydentist Finder</strong>
+                    <p class="text-slate-500 mt-1">Find all Mydentist locations</p>
+                </a>
+                <a href="https://www.bupa.co.uk/dentists" target="_blank" class="bg-emerald-50 p-4 rounded-lg hover:bg-emerald-100 transition">
+                    <strong>Bupa Dentists</strong>
+                    <p class="text-slate-500 mt-1">Find all Bupa locations</p>
+                </a>
+                <a href="https://www.nhs.uk/service-search/find-a-dentist" target="_blank" class="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 transition">
+                    <strong>NHS Find a Dentist</strong>
+                    <p class="text-slate-500 mt-1">All NHS practices in UK</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-white py-8 mt-8">
+        <div class="max-w-5xl mx-auto px-4 text-center text-sm text-slate-400">
+            <p>© 2026 AutoAI Web Solutions | info@autoaiwebsolutions.com</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyEmail(id) {
+            const emailDiv = document.getElementById(id);
+            const text = emailDiv.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Email copied! Paste into your email client.');
+            });
+        }
+    </script>
+</body>
+</html>
