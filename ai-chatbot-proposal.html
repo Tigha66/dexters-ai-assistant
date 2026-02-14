@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Proposal | AutoAI Web Solutions</title>
+    <style>
+        @page { margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background: #fff;
+            page-break-after: always;
+            position: relative;
+        }
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            min-height: 297mm;
+        }
+        .logo { font-size: 48px; margin-bottom: 20px; }
+        .company-name { font-size: 36px; font-weight: 700; margin-bottom: 40px; }
+        .proposal-title { font-size: 28px; margin-bottom: 20px; opacity: 0.9; }
+        .client-name { font-size: 22px; margin-bottom: 10px; }
+        .date { font-size: 16px; opacity: 0.7; }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+        .section-title:first-child { margin-top: 0; }
+        .intro-text { margin-bottom: 20px; }
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .pricing-table th, .pricing-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .pricing-table th { background: #f8fafc; font-weight: 600; }
+        .pricing-table tr:last-child td { border-bottom: none; }
+        .highlight-row { background: #eff6ff !important; }
+        .total-row {
+            font-size: 18px;
+            font-weight: 700;
+            background: #1e293b !important;
+            color: white;
+        }
+        .feature-list { list-style: none; margin: 15px 0; }
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+        .feature-list li.not-included {
+            opacity: 0.5;
+            text-decoration: line-through;
+        }
+        .feature-list li.not-included::before { content: "✗"; color: #ef4444; }
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .info-box {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        .info-row:last-child { border-bottom: none; }
+        .signature-box {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        .signature-line {
+            border-top: 1px solid #333;
+            width: 250px;
+            margin-top: 50px;
+            padding-top: 10px;
+        }
+        .terms-list {
+            font-size: 14px;
+            color: #64748b;
+        }
+        .terms-list li { margin-bottom: 10px; }
+        .watermark {
+            position: absolute;
+            bottom: 10mm;
+            right: 20mm;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+        .badge {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .pricing-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .pricing-card.recommended {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+        .pricing-card h3 { font-size: 18px; margin-bottom: 10px; }
+        .pricing-card .price { font-size: 36px; font-weight: 700; color: #1e293b; }
+        .pricing-card .period { color: #64748b; font-size: 14px; }
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        .print-btn:hover { background: #2563eb; }
+        @media print {
+            .print-btn { display: none; }
+            body { -webkit-print-color-adjust: exact; }
+        }
+        @media screen {
+            .page { box-shadow: 0 0 20px rgba(0,0,0,0.1); margin: 20px auto; }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+    <!-- COVER PAGE -->
+    <div class="page cover-page">
+        <div class="logo">🤖</div>
+        <div class="company-name">AutoAI Web Solutions</div>
+        <div class="proposal-title">AI Chatbot Solution Proposal</div>
+        <div class="client-name">Prepared for: <strong>[Client Business Name]</strong></div>
+        <div class="client-name">[Client Contact Name]</div>
+        <div class="date">Date: <strong id="current-date"></strong></div>
+        <div class="watermark">AutoAI Web Solutions | www.autoaiwebsolutions.com</div>
+    </div>
+
+    <!-- PAGE 1: INTRODUCTION -->
+    <div class="page">
+        <div class="section-title">Executive Summary</div>
+        <p class="intro-text">Thank you for the opportunity to present this proposal for an AI-powered chatbot solution for your business. At AutoAI Web Solutions, we specialize in building custom chatbots that help London small businesses capture leads, book appointments, and provide 24/7 customer service — all done-for-you.</p>
+        
+        <p class="intro-text">This proposal outlines how we can help <strong>[Client Business Name]</strong> automate customer conversations and never miss a lead again.</p>
+
+        <div class="section-title">Why Your Business Needs an AI Chatbot</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="info-box">
+                    <h4 style="margin-bottom: 15px;">📊 The Problem</h4>
+                    <p style="font-size: 14px; color: #64748b;">• Missed calls after hours<br>• Slow response to inquiries<br>• Lost leads to competitors<br>• No 24/7 booking capability<br>• Overwhelmed staff</p>
+                </div>
+            </div>
+            <div>
+                <div class="info-box">
+                    <h4 style="margin-bottom: 15px;">✨ The Solution</h4>
+                    <p style="font-size: 14px; color: #64748b;">• 24/7 instant responses<br>• Automated appointment booking<br>• Lead capture & follow-up<br>• Multi-channel (web, WhatsApp)<br>• Zero staff time required</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">What's Included</div>
+        <div class="two-column">
+            <div>
+                <ul class="feature-list">
+                    <li>Custom AI chatbot trained on your business</li>
+                    <li>Integration with your website</li>
+                    <li>Lead capture & email notifications</li>
+                    <li>Appointment booking system</li>
+                    <li>FAQ automation</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="feature-list">
+                    <li>WhatsApp Business integration</li>
+                    <li>Google Calendar sync</li>
+                    <li>Mobile-optimised widget</li>
+                    <li>Analytics dashboard</li>
+                    <li>30-day onboarding support</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: PRICING -->
+    <div class="page">
+        <div class="section-title">Investment Options</div>
+        <p class="intro-text">Choose the plan that best fits your business needs. All plans include our done-for-you setup service.</p>
+
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Starter<br><span style="font-weight:400;font-size:13px;">£49/mo</span></th>
+                    <th>Professional<br><span style="font-weight:400;font-size:13px;">£99/mo</span></th>
+                    <th>Enterprise<br><span style="font-weight:400;font-size:13px;">Custom</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Conversations/month</td>
+                    <td>500</td>
+                    <td>2,000</td>
+                    <td>Unlimited</td>
+                </tr>
+                <tr>
+                    <td>Chatbots</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>Unlimited</td>
+                </tr>
+                <tr>
+                    <td>Website widget</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>FAQ automation</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Lead capture</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Email notifications</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Appointment booking</td>
+                    <td class="not-included">—</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>WhatsApp integration</td>
+                    class="not-included">—</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>CRM integration</td>
+                    <td class="not-included">—</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Human handoff</td>
+                    <td class="not-included">—</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Priority support</td>
+                    <td>Standard</td>
+                    <td>Priority</td>
+                    <td>Dedicated</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Recommended for</strong></td>
+                    <td>Solo businesses</td>
+                    <td><strong>Growing businesses</strong></td>
+                    <td>Multi-location</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box" style="margin-top: 30px;">
+            <h4 style="margin-bottom: 10px;">💡 Recommended: Professional Plan (£99/mo)</h4>
+            <p style="font-size: 14px; color: #64748b;">Most small to medium businesses find the Professional plan ideal. It includes appointment booking, WhatsApp integration, and priority support — everything needed to capture and convert leads effectively.</p>
+        </div>
+    </div>
+
+    <!-- PAGE 3: PROPOSED SOLUTION -->
+    <div class="page">
+        <div class="section-title">Proposed Solution for [Client Business Name]</div>
+        
+        <div class="pricing-card recommended">
+            <span class="badge">RECOMMENDED</span>
+            <h3>Professional Plan</h3>
+            <div class="price">£99<span class="period">/month</span></div>
+        </div>
+
+        <div class="section-title">Custom Features for Your Business</div>
+        <div class="info-box">
+            <div class="info-row">
+                <span>Industry</span>
+                <strong>[Industry: e.g., Hair Salon, Restaurant, Dental Practice]</strong>
+            </div>
+            <div class="info-row">
+                <span>Primary Use Case</span>
+                <strong>[e.g., Appointment Booking, Lead Capture, Quote Requests]</strong>
+            </div>
+            <div class="info-row">
+                <span>Channels</span>
+                <strong>Website + WhatsApp</strong>
+            </div>
+            <div class="info-row">
+                <span>Calendar Integration</span>
+                <strong>[e.g., Google Calendar, Calendly]</strong>
+            </div>
+            <div class="info-row">
+                <span>CRM Integration</span>
+                <strong>[Optional: e.g., HubSpot, Salesforce]</strong>
+            </div>
+        </div>
+
+        <div class="section-title">Sample FAQs Your Bot Will Handle</div>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Question Type</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Opening Hours</td>
+                    <td>"What are your opening times?"</td>
+                </tr>
+                <tr>
+                    <td>Pricing</td>
+                    <td>"How much does [service] cost?"</td>
+                </tr>
+                <tr>
+                    <td>Availability</td>
+                    <td>"Do you have appointments available tomorrow?"</td>
+                </tr>
+                <tr>
+                    <td>Services</td>
+                    <td>"What services do you offer?"</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>"Where are you located?"</td>
+                </tr>
+                <tr>
+                    <td>Booking</td>
+                    <td>"I'd like to book an appointment"</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">Implementation Timeline</div>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Phase</th>
+                    <th>Activity</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1. Discovery</td>
+                    <td>15-min call to understand your business</td>
+                    <td>Day 1</td>
+                </tr>
+                <tr>
+                    <td>2. Build</td>
+                    <td>We create and train your custom chatbot</td>
+                    <td>Days 2-3</td>
+                </tr>
+                <tr>
+                    <td>3. Review</td>
+                    <td>You test and approve the bot</td>
+                    <td>Day 4</td>
+                </tr>
+                <tr>
+                    <td>4. Launch</td>
+                    <td>Bot goes live on your website</td>
+                    <td>Day 5</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size: 14px; color: #64748b; margin-top: 15px;"><strong>Total time from start to live: 5 business days</strong></p>
+    </div>
+
+    <!-- PAGE 4: TERMS & SIGNATURE -->
+    <div class="page">
+        <div class="section-title">Terms & Conditions</div>
+        <ul class="terms-list">
+            <li><strong>1. Payment Terms:</strong> First month due before launch. Monthly subscription billed on the same date each month thereafter.</li>
+            <li><strong>2. Cancellation:</strong> 30-day notice required for cancellation. No refunds for partial months.</li>
+            <li><strong>3. Service Level:</strong> 99.9% uptime guarantee. Scheduled maintenance windows will be communicated in advance.</li>
+            <li><strong>4. Data Handling:</strong> All customer data is processed in accordance with GDPR. Data remains property of your business.</li>
+            <li><strong>5. Support:</strong> Email support included. Phone support available for Enterprise plans.</li>
+            <li><strong>6. Modifications:</strong> Two rounds of modifications included after launch. Additional changes billed at £50/hour.</li>
+        </ul>
+
+        <div class="section-title">Next Steps</div>
+        <div class="info-box">
+            <p style="margin-bottom: 15px;">To proceed with this proposal:</p>
+            <ol style="padding-left: 20px; color: #64748b; line-height: 2;">
+                <li>Sign and return this proposal (scan or photo)</li>
+                <li>Schedule your 15-min discovery call</li>
+                <li>Pay first month subscription (£99)</li>
+                <li>We'll build your bot within 5 business days!</li>
+            </ol>
+        </div>
+
+        <div class="signature-box">
+            <div class="two-column">
+                <div>
+                    <p><strong>Client Acceptance</strong></p>
+                    <div class="signature-line">
+                        <p style="font-size: 12px; color: #64748b;">Signature</p>
+                    </div>
+                    <p style="margin-top: 10px;">Name: _________________</p>
+                    <p>Date: _________________</p>
+                </div>
+                <div>
+                    <p><strong>AutoAI Web Solutions</strong></p>
+                    <div class="signature-line">
+                        <p style="font-size: 12px; color: #64748b;">Authorised Signature</p>
+                    </div>
+                    <p style="margin-top: 10px;">Name: _________________</p>
+                    <p>Date: _________________</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 30px; text-align: center;">
+            <p style="font-size: 14px; color: #64748b; margin-bottom: 10px;">Questions about this proposal?</p>
+            <p><strong>Email:</strong> info@autoaiwebsolutions.com</p>
+            <p><strong>Website:</strong> www.autoaiwebsolutions.com</p>
+        </div>
+        
+        <div class="watermark">AutoAI Web Solutions | www.autoaiwebsolutions.com</div>
+    </div>
+
+    <script>
+        // Set current date
+        const date = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = date.toLocaleDateString('en-GB', options);
+    </script>
+</body>
+</html>
