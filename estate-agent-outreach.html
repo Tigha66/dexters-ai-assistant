@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate Agent Outreach | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <header class="bg-white shadow-sm py-4">
+        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-slate-800">🏠 Estate Agent Outreach</h1>
+            <a href="sell-ai-bots.html" class="text-sky-600 hover:underline">← Back to Sales</a>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        
+        <!-- Pain Points -->
+        <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-8">
+            <h2 class="font-bold text-red-800 mb-2">😩 The Problem Estate Agents Face</h2>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="font-medium text-red-700">📱 Inquiry Overload</p>
+                    <p class="text-red-600">"Is this available?" → 100+ times per day</p>
+                </div>
+                <div>
+                    <p class="font-medium text-red-700">📞 Missed Calls</p>
+                    <p class="text-red-600">Calls during viewings = lost leads</p>
+                </div>
+                <div>
+                    <p class="font-medium text-red-700">⏰ After Hours</p>
+                    <p class="text-red-600">Enquiries at 2AM = competitors get the lead</p>
+                </div>
+                <div>
+                    <p class="font-medium text-red-700">📋 Repetitive Questions</p>
+                    <p class="text-red-600">"How much is rent?" "Do you have parking?"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Templates -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6">📧 Email Templates</h2>
+            
+            <div class="space-y-6">
+                <!-- Template 1: General -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 1: General Estate Agent</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email1">
+                        <p class="font-bold mb-2">Subject: Never Miss a Property Inquiry Again? 🤖</p>
+                        <p>Hi [Agent Name],<br><br>
+                        I'm from AutoAI Web Solutions. We help estate agents like [Agency Name] capture every property inquiry — 24/7.<br><br>
+                        Here's what we do:<br>
+                        ✅ Answer "Is this available?" instantly<br>
+                        ✅ Book viewings through chat<br>
+                        ✅ Collect buyer/tenant details automatically<br>
+                        ✅ Qualify leads before you call back<br><br>
+                        One London agency saw 45% more viewings booked in month one.<br><br>
+                        Would a quick 5-minute demo help you see if this could work for [Agency Name]?<br><br>
+                        Best,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email1')" class="mt-3 bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">📋 Copy Email</button>
+                </div>
+
+                <!-- Template 2: High Volume -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 2: High-Volume Agency</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email2">
+                        <p class="font-bold mb-2">Subject: Capture More Property Leads? 🤖</p>
+                        <p>Hi [Agent Name],<br><br>
+                        With [Agency Name] handling so many properties, how do you capture every inquiry?<br><br>
+                        Our AI chatbot:<br>
+                        • Answers availability 24/7<br>
+                        • Books viewings instantly<br>
+                        • Qualifies leads automatically<br>
+                        • Works on your website & RightMove<br><br>
+                        40% more viewings booked. 60% fewer missed calls.<br><br>
+                        Quick demo? Reply YES and I'll send you a link.<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email2')" class="mt-3 bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">📋 Copy Email</button>
+                </div>
+
+                <!-- Template 3: Lettings Focus -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 3: Lettings Specialists</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email3">
+                        <p class="font-bold mb-2">Subject: Tenant Inquiries While You Sleep? 🏠</p>
+                        <p>Hi [Agent Name],<br><br>
+                        Does this sound familiar?<br>
+                        "Hi, is the flat on Oxford Street still available?" → Sent at 11PM → You reply Monday → Tenant found another place.<br><br>
+                        Our AI chatbot answers instantly, 24/7, and books viewings while you sleep.<br><br>
+                        One lettings agency captured 50% more tenants in their first month.<br><br>
+                        5-minute demo available. Interested?<br><br>
+                        Best,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email3')" class="mt-3 bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">📋 Copy Email</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Estate Agents -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6">🎯 Top London Estate Agents to Target</h2>
+            
+            <div class="space-y-4">
+                <!-- Foxtons -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold">Foxtons</h3>
+                            <p class="text-sm text-slate-500">London's largest estate agent - 100+ branches</p>
+                            <p class="text-sm text-slate-600 mt-1">📍 Branches: Notting Hill, Chelsea, South Kensington, Canary Wharf, City</p>
+                        </div>
+                        <a href="https://www.foxtons.co.uk/branches" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">Find Branches →</a>
+                    </div>
+                </div>
+
+                <!-- Dexters -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold">Dexters</h3>
+                            <p class="text-sm text-slate-500">Premium London estate agent - 70+ branches</p>
+                            <p class="text-sm text-slate-600 mt-1">📍 Branches: Mayfair, Knightsbridge, St John's Wood, Islington</p>
+                        </div>
+                        <a href="https://www.dexters.co.uk/branch-finder" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">Find Branches →</a>
+                    </div>
+                </div>
+
+                <!-- Rightmove -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold">Rightmove</h3>
+                            <p class="text-sm text-slate-500">Estate agent network - find branches</p>
+                            <p class="text-sm text-slate-600 mt-1">📍 All London areas covered</p>
+                        </div>
+                        <a href="https://www.rightmove.co.uk/estate-agents/london" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">Find Agents →</a>
+                    </div>
+                </div>
+
+                <!-- Zoopla -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold">Zoopla</h3>
+                            <p class="text-sm text-slate-500">Estate agent directory</p>
+                            <p class="text-sm text-slate-600 mt-1">📍 All London areas covered</p>
+                        </div>
+                        <a href="https://www.zoopla.co.uk/estate-agents/london" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">Find Agents →</a>
+                    </div>
+                </div>
+
+                <!-- OnTheMarket -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold">OnTheMarket</h3>
+                            <p class="text-sm text-slate-500">Estate agent listings</p>
+                            <p class="text-sm text-slate-600 mt-1">📍 UK-wide coverage</p>
+                        </div>
+                        <a href="https://www.onthemarket.com/estate-agents/london" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition">Find Agents →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Selling Points -->
+        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-8">
+            <h2 class="font-bold text-emerald-800 mb-4">💰 Key Benefits to Mention</h2>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="font-medium text-emerald-700">✅ Instant Response</p>
+                    <p class="text-emerald-600">Answer inquiries within seconds, not hours</p>
+                </div>
+                <div>
+                    <p class="font-medium text-emerald-700">✅ 24/7 Availability</p>
+                    <p class="text-emerald-600">Capture leads while you sleep</p>
+                </div>
+                <div>
+                    <p class="font-medium text-emerald-700">✅ Lead Qualification</p>
+                    <p class="text-emerald-600">Pre-qualify buyers and tenants</p>
+                </div>
+                <div>
+                    <p class="font-medium text-emerald-700">✅ Viewing Booking</p>
+                    <p class="text-emerald-600">Automated appointment scheduling</p>
+                </div>
+                <div>
+                    <p class="font-medium text-emerald-700">✅ CRM Integration</p>
+                    <p class="text-emerald-600">Sync with existing systems</p>
+                </div>
+                <div>
+                    <p class="font-medium text-emerald-700">✅ Reduce No-Shows</p>
+                    <p class="text-emerald-600">Automated reminders</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">📁 Your Resources</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <a href="estate-agent-london.html" class="bg-slate-100 p-4 rounded-lg hover:bg-emerald-50 transition">
+                    <strong>Chatbot Demo</strong>
+                    <p class="text-sm text-slate-500">Live chatbot example</p>
+                </a>
+                <a href="https://www.foxtons.co.uk" target="_blank" class="bg-slate-100 p-4 rounded-lg hover:bg-emerald-50 transition">
+                    <strong>Foxtons</strong>
+                    <p class="text-sm text-slate-500">Target agency #1</p>
+                </a>
+                <a href="https://www.dexters.co.uk" target="_blank" class="bg-slate-100 p-4 rounded-lg hover:bg-emerald-50 transition">
+                    <strong>Dexters</strong>
+                    <p class="text-sm text-slate-500">Target agency #2</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-white py-8 mt-8">
+        <div class="max-w-5xl mx-auto px-4 text-center text-sm text-slate-400">
+            <p>🏠 Estate Agent Outreach Kit</p>
+            <p class="mt-4">© 2026 AutoAI Web Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyEmail(id) {
+            const emailDiv = document.getElementById(id);
+            const text = emailDiv.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Email copied! Paste into your email client.');
+            });
+        }
+    </script>
+</body>
+</html>

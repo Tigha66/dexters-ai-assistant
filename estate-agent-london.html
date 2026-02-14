@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Estate Agent AI Chatbot | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl">🏠</span>
+                <span class="font-bold text-lg text-slate-800">Prime Property London</span>
+                <span class="text-xs text-slate-500">| Estate Agents</span>
+            </div>
+            <a href="#chatbot" class="bg-emerald-500 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-emerald-600 transition">Book Viewing</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-gradient text-white py-16 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center bg-emerald-500/20 px-4 py-2 rounded-full text-emerald-300 text-sm mb-6">
+                <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                AI Assistant Available 24/7
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Find Your Perfect Home</h1>
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                London property experts. Book viewings, check availability, 
+                and get instant answers — 24 hours a day.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#chatbot" class="bg-emerald-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-600 transition shadow-lg shadow-emerald-500/25">
+                    🤖 Chat with AI Assistant
+                </a>
+                <a href="tel:02012345678" class="bg-white/10 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition">
+                    📞 Call: 020 1234 5678
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info -->
+    <section class="bg-emerald-500 text-white py-4">
+        <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-8 text-sm">
+            <span>📍 123 Oxford Street, London W1D 2DZ</span>
+            <span>📞 020 1234 5678</span>
+            <span>✉️ info@primepropertylondon.co.uk</span>
+            <span>🕐 Mon-Sat 9AM-7PM</span>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Our Services</h2>
+            <p class="text-slate-600 text-center mb-12">Full-service property solutions in London</p>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🏠</div>
+                    <h3 class="font-bold mb-2">Sales</h3>
+                    <p class="text-sm text-slate-500">Residential & commercial sales</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🔑</div>
+                    <h3 class="font-bold mb-2">Lettings</h3>
+                    <p class="text-sm text-slate-500">Tenant & landlord services</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">📋</div>
+                    <h3 class="font-bold mb-2">Valuations</h3>
+                    <p class="text-sm text-slate-500">Free property valuations</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🏢</div>
+                    <h3 class="font-bold mb-2">Block Management</h3>
+                    <p class="text-sm text-slate-500">Full estate management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="py-16 px-4 bg-slate-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Featured Properties</h2>
+            <p class="text-slate-600 text-center mb-12">Latest listings in London</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-slate-200 flex items-center justify-center">
+                        <span class="text-slate-400">Property Image</span>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-emerald-500 text-white text-xs px-2 py-1 rounded">For Sale</span>
+                            <span class="font-bold text-emerald-600">£850,000</span>
+                        </div>
+                        <h3 class="font-bold mb-1">2 Bed Flat in Mayfair</h3>
+                        <p class="text-sm text-slate-500 mb-3">Mayfair, W1K 3JP</p>
+                        <button onclick="quickQuestion('I want to view the 2 bed flat in Mayfair')" class="w-full bg-slate-100 hover:bg-emerald-50 text-slate-700 py-2 rounded text-sm transition">📅 Book Viewing</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-slate-200 flex items-center justify-center">
+                        <span class="text-slate-400">Property Image</span>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded">To Rent</span>
+                            <span class="font-bold text-blue-600">£2,500/mo</span>
+                        </div>
+                        <h3 class="font-bold mb-1">1 Bed Apartment in Shoreditch</h3>
+                        <p class="text-sm text-slate-500 mb-3">Shoreditch, E1 6AN</p>
+                        <button onclick="quickQuestion('I want to view the 1 bed in Shoreditch')" class="w-full bg-slate-100 hover:bg-emerald-50 text-slate-700 py-2 rounded text-sm transition">📅 Book Viewing</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-slate-200 flex items-center justify-center">
+                        <span class="text-slate-400">Property Image</span>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-emerald-500 text-white text-xs px-2 py-1 rounded">For Sale</span>
+                            <span class="font-bold text-emerald-600">£1,250,000</span>
+                        </div>
+                        <h3 class="font-bold mb-1">3 Bed House in Chelsea</h3>
+                        <p class="text-sm text-slate-500 mb-3">Chelsea, SW3 4NG</p>
+                        <button onclick="quickQuestion('I want to view the 3 bed house in Chelsea')" class="w-full bg-slate-100 hover:bg-emerald-50 text-slate-700 py-2 rounded text-sm transition">📅 Book Viewing</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <section id="chatbot" class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-8">
+                <span class="inline-block bg-emerald-100 text-emerald-700 px-4 py-1 rounded-full text-sm font-medium mb-4">🤖 Try Our AI Assistant</span>
+                <h2 class="text-3xl font-bold mb-4">Property Enquiries</h2>
+                <p class="text-slate-600">Available 24/7 to answer your questions</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-emerald-500 text-white p-4 flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                        <div>
+                            <div class="font-semibold">Prime Property AI</div>
+                            <div class="text-xs text-emerald-200">Online • Ready to help</div>
+                        </div>
+                    </div>
+                    <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full hover:bg-white/30 transition">✕</button>
+                </div>
+                <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50" style="height: 350px;"></div>
+                <div class="p-4 border-t bg-white">
+                    <div class="flex space-x-2">
+                        <input type="text" id="chat-input" placeholder="Ask about properties, viewings, valuations..." class="flex-1 bg-slate-100 rounded-full px-4 py-3 focus:ring-2 focus:ring-emerald-500 outline-none" onkeypress="if(event.key==='Enter')sendMessage()">
+                        <button onclick="sendMessage()" class="bg-emerald-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-emerald-600 transition">➤</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 flex flex-wrap justify-center gap-3">
+                <button onclick="quickQuestion('Is this property still available?')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-emerald-50 hover:border-emerald-300 transition">🏠 Availability</button>
+                <button onclick="quickQuestion('Book a viewing')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-emerald-50 hover:border-emerald-300 transition">📅 Book viewing</button>
+                <button onclick="quickQuestion('How much is my property worth?')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-emerald-50 hover:border-emerald-300 transition">💷 Valuation</button>
+                <button onclick="quickQuestion('Do you rent in my area?')" class="bg-white border border-slate-200 px-4 py-2 rounded-full text-sm hover:bg-emerald-50 hover:border-emerald-300 transition">🔑 Lettings</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 rounded-xl p-8">
+                    <h3 class="font-bold text-xl mb-6">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">📍</span>
+                            <div>
+                                <p class="font-medium">Address</p>
+                                <p class="text-slate-600">123 Oxford Street<br>London W1D 2DZ</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">📞</span>
+                            <div>
+                                <p class="font-medium">Phone</p>
+                                <p class="text-slate-600">020 1234 5678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">✉️</span>
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <p class="text-slate-600">info@primepropertylondon.co.uk</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-8">
+                    <h3 class="font-bold text-xl mb-6">Opening Hours</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between py-2 border-b border-slate-200">
+                            <span>Mon-Fri</span><span>9:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-slate-200">
+                            <span>Saturday</span><span>10:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-2 text-slate-500">
+                            <span>Sunday</span><span>By appointment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <span class="text-2xl">🏠</span>
+                <span class="text-xl font-bold">Prime Property London</span>
+            </div>
+            <p class="text-slate-400 text-sm">Your Trusted London Estate Agent</p>
+            <p class="text-slate-500 text-xs mt-4">© 2026 Prime Property London</p>
+        </div>
+    </footer>
+
+    <button onclick="openChat()" id="chat-toggle" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-emerald-500 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:bg-emerald-600 transition shadow-lg">💬</button>
+
+    <script>
+        const CONFIG = {
+            name: 'Prime Property London',
+            phone: '020 1234 5678',
+            email: 'info@primepropertylondon.co.uk',
+            address: '123 Oxford Street, London W1D 2DZ'
+        };
+        let bookingState = { step: 0, name: '', phone: '', email: '', property: '', type: '', date: '', time: '' };
+        
+        function openChat() { document.getElementById('chat-widget').classList.remove('hidden'); document.getElementById('chat-toggle').classList.add('hidden'); if (!window.initialized) { addMessage(welcomeMessage(), false); window.initialized = true; } }
+        function closeChat() { document.getElementById('chat-widget').classList.add('hidden'); document.getElementById('chat-toggle').classList.remove('hidden'); }
+        function quickQuestion(q) { document.getElementById('chat-input').value = q; sendMessage(); }
+        
+        function addMessage(text, isUser) {
+            const div = document.createElement('div');
+            div.className = isUser ? 'flex justify-end' : 'flex justify-start';
+            div.innerHTML = isUser ? `<div class="bg-emerald-500 text-white rounded-2xl rounded-tr-none px-4 py-3 max-w-[85%]">${text}</div>` : `<div class="bg-white border border-slate-200 rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%] shadow-sm">${text}</div>`;
+            document.getElementById('chat-messages').appendChild(div); div.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function welcomeMessage() { return `👋 Welcome to <strong>${CONFIG.name}</strong>! 🏠<br><br>I'm your property AI assistant. I can help with:<br><br>• 📅 <strong>Book viewings</strong><br>• 🏠 <strong>Property availability</strong><br>• 💷 <strong>Valuations</strong><br>• 🔑 <strong>Lettings inquiries</strong><br>• ❓ <strong>General questions</strong><br><br>How can I help you today?`; }
+
+        function getBotResponse(message) {
+            const m = message.toLowerCase();
+            if (bookingState.step > 0) return handleBooking(m);
+            if (m.includes('viewing') || m.includes('book') || m.includes('schedule')) { bookingState.step = 1; return `📅 <strong>Book a Viewing</strong><br><br>I'd be happy to arrange a viewing!<br><br>First, what is your <strong>name</strong>?`; }
+            if (m.includes('available') || m.includes('still on') || m.includes('is this')) return `🏠 <strong>Property Availability</strong><br><br>Most of our properties are listed on RightMove and Zoopla too. Which property are you interested in?<br><br>Or tell me:<br>• What area?<br>• How many bedrooms?<br>• Your budget?<br><br>I'll check availability instantly!`;
+            if (m.includes('valu') || m.includes('worth') || m.includes('sell my')) return `💷 <strong>Free Property Valuation</strong><br><br>We offer FREE no-obligation valuations for London properties.<br><br>Just provide:<br>• Your address<br>• Best time to call<br>• Your phone number<br><br>We'll give you an accurate market valuation!`;
+            if (m.includes('rent') || m.includes('lettings') || m.includes('to rent')) return `🔑 <strong>Lettings & Rentals</strong><br><br>We have properties available across London:<br>• Studios from £1,200/mo<br>• 1-beds from £1,600/mo<br>• 2-beds from £2,200/mo<br>• 3-beds from £3,000/mo<br><br>What's your budget and preferred area?`;
+            if (m.includes('location') || m.includes('address') || m.includes('where')) return `📍 <strong>${CONFIG.name}</strong><br>${CONFIG.address}<br><br>📞 ${CONFIG.phone}<br>✉️ ${CONFIG.email}<br><br>Visit us Mon-Sat!`;
+            if (m.includes('contact') || m.includes('phone') || m.includes('call')) return `📞 <strong>Contact Us</strong><br>Phone: ${CONFIG.phone}<br>Email: ${CONFIG.email}<br>Address: ${CONFIG.address}`;
+            if (m.includes('hour') || m.includes('open') || m.includes('time')) return `🕐 <strong>Opening Hours</strong><br><br>Mon-Fri: 9AM-7PM<br>Saturday: 10AM-5PM<br>Sunday: By appointment<br><br>AI assistant available 24/7!`;
+            if (m.includes('hello') || m.includes('hi')) return welcomeMessage();
+            return `I'd be happy to help! 🤔<br><br>Try: "Book a viewing", "Is this available?", "Valuation", or "Rent a flat"`;
+        }
+
+        function handleBooking(m) {
+            switch(bookingState.step) {
+                case 1: bookingState.name = message; bookingState.step = 2; return `Thanks, ${bookingState.name}! 😊<br><br>What is your <strong>phone number</strong>?`;
+                case 2: bookingState.phone = message; bookingState.step = 3; return `Perfect! And your <strong>email</strong>?`;
+                case 3: bookingState.email = message; bookingState.step = 4; return `Great! What <strong>property</strong> would you like to view?`;
+                case 4: bookingState.property = message; bookingState.step = 5; return `${bookingState.property} noted! 📅<br><br>When would you like to view?`;
+                case 5: bookingState.date = message; bookingState.step = 6; return `We'll check availability and call you at ${bookingState.phone} to confirm.<br><br>Anything else?`;
+                default: bookingState.step = 0; return getBotResponse(message);
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+            addMessage(message, true);
+            input.value = '';
+            setTimeout(() => { addMessage(bookingState.step > 0 ? handleBooking(message) : getBotResponse(message), false); }, 300);
+        }
+    </script>
+
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden" style="width: 420px; max-width: calc(100vw - 32px);">
+            <div class="bg-emerald-500 text-white p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                    <div><div class="font-semibold">${CONFIG.name} AI</div><div class="text-xs text-emerald-200">Online</div></div>
+                </div>
+                <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full">✕</button>
+            </div>
+            <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50" style="height: 350px;"></div>
+            <div class="p-4 border-t bg-white">
+                <div class="flex space-x-2">
+                    <input type="text" id="chat-input" placeholder="Ask about properties..." class="flex-1 bg-slate-100 rounded-full px-4 py-3" onkeypress="if(event.key==='Enter')sendMessage()">
+                    <button onclick="sendMessage()" class="bg-emerald-500 text-white w-12 h-12 rounded-full">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
