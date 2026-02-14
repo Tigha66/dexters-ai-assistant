@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice AI Outreach | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <header class="bg-white shadow-sm py-4">
+        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-slate-800">🎧 Voice AI Outreach</h1>
+            <a href="sell-ai-bots.html" class="text-sky-600 hover:underline">← Back to Sales</a>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        
+        <!-- Pain Points -->
+        <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-8">
+            <h2 class="font-bold text-red-800 mb-2">😩 The Problem Plumbers Face</h2>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="font-medium text-red-700">📞 Missed Calls</p>
+                    <p class="text-red-600">On a job → phone rings → voicemail → lost customer</p>
+                </div>
+                <div>
+                    <p class="font-medium text-red-700">🚨 Emergency Routing</p>
+                    <p class="text-red-600">2AM calls go unanswered → competitor gets the job</p>
+                </div>
+                <div>
+                    <p class="font-medium text-red-700">💷 Quote Without Details</p>
+                    <p class="text-red-600">"How much for a boiler?" → no info → wasted callback</p>
+                </div>
+                <div>
+                    <p class="font-medium text-red-700">⏰ Time on Phone</p>
+                    <p class="text-red-600">Hours on phone tag instead of earning</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Templates -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6">📧 Email Templates</h2>
+            
+            <div class="space-y-6">
+                <!-- Template 1 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 1: Emergency Focus</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email1">
+                        <p class="font-bold mb-2">Subject: Never Miss an Emergency Call Again? 🚰📞</p>
+                        <p>Hi [Plumber Name],<br><br>
+                        Does this sound familiar?<br><br>
+                        "Hi, I have a burst pipe. Can you come today?" → You're underground in a job → No answer → Customer calls your competitor.<br><br>
+                        I help plumbers like you capture every emergency — 24/7 — with an AI voice agent that:<br><br>
+                        ✅ Answers YOUR phone number<br>
+                        ✅ Handles "Can you come today?" calls<br>
+                        ✅ Collects address, issue, and urgency<br>
+                        ✅ Texts YOU the details instantly<br><br>
+                        One London plumber captured £12,000 more in emergency jobs in month one.<br><br>
+                        Would a quick 2-minute demo help you hear if this could work for [Business Name]?<br><br>
+                        Reply YES and I'll send you a link.<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email1')" class="mt-3 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition">📋 Copy Email</button>
+                </div>
+
+                <!-- Template 2 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 2: Quote Collection</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email2">
+                        <p class="font-bold mb-2">Subject: Stop Wasting Time on Price Calls? 💷</p>
+                        <p>Hi [Plumber Name],<br><br>
+                        "How much for a boiler installation?" → You call back → They don't answer → Never hear from them again.<br><br>
+                        Our AI voice agent:<br>
+                        • Answers 24/7<br>
+                        • Asks the right questions (what boiler, where, timeline)<br>
+                        • Sends you a qualified lead with details<br>
+                        • Only books appointments with serious customers<br><br>
+                        More jobs, less time on the phone.<br><br>
+                        Quick demo? Reply YES.<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email2')" class="mt-3 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition">📋 Copy Email</button>
+                </div>
+
+                <!-- Template 3 -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 3: Short & Direct</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email3">
+                        <p class="font-bold mb-2">Subject: Answer your phone while you work? 📞</p>
+                        <p>Hi [Plumber Name],<br><br>
+                        I help tradespeople answer every call — even when you're on a job.<br><br>
+                        AI voice agent. Costs £149/mo. Pays for itself.<br><br>
+                        Demo: [link]<br><br>
+                        Reply YES if interested.<br><br>
+                        Cheers,<br>
+                        [Your Name]
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email3')" class="mt-3 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition">📋 Copy Email</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Benefits -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+            <h2 class="font-bold text-blue-800 mb-4">💰 Key Benefits to Mention</h2>
+            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                <div>
+                    <p class="font-medium text-blue-700">✅ 24/7 Coverage</p>
+                    <p class="text-blue-600">Answer calls while you sleep</p>
+                </div>
+                <div>
+                    <p class="font-medium text-blue-700">✅ Emergency Dispatch</p>
+                    <p class="text-blue-600">Route urgent jobs instantly</p>
+                </div>
+                <div>
+                    <p class="font-medium text-blue-700">✅ Qualified Leads</p>
+                    <p class="text-blue-600">Details before you call back</p>
+                </div>
+                <div>
+                    <p class="font-medium text-blue-700">✅ More Jobs</p>
+                    <p class="text-blue-600">40% increase in bookings</p>
+                </div>
+                <div>
+                    <p class="font-medium text-blue-700">✅ Calendar Booking</p>
+                    <p class="text-blue-600">Automated appointment scheduling</p>
+                </div>
+                <div>
+                    <p class="font-medium text-blue-700">✅ SMS Summaries</p>
+                    <p class="text-blue-600">Get call details via text</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call Script -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">📞 Cold Call Script</h2>
+            <div class="bg-slate-100 rounded-lg p-4 font-mono text-sm">
+                <p class="font-bold mb-2">Opening:</p>
+                <p>"Hi [Name], this is [Your Name] from AutoAI Web Solutions. Have you got 30 seconds?"</p>
+                
+                <p class="font-bold mt-4 mb-2">The Pitch:</p>
+                <p>"I help plumbers capture every emergency call — even when you're on a job. Our AI voice agent answers your phone 24/7, collects the details, and texts you instantly. One client got £12K more in emergency jobs month one."</p>
+                
+                <p class="font-bold mt-4 mb-2">Close:</p>
+                <p>"Would you be open to a quick 2-minute demo to hear how it sounds? I can send you a link right now."</p>
+                
+                <p class="font-bold mt-4 mb-2">If Yes:</p>
+                <p>"Great! I'll email you a demo link. What's your best email?"</p>
+                
+                <p class="font-bold mt-4 mb-2">If No:</p>
+                <p>"No problem! When would be a better time to follow up?"</p>
+            </div>
+        </div>
+
+        <!-- Find Plumbers -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6">🔍 Where to Find Plumbers</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <a href="https://www.checkatrade.com" target="_blank" class="bg-yellow-50 p-4 rounded-lg hover:bg-yellow-100 transition">
+                    <strong>Checkatrade</strong>
+                    <p class="text-sm text-slate-500">Verified plumbers directory</p>
+                </a>
+                <a href="https://www.trustatrader.com" target="_blank" class="bg-green-50 p-4 rounded-lg hover:bg-green-100 transition">
+                    <strong>TrustATrader</strong>
+                    <p class="text-sm text-slate-500">Tradespeople directory</p>
+                </a>
+                <a href="https://www.yell.com" target="_blank" class="bg-red-50 p-4 rounded-lg hover:bg-red-100 transition">
+                    <strong>Yell.com</strong>
+                    <p class="text-sm text-slate-500">Local business directory</p>
+                </a>
+                <a href="https://www.gassaferegister.co.uk" target="_blank" class="bg-orange-50 p-4 rounded-lg hover:bg-orange-100 transition">
+                    <strong>Gas Safe Register</strong>
+                    <p class="text-sm text-slate-500">Gas engineers only</p>
+                </a>
+                <a href="https://www.oftec.co.uk" target="_blank" class="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 transition">
+                    <strong>OFTEC</strong>
+                    <p class="text-sm text-slate-500">Oil & heating engineers</p>
+                </a>
+                <a href="https://www.plumbing-heating.co.uk" target="_blank" class="bg-purple-50 p-4 rounded-lg hover:bg-purple-100 transition">
+                    <strong>PHCC</strong>
+                    <p class="text-sm text-slate-500">Trade association</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Demo Link -->
+        <div class="bg-blue-600 text-white rounded-xl p-6 text-center">
+            <h2 class="text-xl font-bold mb-2">Ready to Pitch?</h2>
+            <p class="text-blue-200 mb-4">Send plumbers this demo link</p>
+            <a href="voice-ai-plumber.html" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-blue-50 transition">🎧 View Demo Page →</a>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-white py-8 mt-8">
+        <div class="max-w-5xl mx-auto px-4 text-center text-sm text-slate-400">
+            <p>🎧 Voice AI Outreach Kit</p>
+            <p class="mt-4">© 2026 AutoAI Web Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyEmail(id) {
+            const emailDiv = document.getElementById(id);
+            const text = emailDiv.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Email copied!');
+            });
+        }
+    </script>
+</body>
+</html>
