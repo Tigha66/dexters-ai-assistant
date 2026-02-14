@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Britannia Plumbers | Trusted London Plumbing & Heating Services</title>
+    <meta name="description" content="Britannia Plumbers - Trusted London plumbers offering emergency callouts, boiler & heating, bathroom installations, leaks, and blockages. Fully insured, qualified engineers, transparent pricing.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0B1F3A',
+                        'navy-light': '#1a3a5c',
+                        accent: '#F59E0B',
+                        'accent-hover': '#d97706',
+                        light: '#F5F7FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, #0B1F3A 0%, #1a3a5c 100%); }
+        html { scroll-behavior: smooth; }
+        .service-card:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-light text-navy">
+    <!-- Top Bar -->
+    <div class="bg-navy text-white py-2">
+        <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-between items-center text-sm">
+            <div class="flex items-center space-x-4">
+                <span>📍 Serving All of London</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:02012345678" class="hover:text-accent transition">📞 020 1234 5678</a>
+                <a href="mailto:info@britanniaplumbers.co.uk" class="hover:text-accent transition">✉️ info@britanniaplumbers.co.uk</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <span class="text-3xl">🔧</span>
+                <div>
+                    <div class="font-bold text-xl text-navy">Britannia</div>
+                    <div class="font-bold text-xl text-accent">Plumbers</div>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#services" class="hover:text-accent transition">Services</a>
+                <a href="#about" class="hover:text-accent transition">About</a>
+                <a href="#reviews" class="hover:text-accent transition">Reviews</a>
+                <a href="#gallery" class="hover:text-accent transition">Gallery</a>
+                <a href="#contact" class="bg-accent text-white px-5 py-2 rounded-full hover:bg-accent-hover transition font-semibold">Get a Free Quote</a>
+                <a href="tel:02012345678" class="bg-navy text-white px-5 py-2 rounded-full hover:bg-navy-light transition">Call Now</a>
+            </div>
+            
+            <button onclick="toggleMobileMenu()" class="md:hidden text-navy">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </nav>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-3 space-y-2 text-sm font-medium">
+                <a href="#services" class="block py-2 hover:text-accent">Services</a>
+                <a href="#about" class="block py-2 hover:text-accent">About</a>
+                <a href="#reviews" class="block py-2 hover:text-accent">Reviews</a>
+                <a href="#gallery" class="block py-2 hover:text-accent">Gallery</a>
+                <a href="#contact" class="block py-2 text-accent font-bold">Get a Free Quote</a>
+                <a href="tel:02012345678" class="block py-2 font-bold">📞 Call Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Trusted Plumbers in London — <span class="text-accent">Fast, Reliable, Professional</span>
+                    </h1>
+                    <p class="text-xl text-slate-300 mb-8 max-w-xl">
+                        Emergency callouts, boiler & heating, bathrooms, leaks, blockages and more. 
+                        Fully insured, qualified engineers, transparent pricing.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#contact" class="bg-accent text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-hover transition shadow-lg shadow-accent/25">Get a Free Quote</a>
+                        <a href="tel:02012345678" class="bg-white text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-100 transition">📞 Call Now</a>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-6 mt-10 pt-8 border-t border-white/20">
+                        <div class="flex items-center space-x-2"><span class="text-2xl">⚡</span><span class="text-sm">Rapid Response</span></div>
+                        <div class="flex items-center space-x-2"><span class="text-2xl">💷</span><span class="text-sm">Transparent Pricing</span></div>
+                        <div class="flex items-center space-x-2"><span class="text-2xl">✓</span><span class="text-sm">Quality Workmanship</span></div>
+                    </div>
+                </div>
+                
+                <div class="flex-shrink-0 bg-white/10 backdrop-blur rounded-2xl p-8 text-center">
+                    <div class="text-6xl mb-4">🚨</div>
+                    <h3 class="text-2xl font-bold mb-2">Emergency?</h3>
+                    <p class="text-accent font-bold text-3xl mb-4">Same-Day Response</p>
+                    <p class="text-slate-300 text-sm mb-4">London & surrounding areas</p>
+                    <a href="tel:02012345678" class="inline-block bg-accent text-white px-8 py-3 rounded-full font-bold hover:bg-accent-hover transition">📞 020 1234 5678</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+                <div class="flex items-center space-x-2 text-sm"><span class="text-3xl">🛡️</span><span class="font-medium">Fully Insured</span></div>
+                <div class="flex items-center space-x-2 text-sm"><span class="text-3xl">👨‍🔧</span><span class="font-medium">Qualified Engineers</span></div>
+                <div class="flex items-center space-x-2 text-sm"><span class="text-3xl">💷</span><span class="font-medium">Transparent Pricing</span></div>
+                <div class="flex items-center space-x-2 text-sm"><span class="text-3xl">⚡</span><span class="font-medium">Fast Response</span></div>
+                <div class="flex items-center space-x-2 text-sm"><span class="text-3xl">⭐</span><span class="font-medium">5-Star Rated</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Our Services</span>
+                <h2 class="text-4xl font-bold mt-2 mb-4">Professional Plumbing Services</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">From emergency repairs to complete bathroom installations, our qualified engineers handle all plumbing and heating needs across London.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="#contact" class="service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-5xl mb-4">🚨</div>
+                    <h3 class="text-xl font-bold mb-3">Emergency Plumbing</h3>
+                    <p class="text-slate-600 text-sm mb-4">24/7 emergency callouts for burst pipes, major leaks, no water, and urgent plumbing issues. Same-day response guaranteed.</p>
+                    <span class="text-accent font-semibold text-sm">Learn More →</span>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-5xl mb-4">🔥</div>
+                    <h3 class="text-xl font-bold mb-3">Boiler & Heating</h3>
+                    <p class="text-slate-600 text-sm mb-4">Boiler installation, repair, and servicing. Heating system upgrades, radiators, and hot water solutions.</p>
+                    <span class="text-accent font-semibold text-sm">Learn More →</span>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-5xl mb-4">🚿</div>
+                    <h3 class="text-xl font-bold mb-3">Bathroom Installations</h3>
+                    <p class="text-slate-600 text-sm mb-4">Full bathroom refurbishments, wet rooms, shower installations, and tiling services.</p>
+                    <span class="text-accent font-semibold text-sm">Learn More →</span>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-5xl mb-4">💧</div>
+                    <h3 class="text-xl font-bold mb-3">Leak Detection & Repairs</h3>
+                    <p class="text-slate-600 text-sm mb-4">Advanced leak detection using thermal imaging. Fast repairs for hidden leaks.</p>
+                    <span class="text-accent font-semibold text-sm">Learn More →</span>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-5xl mb-4">🚰</div>
+                    <h3 class="text-xl font-bold mb-3">Blocked Drains</h3>
+                    <p class="text-slate-600 text-sm mb-4">Drain unblocking and cleaning using CCTV surveys and preventative maintenance.</p>
+                    <span class="text-accent font-semibold text-sm">Learn More →</span>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-5xl mb-4">🔧</div>
+                    <h3 class="text-xl font-bold mb-3">Tap & Toilet Repairs</h3>
+                    <p class="text-slate-600 text-sm mb-4">Dripping taps, running toilets, valve replacements, and minor plumbing repairs.</p>
+                    <span class="text-accent font-semibold text-sm">Learn More →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-navy text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Why Choose Britannia Plumbers?</h2>
+                <p class="text-slate-300 max-w-2xl mx-auto">We're not just plumbers — we're your partners in maintaining a safe, comfortable home or business.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center text-2xl">✓</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Experienced, Tidy Workmanship</h4>
+                        <p class="text-slate-300 text-sm">Our engineers leave your home as clean as they found it.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center text-2xl">✓</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Clear Communication & Honest Advice</h4>
+                        <p class="text-slate-300 text-sm">No jargon. No hidden fees. Just straightforward advice.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center text-2xl">✓</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Quality Parts & Reliable Fixes</h4>
+                        <p class="text-slate-300 text-sm">We use only genuine parts from trusted brands.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center text-2xl">✓</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Respectful In-Home Service</h4>
+                        <p class="text-slate-300 text-sm">We respect your property and your time.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center text-2xl">✓</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Local London Coverage</h4>
+                        <p class="text-slate-300 text-sm">Based in London with rapid response times.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center text-2xl">✓</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Upfront Fixed Quotes</h4>
+                        <p class="text-slate-300 text-sm">Know the price before we start. No surprises.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">How It Works</h2>
+                <p class="text-slate-600">Simple, straightforward process from start to finish</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-navy text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-3">Contact Us</h3>
+                    <p class="text-slate-600 text-sm">Call us or fill out the quote form. We'll discuss your requirements.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-navy text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">2</div>
+                    <h3 class="text-xl font-bold mb-3">We Assess & Quote</h3>
+                    <p class="text-slate-600 text-sm">We'll visit, discuss options, and provide a fixed-price quote.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-navy text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-3">We Complete the Job</h3>
+                    <p class="text-slate-600 text-sm">Quality work, clean up, and your complete satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="py-20 bg-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">What Our Customers Say</h2>
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <span class="text-yellow-400 text-2xl">★★★★★</span>
+                    <span class="text-slate-600">5.0 Average Rating</span>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-yellow-400 mb-3">★★★★★</div>
+                    <p class="text-slate-600 text-sm mb-4">"Excellent service! Arrived within the hour for our emergency burst pipe. Professional, tidy, and fair price. Highly recommend!"</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-bold">S</div>
+                        <div><p class="font-bold text-sm">Sarah M.</p><p class="text-xs text-slate-500">Emergency Repair</p></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-yellow-400 mb-3">★★★★★</div>
+                    <p class="text-slate-600 text-sm mb-4">"Had a new boiler installed. Professional team, explained everything clearly, left area spotless. Great communication throughout."</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-bold">D</div>
+                        <div><p class="font-bold text-sm">David T.</p><p class="text-xs text-slate-500">Boiler Installation</p></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-yellow-400 mb-3">★★★★★</div>
+                    <p class="text-slate-600 text-sm mb-4">"Fast response to our blocked drain. Used CCTV to identify issue and fixed it quickly. Fair pricing and excellent service."</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-bold">J</div>
+                        <div><p class="font-bold text-sm">James P.</p><p class="text-xs text-slate-500">Drain Unblocking</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Our Work</h2>
+                <p class="text-slate-600">Quality installations and repairs across London</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="aspect-square bg-slate-200 rounded-xl flex items-center justify-center"><span class="text-4xl">🔧</span></div>
+                <div class="aspect-square bg-slate-200 rounded-xl flex items-center justify-center"><span class="text-4xl">🚿</span></div>
+                <div class="aspect-square bg-slate-200 rounded-xl flex items-center justify-center"><span class="text-4xl">🔥</span></div>
+                <div class="aspect-square bg-slate-200 rounded-xl flex items-center justify-center"><span class="text-4xl">🚰</span></div>
+                <div class="aspect-square bg-slate-200 rounded-xl flex items-center justify-center"><span class="text-4xl">💧</span></div>
+                <div class="aspect-square bg-slate-200 rounded-xl flex items-center justify-center"><span class="text-4xl">🔧</span></div>
+                <div class="aspect-square bg-slate-200 rounded-xl flex items-center justify-center"><span class="text-4xl">🚽</span></div>
+                <div class="aspect-square bg-slate-200 rounded-xl flex items-center justify-center"><span class="text-4xl">📸</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas We Serve -->
+    <section class="py-16 bg-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold">📍 Areas We Serve in London</h2>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="bg-white px-4 py-2 rounded-full text-sm">Central London</span>
+                <span class="bg-white px-4 py-2 rounded-full text-sm">West London</span>
+                <span class="bg-white px-4 py-2 rounded-full text-sm">East London</span>
+                <span class="bg-white px-4 py-2 rounded-full text-sm">North London</span>
+                <span class="bg-white px-4 py-2 rounded-full text-sm">South London</span>
+                <span class="bg-white px-4 py-2 rounded-full text-sm">Chelsea</span>
+                <span class="bg-white px-4 py-2 rounded-full text-sm">Kensington</span>
+                <span class="bg-white px-4 py-2 rounded-full text-sm">Notting Hill</span>
+                <span class="bg-white px-4 py-2 rounded-full text-sm">Islington</span>
+                <span class="bg-white px-4 py-2 rounded-full text-sm">Camden</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-1">
+                    <span class="text-accent font-semibold text-sm uppercase tracking-wider">About Us</span>
+                    <h2 class="text-4xl font-bold mt-2 mb-6">Britannia Plumbers — Your Trusted London Plumbing Partner</h2>
+                    <p class="text-slate-600 mb-6">
+                        At Britannia Plumbers, we understand that plumbing issues don't wait for convenient times. That's why we've built our reputation on fast response, reliable service, and fair pricing across London.
+                    </p>
+                    <p class="text-slate-600 mb-6">
+                        Our team of fully qualified engineers has decades of combined experience handling everything from emergency callouts to complete bathroom installations.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-light rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-navy">15+</div>
+                            <div class="text-sm text-slate-600">Years Experience</div>
+                        </div>
+                        <div class="bg-light rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-navy">5,000+</div>
+                            <div class="text-sm text-slate-600">Jobs Completed</div>
+                        </div>
+                        <div class="bg-light rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-navy">98%</div>
+                            <div class="text-sm text-slate-600">Satisfaction</div>
+                        </div>
+                        <div class="bg-light rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-navy">24/7</div>
+                            <div class="text-sm text-slate-600">Emergency</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="aspect-video bg-slate-200 rounded-2xl flex items-center justify-center">
+                        <span class="text-6xl">👨‍🔧</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 hero-gradient">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="flex-1 text-white">
+                    <h2 class="text-4xl font-bold mb-4">Get a Free Quote</h2>
+                    <p class="text-slate-300 mb-8">Fill out the form and we'll get back to you within 2 hours.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl">📞</div>
+                            <div><p class="font-bold">Phone</p><p class="text-slate-300">020 1234 5678</p></div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl">✉️</div>
+                            <div><p class="font-bold">Email</p><p class="text-slate-300">info@britanniaplumbers.co.uk</p></div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl">📍</div>
+                            <div><p class="font-bold">Service Area</p><p class="text-slate-300">All of London</p></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-1 bg-white rounded-2xl p-8">
+                    <form class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-navy">Your Name *</label>
+                                <input type="text" required class="w-full bg-light border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy" placeholder="John Smith">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-navy">Phone Number *</label>
+                                <input type="tel" required class="w-full bg-light border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy" placeholder="07123 456789">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-navy">Email Address *</label>
+                            <input type="email" required class="w-full bg-light border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-navy">Service Required *</label>
+                            <select required class="w-full bg-light border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy">
+                                <option value="">Select a service...</option>
+                                <option>Emergency Plumbing</option>
+                                <option>Boiler / Heating</option>
+                                <option>Bathroom Installation</option>
+                                <option>Leak Detection</option>
+                                <option>Blocked Drains</option>
+                                <option>Tap / Toilet Repair</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-navy">Describe Your Issue</label>
+                            <textarea class="w-full bg-light border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy" rows="3" placeholder="Please describe your plumbing issue..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-accent text-white py-4 rounded-full font-bold text-lg hover:bg-accent-hover transition">Get My Free Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <span class="text-3xl">🔧</span>
+                    <div>
+                        <div class="font-bold text-xl">Britannia Plumbers</div>
+                        <div class="text-slate-400 text-sm">Trusted London Plumbing</div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 text-sm">
+                    <a href="#" class="hover:text-accent transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-accent transition">Terms of Service</a>
+                    <a href="#" class="hover:text-accent transition">Cookie Policy</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-slate-400 text-sm">
+                <p>© 2026 Britannia Plumbers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
