@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Practice Tracking Sheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <header class="bg-white shadow-sm py-4">
+        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-slate-800">📊 Dental Practice Tracking Sheet</h1>
+            <a href="ready-to-send-emails.html" class="text-sky-600 hover:underline">← Back to Emails</a>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        
+        <!-- Quick Setup -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">🚀 Quick Setup</h2>
+            <ol class="space-y-2 text-slate-700">
+                <li>1. Go to <a href="https://sheets.google.com" target="_blank" class="text-sky-600 hover:underline">sheets.google.com</a></li>
+                <li>2. Click <strong>"Blank"</strong> to create new sheet</li>
+                <li>3. Copy column headers from below</li>
+                <li>4. Paste your 10 practices data</li>
+                <li>5. Use conditional formatting for status colors</li>
+            </ol>
+        </div>
+
+        <!-- Column Headers -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">📋 Column Headers (Copy These)</h2>
+            <div class="bg-slate-100 rounded-lg p-4 overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-slate-300">
+                            <th class="text-left py-2 px-3 bg-blue-500 text-white rounded-tl-lg">A</th>
+                            <th class="text-left py-2 px-3 bg-blue-500 text-white">B</th>
+                            <th class="text-left py-2 px-3 bg-blue-500 text-white">C</th>
+                            <th class="text-left py-2 px-3 bg-blue-500 text-white">D</th>
+                            <th class="text-left py-2 px-3 bg-blue-500 text-white">E</th>
+                            <th class="text-left py-2 px-3 bg-blue-500 text-white">F</th>
+                            <th class="text-left py-2 px-3 bg-blue-500 text-white">G</th>
+                            <th class="text-left py-2 px-3 bg-blue-500 text-white">H</th>
+                            <th class="text-left py-2 px-3 bg-blue-500 text-white">I</th>
+                            <th class="text-left py-2 px-3 bg-blue-500 text-white">J</th>
+                        </tr>
+                    </thead>
+                    <tbody class="font-mono text-sm">
+                        <tr class="border-b">
+                            <td class="py-2 px-3 font-bold">Practice Name</td>
+                            <td class="py-2 px-3 font-bold">Chain</td>
+                            <td class="py-2 px-3 font-bold">Address</td>
+                            <td class="py-2 px-3 font-bold">Email</td>
+                            <td class="py-2 px-3 font-bold">Phone</td>
+                            <td class="py-2 px-3 font-bold">Date Contacted</td>
+                            <td class="py-2 px-3 font-bold">Method</td>
+                            <td class="py-2 px-3 font-bold">Status</td>
+                            <td class="py-2 px-3 font-bold">Follow-up Date</td>
+                            <td class="py-2 px-3 font-bold rounded-tr-lg">Notes</td>
+                        </tr>
+                        <tr class="border-b bg-sky-50">
+                            <td class="py-2 px-3">Mydentist West London</td>
+                            <td class="py-2 px-3">Mydentist</td>
+                            <td class="py-2 px-3">147 King Street, Hammersmith</td>
+                            <td class="py-2 px-3 text-slate-400 italic">[Find email]</td>
+                            <td class="py-2 px-3">[Find phone]</td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-2 px-3">Mydentist Central London</td>
+                            <td class="py-2 px-3">Mydentist</td>
+                            <td class="py-2 px-3">45 Margaret Street, Fitzrovia</td>
+                            <td class="py-2 px-3 text-slate-400 italic">[Find email]</td>
+                            <td class="py-2 px-3">[Find phone]</td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                        </tr>
+                        <tr class="border-b bg-sky-50">
+                            <td class="py-2 px-3">Mydentist South London</td>
+                            <td class="py-2 px-3">Mydentist</td>
+                            <td class="py-2 px-3">125 Streatham High Road</td>
+                            <td class="py-2 px-3 text-slate-400 italic">[Find email]</td>
+                            <td class="py-2 px-3">[Find phone]</td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-2 px-3">Mydentist East London</td>
+                            <td class="py-2 px-3">Mydentist</td>
+                            <td class="py-2 px-3">234 Commercial Road, Whitechapel</td>
+                            <td class="py-2 px-3 text-slate-400 italic">[Find email]</td>
+                            <td class="py-2 px-3">[Find phone]</td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                        </tr>
+                        <tr class="border-b bg-sky-50">
+                            <td class="py-2 px-3">Mydentist North London</td>
+                            <td class="py-2 px-3">Mydentist</td>
+                            <td class="py-2 px-3">89 Junction Road, Archway</td>
+                            <td class="py-2 px-3 text-slate-400 italic">[Find email]</td>
+                            <td class="py-2 px-3">[Find phone]</td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-2 px-3">Bupa Dental Marylebone</td>
+                            <td class="py-2 px-3">Bupa</td>
+                            <td class="py-2 px-3">125 George Street, Marylebone</td>
+                            <td class="py-2 px-3 text-slate-400 italic">[Find email]</td>
+                            <td class="py-2 px-3">[Find phone]</td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                        </tr>
+                        <tr class="border-b bg-sky-50">
+                            <td class="py-2 px-3">Bupa Dental Canary Wharf</td>
+                            <td class="py-2 px-3">Bupa</td>
+                            <td class="py-2 px-3">Canada Place, Canary Wharf</td>
+                            <td class="py-2 px-3 text-slate-400 italic">[Find email]</td>
+                            <td class="py-2 px-3">[Find phone]</td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-2 px-3">Bupa Dental Kensington</td>
+                            <td class="py-2 px-3">Bupa</td>
+                            <td class="py-2 px-3">197 Kensington High Street</td>
+                            <td class="py-2 px-3 text-slate-400 italic">[Find email]</td>
+                            <td class="py-2 px-3">[Find phone]</td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                        </tr>
+                        <tr class="border-b bg-sky-50">
+                            <td class="py-2 px-3">Bupa Dental Chelsea</td>
+                            <td class="py-2 px-3">Bupa</td>
+                            <td class="py-2 px-3">375 King's Road, Chelsea</td>
+                            <td class="py-2 px-3 text-slate-400 italic">[Find email]</td>
+                            <td class="py-2 px-3">[Find phone]</td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-3 rounded-bl-lg">Bupa Dental City</td>
+                            <td class="py-2 px-3">Bupa</td>
+                            <td class="py-2 px-3">1 King Street, City of London</td>
+                            <td class="py-2 px-3 text-slate-400 italic">[Find email]</td>
+                            <td class="py-2 px-3">[Find phone]</td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3"></td>
+                            <td class="py-2 px-3 rounded-br-lg"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Status Dropdown Options -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">📌 Status Options (Create Dropdown in Column H)</h2>
+            <div class="grid md:grid-cols-5 gap-4">
+                <div class="bg-slate-100 rounded-lg p-3 text-center">
+                    <div class="w-4 h-4 rounded-full bg-slate-400 mx-auto mb-2"></div>
+                    <p class="font-medium">Not Contacted</p>
+                </div>
+                <div class="bg-blue-100 rounded-lg p-3 text-center">
+                    <div class="w-4 h-4 rounded-full bg-blue-500 mx-auto mb-2"></div>
+                    <p class="font-medium">Email Sent</p>
+                </div>
+                <div class="bg-yellow-100 rounded-lg p-3 text-center">
+                    <div class="w-4 h-4 rounded-full bg-yellow-500 mx-auto mb-2"></div>
+                    <p class="font-medium">Follow-up Sent</p>
+                </div>
+                <div class="bg-purple-100 rounded-lg p-3 text-center">
+                    <div class="w-4 h-4 rounded-full bg-purple-500 mx-auto mb-2"></div>
+                    <p class="font-medium">Demo Booked</p>
+                </div>
+                <div class="bg-green-100 rounded-lg p-3 text-center">
+                    <div class="w-4 h-4 rounded-full bg-green-500 mx-auto mb-2"></div>
+                    <p class="font-medium">Closed Won</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conditional Formatting Rules -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">🎨 Conditional Formatting (Color Code Status)</h2>
+            <p class="text-slate-600 mb-4">In Google Sheets: Select Column H → Format → Conditional Formatting → Add rules:</p>
+            <div class="space-y-3 text-sm">
+                <div class="flex items-center">
+                    <div class="w-6 h-6 rounded bg-blue-100 mr-3 flex items-center justify-center text-blue-600 font-bold">1</div>
+                    <p><strong>Text is exactly "Email Sent"</strong> → Fill: Blue → Text: Blue</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-6 h-6 rounded bg-yellow-100 mr-3 flex items-center justify-center text-yellow-600 font-bold">2</div>
+                    <p><strong>Text is exactly "Follow-up Sent"</strong> → Fill: Yellow → Text: Yellow</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-6 h-6 rounded bg-purple-100 mr-3 flex items-center justify-center text-purple-600 font-bold">3</div>
+                    <p><strong>Text is exactly "Demo Booked"</strong> → Fill: Purple → Text: Purple</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-6 h-6 rounded bg-green-100 mr-3 flex items-center justify-center text-green-600 font-bold">4</div>
+                    <p><strong>Text is exactly "Closed Won"</strong> → Fill: Green → Text: Green</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-6 h-6 rounded bg-red-100 mr-3 flex items-center justify-center text-red-600 font-bold">5</div>
+                    <p><strong>Text is exactly "Not Interested"</strong> → Fill: Red → Text: Red</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Import CSV Instructions -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">📥 Alternative: Import CSV</h2>
+            <ol class="space-y-2 text-slate-700">
+                <li>1. Download: <a href="dental-tracking-template.csv" class="text-sky-600 hover:underline">dental-tracking-template.csv</a></li>
+                <li>2. In Google Sheets: <strong>File → Import → Upload</strong></li>
+                <li>3. Select the CSV file</li>
+                <li>4. Choose <strong>"Replace spreadsheet"</strong> or <strong>"Append to current sheet"</strong></li>
+                <li>5. Click <strong>Import</strong></li>
+            </ol>
+        </div>
+
+        <!-- Daily Checklist -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">✅ Daily Checklist</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
+                <div>
+                    <h3 class="font-bold mb-2">Morning Tasks</h3>
+                    <ul class="space-y-1 text-slate-600">
+                        <li>☐ Check follow-up dates for today</li>
+                        <li>☐ Send follow-up emails to non-responders</li>
+                        <li>☐ Find emails for uncontacted practices</li>
+                        <li>☐ Send 5-10 new emails</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-2">Afternoon Tasks</h3>
+                    <ul class="space-y-1 text-slate-600">
+                        <li>☐ Make 5-10 follow-up calls</li>
+                        <li>☐ Connect on LinkedIn</li>
+                        <li>☐ Update status in tracker</li>
+                        <li>☐ Log demos booked</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-white py-8 mt-8">
+        <div class="max-w-5xl mx-auto px-4 text-center text-sm text-slate-400">
+            <p>📧 Ready-to-send emails: ready-to-send-emails.html</p>
+            <p>📊 CSV Template: dental-tracking-template.csv</p>
+            <p class="mt-4">© 2026 AutoAI Web Solutions</p>
+        </div>
+    </footer>
+</body>
+</html>
