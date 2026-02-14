@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumber Outreach | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <header class="bg-white shadow-sm py-4">
+        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-slate-800">🚰 Plumber Outreach Kit</h1>
+            <a href="sell-ai-bots.html" class="text-sky-600 hover:underline">← Back to Sales</a>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        
+        <!-- Pain Points -->
+        <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-8">
+            <h2 class="font-bold text-red-800 mb-2">😩 The Problem Plumbers Face</h2>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="font-medium text-red-700">📱 "Can you come today?"</p>
+                    <p class="text-red-600">Calls during jobs = missed opportunities</p>
+                </div>
+                <div>
+                    <p class="font-medium text-red-700">⏰ After Hours</p>
+                    <p class="text-red-600">Emergency calls at 2AM you can't answer</p>
+                </div>
+                <div>
+                    <p class="font-medium text-red-700">💰 Quote Requests</p>
+                    <p class="text-red-600">"How much for a boiler?" without details</p>
+                </div>
+                <div>
+                    <p class="font-medium text-red-700">😤 Time Wasters</p>
+                    <p class="text-red-600">Customers who just want pricing, not booking</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Templates -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6">📧 Email Templates</h2>
+            
+            <div class="space-y-6">
+                <!-- Template 1: General -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 1: General Plumber</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email1">
+                        <p class="font-bold mb-2">Subject: Never Miss an Emergency Call Again? 🚰</p>
+                        <p>Hi [Plumber Name],<br><br>
+                        I'm from AutoAI Web Solutions. We help plumbers like you capture every inquiry — even when you're underground working.<br><br>
+                        Here's what we do:<br>
+                        ✅ Answer "Can you come today?" 24/7<br>
+                        ✅ Collect job details before calling back<br>
+                        ✅ Qualify leads automatically<br>
+                        ✅ Book appointments on your calendar<br><br>
+                        One London plumber captured 40% more jobs in month one.<br><br>
+                        Would a quick 5-minute demo work for you?<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email1')" class="mt-3 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition">📋 Copy Email</button>
+                </div>
+
+                <!-- Template 2: Emergency Focus -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 2: Emergency Focus</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email2">
+                        <p class="font-bold mb-2">Subject: Emergency Calls While You Work? 🚰🤖</p>
+                        <p>Hi [Plumber Name],<br><br>
+                        Does this sound familiar?<br>
+                        "Hi, I have a burst pipe. Can you come today?" → You're in a job → No answer → Customer calls competitor.<br><br>
+                        Our AI chatbot:<br>
+                        • Answers 24/7, even when you're on another call<br>
+                        • Collects the issue details<br>
+                        • Sends you qualified leads only<br>
+                        • Books jobs on your calendar<br><br>
+                        One London plumber saved 10+ hours per week on phone calls.<br><br>
+                        Quick demo? Reply YES.<br><br>
+                        Cheers,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email2')" class="mt-3 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition">📋 Copy Email</button>
+                </div>
+
+                <!-- Template 3: Quote Collection -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold mb-3">📧 Template 3: Quote Collection</h3>
+                    <div class="bg-slate-100 rounded p-3 text-sm hidden" id="email3">
+                        <p class="font-bold mb-2">Subject: Stop Wasting Time on Price Queries? 💷</p>
+                        <p>Hi [Plumber Name],<br><br>
+                        "How much for a boiler installation?" → 50 emails a week without booking.<br><br>
+                        Our chatbot:<br>
+                        • Asks the right questions (type of boiler, location, timeline)<br>
+                        • Sends you a qualified lead with details<br>
+                        • Only books appointments with serious customers<br><br>
+                        More jobs, less time wasted on tyre-kickers.<br><br>
+                        5-minute demo available.<br><br>
+                        Best,<br>
+                        [Your Name]<br>
+                        AutoAI Web Solutions
+                        </p>
+                    </div>
+                    <button onclick="copyEmail('email3')" class="mt-3 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition">📋 Copy Email</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+            <h2 class="font-bold text-blue-800 mb-4">💰 Key Benefits to Mention</h2>
+            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                <div>
+                    <p class="font-medium text-blue-700">✅ 24/7 Availability</p>
+                    <p class="text-blue-600">Answer calls while you sleep</p>
+                </div>
+                <div>
+                    <p class="font-medium text-blue-700">✅ Lead Qualification</p>
+                    <p class="text-blue-600">Only get serious customers</p>
+                </div>
+                <div>
+                    <p class="font-medium text-blue-700">✅ More Jobs Booked</p>
+                    <p class="text-blue-600">40% increase in conversions</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Find Plumbers -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6">🔍 Where to Find Plumbers</h2>
+            <div class="grid md:cols-3 gap-4">
+                <a href="https://www.checkatrade.com" target="_blank" class="bg-yellow-50 p-4 rounded-lg hover:bg-yellow-100 transition">
+                    <strong>Checkatrade</strong>
+                    <p class="text-sm text-slate-500">Verified plumbers directory</p>
+                </a>
+                <a href="https://www.trustatrader.com" target="_blank" class="bg-green-50 p-4 rounded-lg hover:bg-green-100 transition">
+                    <strong>TrustATrader</strong>
+                    <p class="text-sm text-slate-500">Tradespeople directory</p>
+                </a>
+                <a href="https://www.yell.com" target="_blank" class="bg-red-50 p-4 rounded-lg hover:bg-red-100 transition">
+                    <strong>Yell.com</strong>
+                    <p class="text-sm text-slate-500">Local business directory</p>
+                </a>
+                <a href="https://www.google.com/search?hl=en&q=plumbers+near+me" target="_blank" class="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 transition">
+                    <strong>Google Search</strong>
+                    <p class="text-sm text-slate-500">"Plumbers near me" in London areas</p>
+                </a>
+                <a href="https://www.homeserve.com" target="_blank" class="bg-orange-50 p-4 rounded-lg hover:bg-orange-100 transition">
+                    <strong>HomeServe</strong>
+                    <p class="text-sm text-slate-500">Major plumbing company</p>
+                </a>
+                <a href="https://www.ramservices.co.uk" target="_blank" class="bg-purple-50 p-4 rounded-lg hover:bg-purple-100 transition">
+                    <strong>RAM Services</strong>
+                    <p class="text-sm text-slate-500">London plumbing chain</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-6">📊 Quick Stats</h2>
+            <div class="grid md:grid-cols-4 gap-4 text-center">
+                <div class="bg-slate-100 rounded-lg p-4">
+                    <div class="text-2xl font-bold text-blue-600">5,000+</div>
+                    <div class="text-sm text-slate-500">Plumbers in London</div>
+                </div>
+                <div class="bg-slate-100 rounded-lg p-4">
+                    <div class="text-2xl font-bold text-blue-600">40%</div>
+                    <div class="text-sm text-slate-500">More jobs captured</div>
+                </div>
+                <div class="bg-slate-100 rounded-lg p-4">
+                    <div class="text-2xl font-bold text-blue-600">10hrs</div>
+                    <div class="text-sm text-slate-500">Saved per week</div>
+                </div>
+                <div class="bg-slate-100 rounded-lg p-4">
+                    <div class="text-2xl font-bold text-blue-600">£99/mo</div>
+                    <div class="text-sm text-slate-500">Starting price</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Link -->
+        <div class="bg-blue-600 text-white rounded-xl p-6 text-center">
+            <h2 class="text-xl font-bold mb-2">Ready to Show Plumbers?</h2>
+            <p class="text-blue-200 mb-4">Share this demo with your leads</p>
+            <a href="plumber-london.html" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-blue-50 transition">View Chatbot Demo →</a>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-white py-8 mt-8">
+        <div class="max-w-5xl mx-auto px-4 text-center text-sm text-slate-400">
+            <p>🚰 Plumber Outreach Kit</p>
+            <p class="mt-4">© 2026 AutoAI Web Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyEmail(id) {
+            const emailDiv = document.getElementById(id);
+            const text = emailDiv.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Email copied! Paste into your email client.');
+            });
+        }
+    </script>
+</body>
+</html>
