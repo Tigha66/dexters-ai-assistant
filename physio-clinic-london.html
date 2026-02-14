@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Physio AI Chatbot | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl">🏥</span>
+                <span class="font-bold text-lg text-slate-800">Motion Physio</span>
+                <span class="text-xs text-slate-500">| London Physio Clinic</span>
+            </div>
+            <a href="#chatbot" class="bg-indigo-500 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-indigo-600 transition">Book Appointment</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-gradient text-white py-16 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center bg-indigo-500/20 px-4 py-2 rounded-full text-indigo-300 text-sm mb-6">
+                <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                AI Assistant Available 24/7
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Move Better, Feel Better</h1>
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                Expert physiotherapy in London. Book appointments, get injury advice, 
+                and start your recovery journey — 24 hours a day.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#chatbot" class="bg-indigo-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-indigo-600 transition shadow-lg shadow-indigo-500/25">
+                    🤖 Chat with AI Assistant
+                </a>
+                <a href="tel:02012345678" class="bg-white/10 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition">
+                    📞 Call: 020 1234 5678
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info -->
+    <section class="bg-indigo-500 text-white py-4">
+        <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-8 text-sm">
+            <span>📍 78 Harley Street, London W1G 7HJ</span>
+            <span>📞 020 1234 5678</span>
+            <span>✉️ info@motionphysiolondon.co.uk</span>
+            <span>🕐 Mon-Sat 8AM-8PM</span>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Our Physiotherapy Services</h2>
+            <p class="text-slate-600 text-center mb-12">Specialist treatment for injuries and conditions</p>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🦴</div>
+                    <h3 class="font-bold mb-2">Sports Injuries</h3>
+                    <p class="text-sm text-slate-500">Sprains, strains, tears</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">💪</div>
+                    <h3 class="font-bold mb-2">Rehabilitation</h3>
+                    <p class="text-sm text-slate-500">Post-surgery, ACL, joint</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🧠</div>
+                    <h3 class="font-bold mb-2">Back & Neck Pain</h3>
+                    <p class="text-sm text-slate-500">Sciatica, posture, disc</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🤰</div>
+                    <h3 class="font-bold mb-2">Women's Health</h3>
+                    <p class="text-sm text-slate-500">Pregnancy, pelvic floor</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">👴</div>
+                    <h3 class="font-bold mb-2">Geriatric Physio</h3>
+                    <p class="text-sm text-slate-500">Osteoporosis, arthritis</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🏃</div>
+                    <h3 class="font-bold mb-2">Running Analysis</h3>
+                    <p class="text-sm text-slate-500">Gait analysis, injuries</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🎯</div>
+                    <h3 class="font-bold mb-2">Acupuncture</h3>
+                    <p class="text-sm text-slate-500">Dry needling, pain relief</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">💆</div>
+                    <h3 class="font-bold mb-2">Massage Therapy</h3>
+                    <p class="text-sm text-slate-500">Deep tissue, sports</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-12 px-4 bg-slate-100">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-center mb-8">💷 Consultation Prices</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow">
+                    <div class="text-center mb-4">
+                        <div class="text-3xl font-bold text-indigo-600">£60</div>
+                        <p class="text-sm text-slate-500">Initial Consultation</p>
+                    </div>
+                    <ul class="text-sm space-y-2">
+                        <li>✓ 45-minute session</li>
+                        <li>✓ Full assessment</li>
+                        <li>✓ Diagnosis</li>
+                        <li>✓ Treatment plan</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow ring-2 ring-indigo-500">
+                    <div class="text-center mb-4">
+                        <div class="inline-block bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-2">MOST POPULAR</div>
+                        <div class="text-3xl font-bold text-indigo-600">£50</div>
+                        <p class="text-sm text-slate-500">Follow-up Session</p>
+                    </div>
+                    <ul class="text-sm space-y-2">
+                        <li>✓ 30-minute session</li>
+                        <li>✓ Treatment</li>
+                        <li>✓ Progress review</li>
+                        <li>✓ Exercise program</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow">
+                    <div class="text-center mb-4">
+                        <div class="text-3xl font-bold text-indigo-600">£90</div>
+                        <p class="text-sm text-slate-500">Extended Session</p>
+                    </div>
+                    <ul class="text-sm space-y-2">
+                        <li>✓ 60-minute session</li>
+                        <li>✓ Complex cases</li>
+                        <li>✓ Multiple areas</li>
+                        <li>✓ Combined therapy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <section id="chatbot" class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-8">
+                <span class="inline-block bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-medium mb-4">🤖 Try Our AI Assistant</span>
+                <h2 class="text-3xl font-bold mb-4">Book an Appointment</h2>
+                <p class="text-slate-600">Available 24/7 to answer your questions</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-indigo-500 text-white p-4 flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                        <div>
+                            <div class="font-semibold">Motion Physio AI</div>
+                            <div class="text-xs text-indigo-200">Online • Ready to help</div>
+                        </div>
+                    </div>
+                    <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full hover:bg-white/30 transition">✕</button>
+                </div>
+                <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50" style="height: 350px;"></div>
+                <div class="p-4 border-t bg-white">
+                    <div class="flex space-x-2">
+                        <input type="text" id="chat-input" placeholder="Ask about appointments, injuries, prices..." class="flex-1 bg-slate-100 rounded-full px-4 py-3 focus:ring-2 focus:ring-indigo-500 outline-none" onkeypress="if(event.key==='Enter')sendMessage()">
+                        <button onclick="sendMessage()" class="bg-indigo-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-indigo-600 transition">➤</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Visit Our Clinic</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 rounded-xl p-8">
+                    <h3 class="font-bold text-xl mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">📍</span>
+                            <div><p class="font-medium">Address</p><p class="text-slate-600">78 Harley Street<br>London W1G 7HJ</p></div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">📞</span>
+                            <div><p class="font-medium">Phone</p><p class="text-slate-600">020 1234 5678</p></div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">✉️</span>
+                            <div><p class="font-medium">Email</p><p class="text-slate-600">info@motionphysiolondon.co.uk</p></div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">🚇</span>
+                            <div><p class="font-medium">Transport</p><p class="text-slate-600">Regent's Park (Bakerloo), Great Portland Street (Circle, Hammersmith)</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-8">
+                    <h3 class="font-bold text-xl mb-6">Opening Hours</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between py-2 border-b border-slate-200"><span>Monday - Friday</span><span>8:00 AM - 8:00 PM</span></div>
+                        <div class="flex justify-between py-2 border-b border-slate-200"><span>Saturday</span><span>9:00 AM - 5:00 PM</span></div>
+                        <div class="flex justify-between py-2 text-slate-500"><span>Sunday</span><span>Closed</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <span class="text-2xl">🏥</span>
+                <span class="text-xl font-bold">Motion Physio London</span>
+            </div>
+            <p class="text-slate-400 text-sm">Chartered Physiotherapists • HCPC Registered • CSP Members</p>
+            <p class="text-slate-500 text-xs mt-4">© 2026 Motion Physio London</p>
+        </div>
+    </footer>
+
+    <button onclick="openChat()" id="chat-toggle" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-indigo-500 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:bg-indigo-600 transition shadow-lg">💬</button>
+
+    <script>
+        const CONFIG = { practiceName: 'Motion Physio London', phone: '020 1234 5678', email: 'info@motionphysiolondon.co.uk', address: '78 Harley Street, London W1G 7HJ' };
+        let appointmentState = { step: 0, name: '', phone: '', email: '', injury: '', date: '', time: '' };
+        
+        function openChat() { document.getElementById('chat-widget').classList.remove('hidden'); document.getElementById('chat-toggle').classList.add('hidden'); if (!window.initialized) { addMessage(welcomeMessage(), false); window.initialized = true; } }
+        function closeChat() { document.getElementById('chat-widget').classList.add('hidden'); document.getElementById('chat-toggle').classList.remove('hidden'); }
+        
+        function addMessage(text, isUser) {
+            const div = document.createElement('div');
+            div.className = isUser ? 'flex justify-end' : 'flex justify-start';
+            div.innerHTML = isUser ? `<div class="bg-indigo-500 text-white rounded-2xl rounded-tr-none px-4 py-3 max-w-[85%]">${text}</div>` : `<div class="bg-white border border-slate-200 rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%] shadow-sm">${text}</div>`;
+            document.getElementById('chat-messages').appendChild(div); div.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function welcomeMessage() { return `👋 Welcome to <strong>${CONFIG.practiceName}</strong>! 🏥<br><br>I'm your physio AI assistant. I can help with:<br><br>• 📅 <strong>Book appointments</strong><br>• 💷 <strong>Pricing info</strong><br>• 🦴 <strong>Injury advice</strong><br>• 🕐 <strong>Opening hours</strong><br><br>How can I help you today?`; }
+
+        function getBotResponse(message) {
+            const m = message.toLowerCase();
+            if (m.includes('appointment') || m.includes('book') || m.includes('schedule')) { appointmentState.step = 1; return `📅 <strong>Book an Appointment</strong><br><br>Let's schedule your session!<br><br>First, what is your <strong>name</strong>?`; }
+            if (m.includes('price') || m.includes('cost') || m.includes('how much')) return `💷 <strong>Prices</strong><br><br>• Initial: £60 (45 min)<br>• Follow-up: £50 (30 min)<br>• Extended: £90 (60 min)<br><br>Most health insurance accepted. Book now!`;
+            if (m.includes('hour') || m.includes('open') || m.includes('time')) return `🕐 <strong>Opening Hours</strong><br><br>• Mon-Fri: 8AM-8PM<br>• Saturday: 9AM-5PM<br>• Sunday: Closed<br><br>AI assistant available 24/7!`;
+            if (m.includes('injury') || m.includes('back pain') || m.includes('knee') || m.includes('shoulder')) return `🦴 <strong>Injury?</strong><br><br>We treat:<br>• Back & neck pain<br>• Sports injuries<br>• Post-surgery rehab<br>• Joint pain<br><br>Book a free 5-min assessment!`;
+            if (m.includes('insurance') || m.includes('health insurance')) return `🏥 <strong>Insurance</strong><br><br>We accept:<br>• Bupa<br>• Axa PPP<br>• Vitality<br>• Aviva<br>• Cigna<br>• WPA<br><br>Most policies require GP referral. Call us!`;
+            if (m.includes('location') || m.includes('address') || m.includes('where')) return `📍 <strong>${CONFIG.practiceName}</strong><br>${CONFIG.address}<br><br>Near Regent's Park station.`;
+            if (m.includes('contact') || m.includes('phone') || m.includes('call')) return `📞 <strong>Contact:</strong> ${CONFIG.phone}<br>Email: ${CONFIG.email}`;
+            if (m.includes('hello') || m.includes('hi')) return welcomeMessage();
+            return `I'd be happy to help! 🤔<br><br>Try: "Book appointment", "Prices", "Injury advice", or "Opening hours"`;
+        }
+
+        function handleBookingFlow(m) {
+            switch(appointmentState.step) {
+                case 1: appointmentState.name = message; appointmentState.step = 2; return `Thanks, ${appointmentState.name}! 😊<br><br>What is your <strong>phone number</strong>?`;
+                case 2: appointmentState.phone = message; appointmentState.step = 3; return `Perfect! What <strong>injury or condition</strong> can we help with?`;
+                case 3: appointmentState.injury = message; appointmentState.step = 4; return `Got it! ${appointmentState.injury} noted. 📅<br><br>When would you like to come in?`;
+                case 4: appointmentState.date = message; appointmentState.step = 5; return `We'll check availability and call you at ${appointmentState.phone} to confirm.<br><br>Anything else?`;
+                default: appointmentState.step = 0; return getBotResponse(message);
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+            addMessage(message, true);
+            input.value = '';
+            setTimeout(() => { addMessage(appointmentState.step > 0 ? handleBookingFlow(message) : getBotResponse(message), false); }, 300);
+        }
+    </script>
+
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden" style="width: 420px; max-width: calc(100vw - 32px);">
+            <div class="bg-indigo-500 text-white p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                    <div><div class="font-semibold">Motion Physio AI</div><div class="text-xs text-indigo-200">Online</div></div>
+                </div>
+                <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full">✕</button>
+            </div>
+            <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50" style="height: 350px;"></div>
+            <div class="p-4 border-t bg-white">
+                <div class="flex space-x-2">
+                    <input type="text" id="chat-input" placeholder="Ask about appointments..." class="flex-1 bg-slate-100 rounded-full px-4 py-3" onkeypress="if(event.key==='Enter')sendMessage()">
+                    <button onclick="sendMessage()" class="bg-indigo-500 text-white w-12 h-12 rounded-full">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

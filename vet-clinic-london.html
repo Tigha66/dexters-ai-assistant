@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Vet AI Chatbot | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl">🐕</span>
+                <span class="font-bold text-lg text-slate-800">Paws Clinic</span>
+                <span class="text-xs text-slate-500">| London Vet Practice</span>
+            </div>
+            <a href="#chatbot" class="bg-emerald-500 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-emerald-600 transition">Book Appointment</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-gradient text-white py-16 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center bg-emerald-500/20 px-4 py-2 rounded-full text-emerald-300 text-sm mb-6">
+                <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                AI Assistant Available 24/7
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Caring for Your Pets 24/7</h1>
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                Expert veterinary care in London. Book appointments, get instant advice, 
+                and access emergency support — whenever you need us.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#chatbot" class="bg-emerald-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-600 transition shadow-lg shadow-emerald-500/25">
+                    🤖 Chat with AI Assistant
+                </a>
+                <a href="tel:02012345678" class="bg-white/10 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition">
+                    📞 Emergency: 020 1234 5678
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info -->
+    <section class="bg-emerald-500 text-white py-4">
+        <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-8 text-sm">
+            <span>📍 45 High Street, London SW1A 1AA</span>
+            <span>📞 020 1234 5678</span>
+            <span>✉️ info@pawscliniclondon.co.uk</span>
+            <span>🕐 Mon-Sat 8AM-7PM</span>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">Our Veterinary Services</h2>
+            <p class="text-slate-600 text-center mb-12">Complete care for your beloved pets</p>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🩺</div>
+                    <h3 class="font-bold mb-2">General Consultations</h3>
+                    <p class="text-sm text-slate-500">Health checks, illness diagnosis</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">💉</div>
+                    <h3 class="font-bold mb-2">Vaccinations</h3>
+                    <p class="text-sm text-slate-500">Dogs, cats, rabbits</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🦷</div>
+                    <h3 class="font-bold mb-2">Dental Care</h3>
+                    <p class="text-sm text-slate-500">Teeth cleaning, extractions</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🏥</div>
+                    <h3 class="font-bold mb-2">Surgery</h3>
+                    <p class="text-sm text-slate-500">Soft tissue & orthopaedic</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🧬</div>
+                    <h3 class="font-bold mb-2">Microchipping</h3>
+                    <p class="text-sm text-slate-500">Legal requirement for dogs</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🐱</div>
+                    <h3 class="font-bold mb-2">Neutering</h3>
+                    <p class="text-sm text-slate-500">Cats, dogs, rabbits</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🚨</div>
+                    <h3 class="font-bold mb-2">Emergency Care</h3>
+                    <p class="text-sm text-slate-500">Same-day emergency</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 text-center hover:shadow-lg transition">
+                    <div class="text-4xl mb-3">🏠</div>
+                    <h3 class="font-bold mb-2">Home Visits</h3>
+                    <p class="text-sm text-slate-500">Euthanasia, end of life</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-12 px-4 bg-slate-100">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-center mb-8">💷 Consultation Prices</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow">
+                    <div class="text-center mb-4">
+                        <div class="text-3xl font-bold text-emerald-600">£45</div>
+                        <p class="text-sm text-slate-500">Standard Consultation</p>
+                    </div>
+                    <ul class="text-sm space-y-2">
+                        <li>✓ 15-minute appointment</li>
+                        <li>✓ Health examination</li>
+                        <li>✓ Weight check</li>
+                        <li>✓ Advice & recommendations</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow ring-2 ring-emerald-500">
+                    <div class="text-center mb-4">
+                        <div class="inline-block bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-2">MOST POPULAR</div>
+                        <div class="text-3xl font-bold text-emerald-600">£65</div>
+                        <p class="text-sm text-slate-500">Extended Consultation</p>
+                    </div>
+                    <ul class="text-sm space-y-2">
+                        <li>✓ 30-minute appointment</li>
+                        <li>✓ Full health examination</li>
+                        <li>✓ Behavioural advice</li>
+                        <li>✓ Treatment plan</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow">
+                    <div class="text-center mb-4">
+                        <div class="text-3xl font-bold text-red-500">£95</div>
+                        <p class="text-sm text-slate-500">Emergency Consultation</p>
+                    </div>
+                    <ul class="text-sm space-y-2">
+                        <li>✓ Same-day appointment</li>
+                        <li>✓ Urgent care</li>
+                        <li>✓ Pain management</li>
+                        <li>✓ Stabilisation if needed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <section id="chatbot" class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-8">
+                <span class="inline-block bg-emerald-100 text-emerald-700 px-4 py-1 rounded-full text-sm font-medium mb-4">🤖 Try Our AI Assistant</span>
+                <h2 class="text-3xl font-bold mb-4">Book an Appointment</h2>
+                <p class="text-slate-600">Our AI assistant is available 24/7</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-emerald-500 text-white p-4 flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white flex items-center justify-center">
+                                <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Paws Clinic AI</div>
+                            <div class="text-xs text-emerald-200">Online • Ready to help</div>
+                        </div>
+                    </div>
+                    <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full hover:bg-white/30 transition">✕</button>
+                </div>
+                <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50" style="height: 350px;"></div>
+                <div class="p-4 border-t bg-white">
+                    <div class="flex space-x-2">
+                        <input type="text" id="chat-input" placeholder="Ask about appointments, prices, services..." class="flex-1 bg-slate-100 rounded-full px-4 py-3 focus:ring-2 focus:ring-emerald-500 outline-none" onkeypress="if(event.key==='Enter')sendMessage()">
+                        <button onclick="sendMessage()" class="bg-emerald-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-emerald-600 transition">➤</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Visit Our Clinic</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 rounded-xl p-8">
+                    <h3 class="font-bold text-xl mb-6">Contact Us</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">📍</span>
+                            <div>
+                                <p class="font-medium">Address</p>
+                                <p class="text-slate-600">45 High Street<br>London SW1A 1AA</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">📞</span>
+                            <div>
+                                <p class="font-medium">Phone</p>
+                                <p class="text-slate-600">020 1234 5678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">✉️</span>
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <p class="text-slate-600">info@pawscliniclondon.co.uk</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-8">
+                    <h3 class="font-bold text-xl mb-6">Opening Hours</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between"><span>Mon-Fri</span><span>8:00 AM - 7:00 PM</span></div>
+                        <div class="flex justify-between"><span>Saturday</span><span>9:00 AM - 5:00 PM</span></div>
+                        <div class="flex justify-between text-red-500"><span>Sunday</span><span>Emergency only</span></div>
+                    </div>
+                    <div class="mt-6 bg-red-50 border border-red-200 rounded-lg p-4">
+                        <p class="text-red-800 text-sm"><strong>Emergency?</strong> Call 020 1234 5678. For life-threatening emergencies, visit RSPCA or Vets Now.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <span class="text-2xl">🐕</span>
+                <span class="text-xl font-bold">Paws Clinic London</span>
+            </div>
+            <p class="text-slate-400 text-sm">Registered Veterinary Practice • RCVS accredited</p>
+            <p class="text-slate-500 text-xs mt-4">© 2026 Paws Clinic London</p>
+        </div>
+    </footer>
+
+    <button onclick="openChat()" id="chat-toggle" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-emerald-500 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:bg-emerald-600 transition shadow-lg">💬</button>
+
+    <script>
+        const CONFIG = { practiceName: 'Paws Clinic London', phone: '020 1234 5678', email: 'info@pawscliniclondon.co.uk', address: '45 High Street, London SW1A 1AA' };
+        let appointmentState = { step: 0, name: '', phone: '', email: '', pet: '', service: '', date: '', time: '' };
+        
+        function openChat() { document.getElementById('chat-widget').classList.remove('hidden'); document.getElementById('chat-toggle').classList.add('hidden'); if (!window.messagesInitialized) { addMessage(welcomeMessage(), false); window.messagesInitialized = true; } }
+        function closeChat() { document.getElementById('chat-widget').classList.add('hidden'); document.getElementById('chat-toggle').classList.remove('hidden'); }
+        
+        function addMessage(text, isUser) {
+            const div = document.createElement('div');
+            div.className = isUser ? 'flex justify-end' : 'flex justify-start';
+            div.innerHTML = isUser ? `<div class="bg-emerald-500 text-white rounded-2xl rounded-tr-none px-4 py-3 max-w-[85%]">${text}</div>` : `<div class="bg-white border border-slate-200 rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%] shadow-sm">${text}</div>`;
+            document.getElementById('chat-messages').appendChild(div); div.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function welcomeMessage() { return `👋 Welcome to <strong>${CONFIG.practiceName}</strong>! 🐕<br><br>I'm your vet AI assistant. I can help with:<br><br>• 📅 <strong>Book appointments</strong><br>• 💷 <strong>Pricing inquiries</strong><br>• 🏥 <strong>Services info</strong><br>• 🚨 <strong>Emergency advice</strong><br><br>How can I help your pet today?`; }
+
+        function getBotResponse(message) {
+            const m = message.toLowerCase();
+            if (m.includes('appointment') || m.includes('book') || m.includes('schedule')) { appointmentState.step = 1; return `📅 <strong>Book an Appointment</strong><br><br>Let's schedule a visit!<br><br>First, what is your <strong>name</strong>?`; }
+            if (m.includes('price') || m.includes('cost') || m.includes('how much')) return `💷 <strong>Consultation Prices</strong><br><br>• Standard: £45 (15 min)<br>• Extended: £65 (30 min)<br>• Emergency: £95 (same-day)<br><br>Vaccinations: £35-£65<br>Microchipping: £20<br>Neutering: £150-£400<br><br>Book an appointment!`;
+            if (m.includes('emergency') || m.includes('urgent') || m.includes('pain')) return `🚨 <strong>Emergency?</strong> Call <strong>${CONFIG.phone}</strong> immediately.<br><br>For life-threatening emergencies, visit RSPCA or Vets Now 24/7.`;
+            if (m.includes('hour') || m.includes('open') || m.includes('time')) return `🕐 <strong>Opening Hours</strong><br><br>• Mon-Fri: 8AM-7PM<br>• Saturday: 9AM-5PM<br>• Sunday: Emergency only<br><br>AI assistant available 24/7!`;
+            if (m.includes('vaccination') || m.includes('vaccine')) return `💉 <strong>Vaccinations</strong><br><br>• Dog (core): £55<br>• Cat: £50<br>• Rabbit (VHD/Myxo): £35<br><br>Book a vaccination appointment!`;
+            if (m.includes('register') || m.includes('new patient')) return `👋 <strong>New Patients Welcome!</strong><br><br>Register your pet and book your first appointment online.<br><br>We see: Dogs, Cats, Rabbits, and small mammals.`;
+            if (m.includes('hello') || m.includes('hi')) return welcomeMessage();
+            return `I'd be happy to help! 🤔<br><br>Try: "Book appointment", "Prices", "Emergency", or "Opening hours"`;
+        }
+
+        function handleBookingFlow(m) {
+            switch(appointmentState.step) {
+                case 1: appointmentState.name = message; appointmentState.step = 2; return `Thanks, ${appointmentState.name}! 😊<br><br>What is your <strong>phone number</strong>?`;
+                case 2: appointmentState.phone = message; appointmentState.step = 3; return `Perfect! What <strong>pet's name</strong> and <strong>species</strong> (dog/cat/rabbit)?`;
+                case 3: appointmentState.pet = message; appointmentState.step = 4; return `Great! What <strong>service</strong>? (Consultation, Vaccination, etc.)`;
+                case 4: appointmentState.service = message; appointmentState.step = 5; return `${appointmentState.service} noted! 📅<br><br>When would you like to come in?`;
+                case 5: appointmentState.date = message; appointmentState.step = 6; return `Thanks! We'll check availability and call you at ${appointmentState.phone} to confirm.<br><br>Is there anything else?`;
+                default: appointmentState.step = 0; return getBotResponse(message);
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+            addMessage(message, true);
+            input.value = '';
+            setTimeout(() => { addMessage(appointmentState.step > 0 ? handleBookingFlow(message) : getBotResponse(message), false); }, 300);
+        }
+    </script>
+
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden" style="width: 420px; max-width: calc(100vw - 32px);">
+            <div class="bg-emerald-500 text-white p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🤖</div>
+                    <div>
+                        <div class="font-semibold">Paws Clinic AI</div>
+                        <div class="text-xs text-emerald-200">Online</div>
+                    </div>
+                </div>
+                <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full">✕</button>
+            </div>
+            <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50" style="height: 350px;"></div>
+            <div class="p-4 border-t bg-white">
+                <div class="flex space-x-2">
+                    <input type="text" id="chat-input" placeholder="Ask about appointments..." class="flex-1 bg-slate-100 rounded-full px-4 py-3" onkeypress="if(event.key==='Enter')sendMessage()">
+                    <button onclick="sendMessage()" class="bg-emerald-500 text-white w-12 h-12 rounded-full">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
