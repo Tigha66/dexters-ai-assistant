@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creation Service | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0A0A0B', surface: '#141416', card: '#1C1C1F',
+                        accent: '#00E5A0', 'accent-dark': '#00B87A', muted: '#6B6B6B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Outfit', sans-serif; }
+        body { background: #0A0A0B; color: white; }
+        .gradient-text { background: linear-gradient(135deg, #00E5A0, #00B87A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <header class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-accent to-accent-dark rounded-xl flex items-center justify-center"><span class="text-xl">🤖</span></div>
+                <div class="font-display font-bold text-xl"><span class="text-white">AutoAI</span><span class="gradient-text">Solutions</span></div>
+            </a>
+            <a href="#contact" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-5 py-2 rounded-full font-semibold">Get Started</a>
+        </div>
+    </header>
+
+    <section class="hero-glow py-32">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center gap-2 bg-yellow-500/10 text-yellow-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <span>✍️</span> Content Creation
+            </div>
+            <h1 class="font-display text-4xl md:text-5xl font-bold mb-6">AI-Powered Content<br><span class="gradient-text">At Scale</span></h1>
+            <p class="text-lg text-muted mb-8 max-w-2xl mx-auto">Blog posts, emails, social media, newsletters — consistent high-quality content that converts.</p>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What We Create</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">📝</div>
+                    <h3 class="font-bold mb-2">Blog Posts</h3>
+                    <p class="text-muted text-sm">SEO-optimized articles that drive traffic.</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">📧</div>
+                    <h3 class="font-bold mb-2">Email Sequences</h3>
+                    <p class="text-muted text-sm">Welcome series, newsletters, promotions.</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">📱</div>
+                    <h3 class="font-bold mb-2">Social Media</h3>
+                    <p class="text-muted text-sm">Posts, captions, hashtags for all platforms.</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">🎬</div>
+                    <h3 class="font-bold mb-2">Video Scripts</h3>
+                    <p class="text-muted text-sm">YouTube, TikTok, Reels scripts.</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">📄</div>
+                    <h3 class="font-bold mb-2">Case Studies</h3>
+                    <p class="text-muted text-sm">Proof points that sell for you.</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">📑</div>
+                    <h3 class="font-bold mb-2">Whitepapers</h3>
+                    <p class="text-muted text-sm">In-depth guides for lead magnets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-surface">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Pricing</h2>
+            <div class="bg-card border border-white/5 rounded-2xl p-8">
+                <div class="text-center mb-6">
+                    <span class="text-4xl font-bold gradient-text">£150</span>
+                    <span class="text-muted">/month</span>
+                </div>
+                <ul class="space-y-3 text-sm mb-8">
+                    <li class="flex items-center gap-2"><span class="text-accent">✓</span> 8 blog posts</li>
+                    <li class="flex items-center gap-2"><span class="text-accent">✓</span> 4 email newsletters</li>
+                    <li class="flex items-center gap-2"><span class="text-accent">✓</span> 20 social posts</li>
+                    <li class="flex items-center gap-2"><span class="text-accent">✓</span> SEO optimization</li>
+                    <li class="flex items-center gap-2"><span class="text-accent">✓</span> Tone matching</li>
+                </ul>
+                <a href="#contact" class="block text-center bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 rounded-full font-bold">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Start Creating Content</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <input type="email" placeholder="Email *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <textarea placeholder="What content do you need?" rows="4" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent"></textarea>
+                <button type="submit" class="w-full bg-gradient-to-r from-accent to-accent-dark text-dark py-4 rounded-xl font-bold">Send Request →</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-muted text-sm border-t border-white/5">
+        <p>© 2026 AutoAI Web Solutions</p>
+    </footer>
+</body>
+</html>

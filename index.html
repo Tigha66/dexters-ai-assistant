@@ -3,336 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoAI Web Solutions | AI Chatbots for London Businesses</title>
+    <title>AutoAI Web Solutions | AI Services for UK Businesses</title>
+    <meta name="description" content="Complete AI solutions for UK businesses: Chatbots, Voice Agents, Lead Generation, Content Creation, and more.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>* { font-family: 'Inter', sans-serif; }</style>
-    <meta name="description" content="AI chatbots for London businesses. 24/7 customer service, appointment booking, lead capture. Done-for-you setup in 5 days.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0A0A0B',
+                        surface: '#141416',
+                        card: '#1C1C1F',
+                        accent: '#00E5A0',
+                        'accent-dark': '#00B87A',
+                        muted: '#6B6B6B'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Outfit', sans-serif; }
+        body { background: #0A0A0B; color: white; }
+        .gradient-text {
+            background: linear-gradient(135deg, #00E5A0 0%, #00B87A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 30% 50%, rgba(0, 229, 160, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(0, 229, 160, 0.1) 0%, transparent 40%);
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 40px rgba(0, 229, 160, 0.15);
+            border-color: rgba(0, 229, 160, 0.3);
+        }
+        .float { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    </style>
 </head>
-<body class="bg-slate-900 text-white">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-sm border-b border-slate-700">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <span class="text-2xl">🤖</span>
-                <span class="font-bold text-xl">AutoAI Web Solutions</span>
-            </div>
-            <div class="hidden md:flex space-x-6 text-sm">
-                <a href="#features" class="hover:text-emerald-400 transition">Features</a>
-                <a href="#industries" class="hover:text-emerald-400 transition">Industries</a>
-                <a href="#pricing" class="hover:text-emerald-400 transition">Pricing</a>
-                <a href="#contact" class="bg-emerald-500 px-4 py-2 rounded-full hover:bg-emerald-600 transition">Get Started</a>
-            </div>
+<body class="bg-dark text-white">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-accent to-accent-dark rounded-xl flex items-center justify-center">
+                    <span class="text-xl">🤖</span>
+                </div>
+                <div class="font-display font-bold text-xl">
+                    <span class="text-white">AutoAI</span>
+                    <span class="gradient-text">Solutions</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm">
+                <a href="#services" class="text-muted hover:text-white transition">Services</a>
+                <a href="#pricing" class="text-muted hover:text-white transition">Pricing</a>
+                <a href="#contact" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                    Get Started
+                </a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero -->
-    <section class="pt-32 pb-20 px-4">
-        <div class="max-w-5xl mx-auto text-center">
-            <div class="inline-flex items-center bg-emerald-500/20 text-emerald-400 px-4 py-2 rounded-full text-sm mb-6">
-                <span class="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></span>
-                Done-For-You AI Chatbots
-            </div>
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                Never Miss a Customer Again
-            </h1>
-            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-                AI chatbots that work 24/7, book appointments, capture leads, 
-                and handle customer inquiries — while you sleep.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="bg-emerald-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-600 transition shadow-lg shadow-emerald-500/25">
-                    📅 Book Free Demo
-                </a>
-                <a href="#demos" class="bg-slate-700 text-white px-8 py-4 rounded-full font-semibold hover:bg-slate-600 transition">
-                    🎯 View Live Demos
-                </a>
-            </div>
-            <p class="text-sm text-slate-500 mt-4">Trusted by businesses across London</p>
-        </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="py-12 bg-slate-800">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-3xl font-bold text-emerald-400">24/7</div>
-                    <div class="text-sm text-slate-400">Always Available</div>
+    <section class="hero-glow py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+                    <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                    Serving UK Businesses
                 </div>
-                <div>
-                    <div class="text-3xl font-bold text-emerald-400">40%</div>
-                    <div class="text-sm text-slate-400">More Leads Captured</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-emerald-400">5 Days</div>
-                    <div class="text-sm text-slate-400">Full Setup</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-emerald-400">£49</div>
-                    <div class="text-sm text-slate-400">Starting Price/mo</div>
+                
+                <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Complete AI Solutions for<br>
+                    <span class="gradient-text">Your Business</span>
+                </h1>
+                
+                <p class="text-lg text-muted mb-10 max-w-2xl mx-auto">
+                    From chatbots to lead generation, content to customer support — 
+                    we help UK businesses automate, grow, and scale with AI.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#services" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition">
+                        View All Services →
+                    </a>
+                    <a href="#contact" class="border border-white/20 px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition">
+                        Get Free Consultation
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
-    <section id="features" class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-4">What Your AI Bot Does</h2>
-            <p class="text-slate-400 text-center mb-12">Everything a great receptionist does — but never sleeps</p>
+    <!-- Services -->
+    <section id="services" class="py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-accent font-medium text-sm uppercase tracking-wider">What We Offer</span>
+                <h2 class="font-display text-4xl font-bold mt-2">Our Services</h2>
+            </div>
             
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-slate-800 rounded-xl p-6 hover:bg-slate-750 transition">
-                    <div class="text-4xl mb-4">💬</div>
-                    <h3 class="text-xl font-bold mb-2">Instant Responses</h3>
-                    <p class="text-slate-400">Answer questions within seconds — never keep customers waiting</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- AI Chatbot -->
+                <div class="card-glow bg-card border border-white/5 rounded-2xl p-6 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-3xl mb-4">💬</div>
+                    <h3 class="font-display text-xl font-bold mb-2">AI Chatbot</h3>
+                    <p class="text-muted text-sm mb-4">24/7 AI chatbot for your website that answers questions, captures leads, and books appointments.</p>
+                    <div class="text-accent font-bold">From £49/mo</div>
                 </div>
-                <div class="bg-slate-800 rounded-xl p-6 hover:bg-slate-750 transition">
-                    <div class="text-4xl mb-4">📅</div>
-                    <h3 class="text-xl font-bold mb-2">Book Appointments</h3>
-                    <p class="text-slate-400">Calendar integration — customers book directly through chat</p>
+                
+                <!-- AI Voice Agent -->
+                <div class="card-glow bg-card border border-white/5 rounded-2xl p-6 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-accent to-accent-dark rounded-2xl flex items-center justify-center text-3xl mb-4">🎧</div>
+                    <h3 class="font-display text-xl font-bold mb-2">AI Voice Agent</h3>
+                    <p class="text-muted text-sm mb-4">AI-powered receptionist that answers calls 24/7, handles inquiries, and routes emergencies.</p>
+                    <div class="text-accent font-bold">From £149/mo</div>
                 </div>
-                <div class="bg-slate-800 rounded-xl p-6 hover:bg-slate-750 transition">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h3 class="text-xl font-bold mb-2">Qualify Leads</h3>
-                    <p class="text-slate-400">Filter out time-wasters, focus on serious customers</p>
+                
+                <!-- Lead Generation -->
+                <div class="card-glow bg-card border border-white/5 rounded-2xl p-6 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center text-3xl mb-4">🎯</div>
+                    <h3 class="font-display text-xl font-bold mb-2">Lead Generation</h3>
+                    <p class="text-muted text-sm mb-4">We find and qualify your ideal customers. Lists built, verified, and ready for outreach.</p>
+                    <div class="text-accent font-bold">From £200/project</div>
                 </div>
-                <div class="bg-slate-800 rounded-xl p-6 hover:bg-slate-750 transition">
-                    <div class="text-4xl mb-4">📱</div>
-                    <h3 class="text-xl font-bold mb-2">WhatsApp Integration</h3>
-                    <p class="text-slate-400">Works on your website AND WhatsApp — wherever customers are</p>
+                
+                <!-- Automated Outreach -->
+                <div class="card-glow bg-card border border-white/5 rounded-2xl p-6 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center text-3xl mb-4">📧</div>
+                    <h3 class="font-display text-xl font-bold mb-2">Automated Outreach</h3>
+                    <p class="text-muted text-sm mb-4">Personalized email & DM campaigns that book meetings while you sleep.</p>
+                    <div class="text-accent font-bold">From £300/mo</div>
                 </div>
-                <div class="bg-slate-800 rounded-xl p-6 hover:bg-slate-750 transition">
-                    <div class="text-4xl mb-4">📧</div>
-                    <h3 class="text-xl font-bold mb-2">CRM Sync</h3>
-                    <p class="text-slate-400">Automatically send leads to your existing systems</p>
+                
+                <!-- Content Creation -->
+                <div class="card-glow bg-card border border-white/5 rounded-2xl p-6 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center text-3xl mb-4">✍️</div>
+                    <h3 class="font-display text-xl font-bold mb-2">Content Creation</h3>
+                    <p class="text-muted text-sm mb-4">Blog posts, emails, social media content, newsletters — AI-powered content at scale.</p>
+                    <div class="text-accent font-bold">From £150/mo</div>
                 </div>
-                <div class="bg-slate-800 rounded-xl p-6 hover:bg-slate-750 transition">
-                    <div class="text-4xl mb-4">🔄</div>
-                    <h3 class="text-xl font-bold mb-2">2-Line Install</h3>
-                    <p class="text-slate-400">Add to any website in minutes with just 2 lines of code</p>
+                
+                <!-- Customer Support -->
+                <div class="card-glow bg-card border border-white/5 rounded-2xl p-6 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center text-3xl mb-4">🎫</div>
+                    <h3 class="font-display text-xl font-bold mb-2">Customer Support</h3>
+                    <p class="text-muted text-sm mb-4">AI support bots that handle FAQs, refunds, and tickets — 24/7.</p>
+                    <div class="text-accent font-bold">From £100/mo</div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Demos -->
-    <section id="demos" class="py-20 px-4 bg-slate-800">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-4">🎯 Live Chatbot Demos</h2>
-            <p class="text-slate-400 text-center mb-12">Click any industry to try the chatbot live</p>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Real Estate -->
-                <a href="https://tigha66.github.io/dexters-ai-assistant/estate-agent-london.html" target="_blank" class="group bg-white rounded-xl overflow-hidden hover:shadow-2xl transition">
-                    <div class="h-40 bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
-                        <span class="text-6xl">🏠</span>
-                    </div>
-                    <div class="p-4 text-slate-800">
-                        <h3 class="font-bold text-lg">Estate Agents</h3>
-                        <p class="text-sm text-slate-500">Property inquiries, viewings, valuations</p>
-                        <span class="inline-block mt-2 text-emerald-600 text-sm font-medium">Try Demo →</span>
-                    </div>
-                </a>
-
-                <!-- Plumbers -->
-                <a href="https://tigha66.github.io/dexters-ai-assistant/plumber-london.html" target="_blank" class="group bg-white rounded-xl overflow-hidden hover:shadow-2xl transition">
-                    <div class="h-40 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
-                        <span class="text-6xl">🚰</span>
-                    </div>
-                    <div class="p-4 text-slate-800">
-                        <h3 class="font-bold text-lg">Plumbers & Trades</h3>
-                        <p class="text-sm text-slate-500">Emergency dispatch, quotes, bookings</p>
-                        <span class="inline-block mt-2 text-blue-600 text-sm font-medium">Try Demo →</span>
-                    </div>
-                </a>
-
-                <!-- Dental -->
-                <a href="https://tigha66.github.io/dexters-ai-assistant/mydentist-london.html" target="_blank" class="group bg-white rounded-xl overflow-hidden hover:shadow-2xl transition">
-                    <div class="h-40 bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center">
-                        <span class="text-6xl">🦷</span>
-                    </div>
-                    <div class="p-4 text-slate-800">
-                        <h3 class="font-bold text-lg">Dental Practices</h3>
-                        <p class="text-sm text-slate-500">Appointments, NHS pricing, emergencies</p>
-                        <span class="inline-block mt-2 text-rose-600 text-sm font-medium">Try Demo →</span>
-                    </div>
-                </a>
-
-                <!-- Restaurants -->
-                <a href="https://tigha66.github.io/dexters-ai-assistant/restaurant-london.html" target="_blank" class="group bg-white rounded-xl overflow-hidden hover:shadow-2xl transition">
-                    <div class="h-40 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                        <span class="text-6xl">🍽️</span>
-                    </div>
-                    <div class="p-4 text-slate-800">
-                        <h3 class="font-bold text-lg">Restaurants</h3>
-                        <p class="text-sm text-slate-500">Reservations, menu questions, private events</p>
-                        <span class="inline-block mt-2 text-orange-600 text-sm font-medium">Try Demo →</span>
-                    </div>
-                </a>
-
-                <!-- Legal -->
-                <a href="https://tigha66.github.io/dexters-ai-assistant/legal-ai-assistant.html" target="_blank" class="group bg-white rounded-xl overflow-hidden hover:shadow-2xl transition">
-                    <div class="h-40 bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
-                        <span class="text-6xl">⚖️</span>
-                    </div>
-                    <div class="p-4 text-slate-800">
-                        <h3 class="font-bold text-lg">Legal Firms</h3>
-                        <p class="text-sm text-slate-500">Case inquiries, consultations, contact</p>
-                        <span class="inline-block mt-2 text-slate-600 text-sm font-medium">Try Demo →</span>
-                    </div>
-                </a>
-
-                <!-- Beauty -->
-                <a href="https://tigha66.github.io/dexters-ai-assistant/beauty-ai-assistant.html" target="_blank" class="group bg-white rounded-xl overflow-hidden hover:shadow-2xl transition">
-                    <div class="h-40 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
-                        <span class="text-6xl">💅</span>
-                    </div>
-                    <div class="p-4 text-slate-800">
-                        <h3 class="font-bold text-lg">Beauty & Wellness</h3>
-                        <p class="text-sm text-slate-500">Bookings, treatments, availability</p>
-                        <span class="inline-block mt-2 text-purple-600 text-sm font-medium">Try Demo →</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="text-center mt-8">
-                <a href="https://tigha66.github.io/dexters-ai-assistant/sell-ai-bots.html" target="_blank" class="inline-block text-emerald-400 hover:text-emerald-300">
-                    View All 11 Industries →
-                </a>
+                
+                <!-- Reputation Management -->
+                <div class="card-glow bg-card border border-white/5 rounded-2xl p-6 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center text-3xl mb-4">⭐</div>
+                    <h3 class="font-display text-xl font-bold mb-2">Reputation Management</h3>
+                    <p class="text-muted text-sm mb-4">Monitor and respond to reviews across Google, Trustpilot, Yelp automatically.</p>
+                    <div class="text-accent font-bold">From £150/mo</div>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="card-glow bg-card border border-white/5 rounded-2xl p-6 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center text-3xl mb-4">📱</div>
+                    <h3 class="font-display text-xl font-bold mb-2">Social Media Management</h3>
+                    <p class="text-muted text-sm mb-4">Schedule posts, engage with followers, grow your presence automatically.</p>
+                    <div class="text-accent font-bold">From £200/mo</div>
+                </div>
+                
+                <!-- Website Creation -->
+                <div class="card-glow bg-card border border-white/5 rounded-2xl p-6 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-violet-500 to-purple-500 rounded-2xl flex items-center justify-center text-3xl mb-4">🌐</div>
+                    <h3 class="font-display text-xl font-bold mb-2">Website Creation</h3>
+                    <p class="text-muted text-sm mb-4">Professional, modern websites with AI integration. Mobile-responsive & SEO-optimized.</p>
+                    <div class="text-accent font-bold">From £499 one-time</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Industries -->
-    <section id="industries" class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-4">Industries We Serve</h2>
-            <p class="text-slate-400 text-center mb-12">Specialized chatbots for your vertical</p>
+    <section class="py-24 bg-surface">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-accent font-medium text-sm uppercase tracking-wider">Who We Help</span>
+                <h2 class="font-display text-4xl font-bold mt-2">Industries We Serve</h2>
+            </div>
             
             <div class="flex flex-wrap justify-center gap-4">
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">🏠 Estate Agents</span>
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">🦷 Dental Practices</span>
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">🍽️ Restaurants</span>
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">🚰 Plumbers</span>
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">⚖️ Legal</span>
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">💅 Beauty</span>
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">🏥 Vets</span>
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">🏋️ Physiotherapists</span>
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">👁️ Optometrists</span>
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">🏠 Home Services</span>
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">🎓 Education</span>
-                <span class="bg-slate-800 px-4 py-2 rounded-full text-sm">🏨 Hospitality</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">🏠 Estate Agents</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">🦷 Dental Practices</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">🚰 Plumbers</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">⚡ Electricians</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">🍽️ Restaurants</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">💅 Beauty & Wellness</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">⚖️ Legal</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">🏥 Healthcare</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">🏋️ Fitness</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">🎓 Education</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">🏨 Hospitality</span>
+                <span class="bg-card px-6 py-3 rounded-full border border-white/5">🐕 Vets</span>
             </div>
         </div>
     </section>
 
     <!-- Pricing -->
-    <section id="pricing" class="py-20 px-4 bg-slate-800">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-4">Simple Pricing</h2>
-            <p class="text-slate-400 text-center mb-12">No contracts, cancel anytime</p>
+    <section id="pricing" class="py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-accent font-medium text-sm uppercase tracking-wider">Pricing</span>
+                <h2 class="font-display text-4xl font-bold mt-2">Simple, Transparent Pricing</h2>
+            </div>
             
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-slate-900 rounded-xl p-6">
-                    <h3 class="text-xl font-bold mb-2">Starter</h3>
-                    <div class="text-4xl font-bold text-emerald-400 mb-4">£49<span class="text-lg text-slate-500">/mo</span></div>
-                    <ul class="text-sm space-y-3 mb-6">
-                        <li>✅ AI chatbot on website</li>
-                        <li>✅ 100 conversations/mo</li>
-                        <li>✅ Basic integrations</li>
-                        <li>✅ Email support</li>
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Starter -->
+                <div class="bg-card border border-white/5 rounded-2xl p-8">
+                    <h3 class="font-display text-xl font-bold mb-2">Starter</h3>
+                    <p class="text-muted text-sm mb-4">Perfect for small businesses</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold gradient-text">£49</span>
+                        <span class="text-muted">/month</span>
+                    </div>
+                    <ul class="space-y-3 text-sm mb-8">
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> AI Chatbot</li>
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> 500 conversations/mo</li>
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> Basic integrations</li>
                     </ul>
-                    <a href="#contact" class="block text-center bg-slate-700 py-3 rounded-lg hover:bg-slate-600 transition">Get Started</a>
+                    <a href="#contact" class="block text-center border border-accent text-accent py-3 rounded-full font-semibold hover:bg-accent hover:text-dark transition">Get Started</a>
                 </div>
                 
-                <div class="bg-emerald-500 rounded-xl p-6 transform scale-105">
-                    <div class="text-center bg-white text-emerald-600 text-xs font-bold px-3 py-1 rounded-full -mt-8 mb-4 inline-block">MOST POPULAR</div>
-                    <h3 class="text-xl font-bold mb-2">Professional</h3>
-                    <div class="text-4xl font-bold text-white mb-4">£99<span class="text-lg text-emerald-200">/mo</span></div>
-                    <ul class="text-sm space-y-3 mb-6 text-emerald-100">
-                        <li>✅ Everything in Starter</li>
-                        <li>✅ Unlimited conversations</li>
-                        <li>✅ WhatsApp integration</li>
-                        <li>✅ Calendar booking</li>
-                        <li>✅ CRM integration</li>
-                        <li>✅ Priority support</li>
+                <!-- Professional -->
+                <div class="bg-gradient-to-b from-accent/20 to-transparent border border-accent/30 rounded-2xl p-8 relative">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-dark px-4 py-1 rounded-full text-sm font-bold">POPULAR</div>
+                    <h3 class="font-display text-xl font-bold mb-2">Professional</h3>
+                    <p class="text-muted text-sm mb-4">For growing businesses</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold gradient-text">£198</span>
+                        <span class="text-muted">/month</span>
+                    </div>
+                    <ul class="space-y-3 text-sm mb-8">
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> AI Chatbot + Voice</li>
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> Unlimited conversations</li>
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> Lead generation</li>
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> All integrations</li>
                     </ul>
-                    <a href="#contact" class="block text-center bg-white text-emerald-600 py-3 rounded-lg hover:bg-emerald-50 transition font-semibold">Get Started</a>
+                    <a href="#contact" class="block text-center bg-accent text-dark py-3 rounded-full font-semibold hover:opacity-90 transition">Get Started</a>
                 </div>
                 
-                <div class="bg-slate-900 rounded-xl p-6">
-                    <h3 class="text-xl font-bold mb-2">Enterprise</h3>
-                    <div class="text-4xl font-bold text-white mb-4">Custom</div>
-                    <ul class="text-sm space-y-3 mb-6">
-                        <li>✅ Everything in Professional</li>
-                        <li>✅ White-label</li>
-                        <li>✅ Multiple locations</li>
-                        <li>✅ Custom training</li>
-                        <li>✅ Dedicated support</li>
+                <!-- Enterprise -->
+                <div class="bg-card border border-white/5 rounded-2xl p-8">
+                    <h3 class="font-display text-xl font-bold mb-2">Enterprise</h3>
+                    <p class="text-muted text-sm mb-4">Full automation package</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-white">Custom</span>
+                    </div>
+                    <ul class="space-y-3 text-sm mb-8">
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> Everything in Professional</li>
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> Dedicated account manager</li>
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> Custom integrations</li>
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> SLA guarantee</li>
                     </ul>
-                    <a href="#contact" class="block text-center bg-slate-700 py-3 rounded-lg hover:bg-slate-600 transition">Contact Us</a>
+                    <a href="#contact" class="block text-center border border-white/20 text-white py-3 rounded-full font-semibold hover:bg-white/5 transition">Contact Us</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-20 px-4">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-4">Ready to Get Started?</h2>
-            <p class="text-slate-400 text-center mb-8">Book your free demo consultation</p>
+    <section id="contact" class="py-24 bg-surface">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-accent font-medium text-sm uppercase tracking-wider">Get Started</span>
+                <h2 class="font-display text-4xl font-bold mt-2">Let's Talk</h2>
+                <p class="text-muted mt-4">Ready to transform your business with AI?</p>
+            </div>
             
-            <div class="bg-slate-800 rounded-xl p-8">
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium mb-2">Your Name</label>
-                        <input type="text" class="w-full bg-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="John Smith">
+            <div class="bg-card border border-white/5 rounded-2xl p-8">
+                <form class="space-y-5">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Name *</label>
+                            <input type="text" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Business Name *</label>
+                            <input type="text" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                        </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-2">Business Name</label>
-                        <input type="text" class="w-full bg-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="Your Business Ltd">
+                        <label class="block text-sm font-medium mb-2">Email *</label>
+                        <input type="email" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-2">Email</label>
-                        <input type="email" class="w-full bg-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="john@business.com">
+                        <label class="block text-sm font-medium mb-2">Phone *</label>
+                        <input type="tel" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-2">Phone</label>
-                        <input type="tel" class="w-full bg-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="07123 456789">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-2">Industry</label>
-                        <select class="w-full bg-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500 outline-none">
-                            <option>Select your industry...</option>
-                            <option>Estate Agents</option>
-                            <option>Plumbers & Trades</option>
-                            <option>Dental Practice</option>
-                            <option>Restaurant</option>
-                            <option>Legal</option>
-                            <option>Beauty & Wellness</option>
-                            <option>Other</option>
+                        <label class="block text-sm font-medium mb-2">Service Interested In *</label>
+                        <select required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                            <option>Select a service...</option>
+                            <option>AI Chatbot</option>
+                            <option>AI Voice Agent</option>
+                            <option>Lead Generation</option>
+                            <option>Automated Outreach</option>
+                            <option>Content Creation</option>
+                            <option>Customer Support</option>
+                            <option>Reputation Management</option>
+                            <option>Social Media Management</option>
+                            <option>Website Creation</option>
+                            <option>Multiple Services</option>
                         </select>
                     </div>
-                    <button type="submit" class="w-full bg-emerald-500 text-white py-4 rounded-full font-semibold hover:bg-emerald-600 transition">
-                        📅 Book Free Demo
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea rows="4" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-accent to-accent-dark text-dark py-4 rounded-xl font-bold text-lg hover:opacity-90 transition">
+                        Send Message →
                     </button>
                 </form>
+                
+                <div class="mt-8 pt-8 border-t border-white/5 text-center">
+                    <p class="text-muted mb-2">Or email us directly:</p>
+                    <a href="mailto:tigha66@gmail.com" class="text-accent font-semibold hover:underline">tigha66@gmail.com</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 py-8 border-t border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <div class="flex items-center justify-center space-x-2 mb-4">
-                <span class="text-2xl">🤖</span>
-                <span class="text-xl font-bold">AutoAI Web Solutions</span>
+    <footer class="py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-accent to-accent-dark rounded-xl flex items-center justify-center">
+                    <span class="text-xl">🤖</span>
+                </div>
+                <div class="font-display font-bold text-xl">
+                    <span class="text-white">AutoAI</span>
+                    <span class="gradient-text">Solutions</span>
+                </div>
             </div>
-            <p class="text-slate-500 text-sm">AI Chatbots for London Businesses</p>
-            <p class="text-slate-600 text-xs mt-4">info@autoaiwebsolutions.com</p>
-            <p class="text-slate-600 text-xs">© 2026 AutoAI Web Solutions</p>
+            <p class="text-muted text-sm">Complete AI Solutions for UK Businesses</p>
+            <p class="text-muted text-xs mt-4">© 2026 AutoAI Web Solutions. All rights reserved.</p>
         </div>
     </footer>
 </body>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Outreach Service | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0A0A0B', surface: '#141416', card: '#1C1C1F',
+                        accent: '#00E5A0', 'accent-dark': '#00B87A', muted: '#6B6B6B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Outfit', sans-serif; }
+        body { background: #0A0A0B; color: white; }
+        .gradient-text { background: linear-gradient(135deg, #00E5A0, #00B87A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <header class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-accent to-accent-dark rounded-xl flex items-center justify-center"><span class="text-xl">🤖</span></div>
+                <div class="font-display font-bold text-xl"><span class="text-white">AutoAI</span><span class="gradient-text">Solutions</span></div>
+            </a>
+            <a href="#contact" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-5 py-2 rounded-full font-semibold">Get Started</a>
+        </div>
+    </header>
+
+    <section class="hero-glow py-32">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center gap-2 bg-pink-500/10 text-pink-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <span>📧</span> Automated Outreach
+            </div>
+            <h1 class="font-display text-4xl md:text-5xl font-bold mb-6">Book Meetings While<br><span class="gradient-text">You Sleep</span></h1>
+            <p class="text-lg text-muted mb-8 max-w-2xl mx-auto">Personalized email & DM campaigns that nurture leads and book meetings automatically.</p>
+            <div class="flex gap-4 justify-center">
+                <a href="#contact" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-8 py-4 rounded-full font-bold">Start Campaign →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What's Included</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">📧</div>
+                    <h3 class="font-bold mb-2">Email Campaigns</h3>
+                    <p class="text-muted text-sm">Personalized sequences that land in inbox, not spam.</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">💬</div>
+                    <h3 class="font-bold mb-2">LinkedIn DMs</h3>
+                    <p class="text-muted text-sm">Automated connection requests & follow-ups.</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">📅</div>
+                    <h3 class="font-bold mb-2">Meeting Booking</h3>
+                    <p class="text-muted text-sm">Calendly integration for auto-booking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-surface">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Pricing</h2>
+            <div class="bg-card border border-white/5 rounded-2xl p-8">
+                <div class="text-center mb-6">
+                    <span class="text-4xl font-bold gradient-text">£300</span>
+                    <span class="text-muted">/month</span>
+                </div>
+                <ul class="space-y-3 text-sm mb-8">
+                    <li class="flex items-center gap-2"><span class="text-accent">✓</span> Unlimited emails</li>
+                    <li class="flex items-center gap-2"><span class="text-accent">✓</span> A/B testing</li>
+                    <li class="flex items-center gap-2"><span class="text-accent">✓</span> Personalization</li>
+                    <li class="flex items-center gap-2"><span class="text-accent">✓</span> Weekly reports</li>
+                    <li class="flex items-center gap-2"><span class="text-accent">✓</span> Setup included</li>
+                </ul>
+                <a href="#contact" class="block text-center bg-gradient-to-r from-pink-500 to-rose-500 text-white py-3 rounded-full font-bold">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Start Your Campaign</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <input type="email" placeholder="Email *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <textarea placeholder="Describe your outreach goals..." rows="4" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent"></textarea>
+                <button type="submit" class="w-full bg-gradient-to-r from-accent to-accent-dark text-dark py-4 rounded-xl font-bold">Send Request →</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-muted text-sm border-t border-white/5">
+        <p>© 2026 AutoAI Web Solutions</p>
+    </footer>
+</body>
+</html>
