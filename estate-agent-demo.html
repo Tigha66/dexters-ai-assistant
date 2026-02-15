@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Properties | Estate Agents London</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0A0A0B', surface: '#141416', card: '#1C1C1F',
+                        accent: '#00E5A0', 'accent-dark': '#00B87A', muted: '#6B6B6B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Outfit', sans-serif; }
+        body { background: #0A0A0B; color: white; }
+        .gradient-text { background: linear-gradient(135deg, #00E5A0, #00B87A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <!-- Top Bar -->
+    <div class="bg-surface border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center text-sm">
+            <div class="flex items-center gap-2 text-muted">
+                <span>📍</span>
+                <span>London's Premier Estate Agent</span>
+            </div>
+            <a href="tel:02012345678" class="flex items-center gap-2 text-accent hover:text-accent-dark">
+                <span>📞</span>
+                <span class="font-semibold">020 1234 5678</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="sticky top-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-accent to-accent-dark rounded-xl flex items-center justify-center">
+                    <span class="text-xl">🏠</span>
+                </div>
+                <div class="font-display font-bold text-xl">
+                    <span class="text-white">Prestige</span>
+                    <span class="gradient-text">Properties</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm">
+                <a href="#sales" class="text-muted hover:text-white transition">Sales</a>
+                <a href="#lettings" class="text-muted hover:text-white transition">Lettings</a>
+                <a href="#ai" class="text-muted hover:text-white transition">AI Services</a>
+                <a href="#contact" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-5 py-2 rounded-full font-semibold">Valuation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+                    <span>⭐</span> London's Trusted Estate Agent
+                </div>
+                <h1 class="font-display text-4xl md:text-6xl font-bold mb-6">
+                    Find Your Perfect<br><span class="gradient-text">Home in London</span>
+                </h1>
+                <p class="text-muted text-lg mb-8 max-w-2xl mx-auto">
+                    From Mayfair to Battersea, we help you buy, sell, and rent the finest properties across London. Expert advice, exceptional service.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-8 py-4 rounded-full font-bold">Get Free Valuation</a>
+                    <a href="#properties" class="border border-white/20 px-8 py-4 rounded-full font-bold">View Properties</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-12 bg-surface border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold gradient-text">500+</div>
+                    <div class="text-muted text-sm">Properties Sold</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold gradient-text">£200M+</div>
+                    <div class="text-muted text-sm">Sales Volume</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold gradient-text">15+</div>
+                    <div class="text-muted text-sm">Years Experience</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold gradient-text">4.9★</div>
+                    <div class="text-muted text-sm">Client Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="sales" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">🏠</div>
+                    <h3 class="font-bold text-lg mb-2">Sales</h3>
+                    <p class="text-muted text-sm">Sell your property with expert guidance and maximum exposure.</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">🔑</div>
+                    <h3 class="font-bold text-lg mb-2">Lettings</h3>
+                    <p class="text-muted text-sm">Find the perfect tenant or rental property in London.</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">📋</div>
+                    <h3 class="font-bold text-lg mb-2">Property Management</h3>
+                    <p class="text-muted text-sm">Full-service management for landlords and tenants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lettings -->
+    <section id="lettings" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Premium Lettings</h2>
+                    <p class="text-muted mb-6">From studio apartments in Zone 1 to family homes in the suburbs, we have London's best rental portfolio.</p>
+                    <ul class="space-y-3 text-muted">
+                        <li>✓ Studios to penthouses</li>
+                        <li>✓ Short & long term lets</li>
+                        <li>✓ Professional & student</li>
+                        <li>✓ 24/7 viewing bookings</li>
+                    </ul>
+                </div>
+                <div class="bg-card border border-white/10 rounded-2xl p-8">
+                    <h3 class="font-bold text-xl mb-4">Areas We Cover</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-accent/10 px-4 py-2 rounded-full text-sm">Mayfair</span>
+                        <span class="bg-accent/10 px-4 py-2 rounded-full text-sm">Kensington</span>
+                        <span class="bg-accent/10 px-4 py-2 rounded-full text-sm">Chelsea</span>
+                        <span class="bg-accent/10 px-4 py-2 rounded-full text-sm">Battersea</span>
+                        <span class="bg-accent/10 px-4 py-2 rounded-full text-sm">Fitzrovia</span>
+                        <span class="bg-accent/10 px-4 py-2 rounded-full text-sm">Marylebone</span>
+                        <span class="bg-accent/10 px-4 py-2 rounded-full text-sm">Notting Hill</span>
+                        <span class="bg-accent/10 px-4 py-2 rounded-full text-sm">Hampstead</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Section -->
+    <section id="ai" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-accent text-sm uppercase tracking-wider">New</span>
+                <h2 class="text-3xl font-bold mt-2">AI-Powered Property Service</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">💬</div>
+                    <h3 class="font-bold text-lg mb-2">AI Property Chatbot</h3>
+                    <p class="text-muted text-sm mb-4">Instant answers to property enquiries, 24/7. Book viewings automatically.</p>
+                    <p class="text-accent font-bold">£49/mo</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">🎧</div>
+                    <h3 class="font-bold text-lg mb-2">AI Voice Agent</h3>
+                    <p class="text-muted text-sm mb-4">Never miss a buyer or tenant. 24/7 call answering with instant property matching.</p>
+                    <p class="text-accent font-bold">£149/mo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-surface">
+        <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Get a Free Valuation</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <input type="tel" placeholder="Phone *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <input type="email" placeholder="Email" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <input type="text" placeholder="Property Address" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <select class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                    <option>Property type...</option>
+                    <option>Flat/Apartment</option>
+                    <option>House</option>
+                    <option>Studio</option>
+                    <option>Penthouse</option>
+                    <option>Commercial</option>
+                </select>
+                <button type="submit" class="w-full bg-gradient-to-r from-accent to-accent-dark text-dark py-4 rounded-xl font-bold">Get Free Valuation</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-muted text-sm border-t border-white/5">
+        <p>© 2026 Prestige Properties London</p>
+    </footer>
+</body>
+</html>
