@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smyth Plumbing and Heating - Battersea | Trusted London Plumbers</title>
+    <meta name="description" content="Smyth Plumbing and Heating - Battersea's trusted plumbers. Emergency services, boiler installation, leak detection, bathrooms. 4.9★ rating. Call 07591 115721">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1E3A5F',
+                        'navy-dark': '#0F2744',
+                        accent: '#E85D04',
+                        'accent-hover': '#DC4A00',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, #1E3A5F 0%, #0F2744 100%); }
+        html { scroll-behavior: smooth; }
+        .service-card:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-light text-navy">
+    <!-- Top Bar -->
+    <div class="bg-navy text-white py-2">
+        <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-between items-center text-sm">
+            <div class="flex items-center space-x-4">
+                <span>📍 Serving London & Surrounding Areas</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:07591115721" class="hover:text-accent transition">📞 07591 115721</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <span class="text-3xl">🔧</span>
+                <div>
+                    <div class="font-bold text-xl text-navy">Smyth</div>
+                    <div class="font-bold text-xl text-accent">Plumbing</div>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#services" class="hover:text-accent transition">Services</a>
+                <a href="#reviews" class="hover:text-accent transition">Reviews</a>
+                <a href="#contact" class="bg-accent text-white px-5 py-2 rounded-full hover:bg-accent-hover transition font-semibold">Get a Free Quote</a>
+                <a href="tel:07591115721" class="bg-navy text-white px-5 py-2 rounded-full hover:bg-navy-dark transition">Call Now</a>
+            </div>
+            
+            <button onclick="toggleMobileMenu()" class="md:hidden text-navy">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </nav>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-3 space-y-2 text-sm font-medium">
+                <a href="#services" class="block py-2 hover:text-accent">Services</a>
+                <a href="#reviews" class="block py-2 hover:text-accent">Reviews</a>
+                <a href="#contact" class="block py-2 text-accent font-bold">Get a Free Quote</a>
+                <a href="tel:07591115721" class="block py-2 font-bold">📞 Call Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1 text-center md:text-left">
+                    <div class="inline-flex items-center bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-medium mb-4">
+                        ⭐ 4.9 Rating • 79 Reviews
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        London's Trusted <span class="text-accent">Plumbing & Heating</span> Experts
+                    </h1>
+                    <p class="text-xl text-slate-300 mb-8 max-w-xl">
+                        Emergency callouts, boiler installation, leak detection, bathrooms and all plumbing services. 
+                        Fully qualified, insured, and serving London for years.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#contact" class="bg-accent text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-hover transition shadow-lg shadow-accent/25">Get a Free Quote</a>
+                        <a href="tel:07591115721" class="bg-white text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-100 transition">📞 Call Now</a>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-6 mt-10 pt-8 border-t border-white/20">
+                        <div class="flex items-center space-x-2"><span class="text-2xl">⚡</span><span class="text-sm">24/7 Emergency</span></div>
+                        <div class="flex items-center space-x-2"><span class="text-2xl">✓</span><span class="text-sm">Gas Safe Registered</span></div>
+                        <div class="flex items-center space-x-2"><span class="text-2xl">💷</span><span class="text-sm">Transparent Pricing</span></div>
+                    </div>
+                </div>
+                
+                <!-- Emergency Card -->
+                <div class="flex-shrink-0 bg-white/10 backdrop-blur rounded-2xl p-8 text-center">
+                    <div class="text-6xl mb-4">🚨</div>
+                    <h3 class="text-2xl font-bold mb-2">Emergency?</h3>
+                    <p class="text-accent font-bold text-3xl mb-4">Same-Day Response</p>
+                    <p class="text-slate-300 text-sm mb-4">London & surrounding areas</p>
+                    <a href="tel:07591115721" class="inline-block bg-accent text-white px-8 py-3 rounded-full font-bold hover:bg-accent-hover transition">📞 07591 115721</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+                <div class="flex items-center space-x-2 text-sm"><span class="text-3xl">🛡️</span><span class="font-medium">Fully Insured</span></div>
+                <div class="flex items-center space-x-2 text-sm"><span class="text-3xl">👨‍🔧</span><span class="font-medium">Gas Safe Registered</span></div>
+                <div class="flex items-center space-x-2 text-sm"><span class="text-3xl">⭐</span><span class="font-medium">4.9 Rating</span></div>
+                <div class="flex items-center space-x-2 text-sm"><span class="text-3xl">✓</span><span class="font-medium">79 Reviews</span></div>
+                <div class="flex items-center space-x-2 text-sm"><span class="text-3xl">⚡</span><span class="font-medium">24/7 Available</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Our Services</span>
+                <h2 class="text-4xl font-bold mt-2 mb-4">Professional Plumbing Services</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">From emergency repairs to complete boiler installations, our fully qualified engineers handle all plumbing and heating needs across London.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="#contact" class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">🔥</div>
+                    <h3 class="text-lg font-bold mb-2">Boiler Installation</h3>
+                    <p class="text-slate-600 text-sm">New boiler installation, boiler replacements, and upgrades.</p>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">🚨</div>
+                    <h3 class="text-lg font-bold mb-2">24hr Boiler Breakdown</h3>
+                    <p class="text-slate-600 text-sm">Emergency boiler repairs, 24 hours a day, 7 days a week.</p>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">📋</div>
+                    <h3 class="text-lg font-bold mb-2">Gas Certificates</h3>
+                    <p class="text-slate-600 text-sm">CP12 gas safety certificates for landlords and homeowners.</p>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">💧</div>
+                    <h3 class="text-lg font-bold mb-2">Leak Detection & Repair</h3>
+                    <p class="text-slate-600 text-sm">Fast leak detection and repair services.</p>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">🚿</div>
+                    <h3 class="text-lg font-bold mb-2">Shower Installation</h3>
+                    <p class="text-slate-600 text-sm">Shower installation, repair, and replacement services.</p>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">🚽</div>
+                    <h3 class="text-lg font-bold mb-2">Toilet Installation & Repair</h3>
+                    <p class="text-slate-600 text-sm">Toilet installation, repair, and maintenance.</p>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">🔧</div>
+                    <h3 class="text-lg font-bold mb-2">Tap Installation & Repair</h3>
+                    <p class="text-slate-600 text-sm">Tap installation, repair, and replacement.</p>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">🌡️</div>
+                    <h3 class="text-lg font-bold mb-2">Water Heater Installation</h3>
+                    <p class="text-slate-600 text-sm">Water heater and cylinder installation.</p>
+                </a>
+                
+                <a href="#contact" class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="text-lg font-bold mb-2">Plumbing Pipe Repair</h3>
+                    <p class="text-slate-600 text-sm">Complete pipe repair and replacement services.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="py-20 bg-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">What Our Customers Say</h2>
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <span class="text-yellow-400 text-2xl">★★★★★</span>
+                    <span class="text-slate-600">4.9 Average Rating (79 Reviews)</span>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-yellow-400 mb-3">★★★★★</div>
+                    <p class="text-slate-600 text-sm mb-4">"He quickly identified the problem area, fixed it and gave a very good price. Highly recommended!"</p>
+                    <p class="font-bold text-sm">Google Review</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-yellow-400 mb-3">★★★★★</div>
+                    <p class="text-slate-600 text-sm mb-4">"I received an excellent service from the company. Very professional and efficient."</p>
+                    <p class="font-bold text-sm">Google Review</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-yellow-400 mb-3">★★★★★</div>
+                    <p class="text-slate-600 text-sm mb-4">"They did a fantastic job in my bathroom and got the work done really quickly. Will use again!"</p>
+                    <p class="font-bold text-sm">Google Review</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas We Serve -->
+    <section class="py-16 bg-navy text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold mb-4">📍 Areas We Serve</h2>
+                <p class="text-slate-300">Serving London and surrounding areas</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="bg-white/10 px-4 py-2 rounded-full text-sm">Battersea</span>
+                <span class="bg-white/10 px-4 py-2 rounded-full text-sm">Central London</span>
+                <span class="bg-white/10 px-4 py-2 rounded-full text-sm">South London</span>
+                <span class="bg-white/10 px-4 py-2 rounded-full text-sm">Wandsworth</span>
+                <span class="bg-white/10 px-4 py-2 rounded-full text-sm">Clapham</span>
+                <span class="bg-white/10 px-4 py-2 rounded-full text-sm">Brixton</span>
+                <span class="bg-white/10 px-4 py-2 rounded-full text-sm">Croydon</span>
+                <span class="bg-white/10 px-4 py-2 rounded-full text-sm">Surrey</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Voice Agent Section -->
+    <section class="py-16 bg-navy text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-1">
+                    <span class="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-medium mb-4">🎧 NEW! AI Voice Agent</span>
+                    <h2 class="text-3xl font-bold mb-4">Never Miss an Emergency Call Again</h2>
+                    <p class="text-slate-300 mb-6">
+                        Our AI Voice Agent answers your phone 24/7, handles customer inquiries, 
+                        books appointments, and routes emergencies — while you focus on the job.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3">
+                            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center text-xs">✓</span>
+                            <span>Answers calls instantly, 24/7</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center text-xs">✓</span>
+                            <span>Routes emergencies immediately</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center text-xs">✓</span>
+                            <span>Books appointments on your calendar</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-6 h-6 bg-accent rounded-full flex items-center justify-center text-xs">✓</span>
+                            <span>Sends you SMS with job details</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-hover transition">Get a Quote</a>
+                </div>
+                <div class="flex-shrink-0 bg-white/10 backdrop-blur rounded-2xl p-8 text-center">
+                    <div class="text-8xl mb-4">🎧</div>
+                    <p class="text-accent font-bold text-2xl mb-2">AI Voice Agent</p>
+                    <p class="text-slate-300">£149/month</p>
+                    <p class="text-slate-400 text-sm mt-2">Unlimited calls • 24/7 coverage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="fixed bottom-6 right-6 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden" style="width: 380px; max-width: calc(100vw - 32px);">
+            <div class="bg-navy text-white p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-xl">🤖</div>
+                        <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white"></div>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Smyth AI</div>
+                        <div class="text-xs text-slate-300">Online</div>
+                    </div>
+                </div>
+                <button onclick="closeChat()" class="w-8 h-8 bg-white/20 rounded-full hover:bg-white/30 transition">✕</button>
+            </div>
+            <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50" style="height: 320px;"></div>
+            <div class="p-4 border-t bg-white">
+                <div class="flex space-x-2">
+                    <input type="text" id="chat-input" placeholder="Type your message..." class="flex-1 bg-slate-100 rounded-full px-4 py-3 text-sm focus:ring-2 focus:ring-navy outline-none">
+                    <button onclick="sendMessage()" class="bg-navy text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-navy-dark transition">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button onclick="openChat()" id="chat-toggle" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-accent rounded-full shadow-2xl flex items-center justify-center text-2xl hover:bg-accent-hover transition shadow-lg animate-pulse">
+        💬
+    </button>
+
+    <script>
+        let chatInitialized = false;
+        
+        function openChat() {
+            document.getElementById('chatbot-widget').classList.remove('hidden');
+            document.getElementById('chat-toggle').classList.add('hidden');
+            if (!chatInitialized) {
+                addChatMessage(welcomeChatMessage(), false);
+                chatInitialized = true;
+            }
+        }
+        
+        function closeChat() {
+            document.getElementById('chatbot-widget').classList.add('hidden');
+            document.getElementById('chat-toggle').classList.remove('hidden');
+        }
+        
+        function addChatMessage(text, isUser) {
+            const div = document.createElement('div');
+            div.className = isUser ? 'flex justify-end' : 'flex justify-start';
+            div.innerHTML = isUser 
+                ? `<div class="bg-navy text-white rounded-2xl rounded-tr-none px-4 py-3 max-w-[85%] text-sm">${text}</div>`
+                : `<div class="bg-white border border-slate-200 rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%] text-sm shadow-sm">${text}</div>`;
+            document.getElementById('chat-messages').appendChild(div);
+            div.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function welcomeChatMessage() {
+            return `👋 Hi! I'm Smyth Plumbing AI assistant.<br><br>
+I can help with:<br>
+• 🚨 <strong>Emergency plumbing</strong><br>
+• 🔥 <strong>Boiler services</strong><br>
+• 💷 <strong>Get a quote</strong><br>
+• 📅 <strong>Book appointment</strong><br><br>
+How can I help you today?`;
+        }
+        
+        function getChatResponse(message) {
+            const m = message.toLowerCase();
+            if (m.includes('emergency') || m.includes('leak') || m.includes('burst') || m.includes('help')) {
+                return `🚨 <strong>Emergency?</strong><br><br>Call us immediately: <a href="tel:07591115721" class="text-accent font-bold">07591 115721</a><br><br>Or describe your issue and we'll call you back.`;
+            }
+            if (m.includes('boiler') || m.includes('heating')) {
+                return `🔥 <strong>Boiler Services</strong><br><br>We offer:<br>• Boiler Installation<br>• Boiler Repair<br>• 24hr Breakdown<br>• Gas Certificates<br><br><a href="#contact" class="text-accent font-bold">Get a quote →</a>`;
+            }
+            if (m.includes('quote') || m.includes('price') || m.includes('cost') || m.includes('how much')) {
+                return `💷 <strong>Get a Free Quote</strong><br><br>Fill out our <a href="#contact" class="text-accent font-bold">contact form</a> and we'll get back to you within 2 hours!<br><br>Or call us on <a href="tel:07591115721" class="text-accent">07591 115721</a>`;
+            }
+            if (m.includes('thank') || m.includes('thanks')) {
+                return "You're welcome! 😊 Anything else I can help with?";
+            }
+            if (m.includes('hello') || m.includes('hi')) {
+                return welcomeChatMessage();
+            }
+            return `I'd be happy to help! 🤔<br><br>Try: "Get a quote", "Emergency", "Boiler services", or "Book appointment"`;
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+            addChatMessage(message, true);
+            input.value = '';
+            setTimeout(() => { addChatMessage(getChatResponse(message), false); }, 300);
+        }
+        
+        document.getElementById('chat-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 hero-gradient">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="flex-1 text-white">
+                    <h2 class="text-4xl font-bold mb-4">Get a Free Quote</h2>
+                    <p class="text-slate-300 mb-8">Fill out the form and we'll get back to you within 2 hours.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl">📞</div>
+                            <div><p class="font-bold">Phone</p><p class="text-slate-300">07591 115721</p></div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl">📍</div>
+                            <div><p class="font-bold">Address</p><p class="text-slate-300">10 Shipley House, Albion Rd, London SW8 2AH</p></div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl">🌐</div>
+                            <div><p class="font-bold">Service Area</p><p class="text-slate-300">London & Surrounding Areas</p></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-1 bg-white rounded-2xl p-8">
+                    <form class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-navy">Your Name *</label>
+                                <input type="text" required class="w-full bg-light border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy" placeholder="John Smith">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-navy">Phone Number *</label>
+                                <input type="tel" required class="w-full bg-light border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy" placeholder="07123 456789">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-navy">Email Address *</label>
+                            <input type="email" required class="w-full bg-light border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-navy">Service Required *</label>
+                            <select required class="w-full bg-light border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy">
+                                <option value="">Select a service...</option>
+                                <option>Boiler Installation</option>
+                                <option>Boiler Repair / Breakdown</option>
+                                <option>Gas Certificate</option>
+                                <option>Leak Detection</option>
+                                <option>Shower Installation</option>
+                                <option>Toilet Installation/Repair</option>
+                                <option>Tap Installation/Repair</option>
+                                <option>Water Heater</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-navy">Describe Your Issue</label>
+                            <textarea class="w-full bg-light border-0 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy" rows="3" placeholder="Please describe your plumbing issue..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-accent text-white py-4 rounded-full font-bold text-lg hover:bg-accent-hover transition">Get My Free Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-dark text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <span class="text-3xl">🔧</span>
+                    <div>
+                        <div class="font-bold text-xl">Smyth Plumbing</div>
+                        <div class="text-slate-400 text-sm">& Heating - Battersea</div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 text-sm">
+                    <a href="#" class="hover:text-accent transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-accent transition">Terms of Service</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-slate-400 text-sm">
+                <p>© 2026 Smyth Plumbing and Heating. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
