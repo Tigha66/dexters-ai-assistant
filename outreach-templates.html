@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outreach Templates | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        
+        <h1 class="text-3xl font-bold mb-8 text-center">📧 Outreach Templates</h1>
+
+        <!-- Plumbers Template -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">🚰 Plumbers - Email Template</h2>
+            <div class="bg-slate-100 rounded-lg p-4 font-mono text-sm hidden" id="plumber-email">
+Subject: Quick question about your plumbing business
+
+Hi [Name],
+
+I noticed [Business Name] doesn't have a website yet.
+
+I help plumbers in London get more customers with a professional website + AI voice agent that answers their phone 24/7.
+
+Would you be open to a quick 5-minute chat about how it works?
+
+No pressure - just want to show you what's possible.
+
+Best,
+[Your Name]
+AutoAI Web Solutions
+            </div>
+            <button onclick="copyText('plumber-email')" class="mt-3 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600">📋 Copy Email</button>
+        </div>
+
+        <!-- Restaurants Template -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">🍽️ Restaurants - WhatsApp Template</h2>
+            <div class="bg-slate-100 rounded-lg p-4 font-mono text-sm hidden" id="restaurant-whatsapp">
+Hey! 👋
+
+I noticed [Restaurant Name] doesn't have a website yet.
+
+I help restaurants in London get more bookings with a professional website + online reservation system.
+
+Would you be open to a quick chat about how it works?
+
+No pressure - happy to show you some examples!
+
+Best,
+[Your Name]
+            </div>
+            <button onclick="copyText('restaurant-whatsapp')" class="mt-3 bg-green-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600">📋 Copy WhatsApp</button>
+        </div>
+
+        <!-- Salons Template -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">💅 Salons - Email Template</h2>
+            <div class="bg-slate-100 rounded-lg p-4 font-mono text-sm hidden" id="salon-email">
+Subject: Help more clients find you, [Salon Name]?
+
+Hi [Name],
+
+I help salons and beauty businesses in London get more bookings with a professional website.
+
+Would a quick 3-minute demo help you see how it works?
+
+Best,
+[Your Name]
+            </div>
+            <button onclick="copyText('salon-email')" class="mt-3 bg-purple-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-purple-600">📋 Copy Email</button>
+        </div>
+
+        <!-- Cold Call Script -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">📞 Cold Call Script</h2>
+            <div class="bg-slate-100 rounded-lg p-4 font-mono text-sm hidden" id="call-script">
+Opening:
+"Hi [Name], this is [Your Name] from AutoAI Web Solutions. Have you got 30 seconds?"
+
+Pitch:
+"I help local businesses like yours get more customers with a professional website and AI voice agent that answers your phone 24/7."
+
+Value:
+"One London plumber we worked with got 40% more bookings in month one."
+
+Close:
+"Would you be open to a quick 5-minute demo to see how it works?"
+
+If yes: "Great! I'll send you a link. What's your email?"
+
+If no: "No problem. When would be a better time to follow up?"
+            </div>
+            <button onclick="copyText('call-script')" class="mt-3 bg-red-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-600">📋 Copy Script</button>
+        </div>
+
+        <!-- SMS Template -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">💬 SMS / WhatsApp Broadcast</h2>
+            <div class="bg-slate-100 rounded-lg p-4 font-mono text-sm hidden" id="sms-template">
+Hi [Name]! 👋
+
+I help businesses in [Area] get more customers with professional websites and AI voice agents.
+
+Would a quick demo help you see how it works?
+
+Reply "YES" and I'll send you some examples!
+
+- [Your Name]
+            </div>
+            <button onclick="copyText('sms-template')" class="mt-3 bg-yellow-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-yellow-600">📋 Copy SMS</button>
+        </div>
+
+    </div>
+
+    <script>
+        function copyText(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
