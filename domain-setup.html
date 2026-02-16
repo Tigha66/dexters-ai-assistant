@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Up Custom Domain | autoaiwebsolutions.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-8">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">🔧 Set Up Custom Domain</h1>
+        
+        <div class="bg-gray-800 rounded-xl p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">Option 1: GoHighLevel DNS</h2>
+            <ol class="space-y-4 text-gray-300">
+                <li>
+                    <strong class="text-white">Step 1:</strong> Login to GoHighLevel
+                </li>
+                <li>
+                    <strong class="text-white">Step 2:</strong> Go to <strong>Settings → Domains</strong>
+                </li>
+                <li>
+                    <strong class="text-white">Step 3:</strong> Click <strong>"Add Custom Domain"</strong>
+                </li>
+                <li>
+                    <strong class="text-white">Step 4:</strong> Enter: <code class="bg-gray-700 px-2 py-1 rounded">ai-receptionist.autoaiwebsolutions.com</code>
+                </li>
+                <li>
+                    <strong class="text-white">Step 5:</strong> Add these DNS records:
+                </li>
+            </ol>
+            
+            <div class="bg-gray-900 p-4 rounded-lg mt-4 font-mono text-sm">
+                <p class="text-green-400 mb-2">CNAME Record:</p>
+                <p>Host: <strong>ai-receptionist</strong></p>
+                <p>Value: <strong>tigha66.github.io</strong></p>
+                <br>
+                <p class="text-green-400 mb-2">OR use @ for root:</p>
+                <p>Host: <strong>@</strong></p>
+                <p>Value: <strong>tigha66.github.io</strong></p>
+            </div>
+        </div>
+        
+        <div class="bg-gray-800 rounded-xl p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">Option 2: GitHub Pages (Easier)</h2>
+            <ol class="space-y-4 text-gray-300">
+                <li>
+                    <strong class="text-white">Step 1:</strong> Go to your GitHub repo: <strong>Settings → Pages</strong>
+                </li>
+                <li>
+                    <strong class="text-white">Step 2:</strong> Under "Custom domain", enter:
+                </li>
+                <li>
+                    <code class="bg-gray-700 px-2 py-1 rounded">ai-receptionist.autoaiwebsolutions.com</code>
+                </li>
+                <li>
+                    <strong class="text-white">Step 3:</strong> Check "Enforce HTTPS"
+                </li>
+                <li>
+                    <strong class="text-white">Step 4:</strong> Wait 1-5 minutes
+                </li>
+            </ol>
+        </div>
+        
+        <div class="bg-green-900/30 border border-green-500 rounded-xl p-6">
+            <h3 class="font-bold text-green-400 mb-2">✅ After Setup:</h3>
+            <p class="text-gray-300">Your page will be live at:</p>
+            <p class="text-xl font-bold">https://ai-receptionist.autoaiwebsolutions.com</p>
+        </div>
+    </div>
+</body>
+</html>
