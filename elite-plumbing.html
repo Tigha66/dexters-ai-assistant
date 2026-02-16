@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Plumbing | Emergency Plumbers London</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Outfit', sans-serif; }
+        body { background: #0A0A0B; color: white; }
+        .gradient-text { background: linear-gradient(135deg, #00E5A0, #00B87A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <div class="bg-surface border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center text-sm">
+            <span>📍 London & Surrounding Areas</span>
+            <a href="tel:02012345678" class="text-accent font-semibold">📞 Call Now</a>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-accent to-accent-dark rounded-xl flex items-center justify-center">🚰</div>
+                <div class="font-display font-bold text-xl">
+                    <span class="text-white">Elite</span><span class="gradient-text">Plumbing</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm">
+                <a href="#services" class="text-muted hover:text-white">Services</a>
+                <a href="#ai" class="text-muted hover:text-white">AI Services</a>
+                <a href="#contact" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-5 py-2 rounded-full font-semibold">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="font-display text-4xl md:text-6xl font-bold mb-6">Expert Plumbers<br><span class="gradient-text">In London</span></h1>
+                <p class="text-muted text-lg mb-8">24/7 emergency plumbing. Boiler, leaks, bathrooms & more.</p>
+                <a href="tel:02012345678" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-8 py-4 rounded-full font-bold">📞 Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-card border border-white/5 rounded-xl p-6 text-center">🚨<br><h3 class="font-bold mt-2">Emergency</h3></div>
+                <div class="bg-card border border-white/5 rounded-xl p-6 text-center">🔥<br><h3 class="font-bold mt-2">Boilers</h3></div>
+                <div class="bg-card border border-white/5 rounded-xl p-6 text-center">💧<br><h3 class="font-bold mt-2">Leaks</h3></div>
+                <div class="bg-card border border-white/5 rounded-xl p-6 text-center">🚿<br><h3 class="font-bold mt-2">Bathrooms</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">AI Services</h2>
+            <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <h3 class="font-bold text-lg mb-2">💬 AI Chatbot</h3>
+                    <p class="text-muted text-sm mb-2">24/7 booking.</p>
+                    <p class="text-accent font-bold">£49/mo</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <h3 class="font-bold text-lg mb-2">🎧 AI Voice</h3>
+                    <p class="text-muted text-sm mb-2">Never miss calls.</p>
+                    <p class="text-accent font-bold">£149/mo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-surface">
+        <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Get a Quote</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Name *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <input type="tel" placeholder="Phone *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <button type="submit" class="w-full bg-gradient-to-r from-accent to-accent-dark text-dark py-4 rounded-xl font-bold">Get Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-muted text-sm border-t border-white/5">
+        <p>📞 24/7 Emergency Plumbing</p>
+    </footer>
+</body>
+</html>

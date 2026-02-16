@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gourmet Kitchen | Fine Dining London</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Outfit', sans-serif; }
+        body { background: #0A0A0B; color: white; }
+        .gradient-text { background: linear-gradient(135deg, #f59e0b, #d97706); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <nav class="sticky top-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center">🍽️</div>
+                <div class="font-display font-bold text-xl">
+                    <span class="text-white">The Gourmet</span><span class="gradient-text">Kitchen</span>
+                </div>
+            </a>
+            <a href="#contact" class="bg-gradient-to-r from-orange-500 to-amber-500 text-dark px-5 py-2 rounded-full font-semibold">Book Table</a>
+        </div>
+    </nav>
+
+    <section class="py-32 text-center">
+        <h1 class="font-display text-4xl md:text-6xl font-bold mb-6">Exceptional<br><span class="gradient-text">Dining</span></h1>
+        <p class="text-muted text-lg mb-8">Fine dining in the heart of London. Book your table today.</p>
+        <a href="#contact" class="bg-gradient-to-r from-orange-500 to-amber-500 text-dark px-8 py-4 rounded-full font-bold">Reserve Table</a>
+    </section>
+
+    <section class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center">
+            <div class="bg-card border border-white/5 rounded-xl p-6">🍷<br><h3 class="font-bold mt-2">Wine</h3></div>
+            <div class="bg-card border border-white/5 rounded-xl p-6">👨‍🍳<br><h3 class="font-bold mt-2">Fine Dining</h3></div>
+            <div class="bg-card border border-white/5 rounded-xl p-6">🎉<br><h3 class="font-bold mt-2">Events</h3></div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div class="bg-card border border-white/5 rounded-xl p-6">
+                <h3 class="font-bold text-lg mb-2">💬 AI Chatbot</h3>
+                <p class="text-muted text-sm mb-2">24/7 reservations.</p>
+                <p class="text-orange-400 font-bold">£49/mo</p>
+            </div>
+            <div class="bg-card border border-white/5 rounded-xl p-6">
+                <h3 class="font-bold text-lg mb-2">🎧 AI Voice</h3>
+                <p class="text-muted text-sm mb-2">Never miss bookings.</p>
+                <p class="text-orange-400 font-bold">£149/mo</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-surface">
+        <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Reserve a Table</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Name *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-orange-500">
+                <input type="tel" placeholder="Phone *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-orange-500">
+                <input type="date" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-orange-500">
+                <input type="number" placeholder="Guests" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-orange-500">
+                <button type="submit" class="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-dark py-4 rounded-xl font-bold">Reserve</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-muted text-sm border-t border-white/5">
+        <p>🍽️ The Gourmet Kitchen London</p>
+    </footer>
+</body>
+</html>
