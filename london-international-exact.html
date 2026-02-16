@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London International Dental Clinic | French Dental Practice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #c9a962;
+            --accent-hover: #b8944f;
+            --light: #f8f5f2;
+            --white: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></svg>');
+            background-size: 200px;
+            pointer-events: none;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+        
+        .logo-text {
+            color: var(--white);
+        }
+        
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text p {
+            font-size: 12px;
+            opacity: 0.8;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .header-btn {
+            background: var(--accent);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .header-btn:hover {
+            background: var(--accent-hover);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 169, 98, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .hero h2 span {
+            color: var(--accent);
+        }
+        
+        .hero p {
+            color: rgba(255,255,255,0.8);
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary-custom {
+            background: var(--accent);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            background: var(--accent-hover);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-custom {
+            background: transparent;
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-custom:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Features Section */
+        .features {
+            background: var(--white);
+            padding: 60px 0;
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .feature-box {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+        
+        .feature-box h4 {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .feature-box p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        /* Services Section */
+        .dental-services {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .service-card i {
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .service-card h4 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* AI Solutions Section - NEW */
+        .ai-solutions {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ai-solutions::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,98,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 200px;
+        }
+        
+        .ai-solutions .section-title {
+            color: var(--white);
+        }
+        
+        .ai-solutions .section-subtitle {
+            color: var(--accent);
+        }
+        
+        .ai-solutions p {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .ai-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .ai-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .ai-card i {
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .ai-card h4 {
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .ai-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .ai-card .price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .ai-card .price span {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .contact-info {
+            text-align: center;
+        }
+        
+        .contact-info i {
+            font-size: 30px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .contact-info h4 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .header-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="logo-section">
+                    <div class="logo-icon">🦷</div>
+                    <div class="logo-text">
+                        <h1>LONDON INTERNATIONAL DENTAL CLINIC</h1>
+                        <p>French Dental Practice</p>
+                    </div>
+                </div>
+                <a href="#contact" class="header-btn">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h2>Welcome to London International<br><span>Dental Clinic</span></h2>
+                    <p>Dr Bertrand Larmoyer and his team entirely offer you all dental care in the welcoming and gentle environment in central London.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary-custom">Book Appointment</a>
+                        <a href="tel:02035765653" class="btn-outline-custom">📞 020 3576 5653</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <div class="feature-icon">👨‍⚕️</div>
+                        <h4>25 Years Experience</h4>
+                        <p>Dr Bertrand Larmoyer</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <div class="feature-icon">🔬</div>
+                        <h4>Cutting Edge Technology</h4>
+                        <p>Latest dental technologies</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <div class="feature-icon">✅</div>
+                        <h4>CQC Certified</h4>
+                        <p>Care Quality Commission</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box">
+                        <div class="feature-icon">💬</div>
+                        <h4>Multilingual Team</h4>
+                        <p>French, English & more</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dental Services -->
+    <section class="dental-services">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Our Dental Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-tooth"></i>
+                        <h4>General Dentistry</h4>
+                        <p>Check-ups, cleaning, fillings</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-star-of-life"></i>
+                        <h4>Cosmetic Dentistry</h4>
+                        <p>Whitening, veneers, smile design</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-implant"></i>
+                        <h4>Implantology</h4>
+                        <p>Dental implants, bone grafting</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-teeth"></i>
+                        <h4>Orthodontics</h4>
+                        <p>Invisalign, braces</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-ambulance"></i>
+                        <h4>Emergency Care</h4>
+                        <p>Same-day appointments</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-baby"></i>
+                        <h4>Children's Dentistry</h4>
+                        <p>Family-friendly care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI SOLUTIONS - 9 Services -->
+    <section class="ai-solutions" id="ai-solutions">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-subtitle">New</p>
+                <h2 class="section-title">🤖 AI Digital Solutions</h2>
+                <p class="mb-4">Enhance your practice with AI-powered tools. Never miss a patient booking again.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- AI Chatbot -->
+                <div class="col-md-4">
+                    <div class="ai-card">
+                        <i class="fas fa-comments"></i>
+                        <h4>AI Chatbot</h4>
+                        <p>24/7 website booking & patient enquiries. Automatically schedules appointments.</p>
+                        <div class="price">£49<span>/mo</span></div>
+                    </div>
+                </div>
+                
+                <!-- AI Voice -->
+                <div class="col-md-4">
+                    <div class="ai-card">
+                        <i class="fas fa-headset"></i>
+                        <h4>AI Voice Agent</h4>
+                        <p>Never miss a booking call. Answers 24/7, books appointments directly.</p>
+                        <div class="price">£149<span>/mo</span></div>
+                    </div>
+                </div>
+                
+                <!-- Lead Generation -->
+                <div class="col-md-4">
+                    <div class="ai-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Lead Generation</h4>
+                        <p>Capture more patient inquiries. Convert website visitors to bookings.</p>
+                        <div class="price">£99<span>/mo</span></div>
+                    </div>
+                </div>
+                
+                <!-- Automated Outreach -->
+                <div class="col-md-4">
+                    <div class="ai-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Automated Outreach</h4>
+                        <p>Recall emails, appointment reminders, follow-ups automatically.</p>
+                        <div class="price">£79<span>/mo</span></div>
+                    </div>
+                </div>
+                
+                <!-- Content Creation -->
+                <div class="col-md-4">
+                    <div class="ai-card">
+                        <i class="fas fa-pen-fancy"></i>
+                        <h4>Content Creation</h4>
+                        <p>Auto-generate treatment explanations, blog posts, social content.</p>
+                        <div class="price">£69<span>/mo</span></div>
+                    </div>
+                </div>
+                
+                <!-- Reputation -->
+                <div class="col-md-4">
+                    <div class="ai-card">
+                        <i class="fas fa-star"></i>
+                        <h4>Reputation Management</h4>
+                        <p>Auto-respond to reviews. Build your online reputation.</p>
+                        <div class="price">£59<span>/mo</span></div>
+                    </div>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="col-md-4">
+                    <div class="ai-card">
+                        <i class="fas fa-share-alt"></i>
+                        <h4>Social Media</h4>
+                        <p>Auto-post to Instagram & Facebook. Stay active online.</p>
+                        <div class="price">£79<span>/mo</span></div>
+                    </div>
+                </div>
+                
+                <!-- Website -->
+                <div class="col-md-4">
+                    <div class="ai-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h4>Modern Website</h4>
+                        <p>Update or create a new professional dental website.</p>
+                        <div class="price">£99<span>/mo</span></div>
+                    </div>
+                </div>
+                
+                <!-- Booking System -->
+                <div class="col-md-4">
+                    <div class="ai-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h4>Booking System</h4>
+                        <p>Online appointment scheduling. Sync with your calendar.</p>
+                        <div class="price">£79<span>/mo</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#contact" class="btn-primary-custom">Get a Free Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Contact Us</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Address</h4>
+                        <p>100 Harley Street, W1G 7JA, London</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p>020 3576 5653<br>+44 203 289 5397</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>londoninternationaldental@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="mb-3">Open: Mon-Thu 8:30am-7pm, Fri 8:30am-3:30pm</p>
+                <a href="tel:02035765653" class="btn-primary-custom">📞 Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>London International Dental Clinic | 100 Harley Street, London W1G 7JA</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
