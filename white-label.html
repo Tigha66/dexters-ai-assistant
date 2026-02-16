@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White-Label AI Solutions | AutoAI Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0A0A0B', surface: '#141416', card: '#1C1C1F',
+                        accent: '#00E5A0', 'accent-dark': '#00B87A', muted: '#6B6B6B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Outfit', sans-serif; }
+        body { background: #0A0A0B; color: white; }
+        .gradient-text { background: linear-gradient(135deg, #00E5A0, #00B87A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <nav class="sticky top-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-accent to-accent-dark rounded-xl flex items-center justify-center">
+                    <span class="text-xl">🤖</span>
+                </div>
+                <div class="font-display font-bold text-xl">
+                    <span class="text-white">AutoAI</span>
+                    <span class="gradient-text">White-Label</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm">
+                <a href="#packages" class="text-muted hover:text-white">Packages</a>
+                <a href="#industries" class="text-muted hover:text-white">Industries</a>
+                <a href="#process" class="text-muted hover:text-white">Process</a>
+                <a href="#contact" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-5 py-2 rounded-full font-semibold">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <span class="text-accent text-sm uppercase tracking-wider">White-Label Solutions</span>
+                <h1 class="font-display text-4xl md:text-6xl font-bold mb-6 mt-4">
+                    Your Brand.<br><span class="gradient-text">Your AI Agents.</span>
+                </h1>
+                <p class="text-muted text-lg mb-8 max-w-2xl mx-auto">
+                    Pre-configured OpenClaw instances tailored to your industry. 
+                    Sell AI automation as your own service.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#packages" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-8 py-4 rounded-full font-bold">View Packages</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="industries" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Industry Templates</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-card border border-white/5 rounded-xl p-8">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="font-bold text-xl mb-3">Real Estate</h3>
+                    <ul class="text-muted text-sm space-y-2">
+                        <li>✓ Lead qualification</li>
+                        <li>✓ Viewing appointments</li>
+                        <li>✓ Property data aggregation</li>
+                        <li>✓ Automated CMA reports</li>
+                    </ul>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-8">
+                    <div class="text-4xl mb-4">🦷</div>
+                    <h3 class="font-bold text-xl mb-3">Dental & Medical</h3>
+                    <ul class="text-muted text-sm space-y-2">
+                        <li>✓ Appointment booking</li>
+                        <li>✓ Patient intake forms</li>
+                        <li>✓ Treatment reminders</li>
+                        <li>✓ Emergency routing</li>
+                    </ul>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-8">
+                    <div class="text-4xl mb-4">🛒</div>
+                    <h3 class="font-bold text-xl mb-3">E-Commerce</h3>
+                    <ul class="text-muted text-sm space-y-2">
+                        <li>✓ Order tracking</li>
+                        <li>✓ Customer support</li>
+                        <li>✓ Cart recovery</li>
+                        <li>✓ Product recommendations</li>
+                    </ul>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-8">
+                    <div class="text-4xl mb-4">🚰</div>
+                    <h3 class="font-bold text-xl mb-3">Trades & Plumbing</h3>
+                    <ul class="text-muted text-sm space-y-2">
+                        <li>✓ Emergency call handling</li>
+                        <li>✓ Job scheduling</li>
+                        <li>✓ Quote generation</li>
+                        <li>✓ Customer follow-up</li>
+                    </ul>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-8">
+                    <div class="text-4xl mb-4">💼</div>
+                    <h3 class="font-bold text-xl mb-3">Consulting</h3>
+                    <ul class="text-muted text-sm space-y-2">
+                        <li>✓ Client onboarding</li>
+                        <li>✓ Meeting booking</li>
+                        <li>✓ KPI reporting</li>
+                        <li>✓ Email triage</li>
+                    </ul>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-8">
+                    <div class="text-4xl mb-4">💅</div>
+                    <h3 class="font-bold text-xl mb-3">Beauty & Wellness</h3>
+                    <ul class="text-muted text-sm space-y-2">
+                        <li>✓ Treatment booking</li>
+                        <li>✓ Appointment reminders</li>
+                        <li>✓ Product inquiries</li>
+                        <li>✓ Loyalty management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">White-Label Packages</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-card border border-white/10 rounded-2xl p-8">
+                    <h3 class="font-bold text-2xl mb-2">Starter</h3>
+                    <p class="text-muted mb-6">For small businesses</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">£500</span>
+                        <span class="text-muted">setup</span>
+                    </div>
+                    <div class="text-2xl font-bold text-accent mb-6">£99/mo</div>
+                    <ul class="space-y-3 text-sm mb-8">
+                        <li>✓ 1 AI Chatbot</li>
+                        <li>✓ Basic integrations</li>
+                        <li>✓ Email support</li>
+                        <li>✓ Monthly updates</li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-white/10 hover:bg-white/20 py-3 rounded-xl font-semibold">Get Started</a>
+                </div>
+                <div class="bg-card border border-accent/30 rounded-2xl p-8 relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-dark px-4 py-1 rounded-full text-sm font-bold">POPULAR</div>
+                    <h3 class="font-bold text-2xl mb-2">Professional</h3>
+                    <p class="text-muted mb-6">For growing agencies</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">£1,000</span>
+                        <span class="text-muted">setup</span>
+                    </div>
+                    <div class="text-2xl font-bold text-accent mb-6">£199/mo</div>
+                    <ul class="space-y-3 text-sm mb-8">
+                        <li>✓ Chatbot + Voice Agent</li>
+                        <li>✓ Advanced integrations</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ Custom training</li>
+                        <li>✓ Weekly updates</li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-gradient-to-r from-accent to-accent-dark text-dark py-3 rounded-xl font-bold">Get Started</a>
+                </div>
+                <div class="bg-card border border-white/10 rounded-2xl p-8">
+                    <h3 class="font-bold text-2xl mb-2">Enterprise</h3>
+                    <p class="text-muted mb-6">Full white-label</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">£2,500</span>
+                        <span class="text-muted">setup</span>
+                    </div>
+                    <div class="text-2xl font-bold text-accent mb-6">£399/mo</div>
+                    <ul class="space-y-3 text-sm mb-8">
+                        <li>✓ Full white-label</li>
+                        <li>✓ Multiple agents</li>
+                        <li>✓ Dedicated support</li>
+                        <li>✓ Custom development</li>
+                        <li>✓ SLA guarantee</li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-white/10 hover:bg-white/20 py-3 rounded-xl font-semibold">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                    <h3 class="font-bold mb-2">Choose Industry</h3>
+                    <p class="text-muted text-sm">Select from our templates or request custom</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                    <h3 class="font-bold mb-2">We Configure</h3>
+                    <p class="text-muted text-sm">Setup, integrations & training</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                    <h3 class="font-bold mb-2">You Brand</h3>
+                    <p class="text-muted text-sm">Your logo, colors, domain</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
+                    <h3 class="font-bold mb-2">Go Live</h3>
+                    <p class="text-muted text-sm">Launch & we manage ongoing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roi" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">ROI Calculator</h2>
+            <div class="max-w-2xl mx-auto bg-card border border-white/5 rounded-2xl p-8">
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <label class="block text-muted text-sm mb-2">Team Size</label>
+                        <input type="number" value="5" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3" id="teamSize">
+                    </div>
+                    <div>
+                        <label class="block text-muted text-sm mb-2">Hours/Week on Admin</label>
+                        <input type="number" value="10" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3" id="hoursWeek">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <label class="block text-muted text-sm mb-2">Hourly Rate (£)</label>
+                        <input type="number" value="50" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3" id="hourlyRate">
+                    </div>
+                    <div>
+                        <label class="block text-muted text-sm mb-2">Automation %</label>
+                        <input type="number" value="60" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3" id="autoPercent">
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-accent/20 to-accent-dark/20 rounded-xl p-6 text-center">
+                    <p class="text-muted text-sm mb-2">Monthly Savings</p>
+                    <p class="text-4xl font-bold text-accent" id="monthlySavings">£6,000</p>
+                    <p class="text-muted text-sm mt-2">vs £100/mo AI costs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-surface">
+        <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Start Your White-Label Business</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <input type="email" placeholder="Email *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <input type="text" placeholder="Company Name" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <select class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                    <option>Interested industry...</option>
+                    <option>Real Estate</option>
+                    <option>Dental/Medical</option>
+                    <option>E-Commerce</option>
+                    <option>Trades</option>
+                    <option>Consulting</option>
+                    <option>Beauty</option>
+                    <option>Other</option>
+                </select>
+                <textarea placeholder="Tell us about your needs..." rows="4" class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent"></textarea>
+                <button type="submit" class="w-full bg-gradient-to-r from-accent to-accent-dark text-dark py-4 rounded-xl font-bold">Request Consultation</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-muted text-sm border-t border-white/5">
+        <p>🤖 AutoAI Web Solutions | White-Label AI Automation</p>
+    </footer>
+</body>
+</html>
