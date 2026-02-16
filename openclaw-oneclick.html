@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Click OpenClaw Deploy | Get Your AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: #000; color: #fff; }
+        .gradient-text { background: linear-gradient(135deg, #00E5A0, #00B87A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-bg { background: linear-gradient(135deg, #00E5A0, #00B87A); }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Header -->
+    <nav class="flex justify-between items-center p-6 max-w-5xl mx-auto">
+        <div class="font-bold text-xl">⚡ OpenClaw<span class="gradient-text">OneClick</span></div>
+        <a href="#pricing" class="text-sm text-gray-400 hover:text-white">Pricing</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-20 text-center max-w-2xl mx-auto px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Your AI Assistant.<br>
+            <span class="gradient-text">One Click.</span>
+        </h1>
+        <p class="text-gray-400 text-lg mb-8">
+            Avoid all technical complexity. Deploy your own 24/7 AI assistant in under 60 seconds.
+        </p>
+        
+        <!-- Deploy Button -->
+        <div class="mb-8">
+            <a href="#pricing" class="inline-block gradient-bg text-black px-10 py-5 rounded-full font-bold text-xl">
+                ⚡ Deploy Now — £49
+            </a>
+            <p class="text-gray-500 text-sm mt-3">One-time payment. No monthly fees.</p>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-12">How It Works</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-black">1</div>
+                    <h3 class="font-bold mb-2">Pay £49</h3>
+                    <p class="text-gray-400 text-sm">One-time payment. Instant access.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-black">2</div>
+                    <h3 class="font-bold mb-2">Click Deploy</h3>
+                    <p class="text-gray-400 text-sm">Run one command on your machine.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-black">3</div>
+                    <h3 class="font-bold mb-2">AI Ready</h3>
+                    <p class="text-gray-400 text-sm">Your assistant is live in 60 seconds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20">
+        <div class="max-w-md mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Get Started</h2>
+            
+            <div class="bg-gray-900 rounded-2xl p-8 border-2 border-[#00E5A0]">
+                <div class="text-center mb-6">
+                    <span class="text-gray-400">One-Time Payment</span>
+                    <div class="text-5xl font-bold gradient-text">£49</div>
+                </div>
+                
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3">
+                        <span class="text-[#00E5A0]">✓</span>
+                        <span>One-click deploy script</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-[#00E5A0]">✓</span>
+                        <span>Pre-configured environment</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-[#00E5A0]">✓</span>
+                        <span>Telegram bot setup</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-[#00E5A0]">✓</span>
+                        <span>AI model connection guide</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-[#00E5A0]">✓</span>
+                        <span>Setup instructions</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-[#00E5A0]">✓</span>
+                        <span>Lifetime access</span>
+                    </li>
+                </ul>
+                
+                <!-- Payment Button -->
+                <button onclick="showDeployCode()" class="w-full gradient-bg text-black py-4 rounded-xl font-bold text-lg">
+                    Pay £49 & Deploy
+                </button>
+                
+                <p class="text-center text-gray-500 text-xs mt-4">
+                    Secure payment • Instant delivery
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden Deploy Code Section -->
+    <div id="deploy-section" class="hidden py-16 bg-gray-900">
+        <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-4">🎉 Payment Successful!</h2>
+            <p class="text-center text-gray-400 mb-8">Run this command on your computer:</p>
+            
+            <div class="bg-black rounded-xl p-6 mb-6">
+                <code class="text-[#00E5A0] text-lg break-all">curl -sSL https://get.openclaw.ai/oneclick | bash</code>
+            </div>
+            
+            <div class="bg-black rounded-xl p-6">
+                <h3 class="font-bold mb-3">What's next:</h3>
+                <ol class="text-gray-400 text-sm space-y-2 list-decimal list-inside">
+                    <li>Open Terminal on your computer</li>
+                    <li>Paste the command above</li>
+                    <li>Press Enter</li>
+                    <li>Follow the simple prompts</li>
+                    <li>Your AI assistant is live!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- What You Get -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-12">What You Get</h2>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-gray-900 rounded-xl p-5">
+                    <h3 class="font-bold mb-2">🤖 Your Personal AI</h3>
+                    <p class="text-gray-400 text-sm">24/7 AI assistant that works while you sleep</p>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-5">
+                    <h3 class="font-bold mb-2">💬 Telegram Control</h3>
+                    <p class="text-gray-400 text-sm">Message your AI from anywhere</p>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-5">
+                    <h3 class="font-bold mb-2">📧 Email Integration</h3>
+                    <p class="text-gray-400 text-sm">AI reads and responds to your emails</p>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-5">
+                    <h3 class="font-bold mb-2">📅 Smart Scheduling</h3>
+                    <p class="text-gray-400 text-sm">Book meetings via chat</p>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-5">
+                    <h3 class="font-bold mb-2">🔒 Your Data Stays Private</h3>
+                    <p class="text-gray-400 text-sm">Runs on your machine</p>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-5">
+                    <h3 class="font-bold mb-2">⚡ Instant Setup</h3>
+                    <p class="text-gray-400 text-sm">Live in 60 seconds</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-8">FAQ</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-black rounded-xl p-5">
+                    <h3 class="font-bold mb-2">Do I need technical skills?</h3>
+                    <p class="text-gray-400 text-sm">No! Just copy the command and paste it. That's it.</p>
+                </div>
+                <div class="bg-black rounded-xl p-5">
+                    <h3 class="font-bold mb-2">What do I need?</h3>
+                    <p class="text-gray-400 text-sm">A computer (Mac, Linux, or Windows with WSL) and an API key from OpenAI or Anthropic.</p>
+                </div>
+                <div class="bg-black rounded-xl p-5">
+                    <h3 class="font-bold mb-2">Is there a monthly fee?</h3>
+                    <p class="text-gray-400 text-sm">No! Pay once, use forever. You only pay for your AI API usage (typically £10-30/mo).</p>
+                </div>
+                <div class="bg-black rounded-xl p-5">
+                    <h3 class="font-bold mb-2">Can I get a refund?</h3>
+                    <p class="text-gray-400 text-sm">Yes! If it doesn't work, full refund within 30 days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 text-sm border-t border-gray-800">
+        <p>⚡ OpenClaw OneClick — Deploy in 60 Seconds</p>
+    </footer>
+
+    <script>
+        function showDeployCode() {
+            document.getElementById('deploy-section').classList.remove('hidden');
+            document.getElementById('deploy-section').scrollIntoView({behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
