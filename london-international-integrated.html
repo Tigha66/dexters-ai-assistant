@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London International Dental Clinic | French Dental Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Outfit', sans-serif; }
+        body { background: #f8f5f2; color: #333; }
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+        .gold { color: #c9a962; }
+        .gold-bg { background: #c9a962; }
+        .service-card { transition: transform 0.3s ease; }
+        .service-card:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-[#1a1a2e] rounded-full flex items-center justify-center">
+                    <span class="text-2xl">🦷</span>
+                </div>
+                <div>
+                    <h1 class="font-bold text-xl">London International Dental Clinic</h1>
+                    <p class="text-sm text-gray-500">French Dental Practice</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="#about" class="text-gray-600 hover:text-[#1a1a2e]">About</a>
+                <a href="#services" class="text-gray-600 hover:text-[#1a1a2e]">Services</a>
+                <a href="#ai-solutions" class="text-gray-600 hover:text-[#1a1a2e] font-semibold text-[#c9a962]">🤖 AI Solutions</a>
+                <a href="#contact" class="gold-bg text-white px-5 py-2 rounded-full font-semibold">Book Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Welcome to London International<br><span class="gold">Dental Clinic</span></h2>
+            <p class="text-xl mb-8 text-gray-300">Dr Bertrand Larmoyer and his team offer you all dental care in the welcoming and gentle environment in central London.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="gold-bg text-white px-8 py-4 rounded-full font-bold text-lg">Book Appointment</a>
+                <a href="tel:02035765653" class="border border-white px-8 py-4 rounded-full font-semibold text-lg">📞 020 3576 5653</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl mb-4">👨‍⚕️</div>
+                    <h3 class="font-bold text-lg mb-2">25 Years Experience</h3>
+                    <p class="text-gray-600 text-sm">Dr Bertrand Larmoyer</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4">🔬</div>
+                    <h3 class="font-bold text-lg mb-2">Cutting Edge Technology</h3>
+                    <p class="text-gray-600 text-sm">Latest dental technologies</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4">✅</div>
+                    <h3 class="font-bold text-lg mb-2">CQC Certified</h3>
+                    <p class="text-gray-600 text-sm">Care Quality Commission</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4">💬</div>
+                    <h3 class="font-bold text-lg mb-2">Multilingual Team</h3>
+                    <p class="text-gray-600 text-sm">French, English & more</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dental Services -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Our Dental Services</h2>
+            <p class="text-center text-gray-600 mb-12">Comprehensive dental care for the whole family</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">General Dentistry</h3>
+                    <p class="text-gray-600 text-sm">Check-ups, cleaning, fillings</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">Cosmetic Dentistry</h3>
+                    <p class="text-gray-600 text-sm">Whitening, veneers, smile design</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">Implantology</h3>
+                    <p class="text-gray-600 text-sm">Dental implants, bone grafting</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">Orthodontics</h3>
+                    <p class="text-gray-600 text-sm">Invisalign, braces</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">Emergency Care</h3>
+                    <p class="text-gray-600 text-sm">Same-day appointments</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2">Children's Dentistry</h3>
+                    <p class="text-gray-600 text-sm">Family-friendly care</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI SOLUTIONS - 9 Services -->
+    <section id="ai-solutions" class="py-20 bg-[#1a1a2e] text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-[#c9a962] text-sm uppercase tracking-wider">New</span>
+                <h2 class="text-4xl font-bold mt-2 mb-4">🤖 Digital Solutions for Your Practice</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Enhance your dental practice with AI-powered tools. Never miss a patient booking again.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- AI Chatbot -->
+                <div class="service-card bg-white/10 rounded-xl p-6 border border-white/20">
+                    <div class="text-4xl mb-4">💬</div>
+                    <h3 class="font-bold text-xl mb-2">AI Chatbot</h3>
+                    <p class="text-gray-300 text-sm mb-4">24/7 website booking & patient enquiries. Automatically schedules appointments.</p>
+                    <p class="text-[#c9a962] font-bold text-2xl">£49<span class="text-sm text-gray-400">/mo</span></p>
+                    <a href="#contact" class="inline-block mt-4 text-sm text-[#c9a962] font-semibold">Learn More →</a>
+                </div>
+
+                <!-- AI Voice -->
+                <div class="service-card bg-white/10 rounded-xl p-6 border border-white/20">
+                    <div class="text-4xl mb-4">🎧</div>
+                    <h3 class="font-bold text-xl mb-2">AI Voice Agent</h3>
+                    <p class="text-gray-300 text-sm mb-4">Never miss a booking call. Answers 24/7, books appointments directly.</p>
+                    <p class="text-[#c9a962] font-bold text-2xl">£149<span class="text-sm text-gray-400">/mo</span></p>
+                    <a href="#contact" class="inline-block mt-4 text-sm text-[#c9a962] font-semibold">Learn More →</a>
+                </div>
+
+                <!-- Lead Generation -->
+                <div class="service-card bg-white/10 rounded-xl p-6 border border-white/20">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="font-bold text-xl mb-2">Lead Generation</h3>
+                    <p class="text-gray-300 text-sm mb-4">Capture more patient inquiries. Convert website visitors to bookings.</p>
+                    <p class="text-[#c9a962] font-bold text-2xl">£99<span class="text-sm text-gray-400">/mo</span></p>
+                    <a href="#contact" class="inline-block mt-4 text-sm text-[#c9a962] font-semibold">Learn More →</a>
+                </div>
+
+                <!-- Automated Outreach -->
+                <div class="service-card bg-white/10 rounded-xl p-6 border border-white/20">
+                    <div class="text-4xl mb-4">📧</div>
+                    <h3 class="font-bold text-xl mb-2">Automated Outreach</h3>
+                    <p class="text-gray-300 text-sm mb-4">Recall emails, appointment reminders, follow-ups automatically.</p>
+                    <p class="text-[#c9a962] font-bold text-2xl">£79<span class="text-sm text-gray-400">/mo</span></p>
+                    <a href="#contact" class="inline-block mt-4 text-sm text-[#c9a962] font-semibold">Learn More →</a>
+                </div>
+
+                <!-- Content Creation -->
+                <div class="service-card bg-white/10 rounded-xl p-6 border border-white/20">
+                    <div class="text-4xl mb-4">✍️</div>
+                    <h3 class="font-bold text-xl mb-2">Content Creation</h3>
+                    <p class="text-gray-300 text-sm mb-4">Auto-generate treatment explanations, blog posts, social content.</p>
+                    <p class="text-[#c9a962] font-bold text-2xl">£69<span class="text-sm text-gray-400">/mo</span></p>
+                    <a href="#contact" class="inline-block mt-4 text-sm text-[#c9a962] font-semibold">Learn More →</a>
+                </div>
+
+                <!-- Reputation -->
+                <div class="service-card bg-white/10 rounded-xl p-6 border border-white/20">
+                    <div class="text-4xl mb-4">⭐</div>
+                    <h3 class="font-bold text-xl mb-2">Reputation Management</h3>
+                    <p class="text-gray-300 text-sm mb-4">Auto-respond to reviews. Build your online reputation.</p>
+                    <p class="text-[#c9a962] font-bold text-2xl">£59<span class="text-sm text-gray-400">/mo</span></p>
+                    <a href="#contact" class="inline-block mt-4 text-sm text-[#c9a962] font-semibold">Learn More →</a>
+                </div>
+
+                <!-- Social Media -->
+                <div class="service-card bg-white/10 rounded-xl p-6 border border-white/20">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="font-bold text-xl mb-2">Social Media</h3>
+                    <p class="text-gray-300 text-sm mb-4">Auto-post to Instagram & Facebook. Stay active online.</p>
+                    <p class="text-[#c9a962] font-bold text-2xl">£79<span class="text-sm text-gray-400">/mo</span></p>
+                    <a href="#contact" class="inline-block mt-4 text-sm text-[#c9a962] font-semibold">Learn More →</a>
+                </div>
+
+                <!-- Website -->
+                <div class="service-card bg-white/10 rounded-xl p-6 border border-white/20">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="font-bold text-xl mb-2">Modern Website</h3>
+                    <p class="text-gray-300 text-sm mb-4">Update or create a new professional dental website.</p>
+                    <p class="text-[#c9a962] font-bold text-2xl">£99<span class="text-sm text-gray-400">/mo</span></p>
+                    <a href="#contact" class="inline-block mt-4 text-sm text-[#c9a962] font-semibold">Learn More →</a>
+                </div>
+
+                <!-- Booking System -->
+                <div class="service-card bg-white/10 rounded-xl p-6 border border-white/20">
+                    <div class="text-4xl mb-4">📅</div>
+                    <h3 class="font-bold text-xl mb-2">Booking System</h3>
+                    <p class="text-gray-300 text-sm mb-4">Online appointment scheduling. Sync with your calendar.</p>
+                    <p class="text-[#c9a962] font-bold text-2xl">£79<span class="text-sm text-gray-400">/mo</span></p>
+                    <a href="#contact" class="inline-block mt-4 text-sm text-[#c9a962] font-semibold">Learn More →</a>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-12">
+                <p class="text-gray-300 mb-4">Want to see how these can work for your practice?</p>
+                <a href="#contact" class="gold-bg text-white px-8 py-4 rounded-full font-bold text-lg inline-block">Get a Free Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Dental Clinics Need AI -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Dental Clinics Choose AI</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex gap-4">
+                    <div class="text-3xl">⏰</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Never Miss a Booking</h3>
+                        <p class="text-gray-600">AI answers calls 24/7, even outside office hours. Every missed call could be a lost patient.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="text-3xl">📱</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Instant Responses</h3>
+                        <p class="text-gray-600">Patients expect quick answers. AI responds instantly to enquiries</p>
+                    .</div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="text-3xl">💰</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">More Revenue</h3>
+                        <p class="text-gray-600">Capture more bookings, reduce no-shows with reminders, increase patient retention.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="text-3xl">🛡️</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Competitive Edge</h3>
+                        <p class="text-gray-600">Stand out from other clinics with modern digital tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center mb-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-2">📍 Address</h3>
+                    <p class="text-gray-600">100 Harley Street, W1G 7JA, London</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2">📞 Phone</h3>
+                    <p class="text-gray-600">020 3576 5653</p>
+                    <p class="text-gray-600">+44 203 289 5397</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2">📧 Email</h3>
+                    <p class="text-gray-600">londoninternationaldental@gmail.com</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <p class="text-gray-600 mb-4">Open: Mon-Thu 8:30am-7pm, Fri 8:30am-3:30pm</p>
+                <a href="tel:02035765653" class="gold-bg text-white px-8 py-4 rounded-full font-bold text-lg inline-block">📞 Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>London International Dental Clinic | 100 Harley Street, London W1G 7JA</p>
+            <p class="text-gray-500 mt-2">© 2024 All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
