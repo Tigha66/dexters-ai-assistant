@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleClaw — Deploy OpenClaw in 60 Seconds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: #000; color: #fff; }
+        .gradient-text { background: linear-gradient(135deg, #00E5A0, #00B87A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Header -->
+    <nav class="flex justify-between items-center p-6 max-w-5xl mx-auto">
+        <div class="font-bold text-xl">Simple<span class="gradient-text">Claw</span></div>
+        <div class="text-sm text-gray-400">
+            <span class="text-orange-500">●</span> Limited servers — only 11 left
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-16 text-center max-w-2xl mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Deploy OpenClaw<br>
+            <span class="gradient-text">under 1 minute</span>
+        </h1>
+        <p class="text-gray-400 text-lg mb-8">
+            Avoid all technical complexity and one-click deploy your own 24/7 active OpenClaw instance.
+        </p>
+        
+        <!-- Server Status -->
+        <div class="inline-flex items-center gap-2 bg-gray-900 px-4 py-2 rounded-full mb-8">
+            <span class="text-orange-500">●</span>
+            <span class="text-sm">Limited cloud servers — only <strong>11</strong> left</span>
+        </div>
+        
+        <!-- CTA -->
+        <a href="#deploy" class="inline-block bg-gradient-to-r from-[#00E5A0] to-[#00B87A] text-black px-8 py-4 rounded-full font-bold text-lg">
+            Deploy Now
+        </a>
+    </section>
+
+    <!-- Comparison -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-12">Comparison</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Traditional -->
+                <div class="bg-black rounded-2xl p-6">
+                    <h3 class="text-lg font-bold mb-6 text-gray-400">Traditional Method</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Purchasing local VM</span>
+                            <span>15 min</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Creating SSH keys</span>
+                            <span>10 min</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Connecting via SSH</span>
+                            <span>5 min</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Installing Node.js</span>
+                            <span>5 min</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Installing OpenClaw</span>
+                            <span>7 min</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Setting up OpenClaw</span>
+                            <span>10 min</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Connecting AI</span>
+                            <span>4 min</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Pairing Telegram</span>
+                            <span>4 min</span>
+                        </div>
+                        <div class="border-t border-gray-800 pt-4 flex justify-between font-bold">
+                            <span>Total</span>
+                            <span>60 min</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm mt-4">If non-technical, multiply by 10</p>
+                </div>
+                
+                <!-- SimpleClaw -->
+                <div class="bg-black rounded-2xl p-6 border-2 border-[#00E5A0]">
+                    <h3 class="text-lg font-bold mb-6 text-[#00E5A0]">SimpleClaw</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Pick a model</span>
+                            <span class="text-[#00E5A0]">✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Connect Telegram</span>
+                            <span class="text-[#00E5A0]">✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Deploy</span>
+                            <span class="text-[#00E5A0]">✓</span>
+                        </div>
+                        <div class="border-t border-gray-800 pt-4 flex justify-between font-bold">
+                            <span>Total</span>
+                            <span class="text-[#00E5A0]">&lt; 1 min</span>
+                        </div>
+                    </div>
+                    <p class="text-[#00E5A0] text-sm mt-4">Servers, SSH and environment are already set up</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deploy -->
+    <section id="deploy" class="py-16">
+        <div class="max-w-2xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Get Started</h2>
+            
+            <div class="bg-gray-900 rounded-xl p-4 mb-6 text-left">
+                <code class="text-[#00E5A0] text-lg">curl -sSL https://get.openclaw.ai | bash</code>
+            </div>
+            
+            <p class="text-gray-400 text-sm mb-6">One command. That's it.</p>
+            
+            <a href="#" class="inline-block bg-gradient-to-r from-[#00E5A0] to-[#00B87A] text-black px-8 py-4 rounded-full font-bold">
+                Deploy Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-4">What can OpenClaw do for you?</h2>
+            <p class="text-center text-gray-400 mb-12">One assistant, thousands of use cases</p>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <!-- Communication -->
+                <div class="bg-black rounded-xl p-5">
+                    <h3 class="font-bold mb-3 text-gray-300">💬 Communication</h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>Read & summarize email</li>
+                        <li>Draft replies and follow-ups</li>
+                        <li>Translate messages in real time</li>
+                        <li>Organize your inbox</li>
+                        <li>Answer support tickets</li>
+                        <li>Summarize long documents</li>
+                        <li>Notify before a meeting</li>
+                        <li>Schedule meetings from chat</li>
+                    </ul>
+                </div>
+                
+                <!-- Productivity -->
+                <div class="bg-black rounded-xl p-5">
+                    <h3 class="font-bold mb-3 text-gray-300">⚡ Productivity</h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>Remind you of deadlines</li>
+                        <li>Plan your week</li>
+                        <li>Take meeting notes</li>
+                        <li>Sync across time zones</li>
+                        <li>Do your taxes</li>
+                        <li>Track expenses</li>
+                        <li>Compare insurance quotes</li>
+                        <li>Manage subscriptions</li>
+                    </ul>
+                </div>
+                
+                <!-- Business -->
+                <div class="bg-black rounded-xl p-5">
+                    <h3 class="font-bold mb-3 text-gray-300">💼 Business</h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>Run payroll calculations</li>
+                        <li>Negotiate refunds</li>
+                        <li>Find coupons & discounts</li>
+                        <li>Compare prices online</li>
+                        <li>Price-drop alerts</li>
+                        <li>Write contracts & NDAs</li>
+                        <li>Research competitors</li>
+                        <li>Screen and prioritize leads</li>
+                    </ul>
+                </div>
+                
+                <!-- Content -->
+                <div class="bg-black rounded-xl p-5">
+                    <h3 class="font-bold mb-3 text-gray-300">✍️ Content</h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>Generate invoices</li>
+                        <li>Create presentations</li>
+                        <li>Book travel & hotels</li>
+                        <li>Find recipes</li>
+                        <li>Draft social posts</li>
+                        <li>Monitor news & alerts</li>
+                        <li>Track goals</li>
+                        <li>Draft job descriptions</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="text-center text-gray-500 mt-8 text-sm">
+                PS. You can add as many use cases as you want via natural language
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 text-sm border-t border-gray-800">
+        <p class="mb-2">Built with ❤️</p>
+        <p>SimpleClaw — Deploy OpenClaw under 1 minute</p>
+    </footer>
+</body>
+</html>
