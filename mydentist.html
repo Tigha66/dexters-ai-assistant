@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mydentist | Dental Care UK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0A0A0B', surface: '#141416', card: '#1C1C1F',
+                        accent: '#00E5A0', 'accent-dark': '#00B87A', muted: '#6B6B6B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Outfit', sans-serif; }
+        body { background: #0A0A0B; color: white; }
+        .gradient-text { background: linear-gradient(135deg, #00E5A0, #00B87A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <div class="bg-surface border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center text-sm">
+            <div class="flex items-center gap-2 text-muted">
+                <span>📍</span>
+                <span>~600 Practices Across the UK</span>
+            </div>
+            <a href="tel:03330140050" class="text-accent font-semibold">📞 0333 014 0050</a>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-accent to-accent-dark rounded-xl flex items-center justify-center">
+                    <span class="text-xl">🦷</span>
+                </div>
+                <div class="font-display font-bold text-xl">
+                    <span class="text-white">my</span><span class="gradient-text">dentist</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm">
+                <a href="#treatments" class="text-muted hover:text-white">Treatments</a>
+                <a href="#find" class="text-muted hover:text-white">Find Practice</a>
+                <a href="#ai" class="text-muted hover:text-white">AI Services</a>
+                <a href="#contact" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-5 py-2 rounded-full font-semibold">Book Online</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+                    <span>🦷</span> UK's Largest Dental Provider
+                </div>
+                <h1 class="font-display text-4xl md:text-6xl font-bold mb-6">
+                    Quality Dental Care<br><span class="gradient-text">For Everyone</span>
+                </h1>
+                <p class="text-muted text-lg mb-8 max-w-2xl mx-auto">
+                    NHS and private dentistry at nearly 600 practices across the UK. Affordable, accessible, quality dental care.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#find" class="bg-gradient-to-r from-accent to-accent-dark text-dark px-8 py-4 rounded-full font-bold">Find Your Practice</a>
+                    <a href="#treatments" class="border border-white/20 px-8 py-4 rounded-full font-bold">View Treatments</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-surface border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold gradient-text">600</div>
+                    <div class="text-muted text-sm">UK Practices</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold gradient-text">3,000+</div>
+                    <div class="text-muted text-sm">Clinicians</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold gradient-text">30+</div>
+                    <div class="text-muted text-sm">Years</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold gradient-text">5M+</div>
+                    <div class="text-muted text-sm">Patients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="treatments" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Treatments</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">🦷</div>
+                    <h3 class="font-bold text-lg mb-2">NHS Dentistry</h3>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">✨</div>
+                    <h3 class="font-bold text-lg mb-2">Private Care</h3>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">👶</div>
+                    <h3 class="font-bold text-lg mb-2">Children's</h3>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">💎</div>
+                    <h3 class="font-bold text-lg mb-2">Cosmetic</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-accent text-sm uppercase tracking-wider">New</span>
+                <h2 class="text-3xl font-bold mt-2">AI-Powered Patient Service</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">💬</div>
+                    <h3 class="font-bold text-lg mb-2">AI Chatbot</h3>
+                    <p class="text-muted text-sm mb-4">24/7 booking & enquiries.</p>
+                    <p class="text-accent font-bold">£49/mo</p>
+                </div>
+                <div class="bg-card border border-white/5 rounded-xl p-6">
+                    <div class="text-3xl mb-4">🎧</div>
+                    <h3 class="font-bold text-lg mb-2">AI Voice Agent</h3>
+                    <p class="text-muted text-sm mb-4">Never miss a call.</p>
+                    <p class="text-accent font-bold">£149/mo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="find" class="py-20">
+        <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Find Your Practice</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Postcode or Town *" required class="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent">
+                <button type="submit" class="w-full bg-gradient-to-r from-accent to-accent-dark text-dark py-4 rounded-xl font-bold">Find Practice</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-muted text-sm border-t border-white/5">
+        <p>📧 dataprotection@mydentist.co.uk | 📞 0333 014 0050</p>
+    </footer>
+</body>
+</html>
