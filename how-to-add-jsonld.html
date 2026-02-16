@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Add JSON-LD to Your Website Head Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; padding: 40px; background: #f5f5f5; }
+        .step { background: white; padding: 25px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .code-box { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.6; }
+        .highlight { background: #fff3cd; padding: 2px 5px; border-radius: 3px; }
+        .example { background: #e7f3ff; padding: 15px; border-left: 4px solid #2196F3; margin: 15px 0; }
+        h2 { color: #333; margin-bottom: 15px; }
+        h3 { color: #2196F3; margin-top: 20px; }
+        .arrow { font-size: 40px; text-align: center; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 40px;">📋 How to Add JSON-LD to Your Website</h1>
+        
+        <!-- Step 1 -->
+        <div class="step">
+            <h2>Step 1: Open Your Website's HTML File</h2>
+            <p>You need to edit your website's HTML file. This could be:</p>
+            <ul>
+                <li><strong>WordPress:</strong> Go to Appearance → Theme Editor → header.php</li>
+                <li><strong>Wix/Squarespace:</strong> Go to Settings → SEO → Header Code</li>
+                <li><strong>Custom HTML:</strong> Open your index.html file</li>
+                <li><strong>Shopify:</strong> Go to Online Store → Themes → Edit Code → theme.liquid</li>
+            </ul>
+        </div>
+        
+        <div class="arrow">⬇️</div>
+        
+        <!-- Step 2 -->
+        <div class="step">
+            <h2>Step 2: Find the &lt;head&gt; Section</h2>
+            <p>Look for this in your HTML file:</p>
+            <div class="code-box">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    <span class="highlight">&lt;title&gt;Your Website Title&lt;/title&gt;</span>
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+            </div>
+            <p style="margin-top: 15px;"><strong>Look for:</strong> <code>&lt;head&gt;</code> at the top and <code>&lt;/head&gt;</code> - everything between these is the HEAD section.</p>
+        </div>
+        
+        <div class="arrow">⬇️</div>
+        
+        <!-- Step 3 -->
+        <div class="step">
+            <h2>Step 3: Paste JSON-LD Before &lt;/head&gt;</h2>
+            <p>Add your JSON-LD code right before the closing <code>&lt;/head&gt;</code> tag:</p>
+            
+            <div class="code-box">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Your Website Title&lt;/title&gt;
+    
+    <span class="highlight">// 👇 PASTE YOUR JSON-LD HERE 👇</span>
+    <span style="color: #ce9178;">&lt;script type="application/ld+json"&gt;</span>
+    <span style="color: #9cdcfe;">{</span>
+    <span style="color: #ce9178;">  "@context": "https://schema.org"</span>,
+    <span style="color: #ce9178;">  "@type": "MedicalBusiness"</span>,
+    <span style="color: #ce9178;">  "name": "Your Business Name"</span>,
+    <span style="color: #ce9178;">  "telephone": "+44-20-XXXX-XXXX"</span>
+    <span style="color: #9cdcfe;">}</span>
+    <span style="color: #ce9178;">&lt;/script&gt;</span>
+    <span style="color: #6a9955;">// 👆 PASTE YOUR JSON-LD HERE 👆</span>
+    
+&lt;/head&gt;
+            </div>
+        </div>
+        
+        <div class="arrow">⬇️</div>
+        
+        <!-- Real Example -->
+        <div class="step">
+            <h2>Step 4: Real Example for Dental Clinic</h2>
+            <p>Here's exactly what it looks like:</p>
+            
+            <div class="code-box">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;London International Dental Clinic&lt;/title&gt;
+    
+    <span style="color: #6a9955;">&lt;!-- STRUCTURED DATA FOR GOOGLE --&gt;</span>
+    <span style="color: #ce9178;">&lt;script type="application/ld+json"&gt;</span>
+    <span style="color: #9cdcfe;">{</span>
+    <span style="color: #ce9178;">  "@context": "https://schema.org"</span>,
+    <span style="color: #ce9178;">  "@type": "MedicalBusiness"</span>,
+    <span style="color: #ce9178;">  "name": "London International Dental Clinic"</span>,
+    <span style="color: #ce9178;">  "telephone": "+442035765653"</span>,
+    <span style="color: #ce9178;">  "address": {</span>
+        <span style="color: #ce9178;">"@type": "PostalAddress"</span>,
+        <span style="color: #ce9178;">"streetAddress": "100 Harley Street"</span>,
+        <span style="color: #ce9178;">"addressLocality": "London"</span>,
+        <span style="color: #ce9178;">"postalCode": "W1G 7JA"</span>
+    <span style="color: #ce9178;">  }</span>,
+    <span style="color: #ce9178;">  "openingHoursSpecification": [</span>
+        <span style="color: #ce9178;">{</span>
+        <span style="color: #ce9178;">"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"]</span>,
+        <span style="color: #ce9178;">"opens": "08:30"</span>,
+        <span style="color: #ce9178;">"closes": "19:00"</span>
+        <span style="color: #ce9178;">}</span>
+    <span style="color: #ce9178;">  ]</span>
+    <span style="color: #9cdcfe;">}</span>
+    <span style="color: #ce9178;">&lt;/script&gt;</span>
+    
+&lt;/head&gt;
+            </div>
+        </div>
+        
+        <!-- For Different Platforms -->
+        <div class="step">
+            <h2>📌 Platform-Specific Instructions</h2>
+            
+            <h3>WordPress:</h3>
+            <ol>
+                <li>Go to <strong>Appearance → Theme Editor</strong></li>
+                <li>Click on <strong>header.php</strong> on the right</li>
+                <li>Find <code>&lt;?php wp_head(); ?&gt;</code></li>
+                <li>Paste JSON-LD <strong>before</strong> that line</li>
+                <li>Click <strong>Update File</strong></li>
+            </ol>
+            
+            <h3>Wix:</h3>
+            <ol>
+                <li>Go to <strong>Settings → SEO (Google)</strong></li>
+                <li>Scroll to <strong>Header Code</strong></li>
+                <li>Paste your JSON-LD code</li>
+                <li>Click <strong>Save</strong></li>
+            </ol>
+            
+            <h3>Squarespace:</h3>
+            <ol>
+                <li>Go to <strong>Settings → Developer Options → Code Injection</strong></li>
+                <li>Paste in <strong>Header</strong> section</li>
+                <li>Click <strong>Save</strong></li>
+            </ol>
+            
+            <h3>Shopify:</h3>
+            <ol>
+                <li>Go to <strong>Online Store → Themes → Actions → Edit Code</strong></li>
+                <li>Click <strong>theme.liquid</strong></li>
+                <li>Find <code>&lt;head&gt;</code></li>
+                <li>Paste JSON-LD before <code>&lt;/head&gt;</code></li>
+                <li>Click <strong>Save</strong></li>
+            </ol>
+            
+            <h3>Custom HTML/Other:</h3>
+            <ol>
+                <li>Open your <strong>index.html</strong> file</li>
+                <li>Find <code>&lt;head&gt;</code> at the top</li>
+                <li>Paste JSON-LD anywhere between <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code></li>
+                <li>Save and upload</li>
+            </ol>
+        </div>
+        
+        <!-- Testing -->
+        <div class="step">
+            <h2>✅ How to Test If It Works</h2>
+            <p>After adding the JSON-LD, test it with Google's tool:</p>
+            <ol>
+                <li>Go to <strong><a href="https://search.google.com/test/rich-results" target="_blank">Google Rich Results Test</a></strong></li>
+                <li>Paste your website URL</li>
+                <li>Click <strong>Test URL</strong></li>
+                <li>If it says "✅ Passed" - you're good!</li>
+            </ol>
+        </div>
+        
+    </div>
+</body>
+</html>
