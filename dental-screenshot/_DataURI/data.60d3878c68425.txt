@@ -1,0 +1,1 @@
+chrome-extension://mihgbgcojjjcgckpoclhjoneafcmfpng/js/monitor-script.js

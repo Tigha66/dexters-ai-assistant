@@ -16,11 +16,25 @@
 ### Landing Pages Created
 | Page | URL | Purpose |
 |------|-----|---------|
-| Main Landing Page | index.html | General AI automation for small businesses |
-| Dexters Page | dexters-ai-assistant.html | Real estate agent AI assistant |
-| Foxtons Page | foxtons-ai-assistant.html | Real estate agent AI assistant |
-| Plumber Page | plumber-ai-assistant.html | Trades/plumbing AI assistant |
-| California Dental | california-dental/index.html | Voice-enabled AI dental assistant |
+| Main Sales Page | sell-ai-bots.html | General AI sales for London SMBs |
+| Legal Firms | legal-ai-assistant.html | Law firm AI chatbot |
+| Beauty & Wellness | beauty-ai-assistant.html | Salon/spa AI chatbot |
+| Home Services | home-services-ai-assistant.html | Plumber/electrician AI chatbot |
+| Education | education-ai-assistant.html | Tutor/school AI chatbot |
+| Hospitality | hospitality-ai-assistant.html | Hotel/B&B AI chatbot |
+| Dexters Demo | dexters-ai-assistant.html | Real estate agent AI demo |
+| Foxtons Demo | foxtons-ai-assistant.html | Real estate AI demo |
+| Plumber Demo | plumber-ai-assistant.html | Trades AI demo |
+| California Dental | california-dental/index.html | Voice-enabled dental AI demo |
+| Proposal Template | ai-chatbot-proposal.html | Printable PDF proposal |
+
+### Key Features Offered
+- 24/7 AI chatbot
+- Appointment booking (web + WhatsApp)
+- Lead capture & CRM sync
+- Multi-channel: WhatsApp, Email, SMS, Instagram
+- Google Calendar integration
+- Done-for-you setup (5-day implementation)
 
 ### California Dental Project (Real Client)
 - **Source**: ZIP backup of california-dental.net (real client website)

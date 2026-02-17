@@ -4,6 +4,58 @@
     "openclaw-memory": {
       "version": "1.0.0",
       "installedAt": 1770981901482
+    },
+    "filesystem-mcp": {
+      "version": "1.0.0",
+      "installedAt": 1771139719100
+    },
+    "discord": {
+      "version": "1.0.1",
+      "installedAt": 1771140054121
+    },
+    "notion": {
+      "version": "1.0.0",
+      "installedAt": 1771140160658
+    },
+    "sag": {
+      "version": "1.0.0",
+      "installedAt": 1771140163185
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1771140165017
+    },
+    "healthcheck": {
+      "version": "1.0.2",
+      "installedAt": 1771140560013
+    },
+    "youtube": {
+      "version": "1.0.1",
+      "installedAt": 1771140562058
+    },
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1771140569832
+    },
+    "obsidian": {
+      "version": "1.0.0",
+      "installedAt": 1771140578364
+    },
+    "filesystem": {
+      "version": "1.0.0",
+      "installedAt": 1771141533506
+    },
+    "security-audit": {
+      "version": "1.0.0",
+      "installedAt": 1771141536095
+    },
+    "security-monitor": {
+      "version": "1.0.0",
+      "installedAt": 1771141540360
+    },
+    "tavily-search": {
+      "version": "1.0.0",
+      "installedAt": 1771156079059
     }
   }
 }
