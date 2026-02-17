@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Receptionist for NYC Plumbers | Never Miss a Call</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: #000; color: #fff; }
+        .gradient-text { background: linear-gradient(135deg, #00E5A0, #00B87A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-bg { background: linear-gradient(135deg, #00E5A0, #00B87A); }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Header -->
+    <nav class="flex justify-between items-center p-6 max-w-6xl mx-auto">
+        <div class="font-bold text-xl">🤖 NYC<span class="gradient-text">PlumberAI</span></div>
+        <a href="#contact" class="bg-gradient-to-r from-[#00E5A0] to-[#00B87A] text-black px-5 py-2 rounded-full font-semibold">Get Started</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-20 text-center max-w-3xl mx-auto px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Never Miss a<br>
+            <span class="gradient-text">Service Call.</span>
+        </h1>
+        <p class="text-gray-400 text-lg mb-8">
+            AI receptionist answers your business calls 24/7. 
+            Books jobs, qualifies leads, and schedules technicians — even at 2am.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#pricing" class="gradient-bg text-black px-8 py-4 rounded-full font-bold">Start Free Trial</a>
+            <a href="#demo" class="border border-gray-700 px-8 py-4 rounded-full font-semibold">See Demo</a>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-12 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 grid grid-cols-3 gap-8 text-center">
+            <div>
+                <div class="text-3xl font-bold gradient-text">24/7</div>
+                <div class="text-gray-500 text-sm">Always Answer</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold gradient-text">40%</div>
+                <div class="text-gray-500 text-sm">More Bookings</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold gradient-text">£0</div>
+                <div class="text-gray-500 text-sm">Missed Calls</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">The Problem</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 rounded-xl p-6 border-l-4 border-red-500">
+                    <h3 class="font-bold text-lg mb-2">❌ Missed Calls</h3>
+                    <p class="text-gray-400 text-sm">Late night calls go to voicemail. Customers hire someone else.</p>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-6 border-l-4 border-red-500">
+                    <h3 class="font-bold text-lg mb-2">❌ No Shows</h3>
+                    <p class="text-gray-400 text-sm">Customers book but don't show up. Waste of technician time.</p>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-6 border-l-4 border-red-500">
+                    <h3 class="font-bold text-lg mb-2">❌ Wrong Jobs</h3>
+                    <p class="text-gray-400 text-sm">Technicians arrive unprepared. Wrong parts, wrong estimate.</p>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-6 border-l-4 border-red-500">
+                    <h3 class="font-bold text-lg mb-2">❌ Burned Out</h3>
+                    <p class="text-gray-400 text-sm">You can't sleep. Can't take a day off. Always on call.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">The Solution</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-black rounded-xl p-6 border-l-4 border-[#00E5A0]">
+                    <h3 class="font-bold text-lg mb-2">✅ Answers Every Call</h3>
+                    <p class="text-gray-400 text-sm">AI picks up instantly. Never miss an emergency again.</p>
+                </div>
+                <div class="bg-black rounded-xl p-6 border-l-4 border-[#00E5A0]">
+                    <h3 class="font-bold text-lg mb-2">✅ Books Jobs</h3>
+                    <p class="text-gray-400 text-sm">Checks your calendar. Schedules the right technician.</p>
+                </div>
+                <div class="bg-black rounded-xl p-6 border-l-4 border-[#00E5A0]">
+                    <h3 class="font-bold text-lg mb-2">✅ Qualifies Leads</h3>
+                    <p class="text-gray-400 text-sm">Asks about the issue. Gathers details. Prepares your team.</p>
+                </div>
+                <div class="bg-black rounded-xl p-6 border-l-4 border-[#00E5A0]">
+                    <h3 class="font-bold text-lg mb-2">✅ SMS Confirmations</h3>
+                    <p class="text-gray-400 text-sm">Automatic reminders reduce no-shows by 60%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo -->
+    <section id="demo" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">See It In Action</h2>
+            <div class="bg-gray-900 rounded-2xl p-8">
+                <div class="text-left space-y-4 font-mono text-sm">
+                    <div class="text-gray-400">AI: Hello, thank you for calling NYC Plumber. How can I help?</div>
+                    <div class="text-white">Caller: Hi, I have a leaking pipe in my kitchen.</div>
+                    <div class="text-gray-400">AI: I can help with that. Is this an emergency or can we schedule?</div>
+                    <div class="text-white">Caller: It's leaking pretty bad.</div>
+                    <div class="text-gray-400">AI: I understand. We have a technician available today. Can I get your address?</div>
+                    <div class="text-white">Caller: Yeah, it's 123 Broadway, Manhattan.</div>
+                    <div class="text-gray-400">AI: Perfect. I've booked a plumber for today between 2-4pm. You'll receive a confirmation text. What's your phone number?</div>
+                    <div class="text-gray-400">AI: Great! We've sent a confirmation to your phone. The plumber will arrive with the right tools. Thank you!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Simple Pricing</h2>
+            <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <!-- Starter -->
+                <div class="bg-black rounded-2xl p-6">
+                    <h3 class="font-bold text-lg mb-2">Starter</h3>
+                    <div class="text-3xl font-bold mb-4">£49<span class="text-gray-500 text-sm">/mo</span></div>
+                    <ul class="text-gray-400 text-sm space-y-2 mb-6">
+                        <li>✓ 100 calls/month</li>
+                        <li>✓ Basic FAQ responses</li>
+                        <li>✓ Job booking</li>
+                        <li>✓ SMS notifications</li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-gray-800 py-3 rounded-full font-semibold">Get Started</a>
+                </div>
+
+                <!-- Professional -->
+                <div class="bg-black rounded-2xl p-6 border-2 border-[#00E5A0] relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#00E5A0] text-black px-3 py-1 rounded-full text-xs font-bold">POPULAR</div>
+                    <h3 class="font-bold text-lg mb-2">Professional</h3>
+                    <div class="text-3xl font-bold mb-4">£149<span class="text-gray-500 text-sm">/mo</span></div>
+                    <ul class="text-gray-400 text-sm space-y-2 mb-6">
+                        <li>✓ Unlimited calls</li>
+                        <li>✓ Advanced qualification</li>
+                        <li>✓ Multi-technician</li>
+                        <li>✓ CRM integration</li>
+                        <li>✓ Priority support</li>
+                    </ul>
+                    <a href="#contact" class="block text-center gradient-bg text-black py-3 rounded-full font-bold">Get Started</a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="bg-black rounded-2xl p-6">
+                    <h3 class="font-bold text-lg mb-2">Enterprise</h3>
+                    <div class="text-3xl font-bold mb-4">£299<span class="text-gray-500 text-sm">/mo</span></div>
+                    <ul class="text-gray-400 text-sm space-y-2 mb-6">
+                        <li>✓ Everything in Pro</li>
+                        <li>✓ White-label</li>
+                        <li>✓ Custom training</li>
+                        <li>✓ Dedicated manager</li>
+                        <li>✓ SLA guarantee</li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-gray-800 py-3 rounded-full font-semibold">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20">
+        <div class="max-w-xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Get Your Free Trial</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name *" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 outline-none focus:border-[#00E5A0]">
+                <input type="text" placeholder="Company Name *" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 outline-none focus:border-[#00E5A0]">
+                <input type="email" placeholder="Email *" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 outline-none focus:border-[#00E5A0]">
+                <input type="tel" placeholder="Phone *" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 outline-none focus:border-[#00E5A0]">
+                <input type="text" placeholder="Website (if any)" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 outline-none focus:border-[#00E5A0]">
+                <button type="submit" class="w-full gradient-bg text-black py-4 rounded-xl font-bold">Request Free Demo</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 text-sm border-t border-gray-800">
+        <p>🤖 NYC Plumber AI — Powered by OpenClaw</p>
+    </footer>
+</body>
+</html>
