@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthHub - Your Health Companion</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #3b82f6;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--gray-50);
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header h1 { font-size: 1.5rem; font-weight: 700; }
+        .header p { opacity: 0.9; font-size: 0.875rem; margin-top: 0.25rem; }
+        .nav {
+            background: white;
+            padding: 0.75rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: var(--gray-100);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .nav-btn.active { background: var(--primary); color: white; }
+        .main { padding: 1rem; max-width: 600px; margin: 0 auto; }
+        .section { display: none; }
+        .section.active { display: block; }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .card-title { font-size: 1.125rem; font-weight: 600; color: var(--gray-800); }
+        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem; }
+        .stat-card { background: white; border-radius: 12px; padding: 1rem; text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: 700; color: var(--primary); }
+        .stat-label { font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn { padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; width: 100%; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-secondary { background: var(--gray-100); color: var(--gray-700); }
+        .form-group { margin-bottom: 1rem; }
+        .form-label { display: block; font-size: 0.875rem; font-weight: 500; color: var(--gray-700); margin-bottom: 0.5rem; }
+        .form-input, .form-select, .form-textarea { width: 100%; padding: 0.75rem; border: 1px solid var(--gray-300); border-radius: 8px; font-size: 1rem; }
+        .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--primary); }
+        .medication-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--gray-50); border-radius: 8px; margin-bottom: 0.75rem; }
+        .medication-info h4 { font-size: 1rem; color: var(--gray-800); }
+        .medication-info p { font-size: 0.875rem; color: var(--gray-500); }
+        .medication-status { display: flex; align-items: center; gap: 0.5rem; }
+        .status-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gray-300); }
+        .status-dot.taken { background: var(--primary); }
+        .appointment-card { background: var(--gray-50); border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; border-left: 4px solid var(--secondary); }
+        .appointment-date { font-weight: 600; color: var(--gray-800); }
+        .appointment-type { font-size: 0.875rem; color: var(--gray-500); }
+        .quick-actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
+        .quick-action { background: white; border-radius: 12px; padding: 1rem 0.5rem; text-align: center; cursor: pointer; transition: all 0.2s; border: none; }
+        .quick-action:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .quick-action-icon { font-size: 1.5rem; margin-bottom: 0.25rem; }
+        .quick-action-label { font-size: 0.625rem; color: var(--gray-600); font-weight: 500; }
+        .reminder-toggle { display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: white; border-radius: 8px; margin-bottom: 0.5rem; }
+        .toggle-switch { width: 50px; height: 28px; background: var(--gray-300); border-radius: 14px; position: relative; cursor: pointer; transition: background 0.2s; }
+        .toggle-switch.active { background: var(--primary); }
+        .toggle-switch::after { content: ''; position: absolute; width: 24px; height: 24px; background: white; border-radius: 50%; top: 2px; left: 2px; transition: transform 0.2s; }
+        .toggle-switch.active::after { transform: translateX(22px); }
+        .record-item { padding: 1rem; background: var(--gray-50); border-radius: 8px; margin-bottom: 0.75rem; }
+        .record-type { font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.5px; }
+        .record-title { font-weight: 600; color: var(--gray-800); margin: 0.25rem 0; }
+        .record-date { font-size: 0.875rem; color: var(--gray-500); }
+        .metric-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid var(--gray-100); }
+        .metric-item:last-child { border-bottom: none; }
+        .metric-label { color: var(--gray-600); }
+        .metric-value { font-weight: 600; color: var(--gray-800); margin-right: 0.5rem; }
+        .metric-badge { padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+        .badge-good { background: #d1fae5; color: var(--primary); }
+        .badge-warning { background: #fef3c7; color: var(--warning); }
+        .bp-reading { display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--gray-50); border-radius: 8px; margin-bottom: 0.5rem; }
+        .bp-systolic { font-size: 1.5rem; font-weight: 700; color: var(--danger); }
+        .bp-diastolic { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .bp-separator { font-size: 1.25rem; color: var(--gray-400); }
+        .bp-date { margin-left: auto; font-size: 0.75rem; color: var(--gray-500); }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 1rem; }
+        .modal-overlay.active { display: flex; }
+        .modal { background: white; border-radius: 16px; width: 100%; max-width: 400px; max-height: 90vh; overflow-y: auto; }
+        .modal-header { padding: 1rem 1.25rem; border-bottom: 1px solid var(--gray-200); display: flex; justify-content: space-between; align-items: center; }
+        .modal-title { font-size: 1.125rem; font-weight: 600; }
+        .modal-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-500); }
+        .modal-body { padding: 1.25rem; }
+        .modal-footer { padding: 1rem 1.25rem; border-top: 1px solid var(--gray-200); display: flex; gap: 0.5rem; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .card { animation: fadeIn 0.3s ease-out; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏥 HealthHub</h1>
+        <p>In Control. Healthier. Happier.</p>
+    </div>
+    <nav class="nav">
+        <button class="nav-btn active" onclick="showSection('dashboard')">Dashboard</button>
+        <button class="nav-btn" onclick="showSection('records')">Records</button>
+        <button class="nav-btn" onclick="showSection('appointments')">Appointments</button>
+        <button class="nav-btn" onclick="showSection('medications')">Medications</button>
+        <button class="nav-btn" onclick="showSection('health')">Health</button>
+    </nav>
+    <main class="main">
+        <section id="dashboard" class="section active">
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-value">12</div><div class="stat-label">Appointments</div></div>
+                <div class="stat-card"><div class="stat-value">3</div><div class="stat-label">Medications</div></div>
+                <div class="stat-card"><div class="stat-value">98%</div><div class="stat-label">Adherence</div></div>
+                <div class="stat-card"><div class="stat-value">5</div><div class="stat-label">Records</div></div>
+            </div>
+            <div class="card">
+                <div class="card-header"><span class="card-title">Quick Actions</span></div>
+                <div class="quick-actions">
+                    <button class="quick-action" onclick="openModal('appointment')"><div class="quick-action-icon">📅</div><div class="quick-action-label">Book Appt</div></button>
+                    <button class="quick-action" onclick="openModal('prescription')"><div class="quick-action-icon">💊</div><div class="quick-action-label">Prescription</div></button>
+                    <button class="quick-action" onclick="openModal('measurement')"><div class="quick-action-icon">📊</div><div class="quick-action-label">Measure</div></button>
+                    <button class="quick-action" onclick="openModal('record')"><div class="quick-action-icon">📄</div><div class="quick-action-label">Add Record</div></button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><span class="card-title">Today's Medications</span></div>
+                <div class="medication-item">
+                    <div class="medication-info"><h4>Amlodipine 5mg</h4><p>1 tablet • 8:00 AM</p></div>
+                    <div class="medication-status"><div class="status-dot taken"></div><span>Taken</span></div>
+                </div>
+                <div class="medication-item">
+                    <div class="medication-info"><h4>Metformin 500mg</h4><p>1 tablet • With lunch</p></div>
+                    <div class="medication-status"><div class="status-dot"></div><span>Due 12:00</span></div>
+                </div>
+                <div class="medication-item">
+                    <div class="medication-info"><h4>Atorvastatin 20mg</h4><p>1 tablet • 9:00 PM</p></div>
+                    <div class="medication-status"><div class="status-dot"></div><span>Due 21:00</span></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><span class="card-title">Recent Blood Pressure</span></div>
+                <div class="bp-reading"><span class="bp-systolic">128</span><span class="bp-separator">/</span><span class="bp-diastolic">82</span><span class="bp-date">Today 9:00 AM</span></div>
+                <div class="bp-reading"><span class="bp-systolic">132</span><span class="bp-separator">/</span><span class="bp-diastolic">85</span><span class="bp-date">Yesterday 9:15 AM</span></div>
+            </div>
+        </section>
+        <section id="records" class="section">
+            <div class="card">
+                <div class="card-header"><span class="card-title">Medical Records</span><button class="btn btn-primary" style="width:auto;padding:0.5rem 1rem;" onclick="openModal('record')">+ Add</button></div>
+                <div class="record-item"><div class="record-type">Letter</div><div class="record-title">Cardiology Referral</div><div class="record-date">15 February 2026</div></div>
+                <div class="record-item"><div class="record-type">Test Result</div><div class="record-title">Blood Test - Full Panel</div><div class="record-date">10 February 2026</div></div>
+                <div class="record-item"><div class="record-type">Medication</div><div class="record-title">Prescription - Atorvastatin</div><div class="record-date">05 February 2026</div></div>
+            </div>
+        </section>
+        <section id="appointments" class="section">
+            <div class="card">
+                <div class="card-header"><span class="card-title">Upcoming Appointments</span><button class="btn btn-primary" style="width:auto;padding:0.5rem 1rem;" onclick="openModal('appointment')">+ Book</button></div>
+                <div class="appointment-card"><div class="appointment-date">📅 20 February 2026 • 10:30 AM</div><div class="appointment-type">GP Consultation - Dr. Smith</div></div>
+                <div class="appointment-card"><div class="appointment-date">📅 05 March 2026 • 2:00 PM</div><div class="appointment-type">Blood Test - NHS Clinic</div></div>
+            </div>
+        </section>
+        <section id="medications" class="section">
+            <div class="card">
+                <div class="card-header"><span class="card-title">Current Medications</span><button class="btn btn-primary" style="width:auto;padding:0.5rem 1rem;" onclick="openModal('medication')">+ Add</button></div>
+                <div class="medication-item"><div class="medication-info"><h4>Amlodipine 5mg</h4><p>For: High Blood Pressure • Once daily</p></div></div>
+                <div class="medication-item"><div class="medication-info"><h4>Metformin 500mg</h4><p>For: Type 2 Diabetes • Twice daily</p></div></div>
+                <div class="medication-item"><div class="medication-info"><h4>Atorvastatin 20mg</h4><p>For: High Cholesterol • Once at night</p></div></div>
+            </div>
+            <div class="card">
+                <div class="card-header"><span class="card-title">Medication Reminders</span></div>
+                <div class="reminder-toggle"><div><strong>Morning (8:00 AM)</strong><p style="font-size:0.875rem;color:var(--gray-500);">Amlodipine</p></div><div class="toggle-switch active" onclick="this.classList.toggle('active')"></div></div>
+                <div class="reminder-toggle"><div><strong>Evening (9:00 PM)</strong><p style="font-size:0.875rem;color:var(--gray-500);">Atorvastatin</p></div><div class="toggle-switch active" onclick="this.classList.toggle('active')"></div></div>
+            </div>
+        </section>
+        <section id="health" class="section">
+            <div class="card">
+                <div class="card-header"><span class="card-title">Health Metrics</span><button class="btn btn-primary" style="width:auto;padding:0.5rem 1rem;" onclick="openModal('measurement')">+ Log</button></div>
+                <div class="metric-item"><span class="metric-label">Blood Pressure</span><div><span class="metric-value">128/82</span><span class="metric-badge badge-good">Normal</span></div></div>
+                <div class="metric-item"><span class="metric-label">Heart Rate</span><div><span class="metric-value">72 bpm</span><span class="metric-badge badge-good">Good</span></div></div>
+                <div class="metric-item"><span class="metric-label">Blood Glucose</span><div><span class="metric-value">6.2 mmol/L</span><span class="metric-badge badge-warning">Pre-diabetic</span></div></div>
+                <div class="metric-item"><span class="metric-label">Weight</span><div><span class="metric-value">78 kg</span><span class="metric-badge badge-good">Healthy</span></div></div>
+            </div>
+        </section>
+    </main>
+    <!-- Modals -->
+    <div class="modal-overlay" id="appointment-modal"><div class="modal"><div class="modal-header"><span class="modal-title">Book Appointment</span><button class="modal-close" onclick="closeModal('appointment')">&times;</button></div><div class="modal-body"><div class="form-group"><label class="form-label">Appointment Type</label><select class="form-select"><option>GP Consultation</option><option>Blood Test</option><option>Prescription Review</option><option>Annual Check-up</option></select></div><div class="form-group"><label class="form-label">Preferred Date</label><input type="date" class="form-input"></div><div class="form-group"><label class="form-label">Preferred Time</label><select class="form-select"><option>9:00 AM</option><option>10:00 AM</option><option>2:00 PM</option></select></div></div><div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal('appointment')">Cancel</button><button class="btn btn-primary" onclick="alert('Appointment requested!')">Book</button></div></div></div>
+    <div class="modal-overlay" id="prescription-modal"><div class="modal"><div class="modal-header"><span class="modal-title">Order Prescription</span><button class="modal-close" onclick="closeModal('prescription')">&times;</button></div><div class="modal-body"><div class="form-group"><label class="form-label">Medication</label><select class="form-select"><option>Amlodipine 5mg</option><option>Metformin 500mg</option><option>Atorvastatin 20mg</option></select></div><div class="form-group"><label class="form-label">Quantity</label><input type="number" class="form-input" value="56"></div></div><div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal('prescription')">Cancel</button><button class="btn btn-primary" onclick="alert('Prescription ordered!')">Order</button></div></div></div>
+    <div class="modal-overlay" id="measurement-modal"><div class="modal"><div class="modal-header"><span class="modal-title">Log Measurement</span><button class="modal-close" onclick="closeModal('measurement')">&times;</button></div><div class="modal-body"><div class="form-group"><label class="form-label">Type</label><select class="form-select"><option>Blood Pressure</option><option>Heart Rate</option><option>Blood Glucose</option><option>Weight</option></select></div><div class="form-group"><label class="form-label">Value</label><input type="text" class="form-input" placeholder="e.g., 120/80"></div></div><div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal('measurement')">Cancel</button><button class="btn btn-primary" onclick="alert('Measurement saved!')">Save</button></div></div></div>
+    <div class="modal-overlay" id="record-modal"><div class="modal"><div class="modal-header"><span class="modal-title">Add Record</span><button class="modal-close" onclick="closeModal('record')">&times;</button></div><div class="modal-body"><div class="form-group"><label class="form-label">Type</label><select class="form-select"><option>Letter</option><option>Test Result</option><option>Prescription</option></select></div><div class="form-group"><label class="form-label">Title</label><input type="text" class="form-input"></div><div class="form-group"><label class="form-label">Date</label><input type="date" class="form-input"></div></div><div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal('record')">Cancel</button><button class="btn btn-primary" onclick="alert('Record added!')">Save</button></div></div></div>
+    <div class="modal-overlay" id="medication-modal"><div class="modal"><div class="modal-header"><span class="modal-title">Add Medication</span><button class="modal-close" onclick="closeModal('medication')">&times;</button></div><div class="modal-body"><div class="form-group"><label class="form-label">Medication Name</label><input type="text" class="form-input"></div><div class="form-group"><label class="form-label">Purpose</label><input type="text" class="form-input"></div><div class="form-group"><label class="form-label">Reminder Time</label><input type="time" class="form-input"></div></div><div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal('medication')">Cancel</button><button class="btn btn-primary" onclick="alert('Medication added!')">Add</button></div></div></div>
+    <script>
+        function showSection(id) { document.querySelectorAll('.section').forEach(s => s.classList.remove('active')); document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active')); document.getElementById(id).classList.add('active'); event.target.classList.add('active'); }
+        function openModal(id) { document.getElementById(id + '-modal').classList.add('active'); }
+        function closeModal(id) { document.getElementById(id + '-modal').classList.remove('active'); }
+    </script>
+</body>
+</html>
