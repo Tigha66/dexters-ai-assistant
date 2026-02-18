@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental AI — Automate Your Practice</title>
+    <meta name="theme-color" content="#06b6d4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #06b6d4;
+            --primary-dark: #0891b2;
+            --secondary: #8b5cf6;
+            --dark: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gradient: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--gray-50);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--dark);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .cta-btn {
+            background: var(--gradient);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .hero {
+            background: var(--dark);
+            padding: 80px 20px 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(6, 182, 212, 0.15) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.2);
+            color: #67e8f9;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--gray-400);
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
+        }
+
+        .services {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--gray-500);
+            font-size: 18px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            border: 2px solid var(--gray-100);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--gray-500);
+            margin-bottom: 16px;
+        }
+
+        .service-value {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .pricing {
+            background: var(--dark);
+            padding: 80px 20px;
+        }
+
+        .pricing-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing .section-header h2 {
+            color: white;
+        }
+
+        .pricing .section-header p {
+            color: var(--gray-400);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .price-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .price-card.featured {
+            border: 3px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .price-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .price-card {
+            position: relative;
+        }
+
+        .price-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .price span {
+            font-size: 16px;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        .price-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 24px 0;
+        }
+
+        .price-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        .price-card li::before {
+            content: '✓ ';
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        .cta-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: var(--gray-500);
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .footer {
+            background: var(--gray-100);
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--gray-500);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .price-card.featured { transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">🦷 Dental<span>AI</span></div>
+            <a href="#contact" class="cta-btn">Get Started</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">🤖 AI for Dental Practices</div>
+            <h1>Automate Your Dental<br><span>Practice 24/7</span></h1>
+            <p>AI bots that handle bookings, answer patient questions, and qualify leads — while you focus on treatments.</p>
+            <a href="#contact" class="btn btn-primary">Book Free Demo</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="section-header">
+            <h2>What You Get</h2>
+            <p>Powerful automation built for dental practices</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📅</div>
+                <h3>Online Booking</h3>
+                <p>Patients book appointments anytime. Auto-confirms with calendar sync.</p>
+                <span class="service-value">40% more bookings</span>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💬</div>
+                <h3>Patient Support Bot</h3>
+                <p>Answers FAQs about pricing, treatments, opening hours — 24/7.</p>
+                <span class="service-value">-60% phone calls</span>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Lead Qualification</h3>
+                <p>Qualifies new patients via chat. Captures name, phone, and interest.</p>
+                <span class="service-value">3x more leads</span>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🔔</div>
+                <h3>Reminder System</h3>
+                <p>Automatic appointment reminders via WhatsApp & SMS.</p>
+                <span class="service-value">-30% no-shows</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="pricing-inner">
+            <div class="section-header">
+                <h2>Pricing</h2>
+                <p>Simple, transparent pricing</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Starter</h3>
+                    <div class="price">£49<span>/mo</span></div>
+                    <ul>
+                        <li>Booking Widget</li>
+                        <li>Basic FAQ Bot</li>
+                        <li>Email Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                
+                <div class="price-card featured">
+                    <h3>Professional</h3>
+                    <div class="price">£99<span>/mo</span></div>
+                    <ul>
+                        <li>Full Booking System</li>
+                        <li>Multi-channel (Web + WhatsApp)</li>
+                        <li>Lead Qualification</li>
+                        <li>SMS Reminders</li>
+                        <li>CRM Integration</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">£199<span>/mo</span></div>
+                    <ul>
+                        <li>Everything in Pro</li>
+                        <li>Voice Bot</li>
+                        <li>Multiple Locations</li>
+                        <li>White-label</li>
+                        <li>Dedicated Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <h2>Ready to Automate?</h2>
+        <p>Book a free 15-minute demo for your dental practice.</p>
+        <a href="mailto:info@autoaiwebsolutions.com" class="btn btn-primary">Book Free Demo</a>
+    </section>
+
+    <footer class="footer">
+        <p>🦷 DentalAI — AutoAI Web Solutions</p>
+        <p>info@autoaiwebsolutions.com</p>
+    </footer>
+</body>
+</html>
