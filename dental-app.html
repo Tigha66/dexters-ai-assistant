@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentalBook - Book Your Smile</title>
+    <meta name="theme-color" content="#0ea5e9">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#0ea5e9;--primary-dark:#0284c7;--secondary:#8b5cf6}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;min-height:100vh}
+        .container{max-width:500px;margin:0 auto;padding:20px}
+        .header{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:30px 20px;border-radius:0 0 20px 20px;text-align:center}
+        .header h1{font-size:28px;margin-bottom:5px}
+        .card{background:white;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+        .card-title{font-size:18px;font-weight:600;margin-bottom:16px;color:#1f2937}
+        .form-group{margin-bottom:16px}
+        .form-label{display:block;font-size:14px;font-weight:500;margin-bottom:6px;color:#374151}
+        .form-input{width:100%;padding:14px;border:1px solid #d1d5db;border-radius:10px;font-size:16px}
+        .form-input:focus{outline:none;border-color:var(--primary)}
+        .btn{width:100%;padding:16px;background:var(--primary);color:white;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer}
+        .btn:hover{background:var(--primary-dark)}
+        .service-item{background:#f9fafb;border-radius:12px;padding:16px;margin-bottom:12px;cursor:pointer;border:2px solid transparent}
+        .service-item.selected{border-color:var(--primary);background:#e0f2fe}
+        .service-name{font-weight:600;margin-bottom:4px}
+        .service-price{color:var(--primary);font-size:14px}
+        .service-desc{color:#6b7280;font-size:13px;margin-top:4px}
+        .time-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+        .time-item{background:#f9fafb;padding:12px;text-align:center;border-radius:8px;cursor:pointer;font-size:14px}
+        .time-item.selected{background:var(--primary);color:white}
+        .date-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+        .date-item{background:#f9fafb;padding:10px 4px;border-radius:8px;cursor:pointer}
+        .date-item.selected{background:var(--primary);color:white}
+        .date-day{font-size:10px;color:#6b7280}
+        .date-item.selected .date-day{color:white}
+        .date-num{font-size:16px;font-weight:600}
+        .hidden{display:none}
+        .success{text-align:center;padding:40px 20px}
+        .success-icon{font-size:60px;margin-bottom:20px}
+        .success h2{color:#059650;margin-bottom:10px}
+        .nav{display:flex;background:white;padding:12px;gap:8px;border-top:1px solid #e5e7eb;position:fixed;bottom:0;left:0;right:0;justify-content:space-around}
+        .nav-item{display:flex;flex-direction:column;align-items:center;font-size:11px;color:#6b7280;cursor:pointer;gap:4px}
+        .nav-item.active{color:var(--primary)}
+        .nav-icon{font-size:22px}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Screen -->
+        <div id="loginScreen">
+            <div class="header">
+                <h1>🦷 DentalBook</h1>
+                <p>Book your perfect smile</p>
+            </div>
+            <div class="card">
+                <div class="card-title">Create Account</div>
+                <div class="form-group">
+                    <label class="form-label">Your Name *</label>
+                    <input type="text" class="form-input" id="nameInput" placeholder="John Smith">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-input" id="phoneInput" placeholder="07123456789">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email (optional)</label>
+                    <input type="email" class="form-input" id="emailInput" placeholder="john@email.com">
+                </div>
+                <button class="btn" onclick="handleLogin()">Get Started</button>
+            </div>
+        </div>
+
+        <!-- Main App -->
+        <div id="mainApp" class="hidden">
+            <!-- Book Tab -->
+            <div id="bookTab">
+                <div class="card">
+                    <div class="card-title">Select Service</div>
+                    <div id="servicesList"></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Select Date</div>
+                    <div class="date-grid" id="dateList"></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Select Time</div>
+                    <div class="time-grid" id="timeList"></div>
+                </div>
+                <button class="btn" onclick="confirmBooking()">Confirm Booking</button>
+                <br><br>
+            </div>
+
+            <!-- Appointments Tab -->
+            <div id="appointmentsTab" class="hidden">
+                <div class="card">
+                    <div class="card-title">My Appointments</div>
+                    <div id="appointmentsList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="hidden">
+            <div class="header">
+                <h1>🎉</h1>
+                <p>Booking Confirmed!</p>
+            </div>
+            <div class="card success">
+                <div class="success-icon">✅</div>
+                <h2>You're Booked!</h2>
+                <p style="color:#6b7280;margin-bottom:20px">We'll send you a confirmation SMS.</p>
+                <button class="btn" onclick="closeSuccess()">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Nav -->
+    <div id="navBar" class="nav hidden">
+        <div class="nav-item active" onclick="showTab('book')">
+            <span class="nav-icon">📅</span>
+            <span>Book</span>
+        </div>
+        <div class="nav-item" onclick="showTab('appointments')">
+            <span class="nav-icon">📋</span>
+            <span>My Bookings</span>
+        </div>
+    </div>
+
+    <script>
+        const services = [
+            {id:1, n:'Check-up & Clean', p:'£60', d:'Full exam + professional clean'},
+            {id:2, n:'Teeth Whitening', p:'£250', d:'Professional LED whitening'},
+            {id:3, n:'Dental Filling', p:'£120', d:'White composite filling'},
+            {id:4, n:'Root Canal', p:'£350', d:'Treatment for infected tooth'},
+            {id:5, n:'Emergency Visit', p:'£80', d:'Same-day urgent care'},
+            {id:6, n:'Free Consultation', p:'Free', d:'Implant & treatment planning'}
+        ];
+        const times = ['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM'];
+        
+        let user = null;
+        let booking = {service:null, date:null, time:null};
+        let appointments = [];
+
+        // Load saved data
+        const savedUser = localStorage.getItem('dentalbook_user');
+        const savedAppts = localStorage.getItem('dentalbook_appts');
+        if (savedUser) { user = JSON.parse(savedUser); showMainApp(); }
+        if (savedAppts) { appointments = JSON.parse(savedAppts); }
+
+        function handleLogin() {
+            const name = document.getElementById('nameInput').value.trim();
+            const phone = document.getElementById('phoneInput').value.trim();
+            const email = document.getElementById('emailInput').value.trim();
+            
+            if (!name || !phone) {
+                alert('Please enter your name and phone number');
+                return;
+            }
+            
+            user = { name, phone, email };
+            localStorage.setItem('dentalbook_user', JSON.stringify(user));
+            showMainApp();
+        }
+
+        function showMainApp() {
+            document.getElementById('loginScreen').classList.add('hidden');
+            document.getElementById('mainApp').classList.remove('hidden');
+            document.getElementById('navBar').classList.remove('hidden');
+            renderAll();
+        }
+
+        function renderAll() {
+            renderServices();
+            renderDates();
+            renderTimes();
+            renderAppointments();
+        }
+
+        function renderServices() {
+            document.getElementById('servicesList').innerHTML = services.map(s => 
+                `<div class="service-item" onclick="selectService(${s.id})" id="svc-${s.id}">
+                    <div class="service-name">${s.n}</div>
+                    <div class="service-price">${s.p}</div>
+                    <div class="service-desc">${s.d}</div>
+                </div>`
+            ).join('');
+        }
+
+        function selectService(id) {
+            services.forEach(s => document.getElementById('svc-'+s.id).classList.remove('selected'));
+            document.getElementById('svc-'+id).classList.add('selected');
+            booking.service = services.find(s => s.id === id);
+        }
+
+        function renderDates() {
+            let html = '';
+            const today = new Date();
+            for (let i = 0; i < 14; i++) {
+                const d = new Date(today);
+                d.setDate(today.getDate() + i);
+                if (d.getDay() === 0) continue; // Skip Sunday
+                html += `<div class="date-item" onclick="selectDate(${i})" id="date-${i}">
+                    <div class="date-day">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][d.getDay()]}</div>
+                    <div class="date-num">${d.getDate()}</div>
+                </div>`;
+            }
+            document.getElementById('dateList').innerHTML = html;
+        }
+
+        function selectDate(i) {
+            document.querySelectorAll('.date-item').forEach(d => d.classList.remove('selected'));
+            document.getElementById('date-'+i).classList.add('selected');
+            const d = new Date();
+            d.setDate(d.getDate() + i);
+            booking.date = d.toLocaleDateString('en-GB', {weekday:'short', day:'numeric', month:'short'});
+        }
+
+        function renderTimes() {
+            document.getElementById('timeList').innerHTML = times.map((t, i) => 
+                `<div class="time-item" onclick="selectTime(${i})" id="time-${i}">${t}</div>`
+            ).join('');
+        }
+
+        function selectTime(i) {
+            document.querySelectorAll('.time-item').forEach(t => t.classList.remove('selected'));
+            document.getElementById('time-'+i).classList.add('selected');
+            booking.time = times[i];
+        }
+
+        function confirmBooking() {
+            if (!booking.service) { alert('Please select a service'); return; }
+            if (!booking.date) { alert('Please select a date'); return; }
+            if (!booking.time) { alert('Please select a time'); return; }
+            
+            appointments.push({
+                ...booking,
+                id: Date.now(),
+                status: 'confirmed'
+            });
+            localStorage.setItem('dentalbook_appts', JSON.stringify(appointments));
+            
+            document.getElementById('mainApp').classList.add('hidden');
+            document.getElementById('navBar').classList.add('hidden');
+            document.getElementById('successModal').classList.remove('hidden');
+        }
+
+        function closeSuccess() {
+            booking = {service:null, date:null, time:null};
+            document.querySelectorAll('.service-item,.date-item,.time-item').forEach(e => e.classList.remove('selected'));
+            document.getElementById('successModal').classList.add('hidden');
+            document.getElementById('mainApp').classList.remove('hidden');
+            document.getElementById('navBar').classList.remove('hidden');
+            renderAppointments();
+        }
+
+        function renderAppointments() {
+            const list = document.getElementById('appointmentsList');
+            if (appointments.length === 0) {
+                list.innerHTML = '<p style="color:#6b7280;text-align:center;padding:20px">No appointments yet</p>';
+                return;
+            }
+            list.innerHTML = appointments.map(a => 
+                `<div style="background:#f9fafb;padding:16px;border-radius:12px;margin-bottom:12px">
+                    <div style="font-weight:600">${a.service.n}</div>
+                    <div style="color:#6b7280;font-size:14px">📅 ${a.date} at ${a.time}</div>
+                </div>`
+            ).join('');
+        }
+
+        function showTab(tab) {
+            document.getElementById('bookTab').classList.add('hidden');
+            document.getElementById('appointmentsTab').classList.add('hidden');
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            
+            if (tab === 'book') {
+                document.getElementById('bookTab').classList.remove('hidden');
+                document.querySelectorAll('.nav-item')[0].classList.add('active');
+            } else {
+                document.getElementById('appointmentsTab').classList.remove('hidden');
+                document.querySelectorAll('.nav-item')[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
