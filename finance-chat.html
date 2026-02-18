@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceAI - Your Money Assistant</title>
+    <meta name="theme-color" content="#10b981">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #6366f1;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #22c55e;
+            --dark: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gradient: linear-gradient(135deg, #10b981 0%, #6366f1 100%);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--gray-50);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background: var(--gradient);
+            padding: 20px;
+            color: white;
+            padding-top: 50px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Balance Card */
+        .balance-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .balance-label {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-bottom: 4px;
+        }
+
+        .balance-amount {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .balance-stats {
+            display: flex;
+            gap: 20px;
+        }
+
+        .stat-item {
+            flex: 1;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 12px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .stat-value.income { color: #4ade80; }
+        .stat-value.expense { color: #fca5a5; }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: flex;
+            gap: 10px;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .action-btn {
+            flex: 1;
+            background: white;
+            border: none;
+            padding: 14px;
+            border-radius: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Chat Section */
+        .chat-section {
+            flex: 1;
+            background: white;
+            border-radius: 24px 24px 0 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .chat-title {
+            font-weight: 700;
+        }
+
+        .chat-subtitle {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 14px 18px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: var(--dark);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.assistant {
+            align-self: flex-start;
+            background: var(--gray-100);
+            color: var(--dark);
+            border-bottom-left-radius: 4px;
+        }
+
+        .message.typing {
+            background: var(--gray-100);
+            color: var(--gray-400);
+        }
+
+        /* Suggestion Chips */
+        .suggestions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            padding: 0 20px 16px;
+        }
+
+        .suggestion {
+            background: var(--gray-100);
+            border: none;
+            padding: 10px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .suggestion:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Input Area */
+        .input-area {
+            padding: 16px 20px;
+            border-top: 1px solid var(--gray-100);
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 14px 18px;
+            border: 2px solid var(--gray-200);
+            border-radius: 14px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-area input:focus {
+            border-color: var(--primary);
+        }
+
+        .send-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Spending Categories */
+        .categories {
+            padding: 0 20px 20px;
+        }
+
+        .category-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .category-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .category-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: white;
+            padding: 14px;
+            border-radius: 14px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .category-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .category-info {
+            flex: 1;
+        }
+
+        .category-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .category-percent {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        .category-amount {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        /* Connected Banks */
+        .banks {
+            padding: 0 20px 20px;
+        }
+
+        .bank-list {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .bank-card {
+            min-width: 140px;
+            background: white;
+            padding: 16px;
+            border-radius: 14px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .bank-name {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .bank-balance {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* Loading animation */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 14px 18px;
+            background: var(--gray-100);
+            border-radius: 18px;
+            width: fit-content;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: var(--gray-400);
+            border-radius: 50%;
+            animation: pulse 1.4s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-top">
+            <div class="logo">💰 FinanceAI</div>
+            <button class="menu-btn">☰</button>
+        </div>
+        
+        <div class="balance-card">
+            <div class="balance-label">Total Balance</div>
+            <div class="balance-amount">£12,847.00</div>
+            <div class="balance-stats">
+                <div class="stat-item">
+                    <div class="stat-label">Income</div>
+                    <div class="stat-value income">+£4,200</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Expenses</div>
+                    <div class="stat-value expense">-£3,124</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <button class="action-btn" onclick="sendQuick('transactions')">📊 Transactions</button>
+            <button class="action-btn" onclick="sendQuick('budget')">📈 Budget</button>
+            <button class="action-btn" onclick="sendQuick('goals')">🎯 Goals</button>
+        </div>
+    </div>
+
+    <!-- Chat Section -->
+    <div class="chat-section">
+        <div class="chat-header">
+            <div class="chat-avatar">🤖</div>
+            <div>
+                <div class="chat-title">Finance Assistant</div>
+                <div class="chat-subtitle">AI-powered insights</div>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message assistant">
+                Hey! 👋 I'm your finance assistant. Ask me anything like:
+                <br><br>
+                • "How much did I spend on food?"<br>
+                • "Where am I spending the most?"<br>
+                • "How can I save money?"
+            </div>
+        </div>
+
+        <div class="suggestions">
+            <button class="suggestion" onclick="sendQuick('food')">🍔 Food spending</button>
+            <button class="suggestion" onclick="sendQuick('savings')">💡 Save money?</button>
+            <button class="suggestion" onclick="sendQuick('subscriptions')">📺 Subscriptions</button>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="chatInput" placeholder="Ask about your money..." onkeydown="if(event.key==='Enter')sendMessage()">
+            <button class="send-btn" onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <!-- Spending Categories -->
+    <div class="categories" style="display:none" id="categoriesSection">
+        <div class="category-title">This Month's Spending</div>
+        <div class="category-list">
+            <div class="category-item">
+                <div class="category-icon" style="background:#fef3c7">🍔</div>
+                <div class="category-info">
+                    <div class="category-name">Food & Dining</div>
+                    <div class="category-percent">32% of spending</div>
+                </div>
+                <div class="category-amount">£847</div>
+            </div>
+            <div class="category-item">
+                <div class="category-icon" style="background:#dbeafe">🚗</div>
+                <div class="category-info">
+                    <div class="category-name">Transportation</div>
+                    <div class="category-percent">24% of spending</div>
+                </div>
+                <div class="category-amount">£634</div>
+            </div>
+            <div class="category-item">
+                <div class="category-icon" style="background:#fce7f3">🛒</div>
+                <div class="category-info">
+                    <div class="category-name">Shopping</div>
+                    <div class="category-percent">18% of spending</div>
+                </div>
+                <div class="category-amount">£476</div>
+            </div>
+            <div class="category-item">
+                <div class="category-icon" style="background:#e0e7ff">🎬</div>
+                <div class="category-info">
+                    <div class="category-name">Entertainment</div>
+                    <div class="category-percent">14% of spending</div>
+                </div>
+                <div class="category-amount">£371</div>
+            </div>
+            <div class="category-item">
+                <div class="category-icon" style="background:#d1fae5">💊</div>
+                <div class="category-info">
+                    <div class="category-name">Health</div>
+                    <div class="category-percent">12% of spending</div>
+                </div>
+                <div class="category-amount">£318</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mock transaction data
+        const transactions = [
+            { category: 'Food', merchant: 'Tesco', amount: 87.50 },
+            { category: 'Food', merchant: 'Uber Eats', amount: 34.99 },
+            { category: 'Food', merchant: 'Costa Coffee', amount: 12.50 },
+            { category: 'Transport', merchant: 'Shell', amount: 65.00 },
+            { category: 'Transport', merchant: 'Uber', amount: 28.50 },
+            { category: 'Shopping', merchant: 'Amazon', amount: 156.00 },
+            { category: 'Shopping', merchant: 'Nike', amount: 120.00 },
+            { category: 'Entertainment', merchant: 'Netflix', amount: 15.99 },
+            { category: 'Entertainment', merchant: 'Cinema', amount: 32.00 },
+            { category: 'Health', merchant: 'Gym', amount: 45.00 },
+        ];
+
+        const spendingByCategory = {
+            'Food': 847,
+            'Transport': 634,
+            'Shopping': 476,
+            'Entertainment': 371,
+            'Health': 318,
+        };
+
+        const subscriptions = [
+            { name: 'Netflix', amount: 15.99 },
+            { name: 'Spotify', amount: 9.99 },
+            { name: 'Gym', amount: 45.00 },
+            { name: 'iCloud', amount: 2.99 },
+            { name: 'Amazon Prime', amount: 8.99 },
+        ];
+
+        function addMessage(content, role = 'user') {
+            const messages = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = `message ${role}`;
+            div.innerHTML = content;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function showTyping() {
+            const messages = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = 'message assistant';
+            div.id = 'typing';
+            div.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function hideTyping() {
+            const typing = document.getElementById('typing');
+            if (typing) typing.remove();
+        }
+
+        function sendQuick(type) {
+            const questions = {
+                'transactions': 'Show me my recent transactions',
+                'budget': 'How is my budget doing?',
+                'goals': 'Am I on track for my savings goals?',
+                'food': 'How much did I spend on food this month?',
+                'savings': 'How can I save money?',
+                'subscriptions': 'What subscriptions do I have?'
+            };
+            document.getElementById('chatInput').value = questions[type];
+            sendMessage();
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            addMessage(message, 'user');
+            input.value = '';
+            showTyping();
+
+            // Simulate AI response delay
+            setTimeout(() => {
+                hideTyping();
+                const response = getAIResponse(message);
+                addMessage(response, 'assistant');
+            }, 1500);
+        }
+
+        function getAIResponse(message) {
+            const msg = message.toLowerCase();
+            
+            if (msg.includes('food') || msg.includes('eating') || msg.includes('restaurant') || msg.includes('grocery')) {
+                return `
+                    <strong>Food & Dining this month:</strong><br><br>
+                    📍 <strong>£847</strong> total<br><br>
+                    <strong>Top merchants:</strong><br>
+                    • Tesco: £312<br>
+                    • Uber Eats: £198<br>
+                    • Costa: £87<br><br>
+                    💡 <em>That's 32% of your spending! Cooking at home 3x more could save ~£150/month.</em>
+                `;
+            }
+            
+            if (msg.includes('transport') || msg.includes('car') || msg.includes('uber') || msg.includes('fuel')) {
+                return `
+                    <strong>Transportation this month:</strong><br><br>
+                    📍 <strong>£634</strong> total<br><br>
+                    <strong>Breakdown:</strong><br>
+                    • Fuel: £312<br>
+                    • Uber: £198<br>
+                    • Train: £124<br><br>
+                    💡 <em>Consider public transport 2x/week to save ~£80/month.</em>
+                `;
+            }
+            
+            if (msg.includes('subscri') || msg.includes('subscription') || msg.includes('netflix') || msg.includes('spotify')) {
+                const total = subscriptions.reduce((sum, s) => sum + s.amount, 0);
+                return `
+                    <strong>Your Subscriptions:</strong><br><br>
+                    ${subscriptions.map(s => `• ${s.name}: £${s.amount.toFixed(2)}/mo`).join('<br>')}<br><br>
+                    <strong>Total: £${total.toFixed(2)}/month</strong> (£${(total*12).toFixed(0)}/year)<br><br>
+                    💡 <em>You're not using Nike+ often — could save £120/year!</em>
+                `;
+            }
+            
+            if (msg.includes('save') || msg.includes('cut back') || msg.includes('reduce')) {
+                return `
+                    <strong>Top ways to save:</strong><br><br>
+                    🚗 <strong>Transport:</strong> £80/mo (Uber less)<br>
+                    🍔 <strong>Food:</strong> £150/mo (cook more)<br>
+                    📺 <strong>Subs:</strong> £35/mo (cancel unused)<br><br>
+                    <strong>Potential savings: £265/month (£3,180/year)!</strong>
+                `;
+            }
+            
+            if (msg.includes('most') || msg.includes('biggest') || msg.includes('where')) {
+                const sorted = Object.entries(spendingByCategory).sort((a,b) => b[1] - a[1]);
+                return `
+                    <strong>Your spending by category:</strong><br><br>
+                    1. 🥇 <strong>Food & Dining:</strong> £847 (32%)<br>
+                    2. 🚗 <strong>Transport:</strong> £634 (24%)<br>
+                    3. 🛒 <strong>Shopping:</strong> £476 (18%)<br>
+                    4. 🎬 <strong>Entertainment:</strong> £371 (14%)<br>
+                    5. 💊 <strong>Health:</strong> £318 (12%)<br><br>
+                    💡 <em>Food is your biggest expense. Focus there for max savings!</em>
+                `;
+            }
+            
+            if (msg.includes('income') || msg.includes('earn') || msg.includes('salary')) {
+                return `
+                    <strong>Income vs Expenses:</strong><br><br>
+                    💰 <strong>Income:</strong> £4,200<br>
+                    💸 <strong>Expenses:</strong> £3,124<br>
+                    ✅ <strong>Savings:</strong> £1,076 (26%)<br><br>
+                    <em>Great job! You're saving 26% — above the 20% recommended rate! 🎉</em>
+                `;
+            }
+            
+            if (msg.includes('budget')) {
+                return `
+                    <strong>Budget Review:</strong><br><br>
+                    ✅ Under budget: Health, Entertainment<br>
+                    ⚠️ Over budget: Food (+£147), Shopping (+£76)<br><br>
+                    <em>Your food budget is £700 but you spent £847. Cutting back could help!</em>
+                `;
+            }
+
+            return `
+                I can help you with:<br><br>
+                • "How much did I spend on food?"<br>
+                • "Where am I spending the most?"<br>
+                • "How can I save money?"<br>
+                • "What subscriptions do I have?"<br>
+                • "Am I on budget?"<br><br>
+                Try asking one of these!
+            `;
+        }
+    </script>
+</body>
+</html>
