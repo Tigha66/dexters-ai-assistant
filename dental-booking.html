@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentalBook - Book Your Smile</title>
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="description" content="Book dental appointments easily">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#0ea5e9;--primary-dark:#0284c7;--secondary:#8b5cf6;--success:#22c55e;--danger:#ef4444;--warning:#f59e0b;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--gray-50);min-height:100vh}
+        .header{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:1.5rem;position:sticky;top:0;z-index:100}
+        .header h1{font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:0.5rem}
+        .header p{opacity:0.9;font-size:0.875rem;margin-top:0.25rem}
+        .tab-bar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid var(--gray-200);display:flex;justify-content:space-around;padding:0.5rem;z-index:97}
+        .tab-item{display:flex;flex-direction:column;align-items:center;padding:0.5rem;color:var(--gray-500);font-size:0.625rem;cursor:pointer}
+        .tab-item.active{color:var(--primary)}
+        .tab-icon{font-size:1.25rem;margin-bottom:0.25rem}
+        .main{padding:1rem;max-width:600px;margin:0 auto;padding-bottom:70px}
+        .section{display:none}
+        .section.active{display:block}
+        .card{background:white;border-radius:12px;padding:1.25rem;margin-bottom:1rem;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+        .card-title{font-size:1.125rem;font-weight:600;color:var(--gray-800);margin-bottom:1rem}
+        .btn{padding:0.75rem 1.5rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;width:100%;font-size:1rem}
+        .btn-primary{background:var(--primary);color:white}
+        .btn-primary:hover{background:var(--primary-dark)}
+        .btn-secondary{background:var(--gray-100);color:var(--gray-700)}
+        .btn-small{width:auto;padding:0.5rem 1rem;font-size:0.875rem;float:right}
+        .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-bottom:1rem}
+        .service-card{background:var(--gray-50);border-radius:12px;padding:1rem;text-align:center;cursor:pointer;border:2px solid transparent;transition:all 0.2s}
+        .service-card.selected{border-color:var(--primary);background:#e0f2fe}
+        .service-icon{font-size:2rem;margin-bottom:0.5rem}
+        .service-name{font-weight:600;font-size:0.875rem}
+        .service-price{color:var(--primary);font-size:0.75rem}
+        .form-group{margin-bottom:1rem}
+        .form-label{display:block;font-size:0.875rem;font-weight:500;margin-bottom:0.5rem}
+        .form-input,.form-select,.form-textarea{width:100%;padding:0.75rem;border:1px solid var(--gray-300);border-radius:8px;font-size:1rem}
+        .form-input:focus{outline:none;border-color:var(--primary)}
+        .date-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:0.5rem;margin-bottom:1rem}
+        .date-card{background:var(--gray-50);border-radius:8px;padding:0.5rem;text-align:center;cursor:pointer;border:2px solid transparent}
+        .date-card.selected{background:var(--primary);color:white;border-color:var(--primary)}
+        .date-card.disabled{opacity:0.5;cursor:not-allowed}
+        .date-day{font-size:0.625rem;color:var(--gray-500)}
+        .date-card.selected .date-day{color:white}
+        .date-num{font-size:1rem;font-weight:600}
+        .time-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem}
+        .time-card{background:var(--gray-50);border-radius:8px;padding:0.75rem;text-align:center;cursor:pointer;border:2px solid transparent}
+        .time-card.selected{background:var(--primary);color:white;border-color:var(--primary)}
+        .appointment-card{background:var(--gray-50);border-radius:8px;padding:1rem;margin-bottom:0.75rem;border-left:4px solid var(--primary)}
+        .appt-date{font-weight:600}
+        .appt-service{font-size:0.875rem;color:var(--gray-600)}
+        .appt-status{font-size:0.75rem;padding:0.25rem 0.5rem;border-radius:12px;display:inline-block;margin-top:0.5rem}
+        .status-confirmed{background:#d1fae5;color:#059669}
+        .status-pending{background:#fef3c7;color:#d97706}
+        .status-completed{background:var(--gray-200);color:var(--gray-600)}
+        .hero{text-align:center;padding:2rem 1rem}
+        .hero-icon{font-size:4rem;margin-bottom:1rem}
+        .hero h2{font-size:1.5rem;margin-bottom:0.5rem}
+        .hero p{color:var(--gray-500);margin-bottom:1.5rem}
+        .features{display:grid;gap:1rem;margin-top:1.5rem}
+        .feature{display:flex;align-items:flex-start;gap:1rem}
+        .feature-icon{font-size:1.5rem}
+        .feature h4{font-weight:600;margin-bottom:0.25rem}
+        .feature p{font-size:0.875rem;color:var(--gray-500)}
+        .modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;padding:1rem}
+        .modal-overlay.active{display:flex}
+        .modal{background:white;border-radius:16px;width:100%;max-width:400px;max-height:90vh;overflow-y:auto}
+        .modal-header{padding:1rem;border-bottom:1px solid var(--gray-200);display:flex;justify-content:space-between}
+        .modal-title{font-weight:600}
+        .modal-close{background:none;border:none;font-size:1.5rem;cursor:pointer}
+        .modal-body{padding:1rem}
+        .modal-footer{padding:1rem;border-top:1px solid var(--gray-200);display:flex;gap:0.5rem}
+        .success-animation{text-align:center;padding:2rem}
+        .success-icon{font-size:4rem;margin-bottom:1rem}
+        .login{position:fixed;inset:0;background:white;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;z-index:999}
+        .login h1{font-size:2rem;margin-bottom:0.5rem}
+        .login p{color:var(--gray-500);margin-bottom:2rem}
+        .login form{width:100%;max-width:280px}
+        .avatar{width:40px;height:40px;border-radius:50%;background:var(--primary);color:white;display:flex;align-items:center;justify-content:center;font-weight:700}
+        .user-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem}
+        .user-name{font-weight:600}
+        .user-email{font-size:0.75rem;color:var(--gray-500)}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+        .card{animation:fadeIn 0.3s ease-out}
+    </style>
+</head>
+<body>
+    <div class="login" id="login">
+        <div class="hero-icon">🦷</div>
+        <h1>DentalBook</h1>
+        <p>Book your perfect smile</p>
+        <form onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="Your Name" id="userName" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" class="form-input" placeholder="Phone Number" id="userPhone" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-input" placeholder="Email (optional)" id="userEmail">
+            </div>
+            <button type="submit" class="btn btn-primary">Get Started</button>
+        </form>
+    </div>
+    <div id="app" style="display:none">
+        <div class="header">
+            <div class="user-row">
+                <div class="avatar" id="avatar">D</div>
+                <div>
+                    <div class="user-name" id="displayName">User</div>
+                    <div class="user-email" id="displayPhone">Phone</div>
+                </div>
+            </div>
+        </div>
+        <main class="main">
+            <section id="book" class="section active">
+                <div class="card">
+                    <div class="card-title">Select Service</div>
+                    <div class="services-grid" id="servicesGrid"></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Select Date</div>
+                    <div class="date-grid" id="dateGrid"></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Select Time</div>
+                    <div class="time-grid" id="timeGrid"></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Your Details</div>
+                    <div class="form-group">
+                        <label class="form-label">Notes (optional)</label>
+                        <textarea class="form-textarea" id="notes" rows="2" placeholder="Any special requirements?"></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="confirmBooking()">Confirm Booking</button>
+            </section>
+            <section id="appointments" class="section">
+                <div class="card">
+                    <div class="card-title">My Appointments</div>
+                    <div id="appointmentsList"></div>
+                </div>
+            </section>
+            <section id="services" class="section">
+                <div class="card">
+                    <div class="card-title">Our Services</div>
+                    <div id="servicesList"></div>
+                </div>
+            </section>
+            <section id="contact" class="section">
+                <div class="card">
+                    <div class="card-title">Contact Us</div>
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-input" id="contactName">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-textarea" id="contactMsg" rows="4"></textarea>
+                    </div>
+                    <button class="btn btn-primary" onclick="sendMessage()">Send Message</button>
+                </div>
+                <div class="card">
+                    <div class="card-title">Visit Us</div>
+                    <p style="color:var(--gray-600);margin-bottom:0.5rem">📍 123 Dental Street, London, SW1A 1AA</p>
+                    <p style="color:var(--gray-600);margin-bottom:0.5rem">📞 020 1234 5678</p>
+                    <p style="color:var(--gray-600)">✉️ info@dentalbook.example</p>
+                </div>
+            </section>
+        </main>
+        <div class="tab-bar">
+            <div class="tab-item active" onclick="show('book')"><span class="tab-icon">📅</span>Book</div>
+            <div class="tab-item" onclick="show('appointments')"><span class="tab-icon">📋</span>Appts</div>
+            <div class="tab-item" onclick="show('services')"><span class="tab-icon">🦷</span>Services</div>
+            <div class="tab-item" onclick="show('contact')"><span class="tab-icon">📞</span>Contact</div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="successModal">
+        <div class="modal">
+            <div class="success-animation">
+                <div class="success-icon">✅</div>
+                <h2>Booking Confirmed!</h2>
+                <p style="color:var(--gray-500);margin:1rem 0">We'll send you a confirmation SMS shortly.</p>
+                <button class="btn btn-primary" onclick="closeModal()">Done</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const services = [
+            {id:1,n:'Check-up & Clean',p:£60,i:'🦷',d:'Full examination + professional clean'},
+            {id:2,n:'Teeth Whitening',p:£250,i:'✨',d:'Professional LED whitening'},
+            {id:3,n:'Dental Filling',p:£120,i:'🔧',d:'White composite filling'},
+            {id:4,n:'Root Canal',p:£350,i:'🩹',d:'Treatment for infected tooth'},
+            {id:5,n:'Crown & Bridge',p:£800,i:'👑',d:'Custom porcelain crown'},
+            {id:6,n:'Implant Consultation',p:£50,i:'💉',d:'Implant assessment & planning'},
+            {id:7,n:'Emergency Visit',p:£80,i:'🚨',d:'Same-day urgent care'},
+            {id:8,n:'Invisalign Scan',p:Free,i:'🎄',d:'Free 3D scan + treatment plan'}
+        ];
+        const times = ['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM'];
+        let user = null;
+        let booking = {service:null,date:null,time:null,notes:''};
+        let appointments = [];
+        
+        function init(){
+            const savedUser = localStorage.getItem('dentalbook_user');
+            const savedAppts = localStorage.getItem('dentalbook_appointments');
+            if(savedUser){user=JSON.parse(savedUser);showApp()}
+            if(savedAppts){appointments=JSON.parse(savedAppts)}
+            renderServices();
+            renderDates();
+            renderTimes();
+        }
+        function handleLogin(e){
+            e.preventDefault();
+            user = {
+                name: document.getElementById('userName').value,
+                phone: document.getElementById('userPhone').value,
+                email: document.getElementById('userEmail').value
+            };
+            localStorage.setItem('dentalbook_user',JSON.stringify(user));
+            showApp();
+        }
+        function showApp(){
+            document.getElementById('login').style.display='none';
+            document.getElementById('app').style.display='block';
+            document.getElementById('displayName').textContent=user.name;
+            document.getElementById('displayPhone').textContent=user.phone;
+            document.getElementById('avatar').textContent=user.name.charAt(0).toUpperCase();
+            renderAppointments();
+        }
+        function show(id){
+            document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.tab-item').forEach(t=>t.classList.remove('active'));
+            event.target.closest('.tab-item').classList.add('active');
+        }
+        function renderServices(){
+            const grid = document.getElementById('servicesGrid');
+            grid.innerHTML = services.map(s=>`
+                <div class="service-card" onclick="selectService(${s.id})" id="service-${s.id}">
+                    <div class="service-icon">${s.i}</div>
+                    <div class="service-name">${s.n}</div>
+                    <div class="service-price">${s.p}</div>
+                </div>
+            `).join('');
+            const list = document.getElementById('servicesList');
+            list.innerHTML = services.map(s=>`
+                <div style="padding:0.75rem 0;border-bottom:1px solid var(--gray-100)">
+                    <div style="font-weight:600">${s.i} ${s.n}</div>
+                    <div style="font-size:0.875rem;color:var(--gray-500)">${s.d}</div>
+                    <div style="color:var(--primary);font-weight:600;margin-top:0.25rem">${s.p}</div>
+                </div>
+            `).join('');
+        }
+        function selectService(id){
+            document.querySelectorAll('.service-card').forEach(c=>c.classList.remove('selected'));
+            document.getElementById('service-'+id).classList.add('selected');
+            booking.service = services.find(s=>s.id===id);
+        }
+        function renderDates(){
+            const grid = document.getElementById('dateGrid');
+            let html = '';
+            const today = new Date();
+            for(let i=0;i<14;i++){
+                const d = new Date(today);
+                d.setDate(today.getDate()+i);
+                const day = d.getDay();
+                const disabled = day===0;
+                const dateStr = d.toISOString().split('T')[0];
+                html += `
+                    <div class="date-card ${disabled?'disabled':''}" onclick="${disabled?'':'selectDate('+i+')'}" id="date-${i}">
+                        <div class="date-day">${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][day]}</div>
+                        <div class="date-num">${d.getDate()}</div>
+                    </div>
+                `;
+            }
+            grid.innerHTML = html;
+        }
+        function selectDate(i){
+            document.querySelectorAll('.date-card').forEach(c=>c.classList.remove('selected'));
+            document.getElementById('date-'+i).classList.add('selected');
+            const d = new Date();
+            d.setDate(d.getDate()+i);
+            booking.date = d.toISOString().split('T')[0];
+        }
+        function renderTimes(){
+            const grid = document.getElementById('timeGrid');
+            grid.innerHTML = times.map((t,i)=>`
+                <div class="time-card" onclick="selectTime(${i})" id="time-${i}">${t}</div>
+            `).join('');
+        }
+        function selectTime(i){
+            document.querySelectorAll('.time-card').forEach(c=>c.classList.remove('selected'));
+            document.getElementById('time-'+i).classList.add('selected');
+            booking.time = times[i];
+        }
+        function confirmBooking(){
+            if(!booking.service){alert('Please select a service');return}
+            if(!booking.date){alert('Please select a date');return}
+            if(!booking.time){alert('Please select a time');return}
+            booking.notes = document.getElementById('notes').value;
+            const appt = {
+                id:Date.now(),
+                service:booking.service,
+                date:booking.date,
+                time:booking.time,
+                notes:booking.notes,
+                status:'confirmed',
+                created:new Date().toISOString()
+            };
+            appointments.push(appt);
+            localStorage.setItem('dentalbook_appointments',JSON.stringify(appointments));
+            document.getElementById('successModal').classList.add('active');
+        }
+        function closeModal(){
+            document.getElementById('successModal').classList.remove('active');
+            booking = {service:null,date:null,time:null,notes:''};
+            document.querySelectorAll('.service-card,.date-card,.time-card').forEach(c=>c.classList.remove('selected'));
+            document.getElementById('notes').value='';
+            renderAppointments();
+            show('appointments');
+        }
+        function renderAppointments(){
+            const list = document.getElementById('appointmentsList');
+            if(appointments.length===0){
+                list.innerHTML = '<p style="color:var(--gray-500);text-align:center;padding:2rem">No appointments yet</p>';
+                return;
+            }
+            list.innerHTML = appointments.map(a=>`
+                <div class="appointment-card">
+                    <div style="font-weight:600">${a.service.i} ${a.service.n}</div>
+                    <div class="appt-service">📅 ${a.date} at ${a.time}</div>
+                    <span class="appt-status status-confirmed">Confirmed</span>
+                </div>
+            `).join('');
+        }
+        function sendMessage(){
+            alert('Message sent! We will contact you shortly.');
+        }
+        init();
+    </script>
+</body>
+</html>
