@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalAI - Your 24/7 AI Law Firm Employee</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #1e40af; --primary-dark: #1e3a8a; --secondary: #10b981; --dark: #0f172a; --light: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--dark); background: var(--light); }
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%); color: white; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; background: linear-gradient(90deg, var(--primary), #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.3rem; color: #94a3b8; max-width: 600px; margin: 0 auto 40px; }
+        .hero-cta { display: inline-block; background: var(--primary); color: white; padding: 16px 40px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; text-decoration: none; }
+        .features { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .features h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .feature-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), #60a5fa); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .feature-card p { color: #64748b; }
+        .demo-section { background: var(--dark); padding: 80px 20px; color: white; }
+        .demo-container { max-width: 900px; margin: 0 auto; }
+        .demo-section h2 { text-align: center; font-size: 2rem; }
+        .demo-subtitle { text-align: center; color: #94a3b8; margin-bottom: 40px; }
+        .chat-demo { background: #1e293b; border-radius: 20px; overflow: hidden; }
+        .chat-header { background: #0f172a; padding: 20px; display: flex; align-items: center; gap: 15px; }
+        .chat-avatar { width: 45px; height: 45px; background: linear-gradient(135deg, var(--primary), #60a5fa); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+        .chat-info h4 { font-size: 1rem; }
+        .chat-info span { font-size: 0.8rem; color: #10b981; }
+        .chat-messages { padding: 20px; height: 400px; overflow-y: auto; }
+        .message { margin-bottom: 20px; }
+        .message.ai { display: flex; gap: 12px; }
+        .message.ai .avatar { width: 32px; height: 32px; background: var(--primary); border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .message.ai .bubble { background: #334155; padding: 14px 18px; border-radius: 18px 18px 18px 4px; max-width: 80%; }
+        .message.user { text-align: right; }
+        .message.user .bubble { background: var(--primary); padding: 14px 18px; border-radius: 18px 18px 4px 18px; display: inline-block; max-width: 80%; color: white; }
+        .chat-input { padding: 20px; background: #0f172a; display: flex; gap: 10px; }
+        .chat-input input { flex: 1; padding: 14px 20px; border: none; border-radius: 50px; background: #1e293b; color: white; }
+        .chat-input button { padding: 14px 28px; background: var(--primary); color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; }
+        .pricing { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+        .pricing h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .price-card { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .price-card.featured { border: 2px solid var(--primary); transform: scale(1.05); }
+        .price-card .price { font-size: 3rem; font-weight: 700; color: var(--primary); }
+        .price-card .price span { font-size: 1rem; color: #64748b; }
+        .price-card ul { list-style: none; text-align: left; margin: 20px 0; }
+        .price-card li { padding: 8px 0; }
+        .price-card li::before { content: "✓"; color: #10b981; margin-right: 10px; }
+        .cta-section { background: linear-gradient(135deg, var(--primary), #60a5fa); padding: 80px 20px; text-align: center; color: white; }
+        .cta-section h2 { font-size: 2.5rem; }
+        .cta-section .cta { display: inline-block; background: white; color: var(--primary); padding: 18px 50px; border-radius: 50px; font-weight: 700; text-decoration: none; }
+        footer { background: var(--dark); color: #94a3b8; padding: 40px 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>⚖️ Your 24/7 AI Law Firm Employee</h1>
+        <p>Never miss a client inquiry. An AI that handles consultations, qualifies leads, and books appointments — 24/7.</p>
+        <a href="#demo" class="hero-cta">Try the Demo →</a>
+    </section>
+    <section class="features">
+        <h2>What Your AI Employee Does</h2>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon">📞</div><h3>24/7 Client Intake</h3><p>Answers calls and forms anytime. Never miss a potential client.</p></div>
+            <div class="feature-card"><div class="feature-icon">🎯</div><h3>Lead Qualification</h3><p>Qualifies cases by type, urgency, budget, and complexity.</p></div>
+            <div class="feature-card"><div class="feature-icon">📅</div><h3>Consultation Booking</h3><p>Books initial consultations directly into your calendar.</p></div>
+            <div class="feature-card"><div class="feature-icon">📋</div><h3>Case Intake Forms</h3><p>Collects client details, circumstances, documents needed.</p></div>
+            <div class="feature-card"><div class="feature-icon">📊</div><h3>Pipeline Reports</h3><p>Daily summary of leads, consultations booked, cases won.</p></div>
+            <div class="feature-card"><div class="feature-icon">🔄</div><h3>Follow-up Automation</h3><p>Nurtures leads, sends case updates, reminders.</p></div>
+        </div>
+    </section>
+    <section class="demo-section" id="demo">
+        <div class="demo-container">
+            <h2>🤖 Try the Demo</h2>
+            <p class="demo-subtitle">Chat with our AI legal intake assistant</p>
+            <div class="chat-demo">
+                <div class="chat-header">
+                    <div class="chat-avatar">⚖️</div>
+                    <div class="chat-info"><h4>LegalAI</h4><span>● Online 24/7</span></div>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message ai"><div class="avatar">⚖️</div><div class="bubble">Good day. 👋 I'm your legal intake assistant. I can help with:<br><br>• Booking consultations<br>• Answering about our services<br>• Initial case assessment<br>• Fee information<br<br>How may I assist you today?</div></div>
+                </div>
+                <div class="chat-input"><input type="text" id="userInput" placeholder="Type your message..."><button onclick="sendMessage()">Send</button></div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing">
+        <h2>Pricing</h2>
+        <div class="pricing-grid">
+            <div class="price-card"><h3>Starter</h3><div class="price">£149<span>/mo</span></div><ul><li>24/7 Intake</li><li>Basic Qualification</li><li>Email Notifications</li></ul><a href="#contact" class="cta secondary">Get Started</a></div>
+            <div class="price-card featured"><h3>Professional</h3><div class="price">£299<span>/mo</span></div><ul><li>Everything in Starter</li><li>Case Intake Forms</li><li>Consultation Booking</li><li>Follow-up Automation</li></ul><a href="#contact" class="cta primary">Get Started</a></div>
+            <div class="price-card"><h3>Enterprise</h3><div class="price">£499<span>/mo</span></div><ul><li>Multi-practice</li><li>CMS Integration</li><li>Advanced Analytics</li></ul><a href="#contact" class="cta secondary">Contact Us</a></div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <h2>Ready to Never Miss a Client?</h2>
+        <a href="mailto:info@autoaiwebsolutions.com" class="cta">Book Free Demo →</a>
+    </section>
+    <footer><p>AutoAI Web Solutions — AI for London SMBs</p></footer>
+    <script>
+        const responses = {
+            'consultation': "I'd be happy to arrange a consultation. 📅<br><br>We offer:<br>• Initial phone chat: Free<br>• 30-min in-person: £50<br>• 60-min detailed: £100<br<br>What type of legal matter do you need help with?",
+            'divorce': "For divorce and family law, we can help with:<br<br>• Divorce proceedings<br>• Child arrangements<br>• Financial settlements<br<br>Initial consultation: £100 (60 mins)<br<br>Would you like to book?",
+            'employment': "Employment law matters we handle:<br<br>• Unfair dismissal<br>• Discrimination<br>• Contract review<br>• Redundancy<br<br>Many claims are no-win-no-fee. Tell me more about your situation.",
+            'property': "Our property services:<br<br>• Conveyancing<br>• Lease extensions<br>• Planning disputes<br<br>Fees from £500-1500 depending on value. What do you need?",
+            'will': "Wills and probate services:<br<br>• Simple will: £150<br>• Pair of wills: £250<br>• Lasting power of attorney: £200<br<br>Would you like to book a consultation?",
+            'cost': "Our fee structure:<br<br>• Free initial phone: 15 mins<br>• Paid consultation: £50-150<br>• Fixed-fee services available<br>• No-win-no-fee for qualifying cases<br<br>What matter can I help with?",
+            'hours': "Our office hours:<br<br>• Mon-Fri: 9am - 6pm<br>• Sat: 10am - 2pm<br• Closed Sunday<br<br>But I'm available 24/7 to take your details!",
+            'hi': "Good day. ⚖️ How may I assist you?",
+            'thanks': "Thank you. We'll be in touch shortly. 👍"
+        };
+        function getResponse(m) { const l=m.toLowerCase(); for(let k in responses) if(l.includes(k)) return responses[k]; return "I can help with booking consultations and answering questions about our services. What do you need?"; }
+        function addMessage(t, isUser) { const c=document.getElementById('chatMessages'); c.innerHTML+=`<div class="message ${isUser?'user':'ai'}">${isUser?'<div class="bubble">'+t+'</div>':'<div class="avatar">⚖️</div><div class="bubble">'+t+'</div>'}</div>`; c.scrollTop=c.scrollHeight; }
+        function sendMessage() { const i=document.getElementById('userInput'); if(!i.value.trim())return; addMessage(i.value,true); setTimeout(()=>addMessage(getResponse(i.value),false),800); i.value=''; }
+    </script>
+</body>
+</html>
