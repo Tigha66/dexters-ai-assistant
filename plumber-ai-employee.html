@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeAI - Your 24/7 AI Trades Employee</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #f59e0b; --primary-dark: #d97706; --secondary: #10b981; --dark: #0f172a; --light: #f8fafc; --gray: #64748b; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--dark); background: var(--light); }
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%); color: white; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.3rem; color: #94a3b8; max-width: 600px; margin: 0 auto 40px; }
+        .hero-cta { display: inline-block; background: var(--primary); color: white; padding: 16px 40px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .features { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .features h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .feature-card p { color: var(--gray); font-size: 0.95rem; }
+        .demo-section { background: var(--dark); padding: 80px 20px; color: white; }
+        .demo-container { max-width: 900px; margin: 0 auto; }
+        .demo-section h2 { text-align: center; font-size: 2rem; margin-bottom: 10px; }
+        .demo-subtitle { text-align: center; color: #94a3b8; margin-bottom: 40px; }
+        .chat-demo { background: #1e293b; border-radius: 20px; overflow: hidden; border: 1px solid #334155; }
+        .chat-header { background: #0f172a; padding: 20px; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid #334155; }
+        .chat-avatar { width: 45px; height: 45px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+        .chat-info h4 { font-size: 1rem; }
+        .chat-info span { font-size: 0.8rem; color: var(--secondary); }
+        .chat-messages { padding: 20px; height: 400px; overflow-y: auto; }
+        .message { margin-bottom: 20px; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .message.ai { display: flex; gap: 12px; }
+        .message.ai .avatar { width: 32px; height: 32px; background: var(--primary); border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+        .message.ai .bubble { background: #334155; padding: 14px 18px; border-radius: 18px 18px 18px 4px; max-width: 80%; line-height: 1.5; }
+        .message.user { text-align: right; }
+        .message.user .bubble { background: var(--primary); padding: 14px 18px; border-radius: 18px 18px 4px 18px; display: inline-block; max-width: 80%; text-align: left; color: white; }
+        .chat-input { padding: 20px; background: #0f172a; display: flex; gap: 10px; }
+        .chat-input input { flex: 1; padding: 14px 20px; border: none; border-radius: 50px; background: #1e293b; color: white; font-size: 1rem; }
+        .chat-input input:focus { outline: 2px solid var(--primary); }
+        .chat-input button { padding: 14px 28px; background: var(--primary); color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; transition: background 0.3s; }
+        .chat-input button:hover { background: var(--primary-dark); }
+        .pricing { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+        .pricing h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .price-card { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 2px solid transparent; transition: all 0.3s; }
+        .price-card.featured { border-color: var(--primary); transform: scale(1.05); }
+        .price-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        .price-card .price { font-size: 3rem; font-weight: 700; color: var(--primary); margin: 20px 0; }
+        .price-card .price span { font-size: 1rem; color: var(--gray); font-weight: 400; }
+        .price-card ul { list-style: none; text-align: left; margin: 30px 0; }
+        .price-card li { padding: 10px 0; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; gap: 10px; }
+        .price-card li::before { content: "✓"; color: var(--secondary); font-weight: bold; }
+        .price-card .cta { display: block; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .price-card .cta.primary { background: var(--primary); color: white; }
+        .price-card .cta.secondary { background: var(--light); color: var(--dark); border: 2px solid #e2e8f0; }
+        .cta-section { background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 80px 20px; text-align: center; color: white; }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .cta-section p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+        .cta-section .cta { display: inline-block; background: white; color: var(--primary); padding: 18px 50px; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+        footer { background: var(--dark); color: #94a3b8; padding: 40px 20px; text-align: center; }
+        footer a { color: var(--primary); text-decoration: none; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .price-card.featured { transform: none; } }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>🔧 Your 24/7 AI Trades Employee</h1>
+        <p>Never miss another job. A trained AI that answers calls, books jobs, and dispatches your team — while you focus on the work.</p>
+        <a href="#demo" class="hero-cta">See It In Action →</a>
+    </section>
+    <section class="features">
+        <h2>What Your AI Employee Does</h2>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon">📞</div><h3>24/7 Call Answering</h3><p>Answers every call, even when you're on a job. Never lose an emergency to voicemail again.</p></div>
+            <div class="feature-card"><div class="feature-icon">📅</div><h3>Job Scheduling</h3><p>Books jobs directly into your calendar. Confirms appointments, sends reminders to customers.</p></div>
+            <div class="feature-card"><div class="feature-icon">💰</div><h3>Quote Generation</h3><p>Provides instant quotes for common jobs. Qualifies leads before you call back.</p></div>
+            <div class="feature-card"><div class="feature-icon">🔄</div><h3>Follow-up Automation</h3><p>Sends quotes, follows up on proposals, re-engages past customers for repeat business.</p></div>
+            <div class="feature-card"><div class="feature-icon">📊</div><h3>Job Reporting</h3><p>Daily summary of jobs booked, revenue pipeline, and conversion rates.</p></div>
+            <div class="feature-card"><div class="feature-icon">📱</div><h3>Multi-Channel Leads</h3><p>Captures leads from phone, website, WhatsApp, Checkatrade, and Facebook.</p></div>
+        </div>
+    </section>
+    <section class="demo-section" id="demo">
+        <div class="demo-container">
+            <h2>🤖 Try the Demo</h2>
+            <p class="demo-subtitle">Chat with our AI plumber — see what it can do</p>
+            <div class="chat-demo">
+                <div class="chat-header">
+                    <div class="chat-avatar">🔧</div>
+                    <div class="chat-info"><h4>TradeAI Assistant</h4><span>● Online 24/7</span></div>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message ai"><div class="avatar">🔧</div><div class="bubble">Hi! 👋 I'm your AI plumbing assistant. I can help with:<br><br>• Booking emergency or scheduled jobs<br>• Providing instant quotes<br>• Answering common plumbing questions<br>• Finding available slots<br><br>How can I help you today?</div></div>
+                </div>
+                <div class="chat-input"><input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)"><button onclick="sendMessage()">Send</button></div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing">
+        <h2>Simple, Transparent Pricing</h2>
+        <div class="pricing-grid">
+            <div class="price-card"><h3>Starter</h3><div class="price">£79<span>/mo</span></div><ul><li>24/7 Call Answering</li><li>Job Booking</li><li>Basic Quotes</li><li>SMS Notifications</li></ul><a href="#contact" class="cta secondary">Get Started</a></div>
+            <div class="price-card featured"><h3>Professional</h3><div class="price">£149<span>/mo</span></div><ul><li>Everything in Starter</li><li>Advanced Quote Builder</li><li>Multi-Channel Leads</li><li>Follow-up Automation</li><li>Job Reporting</li></ul><a href="#contact" class="cta primary">Get Started</a></div>
+            <div class="price-card"><h3>Enterprise</h3><div class="price">£249<span>/mo</span></div><ul><li>Everything in Professional</li><li>Multiple Technicians</li><li>Field Service Integration</li><li>Priority Support</li></ul><a href="#contact" class="cta secondary">Contact Us</a></div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <h2>Ready to Never Miss Another Job?</h2>
+        <p>Join tradespeople already using AI to grow their business.</p>
+        <a href="mailto:info@autoaiwebsolutions.com" class="cta">Book Your Free Demo →</a>
+    </section>
+    <footer><p>Built by <a href="https://autoaiwebsolutions.com">AutoAI Web Solutions</a> — AI for London SMBs</p></footer>
+    <script>
+        const responses = {
+            'emergency': "I understand you have an emergency! 🚨 Our emergency service is available 24/7. I can book you in right now.<br><br>What's the issue? And what's your address?",
+            'leak': "Got it - a leak can be serious! I can send someone today. We have availability this afternoon.<br><br>Can you tell me:<br>1. Where's the leak?<br>2. How bad is it?<br>3. Your address?",
+            'price': "Here are our typical rates:<br><br>• Emergency callout: £80-150<br>• Leak repair: £100-200<br>• Boiler service: £80-120<br>• Radiator installation: £150-250<br>• Full bathroom: £1500-3000<br><br>For an accurate quote, I can book a survey. Would you like that?",
+            'book': "I'd be happy to book you in! What type of job is it?<br><br>We have availability:<br>• Today: 2pm - 5pm<br>• Tomorrow: 9am - 5pm<br>• Sat: 10am - 2pm<br><br>What works for you?",
+            'boiler': "We service and repair all boiler types. Service starts from £80, repairs from £100.<br><br>What brand is your boiler? And when was it last serviced?",
+            'bathroom': "We do full bathroom installations from £1,500-3,000 depending on size and fixtures.<br><br>Would you like a free survey and quote?",
+            'hours': "We're open 24/7 for emergencies!<br<br>• Mon-Fri: 8am - 6pm (standard jobs)<br>• Sat: 9am - 3pm<br>• Sun: Emergency only<br<br>But I'm available 24/7 to book! 😊",
+            'hi': "Hi there! 👋 How can I help you today?",
+            'hello': "Hello! 🔧 Welcome to TradeAI. How can I assist you?",
+            'thanks': "You're welcome! 😊 Anything else I can help with?",
+            'bye': "Thanks for chatting! Take care! 🔧"
+        };
+        function getResponse(message) {
+            const lower = message.toLowerCase();
+            for (let key in responses) { if (lower.includes(key)) return responses[key]; }
+            return "Thanks for reaching out! I can help with bookings, quotes, and any plumbing questions. Just let me know what you need! 😊";
+        }
+        function addMessage(text, isUser) {
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = 'message ' + (isUser ? 'user' : 'ai');
+            div.innerHTML = isUser ? '<div class="bubble">' + text + '</div>' : '<div class="avatar">🔧</div><div class="bubble">' + text + '</div>';
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            if (!message) return;
+            addMessage(message, true);
+            input.value = '';
+            setTimeout(() => { addMessage(getResponse(message), false); }, 800);
+        }
+        function handleKeyPress(e) { if (e.key === 'Enter') sendMessage(); }
+    </script>
+</body>
+</html>
