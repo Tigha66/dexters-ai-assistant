@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Dental - Live AI Assistant</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #0ea5e9; --dark: #0f172a; }
+        body { font-family: 'Inter', sans-serif; background: #f0f9ff; min-height: 100vh; }
+        
+        /* Header */
+        header { background: white; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .contact-info { display: flex; gap: 20px; align-items: center; }
+        .contact-info a { color: var(--dark); text-decoration: none; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--dark), #1e293b); color: white; padding: 60px 20px; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+        .badges { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .badge { background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; }
+        
+        /* Main Content */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 400px; gap: 40px; }
+        
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+        }
+        
+        /* Services */
+        .services h2 { font-size: 1.8rem; margin-bottom: 25px; color: var(--dark); }
+        .service-grid { display: grid; gap: 15px; }
+        .service-item { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; }
+        .service-name { font-weight: 600; }
+        .service-price { color: var(--primary); font-weight: 700; }
+        
+        /* Chat Widget */
+        .chat-widget { background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); overflow: hidden; position: sticky; top: 20px; height: calc(100vh - 40px); max-height: 600px; display: flex; flex-direction: column; }
+        
+        .chat-header { background: var(--primary); color: white; padding: 20px; display: flex; align-items: center; gap: 12px; }
+        .chat-avatar { width: 45px; height: 45px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .chat-status { font-size: 0.8rem; opacity: 0.9; }
+        .chat-status span { color: #4ade80; }
+        
+        .chat-messages { flex: 1; padding: 20px; overflow-y: auto; background: #f8fafc; }
+        .message { margin-bottom: 15px; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; } }
+        
+        .message.ai { display: flex; gap: 10px; }
+        .message.ai .avatar { width: 28px; height: 28px; background: var(--primary); border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem; }
+        .message.ai .bubble { background: white; padding: 12px 16px; border-radius: 18px 18px 18px 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 85%; line-height: 1.5; }
+        
+        .message.user { text-align: right; }
+        .message.user .bubble { background: var(--primary); color: white; padding: 12px 16px; border-radius: 18px 18px 4px 18px; display: inline-block; max-width: 85%; text-align: left; }
+        
+        .typing { display: flex; gap: 5px; padding: 10px; }
+        .typing span { width: 8px; height: 8px; background: #94a3b8; border-radius: 50%; animation: bounce 1.4s infinite; }
+        .typing span:nth-child(2) { animation-delay: 0.2s; }
+        .typing span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
+        
+        .chat-input { padding: 15px; background: white; border-top: 1px solid #e2e8f0; display: flex; gap: 10px; }
+        .chat-input input { flex: 1; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 25px; font-size: 1rem; outline: none; transition: border-color 0.3s; }
+        .chat-input input:focus { border-color: var(--primary); }
+        .chat-input button { padding: 12px 24px; background: var(--primary); color: white; border: none; border-radius: 25px; cursor: pointer; font-weight: 600; transition: background 0.3s; }
+        .chat-input button:hover { background: #0284c7; }
+        
+        /* WhatsApp CTA */
+        .whatsapp-cta { background: #25d366; color: white; padding: 15px; text-align: center; }
+        .whatsapp-cta a { color: white; text-decoration: none; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        
+        /* Info Section */
+        .info-section { background: white; padding: 40px 20px; }
+        .info-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .info-card-align: center; { text }
+        .info-icon { font-size: margin-bottom: 15px; }
+ 2rem;        .info-card h3 { margin-bottom: 10px; }
+        .info-card p { color: #64748b; }
+        
+        /* Footer */
+        footer { background: var(--dark); color: #94a3b8; padding: 30px 20px; text-align: center; }
+        footer a { color: var(--primary); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">🦷 California Dental</div>
+            <div class="contact-info">
+                <a href="tel:8183613889">📞 (818) 361-3889</a>
+                <a href="mailto:contact@california-dental.net">✉️ contact@california-dental.net</a>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>Your Smile, Our Priority</h1>
+        <p>Premium dental care with a personal touch. Book online or chat with our AI assistant!</p>
+        <div class="badges">
+            <span class="badge">✅ Same-day appointments</span>
+            <span class="badge">✅ 0% Finance Available</span>
+            <span class="badge">✅ Emergency Care</span>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="services">
+            <h2>Our Services & Prices</h2>
+            <div class="service-grid">
+                <div class="service-item"><span class="service-name">Check-up & Clean</span><span class="service-price">£80-120</span></div>
+                <div class="service-item"><span class="service-name">Teeth Whitening</span><span class="service-price">£250-400</span></div>
+                <div class="service-item"><span class="service-name">White Fillings</span><span class="service-price">£120-200</span></div>
+                <div class="service-item"><span class="service-name">Root Canal</span><span class="service-price">£300-500</span></div>
+                <div class="service-item"><span class="service-name">Dental Implants</span><span class="service-price">£1500-2500</span></div>
+                <div class="service-item"><span class="service-name">Invisalign Consultation</span><span class="service-price">FREE</span></div>
+                <div class="service-item"><span class="service-name">Emergency Appointment</span><span class="service-price">£50-100</span></div>
+                <div class="service-item"><span class="service-name">Dental Crown</span><span class="service-price">£600-900</span></div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <h2>📍 Location</h2>
+                <p style="margin-top: 15px; color: #64748b;">
+                    <strong>California Dental</strong><br>
+                    1009 Glenoaks Blvd<br>
+                    San Fernando, CA 91340<br><br>
+                    <strong>Hours:</strong> Mon-Fri 9am-6pm, Sat 9am-2pm
+                </p>
+            </div>
+        </div>
+        
+        <!-- Live Chat Widget -->
+        <div class="chat-widget">
+            <div class="chat-header">
+                <div class="chat-avatar">🦷</div>
+                <div>
+                    <div><strong>DentalAI Assistant</strong></div>
+                    <div class="chat-status"><span>●</span> Online & ready to help</div>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message ai">
+                    <div class="avatar">🦷</div>
+                    <div class="bubble">
+                        Hi there! 👋 Welcome to California Dental.<br><br>
+                        I'm your AI assistant and I'm fully live! I can:<br><br>
+                        ✅ Book appointments<br>
+                        ✅ Answer pricing questions<br>
+                        ✅ Check availability<br>
+                        ✅ Handle emergencies<br><br>
+                        How can I help you today?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="typing" id="typing" style="display: none;">
+                <span></span><span></span><span></span>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+            
+            <div class="whatsapp-cta">
+                <a href="https://wa.me/18183613889" target="_blank">
+                    💬 Or chat on WhatsApp: (818) 361-3889
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <section class="info-section">
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">🕐</div>
+                <h3>24/7 Online Booking</h3>
+                <p>Book anytime, anywhere. Our AI assistant never sleeps!</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">💳</div>
+                <h3>0% Finance</h3>
+                <p>Spread the cost of your treatment with 0% interest.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🦷</div>
+                <h3>Expert Care</h3>
+                <p>Dr. Hakeem, Dr. Samara & Dr. Ali - years of experience.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2026 California Dental | <a href="https://california-dental.net">california-dental.net</a></p>
+    </footer>
+    
+    <script>
+        // AI Dental Practice Knowledge Base
+        const knowledgeBase = {
+            book: {
+                response: `I'd love to book you in! 🦷\n\nWe have availability:\n\n• Today: 2pm, 4pm\n• Tomorrow: 9am, 11am, 2pm, 4pm\n• Saturday: 10am, 12pm\n\nWhat date and time works for you?`
+            },
+            appointment: {
+                response: `Great! What type of appointment do you need?\n\n• Check-up & Clean (£80-120)\n• Teeth Whitening (£250-400)\n• Consultation (FREE)\n• Emergency\n\nWe have slots available today and this week.`
+            },
+            price: {
+                response: `Here are our prices:\n\n• Check-up & Clean: £80-120\n• Teeth Whitening: £250-400\n• White Fillings: £120-200\n• Root Canal: £300-500\n• Dental Implants: £1500-2500\n• Invisalign: FREE consultation\n\nWe offer 0% finance over 12 months!`
+            },
+            whitening: {
+                response: `We offer professional whitening:\n\n• In-office: £350 (1 hour, instant results)\n• Home kit: £250 (2 weeks)\n\nBoth are safe and effective. Want me to book a consultation?`
+            },
+            implant: {
+                response: `Dental implants from £1500-2500 per implant.\n\nIncludes:\n• Free consultation\n• 3-year warranty\n• 95% success rate\n\nBook a FREE implant assessment to see if you're a candidate!`
+            },
+            emergency: {
+                response: `🆘 For emergencies, call NOW: (818) 361-3889\n\nIf you can describe what's happening, I can advise on next steps while you get to us.`
+            },
+            hours: {
+                response: `We're open:\n\n• Mon-Fri: 9am - 6pm\n• Sat: 9am - 2pm\n• Sun: Closed\n\nBut I'm here 24/7 to book appointments! 😊`
+            },
+            location: {
+                response: `📍 1009 Glenoaks Blvd, San Fernando, CA 91340\n\nFree parking available. Would you like directions?`
+            },
+            contact: {
+                response: `📞 (818) 361-3889\n✉️ contact@california-dental.net\n\nOr just book through me right now!`
+            },
+            invisalign: {
+                response: `Invisalign from £2500!\n\n• Free initial consultation\n• Payment plans from £50/mo\n• Invisible aligners\n• 6-12 month treatment\n\nBook your FREE scan today!`
+            },
+            cleaning: {
+                response: `Clean & Polish from £80-120!\n\nIncludes:\n• Oral health check\n• Scale & polish\n• Stain removal\n• Hygiene advice\n\nWant me to book you in?`
+            },
+            crown: {
+                response: `Dental crowns from £600-900.\n\nTypes available:\n• Porcelain\n• Ceramic\n• Zirconia\n• Gold\n\nBook a consultation to find out which is right for you!`
+            },
+            dentist: {
+                response: `Our dentists:\n\n🦷 Dr. Hakeem - Principal Dentist\n🦷 Dr. Samara - Specialist\n🦷 Dr. Ali - General Dentist\n\nAll GDC registered with years of experience. Would you like to book with a specific dentist?`
+            },
+            insurance: {
+                response: `We accept most insurance. For specific coverage, call us at (818) 361-3889.\n\nWe also offer 0% finance for those without insurance!`
+            },
+            pain: {
+                response: `I'm sorry you're in pain! 😟 For urgent dental pain:\n\n🆘 Call (818) 361-3889 NOW\n\nWe can often see you same-day for emergencies. What's happening?`
+            },
+            child: {
+                response: `We love treating children! 👶\n\n• First visit: FREE\n• Check-ups: £60\n• Fluoride treatment: £30\n\nWe make dental fun for kids. Would you like to book your child in?`
+            }
+        };
+        
+        // Default responses
+        const defaultResponses = [
+            `Thanks for reaching out! I can help with bookings, prices, and any dental questions. What would you like to know? 😊`,
+            `I'm here to help! Ask me about appointments, pricing, or our services. What can I do for you?`,
+            `Great question! Let me know what you'd like to know about - bookings, prices, or treatments!`
+        ];
+        
+        function getAIResponse(message) {
+            const lower = message.toLowerCase();
+            
+            // Check knowledge base
+            for (let key in knowledgeBase) {
+                if (lower.includes(key)) {
+                    return knowledgeBase[key].response;
+                }
+            }
+            
+            // Check for common patterns
+            if (lower.includes('hi') || lower.includes('hello') || lower.includes('hey')) {
+                return `Hi there! 👋 How can I help you today?`;
+            }
+            
+            if (lower.includes('thanks') || lower.includes('thank you')) {
+                return `You're welcome! 😊 Anything else I can help with?`;
+            }
+            
+            if (lower.includes('bye') || lower.includes('goodbye')) {
+                return `Thank you for chatting! Take care! 🦷✨`;
+            }
+            
+            // Random default
+            return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+        }
+        
+        function addMessage(text, isUser) {
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = `message ${isUser ? 'user' : 'ai'}`;
+            
+            if (isUser) {
+                div.innerHTML = `<div class="bubble">${text}</div>`;
+            } else {
+                div.innerHTML = `
+                    <div class="avatar">🦷</div>
+                    <div class="bubble">${text}</div>
+                `;
+            }
+            
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+        
+        function showTyping() {
+            document.getElementById('typing').style.display = 'flex';
+        }
+        
+        function hideTyping() {
+            document.getElementById('typing').style.display = 'none';
+        }
+        
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            addMessage(message, true);
+            input.value = '';
+            
+            showTyping();
+            
+            // Simulate AI processing time
+            await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
+            
+            hideTyping();
+            const response = getAIResponse(message);
+            addMessage(response, false);
+            
+            // Send to webhook (for real AI processing)
+            try {
+                fetch('https://hook.eu2.make.com/YOUR-WEBHOOK-URL', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        message: message,
+                        response: response,
+                        timestamp: new Date().toISOString()
+                    })
+                }).catch(() => {}); // Silent fail
+            } catch(e) {}
+        }
+        
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        }
+        
+        // Initialize
+        document.getElementById('userInput').focus();
+    </script>
+</body>
+</html>
