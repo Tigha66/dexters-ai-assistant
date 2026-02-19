@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentalAI - Your 24/7 AI Employee</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .hero-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(14, 165, 233, 0.3);
+        }
+        
+        /* Features Grid */
+        .features {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Demo Section */
+        .demo-section {
+            background: var(--dark);
+            padding: 80px 20px;
+            color: white;
+        }
+        
+        .demo-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .demo-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .demo-subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+        
+        .chat-demo {
+            background: #1e293b;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+        
+        .chat-header {
+            background: #0f172a;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .chat-avatar {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        
+        .chat-info h4 {
+            font-size: 1rem;
+        }
+        
+        .chat-info span {
+            font-size: 0.8rem;
+            color: var(--secondary);
+        }
+        
+        .chat-messages {
+            padding: 20px;
+            height: 400px;
+            overflow-y: auto;
+        }
+        
+        .message {
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.ai {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .message.ai .avatar {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        .message.ai .bubble {
+            background: #334155;
+            padding: 14px 18px;
+            border-radius: 18px 18px 18px 4px;
+            max-width: 80%;
+            line-height: 1.5;
+        }
+        
+        .message.user {
+            text-align: right;
+        }
+        
+        .message.user .bubble {
+            background: var(--primary);
+            padding: 14px 18px;
+            border-radius: 18px 18px 4px 18px;
+            display: inline-block;
+            max-width: 80%;
+            text-align: left;
+        }
+        
+        .chat-input {
+            padding: 20px;
+            background: #0f172a;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 50px;
+            background: #1e293b;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .chat-input input:focus {
+            outline: 2px solid var(--primary);
+        }
+        
+        .chat-input button {
+            padding: 14px 28px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .chat-input button:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .price-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .price-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .price-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .price-card .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .price-card .price span {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+        
+        .price-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 30px 0;
+        }
+        
+        .price-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .price-card li::before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .price-card .cta {
+            display: block;
+            padding: 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .price-card .cta.primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .price-card .cta.secondary {
+            background: var(--light);
+            color: var(--dark);
+            border: 2px solid var(--border);
+        }
+        
+        .price-card .cta:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .cta-section .cta {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .cta-section .cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #94a3b8;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .price-card.featured { transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <h1>🤖 Your 24/7 AI Dental Employee</h1>
+        <p>Never miss a patient again. A trained AI that handles customer service, bookings, sales, and admin — while you focus on dentistry.</p>
+        <a href="#demo" class="hero-cta">See It In Action →</a>
+    </section>
+    
+    <!-- Features -->
+    <section class="features">
+        <h2>What Your AI Employee Does</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📞</div>
+                <h3>24/7 Customer Support</h3>
+                <p>Answers patient questions about treatments, pricing, and services any time — even at 2am. Never miss an inquiry.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3>Appointment Scheduling</h3>
+                <p>Books, reschedules, and cancels appointments directly. Syncs with your existing calendar system.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Lead Qualification</h3>
+                <p>Chats with prospective patients, qualifies them, and books consultations. Turns inquiries into booked appointments.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Follow-ups & Reminders</h3>
+                <p>Sends appointment reminders, follow-up messages after treatments, and reactivation campaigns for lapsed patients.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Automated Reporting</h3>
+                <p>Daily summaries of bookings, missed calls, leads converted, and revenue. Get insights without asking.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📧</div>
+                <h3>Multi-Channel Messaging</h3>
+                <p>Works across your website chat, WhatsApp, Instagram DMs, and email — one AI, everywhere.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Demo -->
+    <section class="demo-section" id="demo">
+        <div class="demo-container">
+            <h2>🤖 Try the Demo</h2>
+            <p class="demo-subtitle">Chat with our AI dental receptionist — see what it can do</p>
+            
+            <div class="chat-demo">
+                <div class="chat-header">
+                    <div class="chat-avatar">🦷</div>
+                    <div class="chat-info">
+                        <h4>DentalAI Assistant</h4>
+                        <span>● Online 24/7</span>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message ai">
+                        <div class="avatar">🦷</div>
+                        <div class="bubble">
+                            Hi there! 👋 I'm your dental practice AI assistant. I can help with:
+                            <br><br>
+                            • Booking & scheduling appointments<br>
+                            • Answering questions about treatments<br>
+                            • Pricing & insurance queries<br>
+                            • Finding available slots<br>
+                            <br>
+                            How can I help you today?
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing -->
+    <section class="pricing">
+        <h2>Simple, Transparent Pricing</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Starter</h3>
+                <div class="price">£99<span>/mo</span></div>
+                <ul>
+                    <li>24/7 AI Chatbot</li>
+                    <li>Appointment Booking</li>
+                    <li>Lead Qualification</li>
+                    <li>WhatsApp Integration</li>
+                    <li>Basic Reporting</li>
+                </ul>
+                <a href="#contact" class="cta secondary">Get Started</a>
+            </div>
+            
+            <div class="price-card featured">
+                <h3>Professional</h3>
+                <div class="price">£199<span>/mo</span></div>
+                <ul>
+                    <li>Everything in Starter</li>
+                    <li>Multi-Channel (WhatsApp, IG, Email)</li>
+                    <li>Follow-up Automation</li>
+                    <li>Advanced Analytics</li>
+                    <li>Custom Training</li>
+                    <li>Priority Support</li>
+                </ul>
+                <a href="#contact" class="cta primary">Get Started</a>
+            </div>
+            
+            <div class="price-card">
+                <h3>Enterprise</h3>
+                <div class="price">£399<span>/mo</span></div>
+                <ul>
+                    <li>Everything in Professional</li>
+                    <li>Multiple Locations</li>
+                    <li>Dental Software Integration</li>
+                    <li>Dedicated Account Manager</li>
+                    <li>Custom Workflows</li>
+                    <li>White-Label Options</li>
+                </ul>
+                <a href="#contact" class="cta secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Never Miss Another Patient?</h2>
+        <p>Join dental practices already using AI to grow their business.</p>
+        <a href="mailto:info@autoaiwebsolutions.com" class="cta">Book Your Free Demo →</a>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>Built by <a href="https://autoaiwebsolutions.com">AutoAI Web Solutions</a> — AI for London SMBs</p>
+    </footer>
+    
+    <script>
+        const responses = {
+            'book': "I'd be happy to help you book an appointment! What type of appointment do you need? We offer:\n\n• Check-up & Clean (£80-120)\n• Teeth Whitening (£250-400)\n• Dental Implants (consultation required)\n• Invisalign Consultation\n\nAnd I have availability this week on Tuesday, Wednesday, and Friday. What works for you?",
+            'appointment': "I'd be happy to help you book an appointment! What type of appointment do you need? We offer:\n\n• Check-up & Clean (£80-120)\n• Teeth Whitening (£250-400)\n• Dental Implants (consultation required)\n• Invisalign Consultation\n\nAnd I have availability this week on Tuesday, Wednesday, and Friday. What works for you?",
+            'price': "Our most popular services:\n\n• Check-up & Clean: £80-120\n• Teeth Whitening: £250-400\n• White Fillings: £120-200\n• Root Canal: £300-500\n• Dental Implants: £1500-2500\n• Invisalign: from £2500\n\nWe also offer 0% finance over 12 months! Would you like to book a consultation?",
+            'whitening': "Great question! We offer professional teeth whitening:\n\n• In-office whitening: £350 (1-hour session)\n• Home whitening kit: £250 (custom trays + gel)\n\nBoth are safe and effective. The in-office treatment gives immediate results, while home whitening takes about 2 weeks. Would you like me to book you in?",
+            'implant': "Dental implants are a great solution for missing teeth. Here's what you need to know:\n\n• Cost: £1500-2500 per implant\n• Process: 2-3 visits over 3-6 months\n• Success rate: 95%+\n\nWe offer free consultations to assess your suitability. Would you like to book one?",
+            'emergency': "I understand this is urgent. For dental emergencies:\n\n🆘 Call us immediately: (818) 361-3889\n\nIf it's during hours, we can often see you same-day. After-hours, please call our emergency line.\n\nFor immediate advice while you wait, can you tell me what happened?",
+            'hours': "We're open:\n\n• Monday - Friday: 9am - 6pm\n• Saturday: 9am - 2pm\n• Sunday: Closed\n\nBut I'm available 24/7 to book appointments! 😊",
+            'location': "We're located at:\n\n📍 1009 Glenoaks Blvd\n   San Fernando, CA 91340\n\nParking available on-site. Would you like directions?",
+            'contact': "You can reach us:\n\n📞 (818) 361-3889\n📧 contact@california-dental.net\n\nOr just book through me anytime! 😊",
+            'hi': "Hi there! 👋 How can I help you today?",
+            'hello': "Hello! 😊 Welcome to California Dental. How can I assist you?",
+            'thanks': "You're welcome! 😊 Is there anything else I can help you with?",
+            'bye': "Thank you for chatting with us! Take care! 🦷✨"
+        };
+        
+        function getResponse(message) {
+            const lower = message.toLowerCase();
+            
+            for (let key in responses) {
+                if (lower.includes(key)) {
+                    return responses[key];
+                }
+            }
+            
+            return "Thanks for reaching out! I'd be happy to help you. For bookings, pricing, or any questions about our services - just let me know what you're looking for! 😊";
+        }
+        
+        function addMessage(text, isUser) {
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = `message ${isUser ? 'user' : 'ai'}`;
+            
+            if (isUser) {
+                div.innerHTML = `<div class="bubble">${text}</div>`;
+            } else {
+                div.innerHTML = `
+                    <div class="avatar">🦷</div>
+                    <div class="bubble">${text}</div>
+                `;
+            }
+            
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            addMessage(message, true);
+            input.value = '';
+            
+            // Simulate AI response delay
+            setTimeout(() => {
+                const response = getResponse(message);
+                addMessage(response, false);
+            }, 800);
+        }
+        
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+</html>
