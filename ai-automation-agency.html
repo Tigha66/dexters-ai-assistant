@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoAI Solutions - AI Automation Agency for London SMBs</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #0ea5e9; --primary-dark: #0284c7; --secondary: #10b981; --dark: #0f172a; --light: #f8fafc; --gray: #64748b; }
+        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; color: var(--dark); background: var(--light); }
+        
+        /* Header */
+        header { background: white; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .logo span { color: var(--dark); }
+        nav { display: flex; gap: 30px; flex-wrap: wrap; }
+        nav a { color: var(--gray); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--primary); }
+        .cta-btn { background: var(--primary); color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .cta-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, #1e293b 50%, #0f172a 100%); color: white; padding: 100px 20px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .hero-content { position: relative; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; }
+        .hero h1 span { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.3rem; color: #94a3b8; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .hero-btns .btn { padding: 16px 36px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .hero-btns .primary { background: var(--primary); color: white; }
+        .hero-btns .primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .hero-btns .secondary { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
+        .hero-btns .secondary:hover { border-color: white; }
+        
+        /* Stats */
+        .stats { background: var(--dark); padding: 60px 20px; }
+        .stats-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+        .stat-item h3 { font-size: 3rem; color: var(--primary); margin-bottom: 5px; }
+        .stat-item p { color: #94a3b8; font-size: 1rem; }
+        
+        /* Services */
+        .services { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        .section-header p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-icon { width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 12px; }
+        .service-card p { color: var(--gray); }
+        
+        /* Industries */
+        .industries { background: #f1f5f9; padding: 100px 20px; }
+        .industries-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+        .industry-item { background: white; padding: 30px 20px; border-radius: 16px; text-align: center; transition: all 0.3s; }
+        .industry-item:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .industry-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .industry-item h4 { font-size: 1.1rem; }
+        
+        /* Pricing */
+        .pricing { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .price-card { background: white; padding: 50px 40px; border-radius: 24px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: relative; }
+        .price-card.featured { border: 3px solid var(--primary); transform: scale(1.05); }
+        .price-card .badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+        .price-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        .price-card .price { font-size: 3.5rem; font-weight: 700; color: var(--primary); margin: 20px 0; }
+        .price-card .price span { font-size: 1rem; color: var(--gray); font-weight: 400; }
+        .price-card ul { list-style: none; text-align: left; margin: 30px 0; }
+        .price-card li { padding: 12px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; gap: 12px; }
+        .price-card li::before { content: '✓'; color: var(--secondary); font-weight: bold; font-size: 1.2rem; }
+        .price-card .cta { display: block; padding: 16px; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .price-card .cta.primary { background: var(--primary); color: white; }
+        .price-card .cta.primary:hover { background: var(--primary-dark); }
+        .price-card .cta.secondary { background: #f1f5f9; color: var(--dark); }
+        
+        /* Testimonials */
+        .testimonials { background: var(--dark); padding: 100px 20px; color: white; }
+        .testimonials h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .testimonials-grid { max-width: 1000px; margin: 0 auto; display: grid; gap: 30px; }
+        .testimonial { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; border-left: 4px solid var(--primary); }
+        .testimonial p { font-size: 1.1rem; margin-bottom: 20px; line-height: 1.7; }
+        .testimonial .author { color: var(--primary); font-weight: 600; }
+        .testimonial .role { color: #94a3b8; font-size: 0.9rem; }
+        
+        /* Contact */
+        .contact { padding: 100px 20px; max-width: 800px; margin: 0 auto; }
+        .contact h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .contact-form { background: white; padding: 50px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px 18px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--primary); }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-submit { background: var(--primary); color: white; padding: 18px 40px; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; width: 100%; }
+        .form-submit:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        
+        /* Footer */
+        footer { background: var(--dark); color: #94a3b8; padding: 60px 20px 30px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: white; font-size: 1.2rem; margin-bottom: 20px; }
+        .footer-col p { line-height: 1.8; }
+        .footer-col a { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 10px; transition: color 0.3s; }
+        .footer-col a:hover { color: var(--primary); }
+        .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 30px; border-top: 1px solid #334155; text-align: center; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .price-card.featured { transform: none; }
+            .header-content { flex-direction: column; text-align: center; }
+            nav { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">AutoAI <span>Solutions</span></div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#industries">Industries</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="#contact" class="cta-btn">Get Started</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your 24/7 AI Employee<br><span>For Any Small Business</span></h1>
+            <p>Automated customer service, booking, lead handling & more. Powered by OpenClaw — running on your server, your data stays private.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn primary">Book Free Demo</a>
+                <a href="#services" class="btn secondary">See What It Does</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Customer Service</p>
+            </div>
+            <div class="stat-item">
+                <h3>50%+</h3>
+                <p>Time Saved</p>
+            </div>
+            <div class="stat-item">
+                <h3>£0</h3>
+                <p>Additional Staff Cost</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Data Private</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>What Your AI Employee Does</h2>
+            <p>Trained specifically for your business. Handles real conversations, books appointments, and captures every lead.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📞</div>
+                <h3>24/7 Call Answering</h3>
+                <p>Never miss a call. AI answers instantly, day or night, even when you're busy with customers.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📅</div>
+                <h3>Appointment Booking</h3>
+                <p>Books directly into your calendar. Confirms, reschedules, and sends reminders automatically.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💬</div>
+                <h3>Live Chat & WhatsApp</h3>
+                <p>Multi-channel AI that works on your website, WhatsApp, Instagram DM, and Facebook.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Lead Qualification</h3>
+                <p>Filters out time-wasters. Only passes you ready-to-buy prospects with full context.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3>Follow-up Automation</h3>
+                <p>Nurtures leads automatically. Follows up after inquiries, bookings, and no-shows.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Daily Reports</h3>
+                <p>Every morning: bookings, missed calls, revenue tracked, and action items clear.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="industries" id="industries">
+        <div class="section-header">
+            <h2>Industries We Serve</h2>
+            <p>Specialized AI employees trained for your specific business type</p>
+        </div>
+        <div class="industries-grid">
+            <div class="industry-item">
+                <div class="industry-icon">🦷</div>
+                <h4>Dental Practices</h4>
+            </div>
+            <div class="industry-item">
+                <div class="industry-icon">🔧</div>
+                <h4>Trades & Plumbing</h4>
+            </div>
+            <div class="industry-item">
+                <div class="industry-icon">💅</div>
+                <h4>Beauty & Salons</h4>
+            </div>
+            <div class="industry-item">
+                <div class="industry-icon">🏠</div>
+                <h4>Estate Agents</h4>
+            </div>
+            <div class="industry-item">
+                <div class="industry-icon">🍽️</div>
+                <h4>Restaurants</h4>
+            </div>
+            <div class="industry-item">
+                <div class="industry-icon">🐾</div>
+                <h4>Vets</h4>
+            </div>
+            <div class="industry-item">
+                <div class="industry-icon">⚖️</div>
+                <h4>Law Firms</h4>
+            </div>
+            <div class="industry-item">
+                <div class="industry-icon">🛒</div>
+                <h4>Retail</h4>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <h2>Simple, Transparent Pricing</h2>
+            <p>One monthly fee. No hidden costs. Cancel anytime.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Starter</h3>
+                <div class="price">£99<span>/month</span></div>
+                <ul>
+                    <li>24/7 AI Chatbot</li>
+                    <li>Website Integration</li>
+                    <li>Lead Capture</li>
+                    <li>Basic Reporting</li>
+                    <li>Email Support</li>
+                </ul>
+                <a href="#contact" class="cta secondary">Get Started</a>
+            </div>
+            <div class="price-card featured">
+                <span class="badge">Most Popular</span>
+                <h3>Professional</h3>
+                <div class="price">£199<span>/month</span></div>
+                <ul>
+                    <li>Everything in Starter</li>
+                    <li>WhatsApp Integration</li>
+                    <li>Instagram DM Handling</li>
+                    <li>Appointment Booking</li>
+                    <li>Follow-up Automation</li>
+                    <li>Advanced Analytics</li>
+                    <li>Priority Support</li>
+                </ul>
+                <a href="#contact" class="cta primary">Get Started</a>
+            </div>
+            <div class="price-card">
+                <h3>Enterprise</h3>
+                <div class="price">£399<span>/month</span></div>
+                <ul>
+                    <li>Everything in Professional</li>
+                    <li>Multiple Locations</li>
+                    <li>Custom Integrations</li>
+                    <li>Dedicated Account Manager</li>
+                    <li>White-Label Options</li>
+                    <li>Custom Training</li>
+                </ul>
+                <a href="#contact" class="cta secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>What Business Owners Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p>"Our AI receptionist books 15+ appointments per week that we'd otherwise miss. It's like hiring a full-time admin but for a fraction of the cost."</p>
+                <div class="author">Dental Practice Owner</div>
+                <div class="role">London, UK</div>
+            </div>
+            <div class="testimonial">
+                <p>"As a plumber, I was losing £500+ per week to missed calls. Now the AI answers, books the job, and texts me. Game changer."</p>
+                <div class="author">Plumbing Business Owner</div>
+                <div class="role">Manchester, UK</div>
+            </div>
+            <div class="testimonial">
+                <p>"The salon was losing 20% to cancellations. The AI sends reminders and re-books automatically. Our no-shows are down 80%."</p>
+                <div class="author">Salon Owner</div>
+                <div class="role">Birmingham, UK</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <h2>Ready to Automate Your Business?</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" name="name" required placeholder="John Smith">
+                </div>
+                <div class="form-group">
+                    <label>Business Name</label>
+                    <input type="text" name="business" required placeholder="Your Business Ltd">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="john@business.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="phone" placeholder="+44 7700 900000">
+                </div>
+                <div class="form-group">
+                    <label>Industry</label>
+                    <select name="industry">
+                        <option value="">Select your industry</option>
+                        <option value="dental">Dental Practice</option>
+                        <option value="plumbing">Plumbing/Trades</option>
+                        <option value="beauty">Beauty/Salon</option>
+                        <option value="realestate">Estate Agent</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="vet">Vet Practice</option>
+                        <option value="lawyer">Law Firm</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>How can we help?</label>
+                    <textarea name="message" placeholder="Tell us about your business and what you'd like to automate..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message →</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>AutoAI Solutions</h4>
+                <p>AI automation for London small businesses. Your 24/7 employee that never sleeps, never quits, and costs a fraction of staff.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="#services">AI Receptionist</a>
+                <a href="#services">Appointment Booking</a>
+                <a href="#services">Lead Qualification</a>
+                <a href="#services">Follow-up Automation</a>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <a href="#industries">Dental</a>
+                <a href="#industries">Plumbing</a>
+                <a href="#industries">Beauty</a>
+                <a href="#industries">Real Estate</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>📧 info@autoaiwebsolutions.com</p>
+                <p>🌐 autoaiwebsolutions.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 AutoAI Web Solutions. All rights reserved. Powered by OpenClaw.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple alert for demo
+            alert('Thanks for your interest! We\'ll be in touch within 24 hours.\n\n' + 
+                  'Name: ' + data.name + '\n' +
+                  'Business: ' + data.business + '\n' +
+                  'Email: ' + data.email);
+        });
+    </script>
+</body>
+</html>
