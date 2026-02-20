@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Hair Studio Salon | Brooklyn NY Hair Salon</title>
+    <meta name="description" content="Premier hair salon in Brooklyn, NY. Professional haircuts, coloring, styling, and beauty services for the whole family.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #ec4899; --primary-dark: #db2777; --secondary: #8b5cf6; --dark: #1e293b; --light: #fdf2f8; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: var(--dark); background: var(--light); }
+        
+        header { background: white; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .phone { font-size: 1.2rem; font-weight: 600; color: var(--secondary); text-decoration: none; }
+        
+        .hero { background: linear-gradient(135deg, var(--primary-dark) 0%, #be185d 100%); color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.3rem; opacity: 0.9; margin-bottom: 30px; }
+        .cta { background: white; color: var(--primary); padding: 18px 45px; border-radius: 50px; font-size: 1.2rem; font-weight: 600; text-decoration: none; display: inline-block; transition: transform 0.3s; }
+        .cta:hover { transform: scale(1.05); }
+        
+        .gallery { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+        .gallery h2 { text-align: center; margin-bottom: 40px; font-size: 2.2rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-item { border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; }
+        
+        .features { background: white; padding: 60px 20px; }
+        .features-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature { text-align: center; padding: 20px; }
+        .feature-icon { font-size: 3rem; margin-bottom: 15px; }
+        .feature h3 { margin-bottom: 10px; color: var(--primary); }
+        
+        .services { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+        .services h2 { text-align: center; margin-bottom: 50px; font-size: 2.2rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .service-card { background: white; padding: 35px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-card h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.3rem; }
+        
+        .contact-form { background: var(--dark); color: white; padding: 80px 20px; }
+        .contact-form h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; }
+        .form-container { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 15px; border-radius: 10px; border: none; font-size: 1rem; }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .submit-btn { background: var(--primary); color: white; padding: 18px 45px; border-radius: 50px; font-size: 1.2rem; font-weight: 600; border: none; cursor: pointer; width: 100%; transition: transform 0.3s; }
+        .submit-btn:hover { transform: scale(1.02); }
+        
+        .contact { background: #fce7f3; padding: 80px 20px; text-align: center; }
+        .contact h2 { margin-bottom: 25px; font-size: 2rem; }
+        .contact-info { font-size: 1.2rem; margin-bottom: 15px; color: var(--dark); }
+        
+        .hours { background: #fce7f3; padding: 40px 20px; text-align: center; }
+        .hours h3 { margin-bottom: 15px; color: var(--dark); }
+        
+        footer { background: #9d174d; color: #fbcfe8; padding: 30px 20px; text-align: center; }
+        
+        /* Chatbot Styles */
+        .chatbot-toggle { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: var(--primary); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4); z-index: 1000; transition: transform 0.3s; }
+        .chatbot-toggle:hover { transform: scale(1.1); }
+        .chatbot-container { position: fixed; bottom: 90px; right: 20px; width: 380px; height: 500px; background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); display: none; flex-direction: column; z-index: 1000; overflow: hidden; }
+        .chatbot-container.active { display: flex; }
+        .chatbot-header { background: var(--primary); color: white; padding: 15px 20px; display: flex; align-items: center; gap: 10px; }
+        .chatbot-header h3 { font-size: 1.1rem; }
+        .chatbot-messages { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
+        .message { max: 85%; padding: 12px 16px; border-radius: 15px; font-size: 0.95rem; }
+        .message.bot { background: #fdf2f8; align-self: flex-start; border-bottom-left-radius: 3px; }
+        .message.user { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 3px; }
+        .chatbot-input { padding: 15px; border-top: 1px solid #e2e8f0; display: flex; gap: 10px; }
+        .chatbot-input input { flex: 1; padding: 12px; border: 1px solid #e2e8f0; border-radius: 25px; outline: none; }
+        .chatbot-input button { background: var(--primary); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; font-weight: 600; }
+        
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .header-content { flex-direction: column; text-align: center; }
+            .chatbot-container { width: calc(100% - 40px); right: 20px; height: 400px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">💇 Top Hair Studio Salon</div>
+            <a href="tel:+17182665918" class="phone">📞 (718) 266-5918</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>Brooklyn's Premier Hair Destination</h1>
+        <p>Trendy cuts, stunning colors, and professional styling. Look your best with our expert stylists.</p>
+        <a href="tel:+17182665918" class="cta">Book Now: (718) 266-5918</a>
+    </section>
+    
+    <section class="gallery">
+        <h2>Our Styles</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop" alt="Hair Styling">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=400&fit=crop" alt="Hair Color">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&h=400&fit=crop" alt="Haircut">
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">✂️</div>
+                <h3>Expert Stylists</h3>
+                <p>Years of experience in cuts, colors, and styling</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h3>Color Specialists</h3>
+                <p>From balayage to highlights, we create stunning color</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💆</div>
+                <h3>Relaxing Atmosphere</h3>
+                <p>Enjoy a spa-like experience while we pamper you</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                <h3>Family Friendly</h3>
+                <p>Services for the whole family, including kids</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>💇 Haircuts</h3>
+                <p>Precision cuts for men, women, and children. From classic styles to modern trends.</p>
+            </div>
+            <div class="service-card">
+                <h3>🎨 Hair Coloring</h3>
+                <p>Full color, highlights, balayage, ombre, and corrective color. Premium products.</p>
+            </div>
+            <div class="service-card">
+                <h3>✨ Highlights & Balayage</h3>
+                <p>Hand-painted highlights for a natural, sun-kissed look.</p>
+            </div>
+            <div class="service-card">
+                <h3>💆 Treatments</h3>
+                <p>Deep conditioning, keratin treatments, and scalp treatments.</p>
+            </div>
+            <div class="service-card">
+                <h3>💇‍♂️ Men's Grooming</h3>
+                <p>Classic cuts, fades, beard trimming, and men's color.</p>
+            </div>
+            <div class="service-card">
+                <h3>👰 Special Occasions</h3>
+                <p>Wedding parties, proms, and special event styling.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-form">
+        <h2>📝 Book Your Appointment</h2>
+        <div class="form-container">
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="phone" required placeholder="(123) 456-7890">
+                </div>
+                <div class="form-group">
+                    <label>Service</label>
+                    <select name="service">
+                        <option value="">Select a service...</option>
+                        <option value="cut">Haircut</option>
+                        <option value="color">Hair Coloring</option>
+                        <option value="highlights">Highlights/Balayage</option>
+                        <option value="treatment">Treatment</option>
+                        <option value="mens">Men's Cut</option>
+                        <option value="special">Special Occasion</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Stylist</label>
+                    <select name="stylist">
+                        <option value="">No preference</option>
+                        <option value="any">Any Available</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" placeholder="Tell us about your hair goals..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Request Appointment</button>
+            </form>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <h2>Visit Us</h2>
+        <p class="contact-info">📍 2353 86th St, Brooklyn, NY 11214</p>
+        <p class="contact-info">📞 <a href="tel:+17182665918" style="color:inherit">(718) 266-5918</a></p>
+        <p class="contact-info">🗺️ Serving Bensonhurst & Brooklyn</p>
+    </section>
+    
+    <section class="hours">
+        <h3>🕐 Salon Hours</h3>
+        <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
+        <p>Saturday: 9:00 AM - 7:00 PM</p>
+        <p>Sunday: 9:00 AM - 5:00 PM</p>
+    </section>
+    
+    <footer>
+        <p>💇 Top Hair Studio Salon | Brooklyn's Favorite Hair Salon</p>
+    </footer>
+    
+    <!-- Chatbot -->
+    <div class="chatbot-toggle" onclick="toggleChatbot()">💬</div>
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            <span>🤖</span>
+            <h3>AI Stylist Assistant</h3>
+        </div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="message bot">Hi! I'm the AI assistant for Top Hair Studio Salon. How can I help you today?</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatKey(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    
+    <script>
+        function toggleChatbot() {
+            document.getElementById('chatbot').classList.toggle('active');
+        }
+        
+        function handleChatKey(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (!message) return;
+            
+            const messagesDiv = document.getElementById('chatMessages');
+            messagesDiv.innerHTML += '<div class="message user">' + message + '</div>';
+            input.value = '';
+            
+            setTimeout(() => {
+                let response = getBotResponse(message.toLowerCase());
+                messagesDiv.innerHTML += '<div class="message bot">' + response + '</div>';
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }, 1000);
+        }
+        
+        function getBotResponse(msg) {
+            if (msg.includes('call') || msg.includes('phone') || msg.includes('book')) {
+                return 'To book your appointment, call us at (718) 266-5918!';
+            }
+            if (msg.includes('hour') || msg.includes('open') || msg.includes('time')) {
+                return 'We\'re open Mon-Fri 9AM-7PM, Sat 9AM-7PM, Sun 9AM-5PM.';
+            }
+            if (msg.includes('address') || msg.includes('location') || msg.includes('where')) {
+                return 'Find us at 2353 86th St, Brooklyn, NY 11214 in Bensonhurst!';
+            }
+            if (msg.includes('cut') || msg.includes('haircut') || msg.includes('trim')) {
+                return 'We offer precision haircuts for men, women, and children. Call to book!';
+            }
+            if (msg.includes('color') || msg.includes('dye') || msg.includes('highlight')) {
+                return 'Our color specialists do full color, highlights, balayage, and ombre. Book a consultation!';
+            }
+            if (msg.includes('balayage') || msg.includes('ombre')) {
+                return 'Yes! We specialize in balayage and ombre. Call (718) 266-5918 to book.';
+            }
+            if (msg.includes('price') || msg.includes('cost') || msg.includes('cost')) {
+                return 'Prices vary by service. Call (718) 266-5918 for specific pricing.';
+            }
+            if (msg.includes('kids') || msg.includes('children') || msg.includes('family')) {
+                return 'Absolutely! We welcome the whole family, including children\'s haircuts.';
+            }
+            if (msg.includes('wedding') || msg.includes('prom') || msg.includes('special')) {
+                'We do special occasion styling! Call to discuss your event needs.';
+            }
+            if (msg.includes('thank')) {
+                return 'You\'re welcome! We can\'t wait to make you look fabulous!';
+            }
+            return 'Thanks for reaching out! Call (718) 266-5918 to book your appointment!';
+        }
+        
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! We\'ll contact you shortly to confirm your appointment.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
