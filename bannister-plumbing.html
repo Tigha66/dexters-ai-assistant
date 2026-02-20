@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bannister Plumbing and Heating Service | NYC Plumber</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #0ea5e9; --primary-dark: #0284c7; --secondary: #f97316; --dark: #1e293b; --light: #f8fafc; --gray: #64748b; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: var(--dark); background: var(--light); }
+        
+        header { background: white; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .phone { font-size: 1.2rem; font-weight: 600; color: var(--secondary); }
+        
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, #334155 100%); color: white; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+        .cta { background: var(--secondary); color: white; padding: 15px 40px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block; }
+        
+        .services { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+        .services h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .service-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .service-card h3 { color: var(--primary); margin-bottom: 10px; }
+        
+        .contact { background: var(--dark); color: white; padding: 60px 20px; text-align: center; }
+        .contact h2 { margin-bottom: 20px; }
+        .contact-info { font-size: 1.1rem; margin-bottom: 10px; }
+        .contact-email { color: var(--primary); }
+        
+        footer { background: #0f172a; color: var(--gray); padding: 20px; text-align: center; font-size: 0.9rem; }
+        
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .header-content { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">🔧 Bannister Plumbing</div>
+            <a href="tel:+12122930888" class="phone">📞 (212) 293-0888</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>Professional Plumbing & Heating in NYC</h1>
+        <p>Reliable service for Manhattan & beyond. Emergency repairs, installations, and maintenance.</p>
+        <a href="tel:+12122930888" class="cta">Call Now: (212) 293-0888</a>
+    </section>
+    
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🔧 Plumbing Repairs</h3>
+                <p>Fast, reliable repairs for leaks, clogs, and pipe issues.</p>
+            </div>
+            <div class="service-card">
+                <h3>🔥 Heating Services</h3>
+                <p>Heating system installation, repair, and maintenance.</p>
+            </div>
+            <div class="service-card">
+                <h3>🚿 Water Heaters</h3>
+                <p>Installation and repair of all water heater types.</p>
+            </div>
+            <div class="service-card">
+                <h3>✨ Emergency Service</h3>
+                <p>24/7 emergency plumbing when you need it most.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p class="contact-info">📍 110 W 51st St, New York, NY 10020</p>
+        <p class="contact-info">📞 <a href="tel:+12122930888" style="color:inherit">(212) 293-0888</a></p>
+        <p class="contact-info">✉️ <a href="mailto:bannisterplumbingheating@yahoo.com" class="contact-email">bannisterplumbingheating@yahoo.com</a></p>
+    </section>
+    
+    <footer>
+        <p>🔧 Bannister Plumbing and Heating Service | NYC Licensed & Insured</p>
+    </footer>
+</body>
+</html>
