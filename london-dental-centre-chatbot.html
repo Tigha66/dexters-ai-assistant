@@ -1,0 +1,61 @@
+<!-- London Dental Centre AI Chatbot -->
+<style>
+#ldc-chatbot-toggle { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #0ea5e9; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4); z-index: 999999; transition: transform 0.3s; }
+#ldc-chatbot-toggle:hover { transform: scale(1.1); }
+#ldc-chatbot-container { position: fixed; bottom: 90px; right: 20px; width: 350px; height: 450px; background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); display: none; flex-direction: column; z-index: 999999; overflow: hidden; }
+#ldc-chatbot-container.active { display: flex; }
+#ldc-chatbot-header { background: #0ea5e9; color: white; padding: 15px 20px; display: flex; align-items: center; gap: 10px; }
+#ldc-chatbot-header h3 { font-size: 1rem; margin: 0; }
+#ldc-chatbot-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+#ldc-chatbot-messages .message { max: 90%; padding: 10px 14px; border-radius: 15px; font-size: 0.9rem; }
+#ldc-chatbot-messages .bot { background: #f0fdfa; align-self: flex-start; border-bottom-left-radius: 3px; }
+#ldc-chatbot-messages .user { background: #0ea5e9; color: white; align-self: flex-end; border-bottom-right-radius: 3px; }
+#ldc-chatbot-input { padding: 12px; border-top: 1px solid #e2e8f0; display: flex; gap: 8px; }
+#ldc-chatbot-input input { flex: 1; padding: 10px; border: 1px solid #e2e8f0; border-radius: 20px; outline: none; font-size: 0.9rem; }
+#ldc-chatbot-input button { background: #0ea5e9; color: white; border: none; padding: 10px 16px; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+@media (max-width: 400px) {
+  #ldc-chatbot-container { width: calc(100% - 30px); right: 15px; }
+}
+</style>
+
+<div id="ldc-chatbot-toggle" onclick="ldcToggleChat()">💬</div>
+<div id="ldc-chatbot-container">
+  <div id="ldc-chatbot-header">
+    <span>🤖</span>
+    <h3>London Dental Centre AI</h3>
+  </div>
+  <div id="ldc-chatbot-messages">
+    <div class="message bot">Hi! I'm your AI dental assistant. How can I help you today?</div>
+  </div>
+  <div id="ldc-chatbot-input">
+    <input type="text" id="ldc-chat-input" placeholder="Type a message..." onkeypress="if(event.key==='Enter')ldcSendMsg()">
+    <button onclick="ldcSendMsg()">Send</button>
+  </div>
+</div>
+
+<script>
+function ldcToggleChat() { document.getElementById('ldc-chatbot-container').classList.toggle('active'); }
+function ldcSendMsg() {
+  var input = document.getElementById('ldc-chat-input');
+  var msg = input.value.trim();
+  if (!msg) return;
+  var ms = document.getElementById('ldc-chatbot-messages');
+  ms.innerHTML += '<div class="message user">' + msg + '</div>';
+  input.value = '';
+  setTimeout(function() {
+    ms.innerHTML += '<div class="message bot">' + ldcGetResponse(msg.toLowerCase()) + '</div>';
+    ms.scrollTop = ms.scrollHeight;
+  }, 800);
+}
+function ldcGetResponse(m) {
+  if(m.includes('book')||m.includes('appointment')) return 'Great! Call us on 020 7529 1100 or use our online booking form.';
+  if(m.includes('price')||m.includes('cost')) return 'Consultations start from £50. Book a checkup and we\'ll discuss treatment options.';
+  if(m.includes('invisalign')) return 'Yes! We offer Invisalign. Book a consultation to see if it\'s right for you.';
+  if(m.includes('whitening')) return 'Professional whitening from £300. Book a consultation!';
+  if(m.includes('emergency')||m.includes('pain')) return 'For emergencies, call 020 7529 1100. We see emergencies same-day.';
+  if(m.includes('hour')||m.includes('open')) return 'Mon-Fri 9am-6pm. Extended hours by request.';
+  if(m.includes('address')||m.includes('where')) return '181-183 Upper St, Islington, London N1 0PQ. Near Angel station!';
+  if(m.includes('contact')||m.includes('phone')) return 'Call 020 7529 1100 or email info@londondentalcentre.co.uk';
+  return 'Thanks! Call 020 7529 1100 for immediate help, or book online.';
+}
+</script>
